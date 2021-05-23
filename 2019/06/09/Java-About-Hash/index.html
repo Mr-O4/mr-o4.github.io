@@ -47,6 +47,21 @@
 
   
   
+  
+  
+  
+  
+      <style>
+        html {
+          -webkit-filter: grayscale(100%);
+          -moz-filter: grayscale(100%);
+          -ms-filter: grayscale(100%);
+          -o-filter: grayscale(100%);
+          filter: progid:DXImageTransform.Microsoft.BasicImage(grayscale=1);
+          _filter: none;
+        }
+      </style>
+  
 
 
   
@@ -180,7 +195,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
                   
                   
                   >
-                  <i class='fas fa-archive fa-fw'></i>归档
+                  <i class='fas fa-indent fa-fw'></i>导航
                 </a>
                 
                   <ul class="list-v">
@@ -226,7 +241,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
                   
                     id="archives"
                   >
-                  <i class='fas fa-indent fa-fw'></i>归档
+                  <i class='fas fa-archive fa-fw'></i>归档
                 </a>
                 
               </li>
@@ -296,7 +311,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
             
               <li>
                 <a class="menuitem flat-box header toggle-mode-btn">
-                  <i class='fas fa-moon fa-fw'></i>关灯
+                  <i class='fas fa-moon fa-fw'></i>开/关灯
                 </a>
               <li>
             
@@ -359,7 +374,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
                   
                   
                   >
-                  <i class='fas fa-archive fa-fw'></i>归档
+                  <i class='fas fa-indent fa-fw'></i>导航
                 </a>
                 
                   <ul class="list-v">
@@ -405,7 +420,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
                   
                     id="archives"
                   >
-                  <i class='fas fa-indent fa-fw'></i>归档
+                  <i class='fas fa-archive fa-fw'></i>归档
                 </a>
                 
               </li>
@@ -444,7 +459,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
             
               <li>
                 <a class="menuitem flat-box header toggle-mode-btn">
-                  <i class='fas fa-moon fa-fw'></i>关灯
+                  <i class='fas fa-moon fa-fw'></i>开/关灯
                 </a>
               <li>
             
@@ -541,6 +556,12 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
 
   
+    <div class='headimg-div'>
+      <a class='headimg-a'>
+        <img class='headimg' src='https://cdn.jsdelivr.net/gh/TCP404/Picgo/blog/cover/java.jpg'/>
+      </a>
+    </div>
+  
   <div class="article-meta" id="top">
     
     
@@ -603,14 +624,15 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         
           
             
-  <div class="new-meta-item browse leancloud">
+  <div class="new-meta-item browse busuanzi">
     <a class='notlink'>
-      
-      <div id="lc-pv" data-title="Java-About-Hash" data-path="/2019/06/09/Java-About-Hash/">
-        <i class="fas fa-eye fa-fw" aria-hidden="true"></i>
-        <span id='number'><i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i></span>
+      <i class="fas fa-eye fa-fw" aria-hidden="true"></i>
+      <p>
+        <span id="busuanzi_value_page_pv">
+          <i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i>
+        </span>
         次浏览
-      </div>
+      </p>
     </a>
   </div>
 
@@ -624,24 +646,19 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
   
   
-  <p><img src="https://cdn.jsdelivr.net/gh/TCP404/Picgo/blog/cover/java.jpg" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/TCP404/Picgo/blog/cover/java.jpg" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" alt="cover"></p>
-<span id="more"></span>
-
-
-
-<h3 id="HashTable"><a href="#HashTable" class="headerlink" title="HashTable"></a>HashTable</h3><p><strong>HashTable 散列表 哈希表：</strong> 是一种数据结构，它提供快速的插入和查找操作，不管表中有多少数据，插入删除和查找的时间都接近O(1)</p>
+  <h2 id="HashTable"><a href="#HashTable" class="headerlink" title="HashTable"></a>HashTable</h2><p><strong>HashTable 散列表 哈希表：</strong> 是一种数据结构，它提供快速的插入和查找操作，不管表中有多少数据，插入删除和查找的时间都接近O(1)</p>
 <p><strong>优点：</strong>HashTable其实是基于数组的，所以在查询方面非常的快，同时它不像普通数组那样紧密排列，在数值未满的时候所有的值其实是散部在数组中的某个位置上的，所以在插入和删除的时候不用像普通数组一样让余下的值一个个的挪。</p>
 <p><strong>缺点：</strong>同时也因为它的基于数组的，所以创建以后难以扩展，当HashTable被基本填满的时候，性能严重下降，而且不能顺序遍历。</p>
 <p>一个输入传进来的时候会经过<strong>散列函数</strong>，计算出一个值，这个值就是这个输入在HashTable中的位置，称为<strong>HashCode 哈希值 散列值</strong>。</p>
 <p>当HashTable中的值还不多的时候各种操作的效率是非常高的，但是HashTable快满的时候各种操作的效率就开始变低了</p>
-<h3 id="开放寻址法"><a href="#开放寻址法" class="headerlink" title="开放寻址法"></a>开放寻址法</h3><h4 id="线性探测方法"><a href="#线性探测方法" class="headerlink" title="线性探测方法"></a>线性探测方法</h4><blockquote>
+<h2 id="开放寻址法"><a href="#开放寻址法" class="headerlink" title="开放寻址法"></a>开放寻址法</h2><h3 id="线性探测方法"><a href="#线性探测方法" class="headerlink" title="线性探测方法"></a>线性探测方法</h3><blockquote>
 <p>比如一个HashTable的长度是8，现在只剩下 <del>6</del> 这个位置是空的</p>
 <p>而一个输入经过散列函数计算之后得到的结果是 <del>7</del> ，一看 <del>7</del> 上面有人占了，怎么办呢？</p>
 <p>往下找空位咯，<del>7</del> 下面是 <del>0</del> ，有人了，下一个 <del>1</del> ，有人了，下一个 <del>2</del> ，有人了…下一个 <del>6</del> ，耶没人，上去！ </p>
 <p>这样几乎遍历了一整个数组，效率是非常低的，HashTable小的时候还能忍受，如果HashTable长度是2000呢?20000呢？</p>
 </blockquote>
 <p>上述的方法其实就是当散列函数计算出来的值上面已经有值的时候的解决方法之一，<strong>开放寻址法</strong>中的<strong>线性探测</strong>，往下找空位，找到进填进去。最坏的情况下就是几乎遍历整个数组。</p>
-<h4 id="二次探测方法"><a href="#二次探测方法" class="headerlink" title="二次探测方法"></a>二次探测方法</h4><p>另一种的思路有那么点像二分查找法，叫做<strong>二次探测方法</strong></p>
+<h3 id="二次探测方法"><a href="#二次探测方法" class="headerlink" title="二次探测方法"></a>二次探测方法</h3><p>另一种的思路有那么点像二分查找法，叫做<strong>二次探测方法</strong></p>
 <blockquote>
 <p>比如表中只有 <del>3</del> 是有空位的，其余都是满的</p>
 <p>而一个输入经过散列函数计算之后得到的结果是 <del>7</del>，一看 <del>7</del> 上面有人了，怎么办呢？</p>
@@ -649,17 +666,17 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 <p>7不行就 + 1^2^ = 8，8还是不行，那就7 - 1^2^ = 6，6还是不行，那就7 - 2^2^ = 3，3可以，上去！</p>
 </blockquote>
 <p>因为进行试探的步长都是二次方，所以叫 <strong>二次探测方法</strong></p>
-<h4 id="双重散列方法"><a href="#双重散列方法" class="headerlink" title="双重散列方法"></a>双重散列方法</h4><p>还有一种方法叫做 <strong>双重散列方法</strong></p>
+<h3 id="双重散列方法"><a href="#双重散列方法" class="headerlink" title="双重散列方法"></a>双重散列方法</h3><p>还有一种方法叫做 <strong>双重散列方法</strong></p>
 <blockquote>
 <p>就是使用第一个哈希函数计算的值如果被占用了，就找第二个哈希函数，直到找到空闲的存储位置</p>
 </blockquote>
 <p>不管用那种方法，只要HashTable空位不多的时候散列冲突的概率就会大大提高，尽可能保证HashTable中有一定比例的空位。</p>
 <p>一般用<strong>加载因子</strong>来表示空位的多少。加载因子越大表示约满，反之亦然。</p>
-<h3 id="链表法"><a href="#链表法" class="headerlink" title="链表法"></a>链表法</h3><p>HashTable中每个元素对应一条链表，所有散列值相同的元素放到相同的链表中。如下图</p>
+<h2 id="链表法"><a href="#链表法" class="headerlink" title="链表法"></a>链表法</h2><p>HashTable中每个元素对应一条链表，所有散列值相同的元素放到相同的链表中。如下图</p>
 <p><img src="https://cdn.jsdelivr.net/gh/TCP404/Picgo/blog/illustration-pic/Java-about-hash/HashMap.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/TCP404/Picgo/blog/illustration-pic/Java-about-hash/HashMap.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" alt="链表法"></p>
 <p>查找的时候先通过HashCode找到位置，然后将值与链表中的值逐个使用 equals() 对比。</p>
-<h3 id="But"><a href="#But" class="headerlink" title="But"></a>But</h3><p>但其实HashTable是元素数量不能超过总容量的一半，当HashTable太满的时候，一个选择是扩容数组，创建一个新的容量为 <code>CurrentCapacity * 1.34 + n = 2^m </code>  的数组，把值放到新数组，但是元素的索引没法复制，会被重新哈希化。<br>$$<br>CurrentCapacity * 1.34 + n = 2^m = NewCapacity<br>$$</p>
-<h3 id="举个栗子"><a href="#举个栗子" class="headerlink" title="举个栗子"></a>举个栗子</h3><p>一本字典有1000页，当你要查找Link这个词的时候，肯定想去翻目录，目录显示在第666页，那么你是不是可以直接翻到666页找这个单词？也就是所Link这个单词在<code>散列表[666]</code>，但是第666页可能不止这一个单词哦，那你是不是要一个一个进行equals才能知道是哪个呢？因为知道在哪一条链表上，所以尽管遍历看起来很慢，但总比遍历所有链表快吧？</p>
+<h2 id="But"><a href="#But" class="headerlink" title="But"></a>But</h2><p>但其实HashTable是元素数量不能超过总容量的一半，当HashTable太满的时候，一个选择是扩容数组，创建一个新的容量为 <code>CurrentCapacity * 1.34 + n = 2^m </code>  的数组，把值放到新数组，但是元素的索引没法复制，会被重新哈希化。<br>$$<br>CurrentCapacity * 1.34 + n = 2^m = NewCapacity<br>$$</p>
+<h2 id="举个栗子"><a href="#举个栗子" class="headerlink" title="举个栗子"></a>举个栗子</h2><p>一本字典有1000页，当你要查找Link这个词的时候，肯定想去翻目录，目录显示在第666页，那么你是不是可以直接翻到666页找这个单词？也就是所Link这个单词在<code>散列表[666]</code>，但是第666页可能不止这一个单词哦，那你是不是要一个一个进行equals才能知道是哪个呢？因为知道在哪一条链表上，所以尽管遍历看起来很慢，但总比遍历所有链表快吧？</p>
 
   
   
@@ -673,8 +690,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       <i class="fas fa-bookmark fa-fw" aria-hidden="true"></i><span>相关文章</span>
     </section>
     <section class='body'>
-      <div class="vlts-rps"><a class="item" href="/2019/06/09/Java-反射/" title="Java-反射" rel="bookmark "><img src="https://cdn.jsdelivr.net/gh/TCP404/Picgo/blog/cover/java.jpg" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/TCP404/Picgo/blog/cover/java.jpg" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" /><span class="title">Java-反射</span><span class="excerpt"></span></a><a class="item" href="/2019/07/07/SSM-4-数据绑定/" title="SSM-4-数据绑定" rel="bookmark "><img src="https://cdn.jsdelivr.net/gh/TCP404/Picgo/blog/cover/Spring.jpg" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/TCP404/Picgo/blog/cover/Spring.jpg" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" /><span class="title">SSM-4-数据绑定</span><span class="excerpt"></span></a><a class="item" href="/2019/07/07/SSM-5-拦截器/" title="SSM-5-拦截器" rel="bookmark "><img src="https://cdn.jsdelivr.net/gh/TCP404/Picgo/blog/cover/Spring.jpg" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/TCP404/Picgo/blog/cover/Spring.jpg" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" /><span class="title">SSM-5-拦截器</span><span class="excerpt"></span></a><a class="item" href="/2019/07/10/SSM-6-上传和下载/" title="SSM-6-上传和下载" rel="bookmark "><img src="https://cdn.jsdelivr.net/gh/TCP404/Picgo/blog/cover/Spring.jpg" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/TCP404/Picgo/blog/cover/Spring.jpg" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" /><span class="title">SSM-6-上传和下载</span><span class="excerpt"></span></a><a class="item" href="/2019/05/15/几句话区分并行和并发/" title="几句话区分并行和并发" rel="bookmark "><img src="https://cdn.jsdelivr.net/gh/TCP404/Picgo/blog/cover/parallel-concurrent.jpg" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/TCP404/Picgo/blog/cover/parallel-concurrent.jpg" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" /><span class="title">几句话区分并行和并发</span><span class="excerpt">
-吃饭和打电话你选择哪个？</span></a></div></section></div>
+      <div class="vlts-rps"><a class="item" href="/2019/06/09/Java-反射/" title="Java-反射" rel="bookmark "><img src="https://cdn.jsdelivr.net/gh/TCP404/Picgo/blog/cover/java.jpg" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/TCP404/Picgo/blog/cover/java.jpg" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" /><span class="title">Java-反射</span></a><a class="item" href="/2019/07/07/SSM-4-数据绑定/" title="SSM-4-数据绑定" rel="bookmark "><img src="https://cdn.jsdelivr.net/gh/TCP404/Picgo/blog/cover/Spring.jpg" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/TCP404/Picgo/blog/cover/Spring.jpg" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" /><span class="title">SSM-4-数据绑定</span></a><a class="item" href="/2019/07/07/SSM-5-拦截器/" title="SSM-5-拦截器" rel="bookmark "><img src="https://cdn.jsdelivr.net/gh/TCP404/Picgo/blog/cover/Spring.jpg" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/TCP404/Picgo/blog/cover/Spring.jpg" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" /><span class="title">SSM-5-拦截器</span></a><a class="item" href="/2019/07/10/SSM-6-上传和下载/" title="SSM-6-上传和下载" rel="bookmark "><img src="https://cdn.jsdelivr.net/gh/TCP404/Picgo/blog/cover/Spring.jpg" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/TCP404/Picgo/blog/cover/Spring.jpg" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" /><span class="title">SSM-6-上传和下载</span></a><a class="item" href="/2019/05/15/几句话区分并行和并发/" title="几句话区分并行和并发" rel="bookmark "><img src="https://cdn.jsdelivr.net/gh/TCP404/Picgo/blog/cover/parallel-concurrent.jpg" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/TCP404/Picgo/blog/cover/parallel-concurrent.jpg" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" /><span class="title">几句话区分并行和并发</span><span class="excerpt">吃饭和打电话你选择哪个？</span></a></div></section></div>
       
       
         <div class='copyright'>
@@ -703,10 +719,10 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-05-22T21:37:47+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-05-23T12:42:37+08:00">
   <a class='notlink'>
     <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：2021年5月22日</p>
+    <p>更新于：2021年5月23日</p>
   </a>
 </div>
 
@@ -792,24 +808,18 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         <a class='prev' href='/2019/06/09/C-Note/'>
           <p class='title'><i class="fas fa-chevron-left" aria-hidden="true"></i>C-Note</p>
-          <p class='content'>
-C语言笔记
+          <p class='content'>C语言笔记
 
 
 
 
-指针12345定义指针: dataType * pointerName = NULL;int * ptr_a = NULL;指针赋值：pointerName = &amp;...</p>
+指针12345定义指针: dataType * pointerName = NULL;int * ptr_a = NULL;指针赋值：pointerName = &amp;v...</p>
         </a>
       
       
         <a class='next' href='/2019/06/09/Java-%E5%8F%8D%E5%B0%84/'>
           <p class='title'>Java-反射<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
-          <p class='content'>
-
-
-
-
-12345678910111213141516171819Person p = new Person();/**获取*/Class&lt;?&gt; clazz = p.getClas...</p>
+          <p class='content'>12345678910111213141516171819Person p = new Person();/**获取*/Class&lt;?&gt; clazz = p.getClass(); ...</p>
         </a>
       
     </div>
@@ -850,7 +860,7 @@ C语言笔记
 
 
     <div class='content'>
-        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#HashTable"><span class="toc-text">HashTable</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BC%80%E6%94%BE%E5%AF%BB%E5%9D%80%E6%B3%95"><span class="toc-text">开放寻址法</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%BA%BF%E6%80%A7%E6%8E%A2%E6%B5%8B%E6%96%B9%E6%B3%95"><span class="toc-text">线性探测方法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BA%8C%E6%AC%A1%E6%8E%A2%E6%B5%8B%E6%96%B9%E6%B3%95"><span class="toc-text">二次探测方法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8F%8C%E9%87%8D%E6%95%A3%E5%88%97%E6%96%B9%E6%B3%95"><span class="toc-text">双重散列方法</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%93%BE%E8%A1%A8%E6%B3%95"><span class="toc-text">链表法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#But"><span class="toc-text">But</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%BE%E4%B8%AA%E6%A0%97%E5%AD%90"><span class="toc-text">举个栗子</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#HashTable"><span class="toc-text">HashTable</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BC%80%E6%94%BE%E5%AF%BB%E5%9D%80%E6%B3%95"><span class="toc-text">开放寻址法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BA%BF%E6%80%A7%E6%8E%A2%E6%B5%8B%E6%96%B9%E6%B3%95"><span class="toc-text">线性探测方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%8C%E6%AC%A1%E6%8E%A2%E6%B5%8B%E6%96%B9%E6%B3%95"><span class="toc-text">二次探测方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%8C%E9%87%8D%E6%95%A3%E5%88%97%E6%96%B9%E6%B3%95"><span class="toc-text">双重散列方法</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%93%BE%E8%A1%A8%E6%B3%95"><span class="toc-text">链表法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#But"><span class="toc-text">But</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%BE%E4%B8%AA%E6%A0%97%E5%AD%90"><span class="toc-text">举个栗子</span></a></li></ol>
     </div>
   </section>
 
@@ -1177,7 +1187,7 @@ var loadCSS = function( href, before, media, attributes ){
 <script src="https://cdn.jsdelivr.net/npm/jquery-backstretch@2.1.18/jquery.backstretch.min.js"></script>
 
     <script type="text/javascript">
-        var imgs=["https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/001.jpg", "https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/002.jpg", "https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/003.jpg", "https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/004.jpg", "https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/005.jpg", "https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/006.jpg", "https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/012.jpg", "https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/016.jpg", "https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/019.jpg", "https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/025.jpg", "https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/033.jpg", "https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/034.jpg", "https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/035.jpg", "https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/038.jpg", "https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/039.jpg", "https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/042.jpg", "https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/046.jpg", "https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/051.jpg", "https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/052.jpg", "https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/054.jpg", "https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/056.jpg"];
+        var imgs=["https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/001.jpg", "https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/002.jpg", "https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/003.jpg", "https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/004.jpg", "https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/006.jpg", "https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/012.jpg", "https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/016.jpg", "https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/019.jpg", "https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/025.jpg", "https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/034.jpg", "https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/035.jpg", "https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/038.jpg", "https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/039.jpg", "https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/042.jpg", "https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/046.jpg", "https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/051.jpg", "https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/052.jpg", "https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/054.jpg", "https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/056.jpg"];
         if ('true' == 'true') {
           function shuffle(arr){
             /*From countercurrent-time*/
@@ -1193,7 +1203,7 @@ var loadCSS = function( href, before, media, attributes ){
         }
 	  function Pjax_backstretch(){
         
-          $('#cover-backstretch').backstretch(
+          $.backstretch(
             imgs,
           {
             duration: "10000",
@@ -1569,6 +1579,29 @@ var loadCSS = function( href, before, media, attributes ){
 
 
 
+   <script type="text/javascript">
+  loadScript("https://cdn.jsdelivr.net/npm/scrollreveal@4.0.6/dist/scrollreveal.min.js")
+  function pjax_scrollrebeal() {
+    ScrollReveal().reveal('.l_main .reveal', {
+      distance: '32px',
+      duration: '800',
+      interval: '20',
+      scale: '1',
+      easing: 'ease-out'
+    });
+  }
+  $(function () {
+  var checkScrollReveal = setInterval(function () {
+    if ($("#safearea").css("display")!="block") return
+    if (typeof ScrollReveal=="undefined") return
+    clearInterval(checkScrollReveal)
+	pjax_scrollrebeal();
+  }, 100)
+  });
+  volantis.pjax.push(pjax_scrollrebeal)
+</script>
+
+
 
 
   <script>
@@ -1625,6 +1658,8 @@ var loadCSS = function( href, before, media, attributes ){
 
 
 
+  <script defer src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-busuanzi@2.3/js/busuanzi.pure.mini.js" data-pjax></script>
+
 
 
   
@@ -1680,221 +1715,8 @@ $(function () {
 
 
 
-  
-<script src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-volantis@2/js/comment_typing.js"></script>
 
 
-
-
-
-
-  <script defer>
-
-  const LCCounter = {
-    app_id: 'u9j57bwJod4EDmXWdxrwuqQT-MdYXbMMI',
-    app_key: 'jfHtEKVE24j0IVCGHbvuFClp',
-    custom_api_server: '',
-
-    // 查询存储的记录
-    getRecord(Counter, url, title) {
-      return new Promise(function (resolve, reject) {
-        Counter('get', '/classes/Counter?where=' + encodeURIComponent(JSON.stringify({url})))
-          .then(resp => resp.json())
-          .then(({results, code, error}) => {
-            if (code === 401) {
-              throw error;
-            }
-            if (results && results.length > 0) {
-              var record = results[0];
-              resolve(record);
-            } else {
-              Counter('post', '/classes/Counter', {url, title: title, times: 0})
-                .then(resp => resp.json())
-                .then((record, error) => {
-                  if (error) {
-                    throw error;
-                  }
-                  resolve(record);
-                }).catch(error => {
-                console.error('Failed to create', error);
-                reject(error);
-              });
-            }
-          }).catch((error) => {
-          console.error('LeanCloud Counter Error:', error);
-          reject(error);
-        });
-      })
-    },
-
-    // 发起自增请求
-    increment(Counter, incrArr) {
-      return new Promise(function (resolve, reject) {
-        Counter('post', '/batch', {
-          "requests": incrArr
-        }).then((res) => {
-          res = res.json();
-          if (res.error) {
-            throw res.error;
-          }
-          resolve(res);
-        }).catch((error) => {
-          console.error('Failed to save visitor count', error);
-          reject(error);
-        });
-      });
-    },
-
-    // 构建自增请求体
-    buildIncrement(objectId) {
-      return {
-        "method": "PUT",
-        "path": `/1.1/classes/Counter/${ objectId }`,
-        "body": {
-          "times": {
-            '__op': 'Increment',
-            'amount': 1
-          }
-        }
-      }
-    },
-
-    // 校验是否为有效的 UV
-    validUV() {
-      var key = 'LeanCloudUVTimestamp';
-      var flag = localStorage.getItem(key);
-      if (flag) {
-        // 距离标记小于 24 小时则不计为 UV
-        if (new Date().getTime() - parseInt(flag) <= 86400000) {
-          return false;
-        }
-      }
-      localStorage.setItem(key, new Date().getTime().toString());
-      return true;
-    },
-
-    addCount(Counter) {
-      var enableIncr = '' === 'true' && window.location.hostname !== 'localhost';
-      enableIncr = true;
-      var getterArr = [];
-      var incrArr = [];
-      // 请求 PV 并自增
-      var pvCtn = document.querySelector('#lc-sv');
-      if (pvCtn || enableIncr) {
-        var pvGetter = this.getRecord(Counter, 'https://www.boii.xyz' + '/#lc-sv', 'Visits').then((record) => {
-          incrArr.push(this.buildIncrement(record.objectId))
-          var eles = document.querySelectorAll('#lc-sv #number');
-          if (eles.length > 0) {
-            eles.forEach((el,index,array)=>{
-              el.innerText = record.times + 1;
-              if (pvCtn) {
-                pvCtn.style.display = 'inline';
-              }
-            })
-          }
-        });
-        getterArr.push(pvGetter);
-      }
-
-      // 请求 UV 并自增
-      var uvCtn = document.querySelector('#lc-uv');
-      if (uvCtn || enableIncr) {
-        var uvGetter = this.getRecord(Counter, 'https://www.boii.xyz' + '/#lc-uv', 'Visitors').then((record) => {
-          var vuv = this.validUV();
-          vuv && incrArr.push(this.buildIncrement(record.objectId))
-          var eles = document.querySelectorAll('#lc-uv #number');
-          if (eles.length > 0) {
-            eles.forEach((el,index,array)=>{
-              el.innerText = record.times + (vuv ? 1 : 0);
-              if (uvCtn) {
-                uvCtn.style.display = 'inline';
-              }
-            })
-          }
-        });
-        getterArr.push(uvGetter);
-      }
-
-      // 请求文章的浏览数，如果是当前页面就自增
-      var allPV = document.querySelectorAll('#lc-pv');
-      if (allPV.length > 0 || enableIncr) {
-        for (i = 0; i < allPV.length; i++) {
-          let pv = allPV[i];
-          let title = pv.getAttribute('data-title');
-          var url = 'https://www.boii.xyz' + pv.getAttribute('data-path');
-          if (url) {
-            var viewGetter = this.getRecord(Counter, url, title).then((record) => {
-              // 是当前页面就自增
-              let curPath = window.location.pathname;
-              if (curPath.includes('index.html')) {
-                curPath = curPath.substring(0, curPath.lastIndexOf('index.html'));
-              }
-              if (pv.getAttribute('data-path') == curPath) {
-                incrArr.push(this.buildIncrement(record.objectId));
-              }
-              if (pv) {
-                var ele = pv.querySelector('#lc-pv #number');
-                if (ele) {
-                  if (pv.getAttribute('data-path') == curPath) {
-                    ele.innerText = (record.times || 0) + 1;
-                  } else {
-                    ele.innerText = record.times || 0;
-                  }
-                  pv.style.display = 'inline';
-                }
-              }
-            });
-            getterArr.push(viewGetter);
-          }
-        }
-      }
-
-      // 如果启动计数自增，批量发起自增请求
-      if (enableIncr) {
-        Promise.all(getterArr).then(() => {
-          incrArr.length > 0 && this.increment(Counter, incrArr);
-        })
-      }
-
-    },
-
-
-    fetchData(api_server) {
-      var Counter = (method, url, data) => {
-        return fetch(`${ api_server }/1.1${ url }`, {
-          method,
-          headers: {
-            'X-LC-Id': this.app_id,
-            'X-LC-Key': this.app_key,
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify(data)
-        });
-      };
-      this.addCount(Counter);
-    },
-
-    refreshCounter() {
-      var api_server = this.app_id.slice(-9) !== '-MdYXbMMI' ? this.custom_api_server : `https://${ this.app_id.slice(0, 8).toLowerCase() }.api.lncldglobal.com`;
-      if (api_server) {
-        this.fetchData(api_server);
-      } else {
-        fetch('https://app-router.leancloud.cn/2/route?appId=' + this.app_id)
-          .then(resp => resp.json())
-          .then(({api_server}) => {
-            this.fetchData('https://' + api_server);
-          });
-      }
-    }
-
-  };
-
-  LCCounter.refreshCounter();
-
-  document.addEventListener('pjax:complete', function () {
-    LCCounter.refreshCounter();
-  });
-</script>
 
 
 
@@ -2004,6 +1826,8 @@ volantis.pjax.push(()=>{_hmt.push(['_trackPageview', document.location.pathname]
 </script>
 
 
+
+<script src="//code.tidio.co/aaxvracmsuwpscvfvwazvpvdokreowft.js" async></script>
 
 
 <script>
