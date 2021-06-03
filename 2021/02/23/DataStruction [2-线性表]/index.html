@@ -166,11 +166,11 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
             
             
               <li>
-                <a class="menuitem flat-box faa-parent animated-hover" href=https://github.com/Mr-O4/GoTE-miniprogram
+                <a class="menuitem flat-box faa-parent animated-hover" href=https://github.com/TCP404/TinyServer
                   
                   
                   
-                    id="https:githubcomMr-O4GoTE-miniprogram"
+                    id="https:githubcomTCP404TinyServer"
                   >
                   <i class='fas fa-laptop-code fa-fw'></i>项目
                 </a>
@@ -345,11 +345,11 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
               
             
               <li>
-                <a class="menuitem flat-box faa-parent animated-hover" href=https://github.com/Mr-O4/GoTE-miniprogram
+                <a class="menuitem flat-box faa-parent animated-hover" href=https://github.com/TCP404/TinyServer
                   
                   
                   
-                    id="https:githubcomMr-O4GoTE-miniprogram"
+                    id="https:githubcomTCP404TinyServer"
                   >
                   <i class='fas fa-laptop-code fa-fw'></i>项目
                 </a>
@@ -652,16 +652,17 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 <li>其余元素都有唯一一个直接前驱元素和唯一一个直接后继元素</li>
 </ol>
 <p><img src="https://cdn.jsdelivr.net/gh/TCP404/Picgo/blog/illustration-pic/DataStruction/20201018201506104_12047.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/TCP404/Picgo/blog/illustration-pic/DataStruction/20201018201506104_12047.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII="></p>
-<p>线性表元素的个数 n(n&gt;=0) 即为<strong>线性表的长度</strong>；当 n=0 时，称为<strong>空表</strong>。</p>
-<p>非空表中每个数据元素都有一个确定的位置，如a1是首个元素，an是最后元素，ai是第i个元素（称 i 为数据元素 ai 在线性表中的位序）</p>
+<p>线性表元素的个数 $n(n&gt;=0)$ 即为<strong>线性表的长度</strong>；当 n=0 时，称为<strong>空表</strong>。</p>
+<p>非空表中每个数据元素都有一个确定的位置，如$a_1$是首个元素，$a_n$是最后元素，$a_i$是第$i$个元素（称 $i$ 为数据元素 $a_i$ 在线性表中的位序）</p>
 <h2 id="ADT"><a href="#ADT" class="headerlink" title="ADT"></a>ADT</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">ADT 线性表(<span class="type">List</span>)</span><br><span class="line">Data</span><br><span class="line">    线性表是数据对象集合为&#123;a1, a2, ..., an&#125;，每个元素的类型均为DataType。</span><br><span class="line">Operation</span><br><span class="line">    InitList(*L):          初始化操作，建立一个空的线性表L。</span><br><span class="line">    ListEmpty(L):          线性表为空返回<span class="literal">True</span>， 否则返回<span class="literal">False</span></span><br><span class="line">    ClearList(*L):         将线性表清空。</span><br><span class="line">    GetElem(L, i, *e):     将线性表L中第i个位置元素的值返回给e。</span><br><span class="line">    LocateElem(L, e):      在线性表L中查找与给定值e相等的元素，查找成功返回元素在表中的序号，失败返回O。</span><br><span class="line">    ListInsert(*L, i, e):  在线性表L中第i个位置插入新元素e。</span><br><span class="line">    ListDelete(*L, i, *e): 删除线性表L中第i个位置元素，并用e返回其值。</span><br><span class="line">    ListLength(L):         返回线性表L的元素个数。</span><br><span class="line">endADT</span><br></pre></td></tr></table></figure>
 <h2 id="顺序结构的线性表"><a href="#顺序结构的线性表" class="headerlink" title="顺序结构的线性表"></a>顺序结构的线性表</h2><blockquote>
-<p>线性表的顺序存储结构，指的是用一段连续的存储单元一次存储线性表的数据元素。<br>例如数组，知道了第一个元素的地址，后面的元素都可以快速的计算出来。<br>假设第一个元素的<strong>地址为 A</strong>，每个元素<strong>占 k 个字节</strong>，则可知<strong>第 i 个元素</strong>的地址为 <code>A + i * k</code>。</p>
+<p>线性表的顺序存储结构，指的是用一段连续的存储单元一次存储线性表的数据元素。<br>例如数组，知道了第一个元素的地址，后面的元素都可以快速的计算出来。<br>假设第一个元素的<strong>地址为 A</strong>，每个元素<strong>占 k 个字节</strong>，则可知<strong>第 i 个元素</strong>的地址为 <span class='p blue'>A + i * k</span>。</p>
 </blockquote>
-<p>顺序结构在查找时，不论要查找的元素在任何位置，时间复杂度都为 O(1)，但在插入和删除时，平均时间复杂度为 O(n)。</p>
+<p>顺序结构在查找时，不论要查找的元素在任何位置，时间复杂度都为 $O(1)$，但在插入和删除时，平均时间复杂度为 $O(n)$。</p>
 <h2 id="顺序结构代码实现"><a href="#顺序结构代码实现" class="headerlink" title="顺序结构代码实现"></a>顺序结构代码实现</h2><p><img src="https://cdn.jsdelivr.net/gh/TCP404/Picgo/blog/illustration-pic/DataStruction/20201018171008169_28518.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/TCP404/Picgo/blog/illustration-pic/DataStruction/20201018171008169_28518.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII="></p>
 <p>先放上各专业术语的关系图，以做对照。</p>
-<h3 id="数据元素"><a href="#数据元素" class="headerlink" title="数据元素"></a>数据元素</h3><p>各种操作的基本单位是<strong>数据元素</strong>，数据元素又由各<strong>数据项</strong>构成。<br>在代码中，用 <strong>结构体类型(C语言中是结构体，Java等语言是类)</strong> 来实现数据元素，用各种 <strong>基本类型(int、char、float、其他结构体等)</strong> 来实现数据项。（注意数据项也可以是结构体）</p>
+<h3 id="数据元素"><a href="#数据元素" class="headerlink" title="数据元素"></a>数据元素</h3><p>各种操作的基本单位是<strong>数据元素</strong>，数据元素又由各<strong>数据项</strong>构成。</p>
+<p>在代码中，用 <strong>结构体类型(C语言中是结构体，Java等语言是类)</strong> 来实现数据元素，用各种 <strong>基本类型(int、char、float、其他结构体等)</strong> 来实现数据项。（注意数据项也可以是结构体）</p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 定义结构体</span></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Student</span>&#123;</span></span><br><span class="line">    <span class="keyword">char</span> name[<span class="number">10</span>];</span><br><span class="line">    <span class="keyword">int</span> age;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">Student</span> <span class="title">Student</span>;</span>    <span class="comment">// 为结构体起别名，后续写代码的时候比较方便</span></span><br></pre></td></tr></table></figure>
 <p>或者写成这种：</p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span>&#123;</span></span><br><span class="line">    <span class="keyword">char</span> name[<span class="number">10</span>];</span><br><span class="line">    <span class="keyword">int</span> age;</span><br><span class="line">&#125;Student;</span><br></pre></td></tr></table></figure>
@@ -669,11 +670,12 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 <p>在实际应用中数据元素（结构体）名字以实际业务为准<br>在以下例子中，则用 Element 指代 数据元素结构体。</p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span>&#123;</span></span><br><span class="line">    <span class="keyword">char</span> name[<span class="number">10</span>];</span><br><span class="line">    <span class="keyword">int</span> age;</span><br><span class="line">&#125;Element;</span><br></pre></td></tr></table></figure>
 
-<h3 id="数据对象"><a href="#数据对象" class="headerlink" title="数据对象"></a>数据对象</h3><p>这里数据对象指的就是线性表了。<br>线性表中需要包含N个数据元素，N个数据元素要使用数组存放；再加上一个<code>count</code>来统计数据元素个数。<br><strong>注意是元素个数 (count of data elemment) 不是数组长度(length of array)。</strong></p>
-<p>数组长度一开始要预留好，是固定不变的；元素个数是变化的，增删插入之后都会变化，而数组长度不会。</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// DataElement.h</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#defind MAX_SIZE 5</span></span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span>&#123;</span></span><br><span class="line">    Element elemArr[MAX_SIZE];</span><br><span class="line">    <span class="keyword">int</span> count;        <span class="comment">// Count of data element.</span></span><br><span class="line">&#125;SqList;</span><br></pre></td></tr></table></figure>
+<h3 id="数据对象"><a href="#数据对象" class="headerlink" title="数据对象"></a>数据对象</h3><p>这里数据对象指的就是线性表了。<br>线性表中需要包含N个数据元素，N个数据元素要使用数组存放；再加上一个<code>count</code>来统计数据元素个数。</p>
+<p><strong>注意是元素个数 (count of data elemment) 不是数组长度(length of array)。</strong></p>
+<p>数组长度一开始要预留好，是固定不变的；<br>元素个数是变化的，增删插入之后都会变化，而数组长度不会。</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// DataElement.h</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> len(X) sizeof X / sizeof X[0]</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#defind MAX_SIZE 5</span></span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span>&#123;</span></span><br><span class="line">    Element elemArr[MAX_SIZE];</span><br><span class="line">    <span class="keyword">int</span> count;        <span class="comment">// Count of data element.</span></span><br><span class="line">&#125;SqList;</span><br></pre></td></tr></table></figure>
 
-<h3 id="初始化"><a href="#初始化" class="headerlink" title="初始化"></a>初始化</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">Status <span class="title">Init</span><span class="params">(SqList *L, Student *studArr)</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> length = <span class="keyword">sizeof</span> studArr / <span class="keyword">sizeof</span> studArr[<span class="number">0</span>];</span><br><span class="line">    <span class="keyword">if</span>(length &gt; MAX_SIZE) <span class="keyword">return</span> ERROR;</span><br><span class="line">    L-&gt;count = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; length; i++) Insert(L, i, studArr[i]);</span><br><span class="line">    <span class="keyword">return</span> OK;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="初始化"><a href="#初始化" class="headerlink" title="初始化"></a>初始化</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">Status <span class="title">Init</span><span class="params">(SqList *L, Student *studArr)</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> length = len(studArr);          <span class="comment">// 获取数组长度</span></span><br><span class="line">    <span class="keyword">if</span>(length &gt; MAX_SIZE) <span class="keyword">return</span> ERROR; <span class="comment">// 检查数组长度是否超出预设长度</span></span><br><span class="line">    L-&gt;count = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; length; i++) </span><br><span class="line">        Insert(L, i, studArr[i]);</span><br><span class="line">    <span class="keyword">return</span> OK;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 
 
@@ -681,7 +683,9 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
 
 
-<h3 id="获得元素"><a href="#获得元素" class="headerlink" title="获得元素"></a>获得元素</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">define</span> OK 1</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> ERROR 0</span></span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">int</span> Structs;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 用e返回 在线性表L中第position个元素</span></span><br><span class="line"><span class="comment"> * @param *L        要操作是顺序表</span></span><br><span class="line"><span class="comment"> * @param position  要查找的元素位置</span></span><br><span class="line"><span class="comment"> * @param *e        负责带回元素的元素指针</span></span><br><span class="line"><span class="comment"> * @return 获得成功返回OK，失败返回ERROR</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="function">Status <span class="title">GetElem</span><span class="params">(SqList *L, <span class="keyword">int</span> position, Element *pe)</span></span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span>(L-&gt;count == <span class="number">0</span> || position &lt; <span class="number">1</span> || position &gt; L-&gt;count)</span><br><span class="line">        <span class="keyword">return</span> ERROR;</span><br><span class="line"></span><br><span class="line">    *pe = L-&gt;data[position<span class="number">-1</span>];</span><br><span class="line">    <span class="keyword">return</span> OK;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//------------------------------------------------</span></span><br><span class="line"><span class="comment">// 调用时</span></span><br><span class="line">SqList L;</span><br><span class="line">SqList *pL = &amp;L;</span><br><span class="line">Element e;</span><br><span class="line">Element *pe = &amp;e;</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span>(GetElem(pL, <span class="number">3</span>, pe))</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%s %d&quot;</span>, pe-&gt;name, pe-&gt;age);</span><br></pre></td></tr></table></figure>
+<h3 id="获得元素"><a href="#获得元素" class="headerlink" title="获得元素"></a>获得元素</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">define</span> OK 1</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> ERROR 0</span></span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">int</span> Structs;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 用e返回 在线性表L中第position个元素</span></span><br><span class="line"><span class="comment"> * @param *L        要操作是顺序表</span></span><br><span class="line"><span class="comment"> * @param position  要查找的元素位置</span></span><br><span class="line"><span class="comment"> * @param *e        负责带回元素的元素指针</span></span><br><span class="line"><span class="comment"> * @return 获得成功返回OK，失败返回ERROR</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="function">Status <span class="title">GetElem</span><span class="params">(SqList *L, <span class="keyword">int</span> position, Element *pe)</span></span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span>(L-&gt;count == <span class="number">0</span> || position &lt; <span class="number">1</span> || position &gt; L-&gt;count)</span><br><span class="line">        <span class="keyword">return</span> ERROR;</span><br><span class="line"></span><br><span class="line">    *pe = L-&gt;data[position<span class="number">-1</span>];</span><br><span class="line">    <span class="keyword">return</span> OK;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//------------------------------------------------</span></span><br><span class="line"><span class="comment">// 调用时</span></span><br><span class="line">SqList L;</span><br><span class="line">SqList *pL = &amp;L;</span><br><span class="line">Element e;</span><br><span class="line">Element *pe = &amp;e;</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span>(GetElem(pL, <span class="number">3</span>, pe))</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%s %d&quot;</span>, pe-&gt;name, pe-&gt;age);</span><br></pre></td></tr></table></figure>
 
 <p>函数中先是判断顺序表是否为空表（空表时 count 为 0），接着对位置进行判断，看看是否在合法范围内；<br>如果满足其中一个条件则返回 ERROR。<br>最后对将目标元素赋值给 pe。</p>
 <p>参数中使用的是 *L，即直接操作目标顺序表<br><code>position</code> 代表的是位置，从1开始的（注意不是下标，下标是从0开始的），所以是将 <code>data[position-1]</code> 返回去<br>例如查找第5个元素，应该返回 data[4]</p>
@@ -858,10 +862,10 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-05-23T12:25:58+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-05-31T20:25:32+08:00">
   <a class='notlink'>
     <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：2021年5月23日</p>
+    <p>更新于：2021年5月31日</p>
   </a>
 </div>
 
@@ -984,6 +988,59 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
 
 
+
+
+  <script>
+  // https://github.com/theme-next/hexo-theme-next/blob/master/layout/_third-party/math/mathjax.swig
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = 'https://cdn.jsdelivr.net/npm/mathjax@3.0/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    // 文章章节标题不能为 “MathJax” ，否则会报错。
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
 
 
 
@@ -1972,8 +2029,6 @@ volantis.pjax.push(()=>{_hmt.push(['_trackPageview', document.location.pathname]
 </script>
 
 
-
-<script src="//code.tidio.co/aaxvracmsuwpscvfvwazvpvdokreowft.js" async></script>
 
 
 <script>

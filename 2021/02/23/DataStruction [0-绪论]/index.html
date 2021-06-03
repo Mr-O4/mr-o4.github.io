@@ -166,11 +166,11 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
             
             
               <li>
-                <a class="menuitem flat-box faa-parent animated-hover" href=https://github.com/Mr-O4/GoTE-miniprogram
+                <a class="menuitem flat-box faa-parent animated-hover" href=https://github.com/TCP404/TinyServer
                   
                   
                   
-                    id="https:githubcomMr-O4GoTE-miniprogram"
+                    id="https:githubcomTCP404TinyServer"
                   >
                   <i class='fas fa-laptop-code fa-fw'></i>项目
                 </a>
@@ -345,11 +345,11 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
               
             
               <li>
-                <a class="menuitem flat-box faa-parent animated-hover" href=https://github.com/Mr-O4/GoTE-miniprogram
+                <a class="menuitem flat-box faa-parent animated-hover" href=https://github.com/TCP404/TinyServer
                   
                   
                   
-                    id="https:githubcomMr-O4GoTE-miniprogram"
+                    id="https:githubcomTCP404TinyServer"
                   >
                   <i class='fas fa-laptop-code fa-fw'></i>项目
                 </a>
@@ -640,14 +640,13 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <p>什么是数据结构？</p>
 <span id="more"></span>
 
-<h1 id="绪论"><a href="#绪论" class="headerlink" title="绪论"></a>绪论</h1><p><strong>声明</strong>：本系列文章系个人总结所写，执笔上偏于新手向，会有诸多用词不严谨之处，只为了方便理解。欢迎评论，拒绝指责。</p>
+<h1 id="绪论"><a href="#绪论" class="headerlink" title="绪论"></a>绪论</h1><p><strong>声明</strong>：本系列文章系个人总结所写，执笔上偏于新手向，会有诸多用词不严谨之处，只为了方便理解。欢迎指正，拒绝指责。</p>
 <p><strong>正文</strong>：</p>
+<div class="note quote"><p><strong>程序</strong> 是一系列指令的集合。程序设计 = 数据结构 + 算法</p></div>
+
+<p>数据，由 N 个 <span class='p blue'>0</span> 和 <span class='p blue'>1</span> 组成，本质上是一串二进制代码，利于计算机计算，但不利于人类阅读思考。<br>所以在此之上经过层层抽象，将计算机中的数据抽象出诸如 <code>对象、实例、结点、数据对象</code> 等概念。</p>
 <blockquote>
-<p><strong>程序</strong> 是一系列指令的集合。<br>程序设计 = 数据结构 + 算法</p>
-</blockquote>
-<p>数据，由N个 0 和 1 组成，本质上是一串二进制代码，利于计算机计算，但不利于人类阅读思考。<br>所以在此之上经过层层抽象，将计算机中的数据抽象出诸如 <code>对象、实例、结点、数据对象</code> 等概念。</p>
-<blockquote>
-<p><strong>数据结构</strong>，就是以 <code>对象、实例、结点、数据对象</code> 为<strong>单位</strong>，研究各个单位之间的<strong>关系</strong>。<br><img src="https://cdn.jsdelivr.net/gh/TCP404/Picgo/blog/illustration-pic/DataStruction/4177948790941.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/TCP404/Picgo/blog/illustration-pic/DataStruction/4177948790941.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII="><br>由此明确，在数据结构中需要研究两个东西：“单位”、关系。</p>
+<p><strong>数据结构</strong>，就是以 <code>对象、实例、结点、数据对象</code> 为<strong>单位</strong>，研究各个单位之间的<strong>关系</strong>。<br><img src="https://cdn.jsdelivr.net/gh/TCP404/Picgo/blog/illustration-pic/DataStruction/4177948790941.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/TCP404/Picgo/blog/illustration-pic/DataStruction/4177948790941.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII="><br>由此明确，在数据结构中需要研究两个东西： <span class='p h4'>单位、关系</span></p>
 </blockquote>
 <h2 id="单位"><a href="#单位" class="headerlink" title="单位"></a>单位</h2><p>数据的单位在数据结构中通常称为 <strong>数据对象</strong>，数据对象可以是一个人、一辆车、一个数字、一个字符、或者多种数据的组合。</p>
 <p>例如一个人，会有多种数据：名字（name）、年龄（age）、学号（ID），在代码中表现为结构体变量或对象。</p>
@@ -676,18 +675,18 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 <p><img src="https://cdn.jsdelivr.net/gh/TCP404/Picgo/blog/illustration-pic/DataStruction/4827351761135.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/TCP404/Picgo/blog/illustration-pic/DataStruction/4827351761135.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII="></p>
 <p><strong>顺序存储结构</strong></p>
 <ul>
-<li><strong>特点</strong>：数据对象之间在物理上一个挨着一个、有序，只要知道了第一个数据对象的地址，可以很快找到后面其他的数据对象。同时为了保持这种一个挨着一个和有序的特点，当插入或者删除某一个数据对象时，后面的数据对象要一个一个往后挪腾出中间的位置，或者一个一个往前挪填补中间的空缺，导致插入和删除很慢。</li>
+<li><strong>特点</strong>：数据对象之间在物理上一个挨着一个、有序，只要知道了第一个数据对象的地址，可以很快找到后面其他的数据对象。与此同时，为了保持这种一个挨着一个和有序的特点，当插入或者删除某一个数据对象时，后面的数据对象要一个一个往后挪腾出中间的位置，或者一个一个往前挪填补中间的空缺，导致插入和删除很慢。</li>
 <li><strong>优点</strong>：查找速度快。</li>
 <li><strong>缺点</strong>：插入和删除慢。</li>
 </ul>
 <p><strong>链式存储结构</strong></p>
 <ul>
-<li><strong>特点</strong>：数据对象之间在物理上并不一定相互挨着、无序，要查找某一个数据对象时需要从第一个数据对象开始，一个接着一个往后一路查下去才能找到。同时因为物理上不一定相互挨着，所以插入和删除时只需要修改前后的链条即可。</li>
+<li><strong>特点</strong>：数据对象之间在物理上并不一定相互挨着、无序，要查找某一个数据对象时需要从第一个数据对象开始，一个接着一个往后一路查下去才能找到。与此同时，因为物理上不一定相互挨着，所以插入和删除时只需要修改前后的链条即可。</li>
 <li><strong>优点</strong>：插入和删除快。</li>
 <li><strong>缺点</strong>：查找速度慢。</li>
 </ul>
 <p>这里的快慢，指的是计算机需要执行多次计算称为慢，计算机需要执行少量计算称为快。</p>
-<h3 id="ADT-抽象数据类型"><a href="#ADT-抽象数据类型" class="headerlink" title="ADT 抽象数据类型"></a>ADT 抽象数据类型</h3><p>抽象数据类型是用来表示某一种逻辑结构（栈、队、树、…）的具体信息，具有什么样的操作等等。</p>
+<h3 id="ADT-抽象数据类型"><a href="#ADT-抽象数据类型" class="headerlink" title="ADT 抽象数据类型"></a>ADT 抽象数据类型</h3><p>抽象数据类型是用来<span class='p green'>表示某一种逻辑结构（栈、队、树、...）的具体信息，具有什么样的操作</span> 等等。</p>
 <p>描述 ADT 的标准格式：</p>
 <figure class="highlight erlang"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">ADT 抽象数据类型名</span><br><span class="line">Data</span><br><span class="line">    数据元素之间逻辑关系的定义</span><br><span class="line">Operation</span><br><span class="line">    操作<span class="number">1</span></span><br><span class="line">        初始条件</span><br><span class="line">        操作结果描述</span><br><span class="line">    操作<span class="number">2</span></span><br><span class="line">        ...</span><br><span class="line">        ...</span><br><span class="line">    操作n</span><br><span class="line">        ...</span><br><span class="line">        ...</span><br><span class="line"><span class="keyword">end</span>AD</span><br></pre></td></tr></table></figure>
 
@@ -735,10 +734,10 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-05-23T12:22:49+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-05-28T00:33:59+08:00">
   <a class='notlink'>
     <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：2021年5月23日</p>
+    <p>更新于：2021年5月28日</p>
   </a>
 </div>
 
@@ -1850,8 +1849,6 @@ volantis.pjax.push(()=>{_hmt.push(['_trackPageview', document.location.pathname]
 </script>
 
 
-
-<script src="//code.tidio.co/aaxvracmsuwpscvfvwazvpvdokreowft.js" async></script>
 
 
 <script>
