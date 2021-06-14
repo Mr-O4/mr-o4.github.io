@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://www.boii.xyz/friends/</loc>
+    
+    <lastmod>2021-06-14</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://www.boii.xyz/about/</loc>
     
     <lastmod>2021-06-13</lastmod>
@@ -33,13 +40,6 @@
     <loc>https://www.boii.xyz/2021/02/23/DataStruction%20[0-%E7%BB%AA%E8%AE%BA]/</loc>
     
     <lastmod>2021-05-27</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://www.boii.xyz/friends/</loc>
-    
-    <lastmod>2021-05-26</lastmod>
     
   </url>
   
@@ -846,14 +846,14 @@
   </url>
   
   <url>
-    <loc>https://www.boii.xyz/categories/SSM/</loc>
+    <loc>https://www.boii.xyz/categories/Python/%E8%BF%9B%E9%98%B6/%E8%BF%9B%E7%A8%8B%E3%80%81%E7%BA%BF%E7%A8%8B/</loc>
     <lastmod>2021-06-14</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://www.boii.xyz/categories/Python/%E8%BF%9B%E9%98%B6/%E8%BF%9B%E7%A8%8B%E3%80%81%E7%BA%BF%E7%A8%8B/</loc>
+    <loc>https://www.boii.xyz/categories/SSM/</loc>
     <lastmod>2021-06-14</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -867,14 +867,14 @@
   </url>
   
   <url>
-    <loc>https://www.boii.xyz/categories/Other/</loc>
+    <loc>https://www.boii.xyz/categories/Python/%E8%BF%9B%E9%98%B6/IO/</loc>
     <lastmod>2021-06-14</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://www.boii.xyz/categories/Python/%E8%BF%9B%E9%98%B6/IO/</loc>
+    <loc>https://www.boii.xyz/categories/Other/</loc>
     <lastmod>2021-06-14</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
