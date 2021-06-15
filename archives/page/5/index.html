@@ -642,6 +642,106 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 <div class='l_main'>
 	
 	  <article id="arc" class="post article white-box reveal shadow">
+        <div id="calendar">
+            
+            <div class="container archive-calendar">
+    <div class="card">
+        <div id="post-calendar" class="card-content"></div>
+    </div>
+</div>
+<style type="text/css">
+    #post-calendar {
+        width: 100%;
+        height: 225px;
+        margin-top: 20px;
+        border-radius: 12px;
+        background-color: rgb(255, 255, 255, 0.5);
+    }
+</style>
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/TCP404/HEXO-CDN/js/echarts.min.js"></script>
+<script type="text/javascript">
+    let myChart = echarts.init(document.getElementById('post-calendar'));
+
+    
+
+        let option = {
+            title: {
+                top: 0,
+                text: '文章日历',
+                left: 'center',
+                textStyle: {
+                    color: '#3C4858'
+                }
+            },
+            tooltip: {
+                padding: 10,
+                backgroundColor: '#555',
+                borderColor: '#777',
+                borderWidth: 1,
+                formatter: function (obj) {
+                    var value = obj.value;
+                    return '<div style="font-size: 14px;">' + value[0] + '：' + value[1] + '</div>';
+                }
+            },
+            visualMap: {
+                show: true,
+                showLabel: true,
+                categories: [0, 1, 2, 3, 4],
+                calculable: true,
+                inRange: {
+                    symbol: 'rect',
+                    color: ['#ebedf0', '#c6e48b', '#7bc96f', '#239a3b', '#196127']
+                },
+                itemWidth: 12,
+                itemHeight: 12,
+                orient: 'horizontal',
+                left: 'center',
+                bottom: 0
+            },
+            calendar: [{
+                left: 'center',
+                range: ,
+                cellSize: [13, 13],
+                splitLine: {
+                    show: false
+                },
+                itemStyle: {
+                    width: '1.88679%',
+                    height: '15px',
+                    color: '#EEEEEE',
+                    borderColor: '#FFF',
+                    borderWidth: 2
+                },
+                yearLabel: {
+                    show: false
+                },
+                monthLabel: {
+                    nameMap: 'cn',
+                    fontWeight: 'lighter',
+                    fontSize: 12
+                },
+                dayLabel: {
+                    show: true,
+                    formatter: '{start}  1st',
+                    fontWeight: 'lighter',
+                    nameMap: ['日', ' ', ' ', '三', ' ', ' ', '六',],
+                    fontSize: 12
+                }
+            }],
+            series: [{
+                type: 'heatmap',
+                coordinateSystem: 'calendar',
+                calendarIndex: 0,
+                data: 
+        }]
+
+        };
+
+    myChart.setOption(option);
+</script>
+            
+        </div>
 			
 			
 				
@@ -1910,8 +2010,8 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         <div class="webinfo-item">
           <div>最后活动时间：</div>
           
-            <div id="last-update" style="display: none;">Mon Jun 14 2021 17:10:48 GMT+0800 (中国标准时间)</div>
-            <div id="last-update-show">2021-06-14 日</div>
+            <div id="last-update" style="display: none;">Tue Jun 15 2021 16:46:37 GMT+0800 (中国标准时间)</div>
+            <div id="last-update-show">2021-06-15 日</div>
           
         </div>
         
@@ -1961,7 +2061,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
           try {
             document.getElementById('last-update-show').innerHTML = timeago(new Date(lastUpDate));
           } catch (error) {
-            document.getElementById('last-update-show').innerHTML = '2021-06-14 日';
+            document.getElementById('last-update-show').innerHTML = '2021-06-15 日';
           }
         </script>
         
