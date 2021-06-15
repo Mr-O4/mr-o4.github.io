@@ -1,6 +1,102 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://www.boii.xyz/2020/07/26/Python%E3%80%90No-Type%E3%80%91String/</loc>
+    <lastmod>2021-06-15</lastmod>
+  </url>
+  <url>
+    <loc>https://www.boii.xyz/2020/07/25/Python%E3%80%90No-Feature%E3%80%91%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B/</loc>
+    <lastmod>2021-06-15</lastmod>
+  </url>
+  <url>
+    <loc>https://www.boii.xyz/2020/07/24/Python%E3%80%90No-Feature%E3%80%91%E5%B7%A5%E5%85%B7%E7%B1%BB/</loc>
+    <lastmod>2021-06-15</lastmod>
+  </url>
+  <url>
+    <loc>https://www.boii.xyz/2020/07/24/Python%E3%80%90No-Feature%E3%80%91%E9%AB%98%E7%BA%A7%E7%89%B9%E6%80%A7/</loc>
+    <lastmod>2021-06-15</lastmod>
+  </url>
+  <url>
+    <loc>https://www.boii.xyz/2020/08/23/Python%E3%80%90No-Buildins%E3%80%91re/</loc>
+    <lastmod>2021-06-15</lastmod>
+  </url>
+  <url>
+    <loc>https://www.boii.xyz/2020/08/22/Python%E3%80%90No-Buildins%E3%80%91json/</loc>
+    <lastmod>2021-06-15</lastmod>
+  </url>
+  <url>
+    <loc>https://www.boii.xyz/2020/07/21/Python%E3%80%90No-20%E3%80%91%E6%93%8D%E4%BD%9C%E6%96%87%E4%BB%B6%E5%92%8C%E7%9B%AE%E5%BD%95/</loc>
+    <lastmod>2021-06-15</lastmod>
+  </url>
+  <url>
+    <loc>https://www.boii.xyz/2020/07/20/Python%E3%80%90No-19%E3%80%91%E6%96%87%E4%BB%B6%E8%AF%BB%E5%86%99/</loc>
+    <lastmod>2021-06-15</lastmod>
+  </url>
+  <url>
+    <loc>https://www.boii.xyz/2020/07/19/Python%E3%80%90No-18%E3%80%91%E5%8D%8F%E7%A8%8B/</loc>
+    <lastmod>2021-06-15</lastmod>
+  </url>
+  <url>
+    <loc>https://www.boii.xyz/2020/07/18/Python%E3%80%90No-17%E3%80%91%E7%BA%BF%E7%A8%8B/</loc>
+    <lastmod>2021-06-15</lastmod>
+  </url>
+  <url>
+    <loc>https://www.boii.xyz/2020/07/17/Python%E3%80%90No-16%E3%80%91%E8%BF%9B%E7%A8%8B/</loc>
+    <lastmod>2021-06-15</lastmod>
+  </url>
+  <url>
+    <loc>https://www.boii.xyz/2020/07/15/Python%E3%80%90No-14%E3%80%91%E6%9E%9A%E4%B8%BE%E7%B1%BB/</loc>
+    <lastmod>2021-06-15</lastmod>
+  </url>
+  <url>
+    <loc>https://www.boii.xyz/2020/07/14/Python%E3%80%90No-13%E3%80%91%E9%AD%94%E6%9C%AF%E6%96%B9%E6%B3%95/</loc>
+    <lastmod>2021-06-15</lastmod>
+  </url>
+  <url>
+    <loc>https://www.boii.xyz/2020/07/13/Python%E3%80%90No-12%E3%80%91%E7%A7%81%E6%9C%89%E5%8C%96/</loc>
+    <lastmod>2021-06-15</lastmod>
+  </url>
+  <url>
+    <loc>https://www.boii.xyz/2020/07/12/Python%E3%80%90No-11%E3%80%91%E7%B1%BB%E5%92%8C%E5%AF%B9%E8%B1%A1/</loc>
+    <lastmod>2021-06-15</lastmod>
+  </url>
+  <url>
+    <loc>https://www.boii.xyz/2020/07/11/Python%E3%80%90No-10%E3%80%91%E6%A8%A1%E5%9D%97/</loc>
+    <lastmod>2021-06-15</lastmod>
+  </url>
+  <url>
+    <loc>https://www.boii.xyz/2020/07/10/Python%E3%80%90No-9%E3%80%91%E6%B5%8B%E8%AF%95/</loc>
+    <lastmod>2021-06-15</lastmod>
+  </url>
+  <url>
+    <loc>https://www.boii.xyz/2020/07/09/Python%E3%80%90No-8%E3%80%91%E8%B0%83%E8%AF%95/</loc>
+    <lastmod>2021-06-15</lastmod>
+  </url>
+  <url>
+    <loc>https://www.boii.xyz/2020/07/08/Python%E3%80%90No-7%E3%80%91%E9%94%99%E8%AF%AF%E5%A4%84%E7%90%86/</loc>
+    <lastmod>2021-06-15</lastmod>
+  </url>
+  <url>
+    <loc>https://www.boii.xyz/2020/07/07/Python%E3%80%90No-6%E3%80%91%E5%87%BD%E6%95%B0/</loc>
+    <lastmod>2021-06-15</lastmod>
+  </url>
+  <url>
+    <loc>https://www.boii.xyz/2020/07/06/Python%E3%80%90No-5%E3%80%91%E8%BF%90%E7%AE%97%E7%AC%A6/</loc>
+    <lastmod>2021-06-15</lastmod>
+  </url>
+  <url>
+    <loc>https://www.boii.xyz/2020/07/05/Python%E3%80%90No-4%E3%80%91%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/</loc>
+    <lastmod>2021-06-15</lastmod>
+  </url>
+  <url>
+    <loc>https://www.boii.xyz/2020/07/04/Python%E3%80%90No-3%E3%80%91%E5%88%A4%E6%96%AD%E5%92%8C%E5%BE%AA%E7%8E%AF/</loc>
+    <lastmod>2021-06-15</lastmod>
+  </url>
+  <url>
+    <loc>https://www.boii.xyz/2020/07/03/Python%E3%80%90No-2%E3%80%91%E5%9F%BA%E7%A1%80/</loc>
+    <lastmod>2021-06-15</lastmod>
+  </url>
+  <url>
     <loc>https://www.boii.xyz/2019/05/15/%E5%87%A0%E5%8F%A5%E8%AF%9D%E5%8C%BA%E5%88%86%E5%B9%B6%E8%A1%8C%E5%92%8C%E5%B9%B6%E5%8F%91/</loc>
     <lastmod>2021-06-04</lastmod>
   </url>
@@ -141,51 +237,7 @@
     <lastmod>2021-05-22</lastmod>
   </url>
   <url>
-    <loc>https://www.boii.xyz/2020/07/16/Python%E3%80%90No-10%E3%80%91%E6%A8%A1%E5%9D%97/</loc>
-    <lastmod>2021-05-22</lastmod>
-  </url>
-  <url>
-    <loc>https://www.boii.xyz/2020/07/17/Python%E3%80%90No-11%E3%80%91%E7%B1%BB%E5%92%8C%E5%AF%B9%E8%B1%A1/</loc>
-    <lastmod>2021-05-22</lastmod>
-  </url>
-  <url>
-    <loc>https://www.boii.xyz/2020/07/18/Python%E3%80%90No-12%E3%80%91%E7%A7%81%E6%9C%89%E5%8C%96/</loc>
-    <lastmod>2021-05-22</lastmod>
-  </url>
-  <url>
-    <loc>https://www.boii.xyz/2020/07/19/Python%E3%80%90No-13%E3%80%91%E9%AD%94%E6%9C%AF%E6%96%B9%E6%B3%95/</loc>
-    <lastmod>2021-05-22</lastmod>
-  </url>
-  <url>
-    <loc>https://www.boii.xyz/2020/07/16/Python%E3%80%90No-20%E3%80%91%E6%93%8D%E4%BD%9C%E6%96%87%E4%BB%B6%E5%92%8C%E7%9B%AE%E5%BD%95/</loc>
-    <lastmod>2021-05-22</lastmod>
-  </url>
-  <url>
-    <loc>https://www.boii.xyz/2020/07/15/Python%E3%80%90No-9%E3%80%91%E6%B5%8B%E8%AF%95/</loc>
-    <lastmod>2021-05-22</lastmod>
-  </url>
-  <url>
-    <loc>https://www.boii.xyz/2020/07/12/Python%E3%80%90No-Feature%E3%80%91%E5%B7%A5%E5%85%B7%E7%B1%BB/</loc>
-    <lastmod>2021-05-22</lastmod>
-  </url>
-  <url>
-    <loc>https://www.boii.xyz/2020/07/12/Python%E3%80%90No-Feature%E3%80%91%E9%AB%98%E7%BA%A7%E7%89%B9%E6%80%A7/</loc>
-    <lastmod>2021-05-22</lastmod>
-  </url>
-  <url>
-    <loc>https://www.boii.xyz/2020/07/12/Python%E3%80%90No-Type%E3%80%91String/</loc>
-    <lastmod>2021-05-22</lastmod>
-  </url>
-  <url>
-    <loc>https://www.boii.xyz/2020/07/10/Python%E3%80%90No-5%E3%80%91%E8%BF%90%E7%AE%97%E7%AC%A6/</loc>
-    <lastmod>2021-05-22</lastmod>
-  </url>
-  <url>
     <loc>https://www.boii.xyz/2020/08/20/Python%E3%80%90Crawler%E3%80%911-%E9%80%9A%E7%94%A8%E7%88%AC%E8%99%AB/</loc>
-    <lastmod>2021-05-22</lastmod>
-  </url>
-  <url>
-    <loc>https://www.boii.xyz/2020/07/20/Python%E3%80%90No-14%E3%80%91%E6%9E%9A%E4%B8%BE%E7%B1%BB/</loc>
     <lastmod>2021-05-22</lastmod>
   </url>
   <url>
@@ -193,59 +245,7 @@
     <lastmod>2021-05-22</lastmod>
   </url>
   <url>
-    <loc>https://www.boii.xyz/2020/07/16/Python%E3%80%90No-16%E3%80%91%E8%BF%9B%E7%A8%8B/</loc>
-    <lastmod>2021-05-22</lastmod>
-  </url>
-  <url>
-    <loc>https://www.boii.xyz/2020/07/16/Python%E3%80%90No-17%E3%80%91%E7%BA%BF%E7%A8%8B/</loc>
-    <lastmod>2021-05-22</lastmod>
-  </url>
-  <url>
-    <loc>https://www.boii.xyz/2020/07/16/Python%E3%80%90No-18%E3%80%91%E5%8D%8F%E7%A8%8B/</loc>
-    <lastmod>2021-05-22</lastmod>
-  </url>
-  <url>
-    <loc>https://www.boii.xyz/2020/07/16/Python%E3%80%90No-19%E3%80%91%E6%96%87%E4%BB%B6%E8%AF%BB%E5%86%99/</loc>
-    <lastmod>2021-05-22</lastmod>
-  </url>
-  <url>
     <loc>https://www.boii.xyz/2020/07/02/Python%E3%80%90No-1%E3%80%91%E6%80%BB%E5%8F%99/</loc>
-    <lastmod>2021-05-22</lastmod>
-  </url>
-  <url>
-    <loc>https://www.boii.xyz/2020/07/02/Python%E3%80%90No-2%E3%80%91%E5%9F%BA%E7%A1%80/</loc>
-    <lastmod>2021-05-22</lastmod>
-  </url>
-  <url>
-    <loc>https://www.boii.xyz/2020/07/09/Python%E3%80%90No-3%E3%80%91%E5%88%A4%E6%96%AD%E5%92%8C%E5%BE%AA%E7%8E%AF/</loc>
-    <lastmod>2021-05-22</lastmod>
-  </url>
-  <url>
-    <loc>https://www.boii.xyz/2020/07/09/Python%E3%80%90No-4%E3%80%91%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/</loc>
-    <lastmod>2021-05-22</lastmod>
-  </url>
-  <url>
-    <loc>https://www.boii.xyz/2020/07/11/Python%E3%80%90No-6%E3%80%91%E5%87%BD%E6%95%B0/</loc>
-    <lastmod>2021-05-22</lastmod>
-  </url>
-  <url>
-    <loc>https://www.boii.xyz/2020/07/14/Python%E3%80%90No-7%E3%80%91%E9%94%99%E8%AF%AF%E5%A4%84%E7%90%86/</loc>
-    <lastmod>2021-05-22</lastmod>
-  </url>
-  <url>
-    <loc>https://www.boii.xyz/2020/07/15/Python%E3%80%90No-8%E3%80%91%E8%B0%83%E8%AF%95/</loc>
-    <lastmod>2021-05-22</lastmod>
-  </url>
-  <url>
-    <loc>https://www.boii.xyz/2020/08/20/Python%E3%80%90No-Buildins%E3%80%91json/</loc>
-    <lastmod>2021-05-22</lastmod>
-  </url>
-  <url>
-    <loc>https://www.boii.xyz/2020/08/20/Python%E3%80%90No-Buildins%E3%80%91re/</loc>
-    <lastmod>2021-05-22</lastmod>
-  </url>
-  <url>
-    <loc>https://www.boii.xyz/2020/07/12/Python%E3%80%90No-Feature%E3%80%91%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B/</loc>
     <lastmod>2021-05-22</lastmod>
   </url>
   <url>
