@@ -1,0 +1,2447 @@
+<!DOCTYPE html>
+<html lang="zh-CN,en,zh-HK,zh-TW,default">
+  <head hexo-theme='https://github.com/volantis-x/hexo-theme-volantis/tree/4.3.1'>
+  <meta charset="utf-8">
+  <!-- SEO相关 -->
+  
+    
+  
+  <!-- 渲染优化 -->
+  <meta http-equiv='x-dns-prefetch-control' content='on' />
+  <link rel='dns-prefetch' href='https://cdn.jsdelivr.net'>
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <meta name="renderer" content="webkit">
+  <meta name="force-rendering" content="webkit">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="HandheldFriendly" content="True" >
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+  <link rel="preload" href="/css/first.css" as="style">
+  
+
+  <!-- 页面元数据 -->
+  
+  <title>DataStruction 0x08 图-2 - Boii</title>
+  
+    <meta name="keywords" content="数据结构,DataStruction">
+  
+
+  
+    <meta name="description" content="图的存储">
+  
+
+  <!-- feed -->
+  
+    <link rel="alternate" href="/atom.xml" title="Boii" type="application/atom+xml">
+  
+
+  <!-- import meta -->
+  
+
+  <!-- link -->
+  
+    <link rel="shortcut icon" type='image/x-icon' href="/images/icon/favicon.png">
+  
+
+  <!-- import link -->
+  
+
+  
+  
+  
+  
+  
+  
+
+
+  
+    
+<link rel="stylesheet" href="/css/first.css">
+
+  
+
+  
+  <link rel="stylesheet" href="/css/style.css" media="print" onload="this.media='all';this.onload=null">
+  <noscript><link rel="stylesheet" href="/css/style.css"></noscript>
+  
+
+  <script id="loadcss"></script>
+
+  
+<script>
+if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMode))
+    document.write(
+	'<style>'+
+		'html{'+
+			'overflow-x: hidden !important;'+
+			'overflow-y: hidden !important;'+
+		'}'+
+		'.kill-ie{'+
+			'text-align:center;'+
+			'height: 100%;'+
+			'margin-top: 15%;'+
+			'margin-bottom: 5500%;'+
+		'}'+
+	'</style>'+
+    '<div class="kill-ie">'+
+        '<h1><b>抱歉，您的浏览器无法访问本站</b></h1>'+
+        '<h3>微软已经于2016年终止了对 Internet Explorer (IE) 10 及更早版本的支持，<br/>'+
+        '继续使用存在极大的安全隐患，请使用当代主流的浏览器进行访问。</h3><br/>'+
+        '<a target="_blank" rel="noopener" href="https://www.microsoft.com/zh-cn/WindowsForBusiness/End-of-IE-support"><strong>了解详情 ></strong></a>'+
+    '</div>');
+</script>
+
+
+<noscript>
+	<style>
+		html{
+			overflow-x: hidden !important;
+			overflow-y: hidden !important;
+		}
+		.kill-noscript{
+			text-align:center;
+			height: 100%;
+			margin-top: 15%;
+			margin-bottom: 5500%;
+		}
+	</style>
+    <div class="kill-noscript">
+        <h1><b>抱歉，您的浏览器无法访问本站</b></h1>
+        <h3>本页面需要浏览器支持（启用）JavaScript</h3><br/>
+        <a target="_blank" rel="noopener" href="https://www.baidu.com/s?wd=启用JavaScript"><strong>了解详情 ></strong></a>
+    </div>
+</noscript>
+
+</head>
+
+  <body>
+    
+
+<header id="l_header" class="l_header auto shadow blur show" style='opacity: 0' >
+  <div class='container'>
+  <div id='wrapper'>
+    <div class='nav-sub'>
+      <p class="title"></p>
+      <ul class='switcher nav-list-h m-phone' id="pjax-header-nav-list">
+        <li><a id="s-comment" class="fas fa-comments fa-fw" target="_self" href='javascript:void(0)'></a></li>
+        
+          <li><a id="s-toc" class="s-toc fas fa-list fa-fw" target="_self" href='javascript:void(0)'></a></li>
+        
+      </ul>
+    </div>
+		<div class="nav-main">
+      
+        
+        <a class="title flat-box" target="_self" href='/'>
+          
+            <img no-lazy class='logo' src='https://cdn.jsdelivr.net/gh/TCP404/HEXO-CDN/images/icon/bolgger.png'/>
+          
+          
+          
+        </a>
+      
+
+			<div class='menu navigation'>
+				<ul class='nav-list-h m-pc'>
+          
+          
+          
+            
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=/
+                  
+                  
+                  
+                    id="home"
+                  >
+                  <i class='fas fa-rss fa-fw'></i>博客
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" 
+                  
+                  
+                  >
+                  <i class='fas fa-laptop-code fa-fw'></i>项目
+                </a>
+                
+                  <ul class="list-v">
+                    
+                      
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=https://github.com/TCP404/TinyServer
+                  
+                  
+                  
+                    id="https:githubcomTCP404TinyServer"
+                  >
+                  <i class='fas fa-server fa-fw'></i>OneTiny
+                </a>
+                
+              </li>
+            
+          
+                    
+                      
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=https://github.com/TCP404/GoTE-miniprogram
+                  
+                  
+                  
+                    id="https:githubcomTCP404GoTE-miniprogram"
+                  >
+                  <i class='fas fa-car fa-fw'></i>GoTE
+                </a>
+                
+              </li>
+            
+          
+                    
+                  </ul>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" 
+                  
+                  
+                  >
+                  <i class='fas fa-indent fa-fw'></i>导航
+                </a>
+                
+                  <ul class="list-v">
+                    
+                      
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=/categories/
+                  
+                  
+                  
+                    id="categories"
+                  >
+                  <i class='fas fa-folder fa-fw'></i>分类
+                </a>
+                
+              </li>
+            
+          
+                    
+                      
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=/tags/
+                  
+                  
+                  
+                    id="tags"
+                  >
+                  <i class='fas fa-tags fa-fw'></i>标签
+                </a>
+                
+              </li>
+            
+          
+                    
+                      
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=/archives/
+                  
+                  
+                  
+                    id="archives"
+                  >
+                  <i class='fas fa-archive fa-fw'></i>归档
+                </a>
+                
+              </li>
+            
+          
+                    
+                  </ul>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=/about/
+                  
+                  
+                  
+                    id="about"
+                  >
+                  <i class='fas fa-user fa-fw'></i>关于
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=/friends/
+                  
+                  
+                  
+                    id="friends"
+                  >
+                  <i class='fas fa-link fa-fw'></i>友链
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              
+                <li>
+                  <a class="menuitem flat-box">
+                    <i class='fas fa-compact-disc fa-fw music'></i>BGM
+                  </a>
+                  <ul class="list-v">
+                    <li>
+                      <div class="aplayer-container">
+                        
+
+  
+    <meting-js
+      theme='#1BCDFC'
+      autoplay='false'
+      volume='0.1'
+      loop='all'
+      order='random'
+      fixed='false'
+      list-max-height='320px'
+      server='netease'
+      type='playlist'
+      id='2798155811'
+      list-folded='true'>
+    </meting-js>
+  
+
+
+                      </div>
+                    </li>
+                  </ul>
+                <li>
+              
+            
+          
+          
+            
+            
+              <li>
+                <a class="menuitem flat-box header toggle-mode-btn">
+                  <i class='fas fa-moon fa-fw'></i>开/关灯
+                </a>
+              <li>
+            
+          
+          
+				</ul>
+			</div>
+
+      <div class="m_search">
+        <form name="searchform" class="form u-search-form">
+          <i class="icon fas fa-search fa-fw"></i>
+          <input type="text" class="input u-search-input" placeholder="Search..." />
+        </form>
+      </div>
+
+			<ul class='switcher nav-list-h m-phone'>
+				
+					<li><a class="s-search fas fa-search fa-fw" target="_self" href='javascript:void(0)'></a></li>
+				
+				<li>
+          <a class="s-menu fas fa-bars fa-fw" target="_self" href='javascript:void(0)'></a>
+          <ul class="menu-phone list-v navigation white-box">
+            
+              
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=/
+                  
+                  
+                  
+                    id="home"
+                  >
+                  <i class='fas fa-rss fa-fw'></i>博客
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" 
+                  
+                  
+                  >
+                  <i class='fas fa-laptop-code fa-fw'></i>项目
+                </a>
+                
+                  <ul class="list-v">
+                    
+                      
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=https://github.com/TCP404/TinyServer
+                  
+                  
+                  
+                    id="https:githubcomTCP404TinyServer"
+                  >
+                  <i class='fas fa-server fa-fw'></i>OneTiny
+                </a>
+                
+              </li>
+            
+          
+                    
+                      
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=https://github.com/TCP404/GoTE-miniprogram
+                  
+                  
+                  
+                    id="https:githubcomTCP404GoTE-miniprogram"
+                  >
+                  <i class='fas fa-car fa-fw'></i>GoTE
+                </a>
+                
+              </li>
+            
+          
+                    
+                  </ul>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" 
+                  
+                  
+                  >
+                  <i class='fas fa-indent fa-fw'></i>导航
+                </a>
+                
+                  <ul class="list-v">
+                    
+                      
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=/categories/
+                  
+                  
+                  
+                    id="categories"
+                  >
+                  <i class='fas fa-folder fa-fw'></i>分类
+                </a>
+                
+              </li>
+            
+          
+                    
+                      
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=/tags/
+                  
+                  
+                  
+                    id="tags"
+                  >
+                  <i class='fas fa-tags fa-fw'></i>标签
+                </a>
+                
+              </li>
+            
+          
+                    
+                      
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=/archives/
+                  
+                  
+                  
+                    id="archives"
+                  >
+                  <i class='fas fa-archive fa-fw'></i>归档
+                </a>
+                
+              </li>
+            
+          
+                    
+                  </ul>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=/about/
+                  
+                  
+                  
+                    id="about"
+                  >
+                  <i class='fas fa-user fa-fw'></i>关于
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=/friends/
+                  
+                  
+                  
+                    id="friends"
+                  >
+                  <i class='fas fa-link fa-fw'></i>友链
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              
+            
+          
+            
+              
+            
+              <li>
+                <a class="menuitem flat-box header toggle-mode-btn">
+                  <i class='fas fa-moon fa-fw'></i>开/关灯
+                </a>
+              <li>
+            
+          
+            
+          </ul>
+        </li>
+			</ul>
+		</div>
+	</div>
+  </div>
+</header>
+
+    <div id="l_body">
+      <div id="l_cover">
+  
+    
+        <div id="full" class='cover-wrapper post search' style="display: none;">
+          
+            <div id='cover-backstretch'></div>
+          
+          <div class='cover-body'>
+  <div class='top'>
+    
+      <img no-lazy class='logo' src='https://cdn.jsdelivr.net/gh/TCP404/HEXO-CDN/images/icon/bolgger.png'/>
+    
+    
+      <p class="title">Mr.Boii</p>
+    
+    
+      <p class="subtitle">「Show me the code!」</p>
+    
+  </div>
+  <div class='bottom'>
+    
+      <div class="m_search">
+        <form name="searchform" class="form u-search-form">
+          <input type="text" class="input u-search-input" placeholder="Search..." />
+          <i class="icon fas fa-search fa-fw"></i>
+        </form>
+      </div>
+    
+    <div class='menu navigation'>
+      <div class='list-h'>
+        
+          
+            <a href="/"
+              
+              
+              id="home">
+              <i class='fas fa-book fa-fw'></i><p></p>
+            </a>
+          
+            <a target="_blank" rel="noopener" href="https://github.com/Mr-O4/GoTE-miniprogram"
+              
+              
+              id="https:githubcomMr-O4GoTE-miniprogram">
+              <i class='fas fa-laptop-code fa-fw'></i><p></p>
+            </a>
+          
+            <a href="/archives/"
+              
+              
+              id="archives">
+              <i class='fas fa-archive fa-fw'></i><p></p>
+            </a>
+          
+            <a href="/about/"
+              
+              
+              id="about">
+              <i class='fas fa-user fa-fw'></i><p></p>
+            </a>
+          
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+          <div id="scroll-down" style="display: none;"><i class="fa fa-chevron-down scroll-down-effects"></i></div>
+        </div>
+    
+  
+  </div>
+
+      <div id="safearea">
+        <div class="body-wrapper" id="pjax-container">
+          
+
+<div class='l_main'>
+  <article class="article post white-box reveal md shadow article-type-post" id="post" itemscope itemprop="blogPost">
+  
+
+
+  
+    <div class='headimg-div'>
+      <a class='headimg-a'>
+        <img class='headimg' src='https://cdn.jsdelivr.net/gh/TCP404/Picgo/blog/cover/Graph.png'/>
+      </a>
+    </div>
+  
+  <div class="article-meta" id="top">
+    
+    
+      <a title='DataStruction 0x08 图-2' href='/posts/55493'>
+        <img class='thumbnail' src='https://cdn.jsdelivr.net/gh/TCP404/Picgo/blog/thumbnail/algorithms.png'>
+      </a>
+    
+    
+      <h1 class="title">
+        DataStruction 0x08 图-2
+      </h1>
+      <div class='new-meta-box'>
+        
+          
+            
+<div class='new-meta-item author'>
+  <a class='author' href="/" rel="nofollow">
+    <img no-lazy src="https://cdn.jsdelivr.net/gh/TCP404/HEXO-CDN/images/icon/favicon.png">
+    <p>Mr.Pro</p>
+  </a>
+</div>
+
+          
+        
+          
+            <div class="new-meta-item date">
+  <a class='notlink'>
+    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
+    <p>发布于：2021年2月23日</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+  
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>数据结构</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/DataStruction/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>DataStruction</p></a></div>
+
+
+          
+        
+          
+            
+  <div class="new-meta-item wordcount">
+    <a class='notlink'>
+      <i class="fas fa-keyboard fa-fw" aria-hidden="true"></i>
+      <p>字数：8.9k字</p>
+    </a>
+  </div>
+  <div class="new-meta-item readtime">
+    <a class='notlink'>
+      <i class="fas fa-hourglass-half fa-fw" aria-hidden="true"></i>
+      <p>时长：36分钟</p>
+    </a>
+  </div>
+
+
+          
+        
+          
+            
+  <div class="new-meta-item browse busuanzi">
+    <a class='notlink'>
+      <i class="fas fa-eye fa-fw" aria-hidden="true"></i>
+      <p>
+        <span id="busuanzi_value_page_pv">
+          <i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i>
+        </span>
+        次浏览
+      </p>
+    </a>
+  </div>
+
+
+          
+        
+      </div>
+    
+  </div>
+
+
+  
+  
+  <p>图的存储</p>
+<span id="more"></span>
+
+<h1 id="8-图2"><a href="#8-图2" class="headerlink" title="8-图2"></a>8-图2</h1><h2 id="图的ADT"><a href="#图的ADT" class="headerlink" title="图的ADT"></a>图的ADT</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">ADT 图 Graph</span><br><span class="line">Data</span><br><span class="line">    顶点的有穷非空集合和边的集合</span><br><span class="line"><span class="function">Operation</span></span><br><span class="line"><span class="function">    <span class="title">CreateGraph</span><span class="params">(*G, V, E)</span>: 按照顶点集V和边集E的定义构造图G</span></span><br><span class="line"><span class="function">    <span class="title">DestoryGraph</span><span class="params">(G*)</span>: 图G存在则销毁</span></span><br><span class="line"><span class="function">    <span class="title">LocateVex</span><span class="params">(G*, v)</span>: 若图G中存在顶点v，则返回v在图中的顶点数组的下标</span></span><br><span class="line"><span class="function">    <span class="title">GetVex</span><span class="params">(G*, v)</span>: 返回图中顶点v的值</span></span><br><span class="line"><span class="function">    <span class="title">PutVex</span><span class="params">(G*, v, value)</span>: 将图G中顶点v赋值value</span></span><br><span class="line"><span class="function">    <span class="title">FirstNeighbor</span><span class="params">(G*, v)</span>: 返回顶点v的第一个邻接点，若无则返回空</span></span><br><span class="line"><span class="function">    <span class="title">NextNeighbor</span><span class="params">(G*, v1, v2)</span>: 返回顶点v1相对于顶点v2的下一个邻接点，若v2是v1的最后一个邻接点则返回空</span></span><br><span class="line"><span class="function">    <span class="title">InsertVex</span><span class="params">(G*, v)</span>: 在图G中增加顶点v</span></span><br><span class="line"><span class="function">    <span class="title">DeleteVex</span><span class="params">(G*, v)</span>: 删除图G中顶点v及其相关的边/弧</span></span><br><span class="line"><span class="function">    <span class="title">InsertArc</span><span class="params">(G*, v1, v2)</span>: 在图G中增加弧&lt;v1, v2&gt;，若G是无向图，还需添加对称弧&lt;v2, v1&gt;</span></span><br><span class="line"><span class="function">    <span class="title">DeleteArc</span><span class="params">(G*, v1, v2)</span>: 在图G中删除弧&lt;v1, v2&gt;，若G是无向图，还需删除对称弧&lt;v2, v1&gt;</span></span><br><span class="line"><span class="function">    <span class="title">DFSTraverse</span><span class="params">(G*)</span>: 对图G中进行深度优先遍历</span></span><br><span class="line"><span class="function">    <span class="title">BFSTraverse</span><span class="params">(G*)</span>: 对图G中进行广度优先遍历</span></span><br><span class="line"><span class="function">    <span class="title">Adjacent</span><span class="params">(G*, v1, v2)</span>: 判断图G中是否存在边/弧&lt;v1, v2&gt;</span></span><br><span class="line"><span class="function">    <span class="title">Neighbors</span><span class="params">(G*, v)</span>: 列处图G中与顶点v邻接的边</span></span><br><span class="line"><span class="function">    <span class="title">GetEdgeValue</span><span class="params">(G*, v1, v2)</span>: 获取图G中边/弧&lt;v1, v2&gt;对应的权值</span></span><br><span class="line"><span class="function">    <span class="title">SetEdgeValue</span><span class="params">(G*, v1, v2, value)</span>: 设置图G中边/弧&lt;v1, v2&gt;对应的权值为value</span></span><br><span class="line"><span class="function">endADT</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="图的存储结构"><a href="#图的存储结构" class="headerlink" title="图的存储结构"></a>图的存储结构</h2><p>图的顶点之间没有次序关系，且顶点的邻接情况多变，无法用统一的格式来存储。</p>
+<h3 id="邻接矩阵-Adjacent-Matrix"><a href="#邻接矩阵-Adjacent-Matrix" class="headerlink" title="邻接矩阵 Adjacent Matrix"></a>邻接矩阵 Adjacent Matrix</h3><div class="note quote blue"><p>图的邻接矩阵的存储方式是用两个数组来表示图。<br>一个一维数组用来存储图中的顶点集，一个二维数组（称为邻接矩阵）用来存储图中的边集。</p><p>图的邻接矩阵表示法 = 一维数组 $\times$ 1 + 二维数组 $\times$ 1</p></div>
+
+<p>设 图G 有 n 个顶点，则邻接矩阵是一个 $n \times n$ 的方阵，定义为：</p>
+<p>$$<br>Arc[i][j] =<br>\begin{cases}<br>1, &amp; {(v_i, v_j) \in E 或 \langle v_i, v_j \rangle \in E} \[3ex]<br>0, &amp; {反之}<br>\end{cases}<br>$$</p>
+<h4 id="无向图"><a href="#无向图" class="headerlink" title="无向图"></a>无向图</h4><h5 id="理论描述"><a href="#理论描述" class="headerlink" title="理论描述"></a>理论描述</h5><p>顶点集很容易表示，使用顶点结构类型的一维数组来存储顶点信息。<br>边集可以用 <strong>矩阵(Metrix)</strong> 来表示，而矩阵在计算机中可以使用二维数组来实现。</p>
+<p>eg: <img src="https://cdn.jsdelivr.net/gh/TCP404/Picgo/blog/illustration-pic/DataStruction/20201221132810429_2398.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/TCP404/Picgo/blog/illustration-pic/DataStruction/20201221132810429_2398.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII="> </p>
+<p>这个图的边集可以变成下面的矩阵：</p>
+<p>$$<br>\begin{bmatrix}<br>0 &amp; 1 &amp; 1 &amp; 0 \<br>1 &amp; 0 &amp; 1 &amp; 0 \<br>1 &amp; 1 &amp; 0 &amp; 1 \<br>0 &amp; 0 &amp; 1 &amp; 0<br>\end{bmatrix}<br>$$</p>
+<p>所以对于图 **G = (V, {E})**，可以使用一个一维数组来存储顶点集 V，再用一个二维数组来存储边集 E。<br>于是一张图可以变成下图所示：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/TCP404/Picgo/blog/illustration-pic/DataStruction/20201221172548767_15519.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/TCP404/Picgo/blog/illustration-pic/DataStruction/20201221172548767_15519.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" alt="无向图邻接矩阵"></p>
+<p>上图中，有一个结构体 <code>struct Graph</code>，结构体中包含一个一维数组 <code>Vertex[]</code> 和一个二维数组 <code>Edge[][]</code>，一个 <code>v_count</code> 存储顶点数，一个 <code>e_count</code> 存储边数。</p>
+<p><code>Vertex[]</code> 用来存储顶点信息，<code>Edge[][]</code> 用来存储边的信息。</p>
+<p>例如 (v1, v2) 就将 <code>Edge[0][1]</code> 置为1；而 (v1, v2) 也可以表示为 (v2, v1) ，所以 <code>Edge[1][0]</code> 也应置为1。<br>而简单图不会有自己邻接自己的边，所以 <code>Edge[0][0]、Edge[1][1]、Edge[2][2]、Edge[3][3]</code> 均为0。</p>
+<p>稍微观察可以发现，无向图的邻接矩阵一定是一个对称矩阵[^1]，于是我们可以很容易知道图中的信息：</p>
+<ol>
+<li>某个顶点的度，起始就是这个顶点 v<del>i</del> 在邻接矩阵中第 i 行（或第 i 列）的元素之和。eg：顶点 v3 的度就是 1+1+0+1 = 3</li>
+<li>求顶点 v<del>i</del> 的所有邻接点就是在邻接矩阵中第 i 行所有元素为 1 的点。eg：顶点 v2 的所有邻接点就遍历 Edge[1][…]，其中为 <code>Eege[1][0]、Edge[1][2]</code> 为1，表示 v1 和 v3 为邻接点。</li>
+</ol>
+<h5 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h5><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// GraphModel.h</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">ifndef</span> GRAPH_MODEL_H_INCLUDED</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> GRAPH_MODEL_H_INCLUDED</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdlib.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> MAX 4</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">enum</span> &#123;</span></span><br><span class="line">    ERROR,</span><br><span class="line">    OK,</span><br><span class="line">&#125; Status;</span><br><span class="line"></span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">enum</span> &#123;</span></span><br><span class="line">    DG,  <span class="comment">// 有向图</span></span><br><span class="line">    UDG, <span class="comment">// 无向图</span></span><br><span class="line">    DN,  <span class="comment">// 有向网</span></span><br><span class="line">    UDN, <span class="comment">// 无向网</span></span><br><span class="line">&#125; GraphKind;</span><br><span class="line"></span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">char</span>* Vertex; <span class="comment">// 顶点数组类型</span></span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">int</span> Edge;     <span class="comment">// 邻接矩阵类型</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">endif</span> <span class="comment">// GRAPH_MODEL_H_INCLUDED</span></span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// MatrixGraph.h</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">ifndef</span> MATRIX_GRAPH_H_INCLUDED</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> MATRIX_GRAPH_H_INCLUDED</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&quot;GraphModel.h&quot;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> &#123;</span></span><br><span class="line">    Vertex vers[MAX];     <span class="comment">// 顶点数组</span></span><br><span class="line">    Edge edges[MAX][MAX]; <span class="comment">// 邻接矩阵（边数组）</span></span><br><span class="line">    <span class="keyword">size_t</span> v_count;       <span class="comment">// 顶点总数</span></span><br><span class="line">    <span class="keyword">size_t</span> e_count;       <span class="comment">// 边总数</span></span><br><span class="line">    GraphKind kind;       <span class="comment">// 图类型</span></span><br><span class="line">&#125; MatrixGraph;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * @description: 创建无向图</span></span><br><span class="line"><span class="comment"> * @param G 要操作初始化的图</span></span><br><span class="line"><span class="comment"> * @return 成功返回OK，失败返回ERROR</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="function">Status <span class="title">CreatUDG</span><span class="params">(MatrixGraph* G)</span></span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * @description: 返回某个顶点在顶点集合中的下标</span></span><br><span class="line"><span class="comment"> * @param G 要查找的图结构</span></span><br><span class="line"><span class="comment"> * @param v 顶点</span></span><br><span class="line"><span class="comment"> * @return 返回下标，不存在返回-1</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">LocateVex</span><span class="params">(MatrixGraph* G, Vertex v)</span></span>;</span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">endif</span> <span class="comment">// MATRIX_GRAPH_H_INCLUDED</span></span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// MatrixGraph.c</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&quot;MatrixGraph.h&quot;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function">Status <span class="title">CreatUDG</span><span class="params">(MatrixGraph* G)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    G-&gt;kind = UDG;</span><br><span class="line"></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;Please type the count of Vertex : &quot;</span>);</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>, &amp;G-&gt;v_count);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;Please type the count of Edge : &quot;</span>);</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>, &amp;G-&gt;e_count);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 录入顶点数组</span></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;Please type Vertex in turn.\n&quot;</span>);</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; G-&gt;v_count; i++) &#123;</span><br><span class="line">        G-&gt;vers[i] = <span class="built_in">calloc</span>(<span class="number">10</span>, <span class="keyword">sizeof</span>(Vertex));</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;Vertex %d :&quot;</span>, i);</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">&quot;%s&quot;</span>, G-&gt;vers[i]);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 初始化邻接矩阵，所有边的权值设置为0</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; G-&gt;v_count; i++) &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; G-&gt;v_count; j++) &#123;</span><br><span class="line">            G-&gt;edges[i][j] = <span class="number">0</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 录入邻接矩阵</span></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;Please type Vertex and Adjacent. \n&quot;</span>);</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; G-&gt;e_count; i++) &#123;</span><br><span class="line">        Vertex v1 = <span class="built_in">calloc</span>(<span class="number">10</span>, <span class="keyword">sizeof</span>(Vertex));</span><br><span class="line">        Vertex v2 = <span class="built_in">calloc</span>(<span class="number">10</span>, <span class="keyword">sizeof</span>(Vertex));</span><br><span class="line"></span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;Vertex %d : &quot;</span>, i + <span class="number">1</span>);</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">&quot;%s&quot;</span>, v1);</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;Adjacent %d : &quot;</span>, i + <span class="number">1</span>);</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">&quot;%s&quot;</span>, v2);</span><br><span class="line"></span><br><span class="line">         <span class="comment">/** 核心代码 begin */</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">// 获取顶点的下标</span></span><br><span class="line">        <span class="keyword">int</span> x = LocateVex(G, v1);</span><br><span class="line">        <span class="keyword">int</span> y = LocateVex(G, v2);</span><br><span class="line">        <span class="keyword">if</span> (x == <span class="number">-1</span> || y == <span class="number">-1</span>)</span><br><span class="line">            <span class="keyword">return</span> ERROR;</span><br><span class="line">        <span class="comment">// 对应位置置为1</span></span><br><span class="line">        G-&gt;edges[x][y] = <span class="number">1</span>;</span><br><span class="line">        G-&gt;edges[y][x] = <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line">        <span class="comment">/** 核心代码 end */</span></span><br><span class="line"></span><br><span class="line">        <span class="built_in">free</span>(v1);</span><br><span class="line">        <span class="built_in">free</span>(v2);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> OK;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">LocateVex</span><span class="params">(MatrixGraph* G, Vertex v)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> index = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">while</span> (index &lt; G-&gt;v_count) &#123;</span><br><span class="line">        <span class="keyword">if</span> (<span class="built_in">strcmp</span>(v, G-&gt;vers[index]) == <span class="number">0</span>) &#123;</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        index++;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> index == G-&gt;v_count ? <span class="number">-1</span> : index;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Test</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    MatrixGraph G;</span><br><span class="line">    Status status = CreatUDG(&amp;G);</span><br><span class="line">    <span class="keyword">if</span> (status = ERROR) &#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;Create Graph Failed~&quot;</span>);</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;The Adjacent Matrix: \n&quot;</span>);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;\t&quot;</span>);</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; G.v_count; i++) &#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;\t%s&quot;</span>, G.vers[i]);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;\n&quot;</span>);</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; G.e_count; i++) &#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;\t%s&quot;</span>, G.vers[i]);</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; G.e_count; j++) &#123;</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">&quot;\t%d&quot;</span>, G.edges[i][j]);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;\n&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&quot;MatrixGraph.c&quot;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">char</span> <span class="keyword">const</span>* argv[])</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    Test();</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="有向图"><a href="#有向图" class="headerlink" title="有向图"></a>有向图</h4><h5 id="理论描述-1"><a href="#理论描述-1" class="headerlink" title="理论描述"></a>理论描述</h5><p>有向图和无向图的区别在于邻接矩阵。</p>
+<p>在有向图邻接矩阵中，<br>第 i 行含义：以结点 v<sub>i</sub> 为尾的弧（即出度边）<br>第 i 列含义：以结点 v<sub>i</sub> 为头的弧（即入度边）</p>
+<p>其特点为：</p>
+<ul>
+<li>无向图的邻接矩阵一定是对称的，当有向图的邻接矩阵不一定是对称的。</li>
+<li>顶点 v<sub>i</sub> 的出度 = 第 i <strong>行</strong>元素之和</li>
+<li>顶点 v<sub>i</sub> 的入度 = 第 i <strong>列</strong>元素之和</li>
+<li>顶点 v<sub>i</sub> 的度 = 第 i 行元素之和 + 第 i 列元素之和</li>
+</ul>
+<div class="note done"><p>口诀：</p><ul><li><code>Arc[行][列]</code></li><li><code>Arc[出][入]</code></li><li><strong>列头入，行尾出</strong>：即 列为弧头、入度；行为弧尾、出度。</li></ul></div>
+
+
+<p><img src="https://cdn.jsdelivr.net/gh/TCP404/Picgo/blog/illustration-pic/DataStruction/20201221172927072_32706.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/TCP404/Picgo/blog/illustration-pic/DataStruction/20201221172927072_32706.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" alt="有向图邻接矩阵"></p>
+<h5 id="代码实现-1"><a href="#代码实现-1" class="headerlink" title="代码实现"></a>代码实现</h5><p>在代码实现上，有向图与无向图唯一的区别在于：录入弧的数据之后，只需要执行赋值一次就可以。</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">G-&gt;edges[x][y] = <span class="number">1</span>;</span><br><span class="line"><span class="comment">// G-&gt;edges[y][x] = 1;</span></span><br></pre></td></tr></table></figure>
+
+<p>这里我将有向图和无向图的创建合并在一起，在调用函数时多传入一个 GraphKind 类型参数来区分。</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">Status <span class="title">CreatGraph</span><span class="params">(MatrixGraph* G, GraphKind kind)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    G-&gt;kind = kind;</span><br><span class="line">    <span class="comment">// 录入顶点数和边数</span></span><br><span class="line">    ...</span><br><span class="line">    <span class="comment">// 录入顶点数组</span></span><br><span class="line">    ...</span><br><span class="line">    <span class="comment">// 初始化邻接矩阵，所有边的权值设置为0</span></span><br><span class="line">    ...</span><br><span class="line">    <span class="comment">// 录入邻接矩阵</span></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;Please type %s and %s. \n&quot;</span>, kind == UDG ? <span class="string">&quot;Vertex&quot;</span> : <span class="string">&quot;InDegree&quot;</span>, kind == UDG ? <span class="string">&quot;Adjacent&quot;</span> : <span class="string">&quot;OutDegree&quot;</span>);</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; G-&gt;e_count; i++) &#123;</span><br><span class="line">        Vertex v1 = <span class="built_in">calloc</span>(<span class="number">10</span>, <span class="keyword">sizeof</span>(Vertex));</span><br><span class="line">        Vertex v2 = <span class="built_in">calloc</span>(<span class="number">10</span>, <span class="keyword">sizeof</span>(Vertex));</span><br><span class="line"></span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;%s %d : &quot;</span>, kind == UDG ? <span class="string">&quot;Vertex&quot;</span> : <span class="string">&quot;OutDegree&quot;</span>, i + <span class="number">1</span>);</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">&quot;%s&quot;</span>, v1);</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;%s %d : &quot;</span>, kind == UDG ? <span class="string">&quot;Adjacent&quot;</span> : <span class="string">&quot;InDegree&quot;</span>, i + <span class="number">1</span>);</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">&quot;%s&quot;</span>, v2);</span><br><span class="line"></span><br><span class="line">        <span class="keyword">int</span> x = LocateVex(G, v1);</span><br><span class="line">        <span class="keyword">int</span> y = LocateVex(G, v2);</span><br><span class="line">        <span class="keyword">if</span> (x == <span class="number">-1</span> || y == <span class="number">-1</span>)</span><br><span class="line">            <span class="keyword">return</span> ERROR;</span><br><span class="line"></span><br><span class="line">        G-&gt;edges[x][y] = <span class="number">1</span>;</span><br><span class="line">        G-&gt;edges[y][x] = kind == UDG ? <span class="number">1</span> : <span class="number">0</span>;    <span class="comment">// 无向图置为1，有向图保持默认</span></span><br><span class="line"></span><br><span class="line">        <span class="built_in">free</span>(v1);</span><br><span class="line">        <span class="built_in">free</span>(v2);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> OK;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// Status status = CreatGraph(&amp;G);</span></span><br><span class="line">Status status = CreatGraph(&amp;G, DG);</span><br></pre></td></tr></table></figure>
+
+<p>同时，有向图的顶点的度 = 出度 + 入度，可以实现一个函数根据图的类型来返回顶点的度。</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * @description: 获取某个顶点的度</span></span><br><span class="line"><span class="comment"> * @param G 要查找的图</span></span><br><span class="line"><span class="comment"> * @param v 要查询度的顶点</span></span><br><span class="line"><span class="comment"> * @return 该顶点的度</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="function"><span class="keyword">size_t</span> <span class="title">GetDegree</span><span class="params">(MatrixGraph* G, Vertex v)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// 获取无向图的度：累加第i行或第i列的元素之和</span></span><br><span class="line">    <span class="comment">// 获取有向图的度：累加第i行和第i列的元素之和并相加</span></span><br><span class="line">    <span class="keyword">int</span> index = LocateVex(G, v);</span><br><span class="line">    <span class="keyword">int</span> inDegree = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">int</span> outDegree = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; G-&gt;e_count; i++) &#123;</span><br><span class="line">        inDegree += G-&gt;edges[i][index];</span><br><span class="line">        outDegree += G-&gt;edges[index][i];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> G-&gt;kind == UDG ? inDegree : inDegree + outDegree;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>无向图的度只需要返回行的和或列的和就行，有向图的度则需要相加再返回。</p>
+<h4 id="网"><a href="#网" class="headerlink" title="网"></a>网</h4><p>边或弧带权的图即为网。</p>
+<h5 id="理论描述-2"><a href="#理论描述-2" class="headerlink" title="理论描述"></a>理论描述</h5><p>设 图G 有 n 个顶点，则邻接矩阵是一个 $n \times n$ 的方阵，定义为：</p>
+<p>$$<br>Arc[i][j] =<br>\begin{cases}<br>W_{ij}, &amp; {(v_i, v_j) \in E 或 \langle v_i, v_j \rangle \in E} \[1ex]<br>0, &amp; {i=j} \[1ex]<br>∞, &amp; {反之}<br>\end{cases}<br>$$</p>
+<p>这里 $W_{ij}$ 表示 $\langle v_i, v_j \rangle$ 或 $(v_i, v_j)$ 上的权值。<br>∞表示一个计算机允许的、大于所有边上权值的值，即一个不可能的极限值，在C语言中可以使用 <code>INT_MAX</code> 来表示无穷。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/TCP404/Picgo/blog/illustration-pic/DataStruction/20201221215629050_25484.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/TCP404/Picgo/blog/illustration-pic/DataStruction/20201221215629050_25484.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" alt="网的邻接矩阵"></p>
+<h5 id="代码实现-2"><a href="#代码实现-2" class="headerlink" title="代码实现"></a>代码实现</h5><p>网的大部分代码与有向图和无向图的相同的，只有几处需要修改。</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 初始化邻接矩阵，所有边的权值设置为0</span></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; G-&gt;v_count; i++) &#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; G-&gt;v_count; j++) &#123;</span><br><span class="line">        G-&gt;edges[i][j] = INT_MAX;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>在初始化时，不能初始化为0，而要初始化为 <code>INT_MAX</code>。</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 录入邻接矩阵</span></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;Please type %s and %s. \n&quot;</span>, kind == UDN ? <span class="string">&quot;Vertex&quot;</span> : <span class="string">&quot;InDegree&quot;</span>, kind == UDN ? <span class="string">&quot;Adjacent&quot;</span> : <span class="string">&quot;OutDegree&quot;</span>);</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; G-&gt;e_count; i++) &#123;</span><br><span class="line">        Vertex v1 = <span class="built_in">calloc</span>(<span class="number">10</span>, <span class="keyword">sizeof</span>(Vertex));</span><br><span class="line">        Vertex v2 = <span class="built_in">calloc</span>(<span class="number">10</span>, <span class="keyword">sizeof</span>(Vertex));</span><br><span class="line">        <span class="keyword">int</span> weight = <span class="number">0</span>; <span class="comment">// 权值</span></span><br><span class="line"></span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;%s %d : &quot;</span>, kind == UDN ? <span class="string">&quot;Vertex&quot;</span> : <span class="string">&quot;OutDegree&quot;</span>, i + <span class="number">1</span>);</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">&quot;%s&quot;</span>, v1);</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;%s %d : &quot;</span>, kind == UDN ? <span class="string">&quot;Adjacent&quot;</span> : <span class="string">&quot;InDegree&quot;</span>, i + <span class="number">1</span>);</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">&quot;%s&quot;</span>, v2);</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;Value %d: &quot;</span>, i + <span class="number">1</span>);</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">&quot;%s&quot;</span>, &amp;weight);</span><br><span class="line"></span><br><span class="line">        <span class="keyword">int</span> x = LocateVex(G, v1);</span><br><span class="line">        <span class="keyword">int</span> y = LocateVex(G, v2);</span><br><span class="line">        <span class="keyword">if</span> (x == <span class="number">-1</span> || y == <span class="number">-1</span>)</span><br><span class="line">            <span class="keyword">return</span> ERROR;</span><br><span class="line"></span><br><span class="line">        G-&gt;edges[x][y] = weight;</span><br><span class="line">        G-&gt;edges[y][x] = kind == UDN ? weight : INT_MAX;</span><br><span class="line"></span><br><span class="line">        <span class="built_in">free</span>(v1);</span><br><span class="line">        <span class="built_in">free</span>(v2);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<p>录入邻接矩阵时也需要多录入一个权值。</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 邻接矩阵</span></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; G.e_count; i++) &#123;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;\t%s&quot;</span>, G.vers[i]);</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; G.e_count; j++) &#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;\t%s&quot;</span>, G.edges[i][j] == INT_MAX ? <span class="string">&quot;∞&quot;</span> : (<span class="keyword">char</span>*)G.edges[i][j]);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;\n&quot;</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>打印时也稍作处理。</p>
+<h3 id="邻接表-Adjacent-List"><a href="#邻接表-Adjacent-List" class="headerlink" title="邻接表 Adjacent List"></a>邻接表 Adjacent List</h3><p>邻接矩阵适合处理稠密图，对于稀疏图，邻接矩阵会造成巨大的浪费。在数据结构中，解决浪费问题需要往链式结构的方向去想。</p>
+<div class="note quote"><p>图的邻接表的存储方式是用一维数组和单链表来表示图。<br>一个一维数组用来存储图中的顶点集，多个单链表用来存储图中的边集。</p><p>图的邻接矩阵表示法 = 一维数组 $\times$ 1 + 单链表 $\times$ n</p></div>
+
+<h4 id="无向图的邻接表"><a href="#无向图的邻接表" class="headerlink" title="无向图的邻接表"></a>无向图的邻接表</h4><p>邻接表的处理方法如下：</p>
+<ul>
+<li>图的顶点集用一维数组存储，数组元素为 <code>数据域</code> + <code>首邻接点域</code>；</li>
+<li>图的边/弧集用单链表存储，链表结点由 <code>邻接点域</code> + <code>指针域</code> 构成；</li>
+</ul>
+<p><code>首邻接点域</code> 指的是顶点的第一个边链表结点的地址，链表中的 <code>邻接点域</code> 存储的是邻接点的在顶点数组中的下标。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/TCP404/Picgo/blog/illustration-pic/DataStruction/20201222123713244_31065.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/TCP404/Picgo/blog/illustration-pic/DataStruction/20201222123713244_31065.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" alt="邻接表"></p>
+<p>从上图可以看出，一个无向图可以用一个顶点类型的一维数组来存储顶点，每个顶点都各自有一条边链表，存储着该顶点的所有邻接点；</p>
+<p>顶点数组中的某个顶点 <code>Vertex[i]</code> 和 对应边链表中的任一个结点构成了一条边。</p>
+<p>eg：</p>
+<p>$v_1$ 的邻接点是 $v_2$ 和 $v_3$，在顶点数组中 $v_1$ 的下标是 0；</p>
+<p>在 <code>Vertex[0]</code> 数据域中存着 $v_1$，首邻接点域存储着边链的第一个结点的地址；</p>
+<p>在边链的第一个结点中，邻接点域存储着 $v_2$ 的下标 1，然后指针域指向下一个结点；</p>
+<p>下一个结点的邻接点域存储着 $v_3$ 的下标 2，后面不再有了，所以指针域为空。</p>
+<p>仔细观察可以发现以下特点：</p>
+<ul>
+<li>无向图的邻接表重复存储着数据（邻接矩阵里也是），但总比邻接矩阵节省空间。</li>
+<li>边链中的结点，除了与顶点数组中的元素，相互之间没有关系。</li>
+<li>顶点的度 = 它的边链的结点数</li>
+<li>求顶点的所有邻接点 = 遍历顶点的边链并取邻接点域</li>
+<li>如果有 n 条边，则边链表会有 2n 个结点</li>
+</ul>
+<h4 id="有向图的邻接表"><a href="#有向图的邻接表" class="headerlink" title="有向图的邻接表"></a>有向图的邻接表</h4><p>有向图的邻接表是类似的，但有向图区分方向。</p>
+<p>我们以顶点为弧尾来存储边链表，并称这样的边链表为<strong>出边表</strong>，或<strong>正邻接表</strong><br>我们以顶点为弧头来存储边链表，并称这样的边链表为<strong>入边表</strong>，或<strong>逆邻接表</strong></p>
+<p><img src="https://cdn.jsdelivr.net/gh/TCP404/Picgo/blog/illustration-pic/DataStruction/20201222123739148_26529.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/TCP404/Picgo/blog/illustration-pic/DataStruction/20201222123739148_26529.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" alt="右上出边表 和 右下入边表"></p>
+<p>右上为出边表，右下为入边表</p>
+<p>出边表中，顶点 v1 作为弧尾，邻接弧头 v2，所以首邻接点与指向出边表的第一个结点，结点中的数据域存储着弧头 v2 的下标 1。所以 v1 和 <code>Vertex[1]</code> 共同组成一条弧。</p>
+<p>而顶点 v2 有 2 个出度，所以 v2 的出边表中有 2 个结点。</p>
+<p>入边表中，顶点 v3 作为弧头，邻接弧尾 v2 和 v4，所以首邻接点指向入边表的第一个结点，结点中存着 v2 的下标 1，第二个结点存着 v4 下标 3。</p>
+<p>观察两个表，可以发现以下特点：</p>
+<ul>
+<li>使用入边表表示图时，顶点的入度 = 对应入边表的结点数量，要计算出度只能遍历所有边链表</li>
+<li>使用出边表表示图时，顶点的出度 = 对应出边表的结点数量，要计算入度只能遍历所有边链表</li>
+<li>边链表中的结点，除了与顶点元素，相互之间没有关系</li>
+<li>弧的总数 = 所有边链表的结点的总数之和</li>
+</ul>
+<h4 id="有向网的邻接表"><a href="#有向网的邻接表" class="headerlink" title="有向网的邻接表"></a>有向网的邻接表</h4><p>有向网和无向网的邻接表仅仅只是在边链表中的结点增加一个变量 weight 来存储权值。同样有有向无向、出边入边之分。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/TCP404/Picgo/blog/illustration-pic/DataStruction/20201222123823531_26765.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/TCP404/Picgo/blog/illustration-pic/DataStruction/20201222123823531_26765.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" alt="网的邻接表"></p>
+<h4 id="代码实现-3"><a href="#代码实现-3" class="headerlink" title="代码实现"></a>代码实现</h4><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 边链表结点类型</span></span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">node</span>&#123;</span></span><br><span class="line">    <span class="keyword">int</span> adjvex;          <span class="comment">// 邻接点域、邻接点下标</span></span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">node</span>* <span class="title">next</span>;</span>   <span class="comment">// 指针域</span></span><br><span class="line">&#125; EdgeNode, ArcNode;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 顶点类型</span></span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">char</span>* Vertex;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 顶点结点类型</span></span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> &#123;</span></span><br><span class="line">    Vertex data;         <span class="comment">// 数据域</span></span><br><span class="line">    EdgeNode firstEdge;  <span class="comment">// 首邻接点域</span></span><br><span class="line">&#125; VertexNode;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 图类型</span></span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> &#123;</span></span><br><span class="line">    VertexNode vexs[MAX];    <span class="comment">// 顶点结点数组</span></span><br><span class="line">    <span class="keyword">int</span> v_count;             <span class="comment">// 顶点数量</span></span><br><span class="line">    <span class="keyword">int</span> e_count;             <span class="comment">// 边/弧数量</span></span><br><span class="line">    GraphKind kind;          <span class="comment">// 图类型</span></span><br><span class="line">&#125; AdjListGraph;</span><br></pre></td></tr></table></figure>
+
+<h3 id="十字链表-Orthogonal-List"><a href="#十字链表-Orthogonal-List" class="headerlink" title="十字链表 Orthogonal List"></a>十字链表 Orthogonal List</h3><div class="note quote"><p>十字链表主要针对有向图，适用于需要<strong>频繁获取顶点的入度和出度，频繁地判断一个点是不是另一个点</strong>的邻接点等的情况。</p><p>其核心思想是<strong>将出边表和入边表整合起来</strong>。</p></div>
+
+<p>有向图的邻接表只有表示出度的出边表，或者表示入度的入边表，鱼和熊掌不可兼得。</p>
+<p>对于这种情况，小孩子才做选择，大人全都要！</p>
+<p>于是我们可以改造一下顶点数组，让一个顶点数组的元素包含 <code>顶点</code>、<code>出边表的首邻接点域</code>、<code>入边表的首邻接点域</code></p>
+<p><img src="https://cdn.jsdelivr.net/gh/TCP404/Picgo/blog/illustration-pic/DataStruction/20201223125912346_19343.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/TCP404/Picgo/blog/illustration-pic/DataStruction/20201223125912346_19343.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII="></p>
+<p><code>data</code> 表示顶点，<code>iFirst</code> 表示入边表的首邻接点域，<code>oFirst</code> 表示出边表的首邻接点域。</p>
+<p>于是我们可以得到一个这样的双邻接表：<br><img src="https://cdn.jsdelivr.net/gh/TCP404/Picgo/blog/illustration-pic/DataStruction/20201223132930617_4233.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/TCP404/Picgo/blog/illustration-pic/DataStruction/20201223132930617_4233.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" alt="双邻接表"></p>
+<p>最左边是图结构，中间上面是出边表，中间下面是入边表，将它们结合，就成了最右边的双邻接表</p>
+<p>下一步我们改造一下边链表的结点，让它由 <code>弧尾下标</code> + <code>弧尾边链的指针域</code> + <code>弧头下标</code> + <code>弧头边链的指针域</code> 构成。<br><img src="https://cdn.jsdelivr.net/gh/TCP404/Picgo/blog/illustration-pic/DataStruction/20201223130924330_32433.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/TCP404/Picgo/blog/illustration-pic/DataStruction/20201223130924330_32433.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII="></p>
+<p><code>oVex</code> 表示弧中出边的结点，即弧尾结点，的下标；<code>oNext</code> 替代了原出边表结点里的指针域；<br><code>iVex</code> 表示弧中入边的结点，即弧头结点，的下标；<code>iNext</code> 替代了原入边表结点里的指针域；</p>
+<p>现在对双邻接表进行改造：<br><img src="https://cdn.jsdelivr.net/gh/TCP404/Picgo/blog/illustration-pic/DataStruction/20201223133027047_23264.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/TCP404/Picgo/blog/illustration-pic/DataStruction/20201223133027047_23264.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" alt="改造边链表结点"></p>
+<p>然后我们会发现有很多重复的结点，我们保留一个，删除一个：<br><img src="https://cdn.jsdelivr.net/gh/TCP404/Picgo/blog/illustration-pic/DataStruction/20201223133122257_6587.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/TCP404/Picgo/blog/illustration-pic/DataStruction/20201223133122257_6587.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" alt="删除重复结点"></p>
+<p>接着把被删除的地方的链指向保留下来的那个结点：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/TCP404/Picgo/blog/illustration-pic/DataStruction/20201223135115072_2208.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/TCP404/Picgo/blog/illustration-pic/DataStruction/20201223135115072_2208.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" alt="改链"></p>
+<p>例如 v1 的出边表第一个结点（v1 红色线条指向的那个 0 和 1 的结点） 和 v2 的入边表的第一个节点（v2 蓝色线条指向的那个 0 和 1 的结点），</p>
+<p>这两个结点相同，</p>
+<p>于是我删掉其中 v2 的那个，然后让 v2 的蓝色线指向 v1 的第一个结点，其他结点也是同样操作。</p>
+<p>最后整理一下就是下图的样子：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/TCP404/Picgo/blog/illustration-pic/DataStruction/20201223135135896_26333.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/TCP404/Picgo/blog/illustration-pic/DataStruction/20201223135135896_26333.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" alt="十字链表"></p>
+<p>对比一下该图的顶点 v2 的出边表和十字链表：<br><img src="https://cdn.jsdelivr.net/gh/TCP404/Picgo/blog/illustration-pic/DataStruction/20201223140240032_28522.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/TCP404/Picgo/blog/illustration-pic/DataStruction/20201223140240032_28522.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" alt="出边表 VS 十字链表"></p>
+<p>可以看到没有损失任何信息。</p>
+<h4 id="代码实现-4"><a href="#代码实现-4" class="headerlink" title="代码实现"></a>代码实现</h4><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/** 顶点类型 */</span></span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">char</span>* Vertex;</span><br><span class="line"></span><br><span class="line"><span class="comment">/** 十字链表结点 */</span></span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">node</span>&#123;</span></span><br><span class="line">    Vertex oVex;        <span class="comment">// 弧头下标</span></span><br><span class="line">    Vertex iVex;        <span class="comment">// 弧尾下标</span></span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">node</span>* <span class="title">oNext</span>;</span> <span class="comment">// 出边表指针域</span></span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">node</span>* <span class="title">iNext</span>;</span> <span class="comment">// 入边表指针域</span></span><br><span class="line">    <span class="keyword">int</span> weight;         <span class="comment">// 权值</span></span><br><span class="line">&#125; OrthoNode;</span><br><span class="line"></span><br><span class="line"><span class="comment">/** 顶点数组元素类型 */</span></span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> &#123;</span></span><br><span class="line">    Vertex data;        <span class="comment">// 顶点</span></span><br><span class="line">    OrthoNode iFirst;   <span class="comment">// 入边表的首个结点</span></span><br><span class="line">    OrthoNode oFirst;   <span class="comment">// 出边表的首个节点</span></span><br><span class="line">&#125; VertexNode;</span><br><span class="line"></span><br><span class="line"><span class="comment">/** 图结构 */</span></span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> &#123;</span></span><br><span class="line">    VertexNode vexArray[MAX];    <span class="comment">// 顶点数组</span></span><br><span class="line">    <span class="keyword">int</span> v_count;                 <span class="comment">// 顶点数量</span></span><br><span class="line">    <span class="keyword">int</span> a_count;                 <span class="comment">// 弧的数量</span></span><br><span class="line">    GraphKind kind;              <span class="comment">// 图的类型（有向图/有向网）</span></span><br><span class="line">&#125; OrthoGraph;</span><br></pre></td></tr></table></figure>
+
+<h4 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h4><div class="note done"><p>十字链表5步走：</p><ol><li>生成有向图的出边表和入边表</li><li>组合成双邻接表</li><li>改造链表结点</li><li>删除重复结点</li><li>连接</li></ol></div>
+
+
+<h3 id="邻接多重表-Adjacent-Multilist-List"><a href="#邻接多重表-Adjacent-Multilist-List" class="headerlink" title="邻接多重表 Adjacent Multilist List"></a>邻接多重表 Adjacent Multilist List</h3><div class="note quote"><p>邻接多重表主要是针对无向图。</p></div>
+
+<p><img src="https://cdn.jsdelivr.net/gh/TCP404/Picgo/blog/illustration-pic/DataStruction/20201222185711829_15128.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/TCP404/Picgo/blog/illustration-pic/DataStruction/20201222185711829_15128.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" alt="无向图的邻接表表示法"></p>
+<p>从图中可以发现边链结点很多都是重复的。当删除一条边时，需要到两条边链中删除。<br>例如删除 边(v1, v3)，需要找到 v1 的边链，删除第二个结点，然后还要找到 v3 的边链，然后删除第一个结点。显然这是比较繁琐的。</p>
+<p>所以邻接多重表就在邻接表的基础上对边链的结点进行改造。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/TCP404/Picgo/blog/illustration-pic/DataStruction/20201222191259613_26797.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/TCP404/Picgo/blog/illustration-pic/DataStruction/20201222191259613_26797.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII="></p>
+<p>邻接表的结点由 <code>邻接点的下标</code> <strong>+</strong> <code>下一结点指针</code> 构成<br>邻接多重表的结点由 <code>顶点下标</code> <strong>+</strong> <code>顶点的下一结点的指针</code> <strong>+</strong> <code>邻接点下标</code> <strong>+</strong> <code>邻接点的下一结点的指针</code> 构成</p>
+<div class="note quote"><p>其思想是<strong>将所有顶点的边链整合起来</strong>，即节省空间，也提高了操作效率。</p></div>
+
+
+<p>下面介绍一下如何将邻接表改为邻接多重表：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/TCP404/Picgo/blog/illustration-pic/DataStruction/20201222224547724_28766.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/TCP404/Picgo/blog/illustration-pic/DataStruction/20201222224547724_28766.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" alt="改造边链结点"></p>
+<ol>
+<li>首先将 边链的结点进行改造：边链结点中不仅要填入邻接点的下标，还要填入顶点自己的下标。</li>
+</ol>
+<p>例如 顶点 v1 有两个邻接点 v2 和 v3，所以要在两个结点中的 ivex 处填入 v1 的下标 0。其他结点同理。看不懂可以对比两个图的边链。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/TCP404/Picgo/blog/illustration-pic/DataStruction/20201222225410133_12444.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/TCP404/Picgo/blog/illustration-pic/DataStruction/20201222225410133_12444.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" alt="删除重复结点"></p>
+<ol start="2">
+<li>例如 v1 的第一个边链结点中有 0 和 1，代表 v1 的地址和 v2 的地址；v2 的第一个边链结点也有 1 和 0，所以随便保留哪一个都可以。</li>
+</ol>
+<p>图中将 v2 的第一个边链结点删除，然后让 v1 的第一个边链结点也成为 v2 的边链结点。</p>
+<p>这一步怎么删，删完指向谁可能有点乱，请看下面的图。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/TCP404/Picgo/blog/illustration-pic/DataStruction/20201222225336253_30848.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/TCP404/Picgo/blog/illustration-pic/DataStruction/20201222225336253_30848.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" alt="对比图"></p>
+<ol start="3">
+<li>这里左侧两个图结构是同一个，第二个图结构多做了4条辅助线用来对照，实际真正的图是第一个的图结构，不要混淆。<br>对照第二个的图结构，和右侧的邻接多重表：</li>
+</ol>
+<p>顶点 v1 有两条边，邻接 v2 和 v3，在邻接多重表中用红色线连接起来了。单独观察 <code>VertexNode[0]</code> 和 <code>红色线连接的两个结点</code>，是不是跟邻接表相似？</p>
+<p><img src="https://cdn.jsdelivr.net/gh/TCP404/Picgo/blog/illustration-pic/DataStruction/20201222230310803_2534.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/TCP404/Picgo/blog/illustration-pic/DataStruction/20201222230310803_2534.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" alt="左：邻接多重表 右：邻接表"></p>
+<p>同样道理可以继续观察 v2、v3、v4。</p>
+<p>我们会发现邻接多重表的结点数少了，而且<strong>结点总数刚好就是边数</strong>。</p>
+<p>现在再来体会那句：<strong>将所有边链整合起来</strong>，再体会体会为什么要增加 <code>inext</code> 和 <code>jnext</code> 两个元素在结点中，其实就是为了保留原本的信息。</p>
+<p>邻接多重表中边链的结点不分是谁的，只记录边两头两个顶点的下标。</p>
+<div class="note quote"><p>扩展一下，如果无向网使用邻接多重表表示，是不是只要将边链结点多加一个 权值 的成员即可？如果还要再来个是否被搜索过的标记，是不是再加个 布尔值 的成员即可？</p></div>
+
+
+<h3 id="边集数组-Edgeset-Array"><a href="#边集数组-Edgeset-Array" class="headerlink" title="边集数组 Edgeset Array"></a>边集数组 Edgeset Array</h3><div class="note quote"><p>边集数组是由两个一维数组构成，一个是存储顶点的信息，另一个是存储边的信息。这个边数组的每个元素由一条边的起点下标 (begin) 、终点下标 (end) 和权 (weight) 组成。</p><p>边集数组关注的是边的集合。</p><p>在边集数组中要查找一个顶点的度需要扫描整个边数组，效率不高，因此更适合对边依次进行处理的操作，而不适合对顶点相关的操作。</p></div>
+
+<p><img src="https://cdn.jsdelivr.net/gh/TCP404/Picgo/blog/illustration-pic/DataStruction/20201222233340163_16644.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/TCP404/Picgo/blog/illustration-pic/DataStruction/20201222233340163_16644.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" alt="边集数组"></p>
+<h2 id="图的遍历"><a href="#图的遍历" class="headerlink" title="图的遍历"></a>图的遍历</h2><h3 id="深度优先搜索-DFS"><a href="#深度优先搜索-DFS" class="headerlink" title="深度优先搜索 DFS"></a>深度优先搜索 DFS</h3><div class="note quote"><p>深度优先遍历 (Depth-First-Search) 是仿树的前序遍历，该算法是利用栈来实现，也就是递归，所以在 DFS 中会有<strong>递归</strong>和<strong>回溯</strong>的说法。</p></div>
+
+<p>DFS 需要借助一个数组来记录访问状态，这里将其称作**状态数组 (Status Array) **；该数组长度为顶点总数，次序与顶点数组相同。</p>
+<p>从某一个顶点 vi 出发，则当前顶点为 vi；</p>
+<p>先将该顶点标记为已访问，然后遍历其所有邻接点，找到 <strong>第一个未访问的邻接点 vj</strong> 并置为当前顶点；</p>
+<p>接着从该顶点 vj 出发，先标记为已访问，然后遍历找到 <strong>第一个未访问的邻接点 vk</strong> 并置为当前顶点… 以此类推</p>
+<p><img src="https://cdn.jsdelivr.net/gh/TCP404/Picgo/blog/illustration-pic/DataStruction/20201227104338200_15211.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/TCP404/Picgo/blog/illustration-pic/DataStruction/20201227104338200_15211.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII="></p>
+<p>例如上图左边是一个图，我们可以转换一下思维，像右图一样把那两条边当作没有，就可以看成一棵二叉树</p>
+<p>运用树的前序遍历法可以得到：<strong>v0 -&gt; v1 -&gt; v5 -&gt; v2 -&gt; v4 -&gt; v3</strong>，而这正好就是 DFS 的结果。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/TCP404/Picgo/blog/illustration-pic/DataStruction/20201227104426654_6400.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/TCP404/Picgo/blog/illustration-pic/DataStruction/20201227104426654_6400.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII="><br>回过头来重新看着左边的图，假设从 v0 出发（其实图是无序的，从任何一点出发都可以）；</p>
+<ul>
+<li>v0 有两个邻接点 v1 和 v3，我们先选择 v1，然后从 v1 出发；</li>
+<li>v1 有两个邻接点 v5 和 v0，v0 已经访问过了，只能选择 v5，然后从 v5 出发；</li>
+<li>v5 有三个邻接点 v1、v2、v3，v1 已经访问过了，我们先选择 v2 ，然后从 v2 出发；</li>
+<li>v2 有两个邻接点 v5 和 v4，v5 已经访问过了，只能选择 v4，然后从 v4 出发；</li>
+<li>v4 有两个邻接点 v2 和 v3，v2 已经访问过了，只能选择 v3，然后从 v3 出发；</li>
+<li>v3 有三个邻接点 v4、v5、v0，全都访问过了，到此遍历也就结束了。</li>
+</ul>
+<p>如果仔细阅读上面6个步骤会发现，当我们遍历时，我们需要知道这个顶点是不是被访问过了，所以我们需要一个状态数组来记录；</p>
+<p>而当有多个邻接点可以访问时，我们选择的依据，其实是顶点在顶点数组中存储的顺序所决定的。</p>
+<p>例如在 v5 的时候，选择了 v2 而不是 v3，其实是我们默认顶点数组是按照 <code>v0、v1、v2、v3、v4、v5</code> 的顺序存储，假设是按照 <code>v0、v1、v3、v2、v4、v5</code> 存储，v3 在 v2 前，则会先访问 v3。</p>
+<h4 id="邻接矩阵的-DFS"><a href="#邻接矩阵的-DFS" class="headerlink" title="邻接矩阵的 DFS"></a>邻接矩阵的 DFS</h4><p><img src="https://cdn.jsdelivr.net/gh/TCP404/Picgo/blog/illustration-pic/DataStruction/20201227102907217_22966.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/TCP404/Picgo/blog/illustration-pic/DataStruction/20201227102907217_22966.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" alt="邻接矩阵的 DFS"></p>
+<p>先将图的边用矩阵表示，在计算机中使用二维数组存储。<br>然后设置一个状态数组，长度和顶点数组相同。</p>
+<p>接下来就可以执行 DFS 了。</p>
+<p>第一步：先初始化状态数组为未访问状态，即最开始所有顶点都未访问。<br>第二步：遍历顶点数组，让数组里每个顶点都放入遍历执行函数中，不过在调用遍历执行函数之前要先判断顶点是否已被访问。</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> visited[MAX];</span><br><span class="line"></span><br><span class="line"><span class="comment">/** DFS begin */</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * @description: 深度优先遍历算法</span></span><br><span class="line"><span class="comment"> * @param G 需要被遍历的图</span></span><br><span class="line"><span class="comment"> * @return 无</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">DFSTraverse_AMG</span><span class="params">(MatrixGraph* G)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// 初始化状态数组</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; G-&gt;v_count; i++)</span><br><span class="line">        visited[i] = UNVISITED;</span><br><span class="line">    <span class="comment">// DFS 遍历</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; G-&gt;v_count; i++)</span><br><span class="line">        <span class="keyword">if</span> (!visited[i]) <span class="comment">// 如果某个顶点未访问</span></span><br><span class="line">            DFS_AMG(G, i); <span class="comment">// 调用遍历执行函数</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>遍历执行函数就是 DFS 的核心算法了。<br>该函数接收顶点的下标，并做3件事：</p>
+<ol>
+<li>访问当前顶点</li>
+<li>更改顶点的访问状态</li>
+<li>获取第一个未访问的邻接点下标，然后递归进去，找不到则回溯</li>
+</ol>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * @description: 深度优先搜索的核心算法</span></span><br><span class="line"><span class="comment"> * @param G 要搜索的图</span></span><br><span class="line"><span class="comment"> * @param index 要搜索的顶点的下标</span></span><br><span class="line"><span class="comment"> * @return 无</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">DFS_AMG</span><span class="params">(MatrixGraph* G, <span class="keyword">int</span> index)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;-&gt; %s &quot;</span>, G-&gt;vexes[index]); <span class="comment">// 访问当前顶点</span></span><br><span class="line">    visited[index] = VISITED; <span class="comment">// 更改当前顶点的访问状态</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; G-&gt;v_count; j++)</span><br><span class="line">        <span class="keyword">if</span> (G-&gt;matrix[index][j] &amp;&amp; !visited[j]) <span class="comment">// 获取第一个未访问的邻接点下标然后递归进去</span></span><br><span class="line">            DFS_AMG(G, j);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/** DFS end */</span></span><br></pre></td></tr></table></figure>
+
+<p>在邻接矩阵中，获取某个顶点的所有邻接点就是遍历其所在的行，找到第一个未访问的邻接点。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/TCP404/Picgo/blog/illustration-pic/DataStruction/20201227111845411_7573.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/TCP404/Picgo/blog/illustration-pic/DataStruction/20201227111845411_7573.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII="></p>
+<p>从邻接矩阵中看如上图</p>
+<ul>
+<li>最开始从第 0 行进行（箭头1），找到第一个邻接点的下标，其列标为 1，于是跳到第 1 行（箭头2）</li>
+<li>第 1 行第一个邻接点是 v0 ，已经访问过，所以跳过（箭头3），一直找到 v5 这个邻接点，其列标为 5，于是跳到第 5 行（箭头4）</li>
+<li>第 5 行第一个邻接点的 v1，已经访问过，所以跳过（箭头5），接下去找到第二个邻接点 v2，其列标为 2，于是跳到第 2 行（箭头6）</li>
+<li>接下去的步骤都是这个思路，画出来太乱就没画了。</li>
+</ul>
+<h4 id="邻接表的-DFS"><a href="#邻接表的-DFS" class="headerlink" title="邻接表的 DFS"></a>邻接表的 DFS</h4><p>邻接表的具体代码实现跟邻接矩阵稍稍不同而已，只不过把数组处理换成了链表处理<br><img src="https://cdn.jsdelivr.net/gh/TCP404/Picgo/blog/illustration-pic/DataStruction/20201227115455825_10282.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/TCP404/Picgo/blog/illustration-pic/DataStruction/20201227115455825_10282.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII="></p>
+<ul>
+<li>最开始从 v1 开始（箭头1），访问 v1 的边链上第一个结点（箭头2），得到了 v2 的下标，于是跳到 v2（箭头3）</li>
+<li>接着从 v2 开始，先访问 v2，然后遍历 v2 的边链上的结点（箭头4），第一个结点 0 是 v1 的下标，已经访问过了，于是继续下一个结点，得到了 v3 的下标，于是跳到 v3（箭头5）</li>
+<li>接着从 v3 开始，先访问 v3，然后遍历 v3 的边链上的结点（箭头6），第一和第二个结点是 v1 和 v2 的下标，已经访问过，所以接着下一个结点，得到 v4 的下标，于是跳到 v4（箭头7）</li>
+<li>接着从 v4 开始，先访问 v4，然后遍历 v4 的边链上的结点，发现得到的是 v3 的下标，已经访问过了，再下去没有了，于是结束。</li>
+</ul>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">DFSTraverse_ALG</span><span class="params">(AdjListGraph* G)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">//  初始化状态数组</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; G-&gt;v_count; i++)</span><br><span class="line">        visited[i] = UNVISITED;</span><br><span class="line">    <span class="comment">// DFS遍历</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; G-&gt;v_count; i++)</span><br><span class="line">        <span class="keyword">if</span> (!visited[i]) <span class="comment">// 如果顶点没有被访问，就递归调用</span></span><br><span class="line">            DFS_ALG(G, i);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">DFS_ALG</span><span class="params">(AdjListGraph* G, <span class="keyword">int</span> index)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot; -&gt; %s&quot;</span>, G-&gt;vexes[index].data);    <span class="comment">// 访问顶点</span></span><br><span class="line">    visited[index] = VISITED;                  <span class="comment">// 更改状态</span></span><br><span class="line"></span><br><span class="line">   <span class="comment">// 寻找邻接点</span></span><br><span class="line">    EdgeNode* eNode = G-&gt;vexes[index].firstEdge;</span><br><span class="line">    <span class="keyword">while</span> (eNode) &#123;</span><br><span class="line">        <span class="keyword">if</span> (!visited[eNode-&gt;adjvex]) <span class="comment">// 如果邻接点未访问就递归访问</span></span><br><span class="line">            DFS_ALG(G, eNode-&gt;adjvex);</span><br><span class="line">        eNode = eNode-&gt;nextEdge;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><code>DFSTraverse_ALG()</code> 和 <code>DFSTraverse_AMG()</code> 是一样的，初始化状态数组，然后遍历顶点数组，调用 DFS 算法</p>
+<p><code>DFS_AMG()</code> 中是遍历某一行，<code>DFS_ALG()</code> 中是遍历某一条链表，执行的逻辑都是如果邻接点为访问就递归。<br><img src="https://cdn.jsdelivr.net/gh/TCP404/Picgo/blog/illustration-pic/DataStruction/20201227114050613_21706.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/TCP404/Picgo/blog/illustration-pic/DataStruction/20201227114050613_21706.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII="></p>
+<h3 id="广度优先-BFS"><a href="#广度优先-BFS" class="headerlink" title="广度优先 BFS"></a>广度优先 BFS</h3><div class="note quote"><p>广度优先遍历 (Breadth-First-Search) 是仿树的层次遍历。该算法是利用队列实现的。</p></div>
+
+
+<p>BFS 的思想是，把顶点都放到队列中，当访问一个顶点，即为出队一个元素；当出队一个元素时，需将其所有未访问的邻接点入队。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/TCP404/Picgo/blog/illustration-pic/DataStruction/20201227214919073_23879.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/TCP404/Picgo/blog/illustration-pic/DataStruction/20201227214919073_23879.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII="></p>
+<ol>
+<li>先从 v0 开始遍历，打印 v0，然后 v0 入队</li>
+<li>队列不为空，v0 出队，同时 v0 的未入队且未访问的邻接点 v1、v3 入队，然后访问 v1、v3</li>
+<li>队列不为空，v1 出队，同时 v1 的未入队且未访问的邻接点 v5、v6 入队，然后访问 v5、v6</li>
+<li>队列不为空，v3 出队，同时 v3 的未入队且未访问的邻接点 v4 入队，然后访问 v4</li>
+<li>队列不为空，v5 出队，同时 v5 的未入队且未访问的邻接点 v2 入队，然后访问 v2</li>
+<li>队列不为空，v6 出队，同时 v6 已经没有未入队且为访问的邻接点了，不做入队操作</li>
+<li>队列不为空，v4 出队</li>
+<li>队列不为空，v2 出队<br>队列为空，结束<br>到此 BFS 执行完毕</li>
+</ol>
+<p>所以该图的 BFS 顺序为 <code>v0 -&gt; v1 -&gt; v3 -&gt; v5 -&gt; v6 -&gt; v4 -&gt; v2</code>。</p>
+<h4 id="队列"><a href="#队列" class="headerlink" title="队列"></a>队列</h4><p>BFS 需要借助队列实现，下面是队列的代码：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// LinkQueue.h</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">ifndef</span> LINK_QUEUE_H_INCLUDED</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> LINK_QUEUE_H_INCLUDED</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&quot;GraphModel.h&quot;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">typedef</span> Vertex Element;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 结点</span></span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">QueueNode</span> &#123;</span></span><br><span class="line">    Element data;</span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">QueueNode</span>* <span class="title">next</span>;</span></span><br><span class="line">&#125; QueueNode;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 队列</span></span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> &#123;</span></span><br><span class="line">    QueueNode* front;</span><br><span class="line">    QueueNode* rear;</span><br><span class="line">&#125; LinkedQueue;</span><br><span class="line"></span><br><span class="line"><span class="function">Status <span class="title">InitLinkedQueue</span><span class="params">(LinkedQueue* q)</span></span>;</span><br><span class="line"><span class="function">Status <span class="title">EnQueue</span><span class="params">(LinkedQueue* q, Element e)</span></span>;</span><br><span class="line"><span class="function">Status <span class="title">DeQueue</span><span class="params">(LinkedQueue* q, Element* e)</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">isEmptyQueue</span><span class="params">(LinkedQueue* q)</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">PrintLinkedQueue</span><span class="params">(LinkedQueue* q)</span></span>;</span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">endif</span> <span class="comment">// LINK_QUEUE_H_INCLUDED</span></span></span><br></pre></td></tr></table></figure>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// LinkQueue.c</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&quot;LinkQueue.h&quot;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function">Status <span class="title">InitLinkedQueue</span><span class="params">(LinkedQueue* q)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    q-&gt;front = <span class="literal">NULL</span>;</span><br><span class="line">    q-&gt;rear = <span class="literal">NULL</span>;</span><br><span class="line">    <span class="keyword">return</span> OK;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function">Status <span class="title">EnQueue</span><span class="params">(LinkedQueue* q, Element e)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    QueueNode* <span class="keyword">new</span> = <span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(QueueNode));</span><br><span class="line">    <span class="keyword">new</span>-&gt;data = e;</span><br><span class="line">    <span class="keyword">new</span>-&gt;next = <span class="literal">NULL</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (isEmptyQueue(q)) &#123; <span class="comment">// 处理空队情况</span></span><br><span class="line">        q-&gt;front = q-&gt;rear = <span class="keyword">new</span>;</span><br><span class="line">        <span class="keyword">return</span> OK;</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123; <span class="comment">// 处理非空队情况</span></span><br><span class="line">        q-&gt;rear-&gt;next = <span class="keyword">new</span>; <span class="comment">// 原队尾结点的next指向新结点</span></span><br><span class="line">        q-&gt;rear = <span class="keyword">new</span>; <span class="comment">// 更新队尾指针</span></span><br><span class="line">        <span class="keyword">return</span> OK;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> ERROR;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function">Status <span class="title">DeQueue</span><span class="params">(LinkedQueue* q, Element* e)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (isEmptyQueue(q)) &#123; <span class="comment">// 空队直接返回</span></span><br><span class="line">        e = <span class="literal">NULL</span>;</span><br><span class="line">        <span class="keyword">return</span> OK;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (q-&gt;front == q-&gt;rear) &#123; <span class="comment">// 处理队中只有一个结点的情况</span></span><br><span class="line">        *e = q-&gt;front-&gt;data;</span><br><span class="line">        <span class="built_in">free</span>(q-&gt;front);</span><br><span class="line">        q-&gt;front = q-&gt;rear = <span class="literal">NULL</span>;</span><br><span class="line">        <span class="keyword">return</span> OK;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 处理队中不止一个结点的情况</span></span><br><span class="line">    QueueNode* del = q-&gt;front; <span class="comment">// 标记队头结点</span></span><br><span class="line">    q-&gt;front = del-&gt;next; <span class="comment">// 队头指针指向下一个结点</span></span><br><span class="line">    *e = del-&gt;data; <span class="comment">// 取数据</span></span><br><span class="line">    <span class="built_in">free</span>(del); <span class="comment">// 删除原队头结点</span></span><br><span class="line">    del = <span class="literal">NULL</span>;</span><br><span class="line">    <span class="keyword">return</span> OK;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">isEmptyQueue</span><span class="params">(LinkedQueue* q)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> q-&gt;front == <span class="literal">NULL</span> || q-&gt;rear == <span class="literal">NULL</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">PrintLinkedQueue</span><span class="params">(LinkedQueue* q)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (isEmptyQueue(q)) &#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;Queue Empty&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    QueueNode* p = q-&gt;front;</span><br><span class="line">    <span class="keyword">while</span> (p) &#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;\t%s &quot;</span>, p-&gt;data);</span><br><span class="line">        p = p-&gt;next;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+<h4 id="邻接矩阵的-BFS"><a href="#邻接矩阵的-BFS" class="headerlink" title="邻接矩阵的 BFS"></a>邻接矩阵的 BFS</h4><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/** BFS begin */</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">BFSTraverse_AMG</span><span class="params">(MatrixGraph* G)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; G-&gt;v_count; i++)</span><br><span class="line">        visited[i] = UNVISITED;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 循环遍历每个顶点</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; G-&gt;v_count; i++)</span><br><span class="line">        <span class="keyword">if</span> (!visited[i]) <span class="comment">// 如果没有访问过就遍历访问</span></span><br><span class="line">            BFS_AMG(G, i);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">BFS_AMG</span><span class="params">(MatrixGraph* G, <span class="keyword">int</span> index)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;-&gt; %s &quot;</span>, G-&gt;vexes[index]);    <span class="comment">// 访问顶点</span></span><br><span class="line">    visited[index] = VISITED;             <span class="comment">// 更改访问状态</span></span><br><span class="line"></span><br><span class="line">    LinkQueue <span class="built_in">queue</span>;</span><br><span class="line">    InitLinkedQueue(&amp;<span class="built_in">queue</span>);            <span class="comment">// 初始化队列</span></span><br><span class="line">    EnQueue(&amp;<span class="built_in">queue</span>, G-&gt;vexes[index]);   <span class="comment">// 当前顶点入队，对应上图中第一步的 v0 入队</span></span><br><span class="line">    <span class="keyword">while</span> (!isEmptyQueue(&amp;<span class="built_in">queue</span>)) &#123;    <span class="comment">// 取出队头元素，遍历队头顶点的所有邻接点</span></span><br><span class="line"></span><br><span class="line">        Vertex vex;</span><br><span class="line">        DeQueue(&amp;<span class="built_in">queue</span>, &amp;vex);     <span class="comment">// 取出的队头顶点</span></span><br><span class="line">        <span class="comment">// 获取该顶点的所有邻接点</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = FirstAdjVex_AMG(G, vex); i; i = SecondAdjVex_AMG(G, vex, G-&gt;vexes[i])) &#123;</span><br><span class="line">            <span class="keyword">if</span> (!visited[i]) &#123;</span><br><span class="line">                <span class="built_in">printf</span>(<span class="string">&quot;-&gt; %s &quot;</span>, G-&gt;vexes[i]);    <span class="comment">// 遇到顶点的邻接点先访问</span></span><br><span class="line">                visited[i] = VISITED;</span><br><span class="line">                EnQueue(&amp;<span class="built_in">queue</span>, G-&gt;vexes[i]);     <span class="comment">// 再入队</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">FirstAdjVex_AMG</span><span class="params">(MatrixGraph* G, Vertex v)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> defaultWeight = G-&gt;kind &lt;= <span class="number">1</span> ? <span class="number">0</span> : INT_MAX; <span class="comment">// 图/网 的默认权重</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">int</span> vex_index = LocateVex(G, v); <span class="comment">// 获取顶点下标</span></span><br><span class="line">    <span class="keyword">if</span> (vex_index == <span class="number">-1</span>)</span><br><span class="line">        <span class="keyword">return</span> ERROR;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 搜索图的邻接矩阵中域顶点v的第一个邻接点下标</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; G-&gt;v_count; j++)</span><br><span class="line">        <span class="keyword">if</span> (G-&gt;matrix[vex_index][j] != defaultWeight)</span><br><span class="line">            <span class="keyword">return</span> j;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">SecondAdjVex_AMG</span><span class="params">(MatrixGraph* G, Vertex v1, Vertex v2)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> defaultWeight = G-&gt;kind &lt;= <span class="number">1</span> ? <span class="number">0</span> : INT_MAX; <span class="comment">// 图/网 的默认权重</span></span><br><span class="line">    <span class="keyword">int</span> index1 = LocateVex(G, v1);</span><br><span class="line">    <span class="keyword">int</span> index2 = LocateVex(G, v2);</span><br><span class="line">    <span class="keyword">if</span> (index1 == <span class="number">-1</span> || index2 == <span class="number">-1</span>)</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = index2 + <span class="number">1</span>; i &lt; G-&gt;v_count; i++)</span><br><span class="line">        <span class="keyword">if</span> (G-&gt;matrix[index1][i] != defaultWeight)</span><br><span class="line">            <span class="keyword">return</span> i;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/** BFS end */</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="邻接表的-BFS"><a href="#邻接表的-BFS" class="headerlink" title="邻接表的 BFS"></a>邻接表的 BFS</h4><p>按理来说邻接矩阵的 BFS 和邻接表的 BFS 应该是一样的，至少在无向图中是一样的。<br>但是如果邻接表是用的头插法，那可能结果是不一样的</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">BFSTraverse_ALG</span><span class="params">(AdjListGraph* G)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; G-&gt;v_count; i++)    <span class="comment">// 初始化状态数组</span></span><br><span class="line">        visited[i] = UNVISITED;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; G-&gt;v_count; i++)    <span class="comment">// 遍历顶点数组，逐一对每一个未访问的顶点执行 BFS</span></span><br><span class="line">        <span class="keyword">if</span> (!visited[i])</span><br><span class="line">            BFS_ALG(G, i);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">BFS_ALG</span><span class="params">(AdjListGraph* G, <span class="keyword">int</span> index)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;-&gt; %s &quot;</span>, G-&gt;vexes[index].data);    <span class="comment">// 访问顶点</span></span><br><span class="line">    visited[index] = VISITED;                  <span class="comment">// 更改顶点状态</span></span><br><span class="line"></span><br><span class="line">    LinkQueue <span class="built_in">queue</span>;</span><br><span class="line">    InitLinkedQueue(&amp;<span class="built_in">queue</span>);</span><br><span class="line">    EnQueue(&amp;<span class="built_in">queue</span>, G-&gt;vexes[index].data);     <span class="comment">// 当前顶点入队</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">while</span> (!isEmptyQueue(&amp;<span class="built_in">queue</span>)) &#123;    <span class="comment">// 取出队头元素，遍历队头顶点的所有邻接点</span></span><br><span class="line">        Vertex vex;</span><br><span class="line">        DeQueue(&amp;<span class="built_in">queue</span>, &amp;vex);    <span class="comment">// 取出队头元素</span></span><br><span class="line">        <span class="comment">// 遍历所有邻接点</span></span><br><span class="line">        EdgeNode* node = G-&gt;vexes[LocateVex_ADJ(G, vex)].firstEdge;</span><br><span class="line">        <span class="keyword">while</span> (node) &#123;</span><br><span class="line">            <span class="keyword">if</span> (!visited[node-&gt;adjvex]) &#123;</span><br><span class="line">                <span class="built_in">printf</span>(<span class="string">&quot;-&gt; %s &quot;</span>, G-&gt;vexes[node-&gt;adjvex].data);    <span class="comment">// 邻接点先访问</span></span><br><span class="line">                visited[node-&gt;adjvex] = VISITED;</span><br><span class="line">                EnQueue(&amp;<span class="built_in">queue</span>, G-&gt;vexes[node-&gt;adjvex].data);    <span class="comment">// 再入队</span></span><br><span class="line">            &#125;</span><br><span class="line">            node = node-&gt;nextEdge;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+<h2 id="总结-1"><a href="#总结-1" class="headerlink" title="总结"></a>总结</h2><ol>
+<li><p>存储结构：</p>
+<ul>
+<li>邻接矩阵：一维数组存储顶点集+二维数组存储边/弧</li>
+<li>邻接表：一维数组存储顶点集+单链表存储边/弧<ul>
+<li>出边表：链表的结点存储的是弧头的下标</li>
+<li>入边表：链表的结点存储的是弧尾的下标</li>
+</ul>
+</li>
+<li>十字链表：将出边表和入边表整合起来，主要针对有向图</li>
+<li>邻接多重表：将所有边链的结点整合起来，去除重复的结点，主要针对无向图</li>
+<li>边集数组：一维数组存储顶点集+一维数组存储边集，关注的是边</li>
+</ul>
+</li>
+<li><p>图的遍历：</p>
+<ul>
+<li><strong>深度优先搜索 DFS</strong> 和 <strong>广度优先搜索 BFS</strong> 是图的最基本的遍历方式。</li>
+<li>DFS 是仿树的前序遍历，利用栈做辅助，具体实现是不断将当前顶点的第一个未访问邻接点拿去递归。</li>
+<li>BFS 是仿树的层序遍历，利用队列做辅助，具体实现是每当出队一个元素时，就访问其所有未访问且未入队的邻接点，并将这些邻接点入队。</li>
+<li>使用邻接矩阵存储和使用邻接表存储的图在做 DFS 或 BFS 时没什么区别，只不过邻接矩阵是操作二维数组，邻接表是操作链表。</li>
+</ul>
+</li>
+</ol>
+<p>[^1]: 对称矩阵：n阶矩阵的元满足 $a_{ij} = a_{ji}, (0 \leq i, j \leq n)$，即从矩阵左上角到右下角的主对角线为轴，右上角的元与左下角相对应的元完全相等。</p>
+
+  
+  
+    
+    <div class='footer'>
+      
+      
+        
+  <div class="related_posts">
+    <section class='header'>
+      <i class="fas fa-bookmark fa-fw" aria-hidden="true"></i><span>相关文章</span>
+    </section>
+    <section class='body'>
+      <div class="vlts-rps"><a class="item" href="/posts/44644.html" title="DataStruction 0x00 绪论" rel="bookmark "><img src="https://cdn.jsdelivr.net/gh/TCP404/Picgo/blog/cover/DataStruction.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/TCP404/Picgo/blog/cover/DataStruction.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" /><span class="title">DataStruction 0x00 绪论</span><span class="excerpt">什么是数据结构？</span></a><a class="item" href="/posts/17036.html" title="DataStruction 0x01 算法" rel="bookmark "><img src="https://cdn.jsdelivr.net/gh/TCP404/Picgo/blog/cover/DataStruction.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/TCP404/Picgo/blog/cover/DataStruction.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" /><span class="title">DataStruction 0x01 算法</span><span class="excerpt">什么是算法？</span></a><a class="item" href="/posts/21668.html" title="DataStruction 0x02 线性表" rel="bookmark "><img src="https://cdn.jsdelivr.net/gh/TCP404/Picgo/blog/cover/Sequence.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/TCP404/Picgo/blog/cover/Sequence.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" /><span class="title">DataStruction 0x02 线性表</span><span class="excerpt">什么是线性表？</span></a><a class="item" href="/posts/29925.html" title="DataStruction 0x03 栈" rel="bookmark "><img src="https://cdn.jsdelivr.net/gh/TCP404/Picgo/blog/cover/Stack.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/TCP404/Picgo/blog/cover/Stack.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" /><span class="title">DataStruction 0x03 栈</span><span class="excerpt">什么是栈？</span></a><a class="item" href="/posts/50917.html" title="DataStruction 0x04 队列" rel="bookmark "><img src="https://cdn.jsdelivr.net/gh/TCP404/Picgo/blog/cover/Queue.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/TCP404/Picgo/blog/cover/Queue.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" /><span class="title">DataStruction 0x04 队列</span><span class="excerpt">什么是队列？</span></a></div></section></div>
+      
+      
+        <div class='copyright'>
+          <blockquote>
+            
+              
+                <p>博客内容遵循 署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</p>
+
+              
+            
+              
+                <p>本文永久链接是：<a href=https://www.boii.xyz/posts/55493>https://www.boii.xyz/posts/55493</a></p>
+              
+            
+          </blockquote>
+        </div>
+      
+      
+    </div>
+  
+  
+    
+
+
+  <div class='article-meta' id="bottom">
+    <div class='new-meta-box'>
+      
+        
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-06-30T01:09:22+08:00">
+  <a class='notlink'>
+    <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
+    <p>更新于：2021年6月30日</p>
+  </a>
+</div>
+
+        
+      
+        
+          
+  
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>数据结构</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/DataStruction/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>DataStruction</p></a></div>
+
+
+        
+      
+        
+          
+  <div class="new-meta-item share -mob-share-list">
+  <div class="-mob-share-list share-body">
+    
+      
+        <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://www.boii.xyz/posts/55493&title=DataStruction 0x08 图-2 - Boii&pics=https://cdn.jsdelivr.net/gh/TCP404/Picgo/blog/thumbnail/algorithms.png&summary=图的存储"
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qq.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qq.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://www.boii.xyz/posts/55493&title=DataStruction 0x08 图-2 - Boii&pics=https://cdn.jsdelivr.net/gh/TCP404/Picgo/blog/thumbnail/algorithms.png&summary=图的存储"
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qzone.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qzone.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="http://service.weibo.com/share/share.php?url=https://www.boii.xyz/posts/55493&title=DataStruction 0x08 图-2 - Boii&pics=https://cdn.jsdelivr.net/gh/TCP404/Picgo/blog/thumbnail/algorithms.png&summary=图的存储"
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/weibo.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/weibo.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=">
+          
+        </a>
+      
+    
+      
+    
+      
+    
+  </div>
+</div>
+
+
+
+        
+      
+        
+          
+  
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>数据结构</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/DataStruction/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>DataStruction</p></a></div>
+
+
+        
+      
+    </div>
+  </div>
+
+
+  
+  
+
+  
+    <div class="prev-next">
+      
+        <a class='prev' href='/posts/25754'>
+          <p class='title'><i class="fas fa-chevron-left" aria-hidden="true"></i>OneTiny 开发日记-2021-6-22</p>
+          <p class='content'>开发 OneTiny 时的一点思路
+
+
+需求自从买了台二手 Surface 二合一电脑以后，的确效率上去了，可以手写真香，手终于能跟上脑子了。一开始拿来当出门用的备用机，轻便，但是使用久了以后，...</p>
+        </a>
+      
+      
+        <a class='next' href='/posts/55674'>
+          <p class='title'>DataStruction 0x07 图-1<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
+          <p class='content'>什么是图？
+
+
+7-图图 是有顶点的有穷非空集合和顶点之间边的集合组成，通常表示为：G（ V, E ）其中 G 表示一个图，V 是顶点集合，E 是边的集合。
+
+线性表的数据元素 -&gt; 元素...</p>
+        </a>
+      
+    </div>
+  
+</article>
+
+
+  
+
+  <article class="post white-box reveal shadow" id="comments">
+    <p ct><i class='fas fa-comments'></i> 哔哔</p>
+    
+    <div id="valine_container" class="valine_thread">
+  <i class="fas fa-cog fa-spin fa-fw fa-2x"></i>
+</div>
+
+  </article>
+
+
+
+
+
+  <script>
+  // https://github.com/theme-next/hexo-theme-next/blob/master/layout/_third-party/math/mathjax.swig
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = 'https://cdn.jsdelivr.net/npm/mathjax@3.0/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    // 文章章节标题不能为 “MathJax” ，否则会报错。
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
+
+
+
+</div>
+<aside class='l_side'>
+  
+  
+    
+    
+
+
+
+  <section class="widget toc-wrapper shadow desktop mobile" id="toc-div" >
+    
+  <header>
+    
+      <i class="fas fa-list fa-fw" aria-hidden="true"></i><span class='name'>本文目录</span>
+    
+  </header>
+
+
+    <div class='content'>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9B%BE%E7%9A%84ADT"><span class="toc-text">图的ADT</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9B%BE%E7%9A%84%E5%AD%98%E5%82%A8%E7%BB%93%E6%9E%84"><span class="toc-text">图的存储结构</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%82%BB%E6%8E%A5%E7%9F%A9%E9%98%B5-Adjacent-Matrix"><span class="toc-text">邻接矩阵 Adjacent Matrix</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%97%A0%E5%90%91%E5%9B%BE"><span class="toc-text">无向图</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%90%86%E8%AE%BA%E6%8F%8F%E8%BF%B0"><span class="toc-text">理论描述</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E4%BB%A3%E7%A0%81%E5%AE%9E%E7%8E%B0"><span class="toc-text">代码实现</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%9C%89%E5%90%91%E5%9B%BE"><span class="toc-text">有向图</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%90%86%E8%AE%BA%E6%8F%8F%E8%BF%B0-1"><span class="toc-text">理论描述</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E4%BB%A3%E7%A0%81%E5%AE%9E%E7%8E%B0-1"><span class="toc-text">代码实现</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%BD%91"><span class="toc-text">网</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%90%86%E8%AE%BA%E6%8F%8F%E8%BF%B0-2"><span class="toc-text">理论描述</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E4%BB%A3%E7%A0%81%E5%AE%9E%E7%8E%B0-2"><span class="toc-text">代码实现</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%82%BB%E6%8E%A5%E8%A1%A8-Adjacent-List"><span class="toc-text">邻接表 Adjacent List</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%97%A0%E5%90%91%E5%9B%BE%E7%9A%84%E9%82%BB%E6%8E%A5%E8%A1%A8"><span class="toc-text">无向图的邻接表</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%9C%89%E5%90%91%E5%9B%BE%E7%9A%84%E9%82%BB%E6%8E%A5%E8%A1%A8"><span class="toc-text">有向图的邻接表</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%9C%89%E5%90%91%E7%BD%91%E7%9A%84%E9%82%BB%E6%8E%A5%E8%A1%A8"><span class="toc-text">有向网的邻接表</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BB%A3%E7%A0%81%E5%AE%9E%E7%8E%B0-3"><span class="toc-text">代码实现</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8D%81%E5%AD%97%E9%93%BE%E8%A1%A8-Orthogonal-List"><span class="toc-text">十字链表 Orthogonal List</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BB%A3%E7%A0%81%E5%AE%9E%E7%8E%B0-4"><span class="toc-text">代码实现</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%80%BB%E7%BB%93"><span class="toc-text">总结</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%82%BB%E6%8E%A5%E5%A4%9A%E9%87%8D%E8%A1%A8-Adjacent-Multilist-List"><span class="toc-text">邻接多重表 Adjacent Multilist List</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BE%B9%E9%9B%86%E6%95%B0%E7%BB%84-Edgeset-Array"><span class="toc-text">边集数组 Edgeset Array</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9B%BE%E7%9A%84%E9%81%8D%E5%8E%86"><span class="toc-text">图的遍历</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B7%B1%E5%BA%A6%E4%BC%98%E5%85%88%E6%90%9C%E7%B4%A2-DFS"><span class="toc-text">深度优先搜索 DFS</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%82%BB%E6%8E%A5%E7%9F%A9%E9%98%B5%E7%9A%84-DFS"><span class="toc-text">邻接矩阵的 DFS</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%82%BB%E6%8E%A5%E8%A1%A8%E7%9A%84-DFS"><span class="toc-text">邻接表的 DFS</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B9%BF%E5%BA%A6%E4%BC%98%E5%85%88-BFS"><span class="toc-text">广度优先 BFS</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%98%9F%E5%88%97"><span class="toc-text">队列</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%82%BB%E6%8E%A5%E7%9F%A9%E9%98%B5%E7%9A%84-BFS"><span class="toc-text">邻接矩阵的 BFS</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%82%BB%E6%8E%A5%E8%A1%A8%E7%9A%84-BFS"><span class="toc-text">邻接表的 BFS</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%80%BB%E7%BB%93-1"><span class="toc-text">总结</span></a></li></ol>
+    </div>
+  </section>
+
+
+  
+
+
+</aside>
+
+
+
+		  
+		  <!--此文件用来存放一些不方便取值的变量-->
+<!--思路大概是将值藏到重加载的区域内-->
+
+<script>
+  window.pdata={}
+  pdata.ispage=true;
+  pdata.postTitle="DataStruction 0x08 图-2";
+  pdata.commentPath="";
+  pdata.commentPlaceholder="";
+  // header 这里无论是否开启pjax都需要
+  var l_header=document.getElementById("l_header");
+  
+  l_header.classList.add("show");
+  
+  
+    // cover
+    var cover_wrapper=document.querySelector('.cover-wrapper');
+    
+    cover_wrapper.id="none";
+    cover_wrapper.style.display="none";
+    
+  
+</script>
+
+        </div>
+        
+  
+  <footer class="footer clearfix">
+    <br><br>
+    
+      
+        <div class="aplayer-container">
+          
+
+  
+    <meting-js
+      theme='#1BCDFC'
+      autoplay='false'
+      volume='0.1'
+      loop='all'
+      order='random'
+      fixed='false'
+      list-max-height='320px'
+      server='netease'
+      type='playlist'
+      id='2798155811'
+      list-folded='true'>
+    </meting-js>
+  
+
+
+        </div>
+      
+    
+      
+        <br>
+        <div class="social-wrapper">
+          
+            
+              <a href="/"
+                class="social fas fa-rss flat-btn"
+                target="_blank"
+                rel="external nofollow noopener noreferrer">
+                
+              </a>
+            
+          
+            
+              <a href="mailto:i@tcp404.com"
+                class="social fas fa-envelope flat-btn"
+                target="_blank"
+                rel="external nofollow noopener noreferrer">
+                
+              </a>
+            
+          
+            
+              <a href="https://github.com/TCP404"
+                class="social fab fa-github flat-btn"
+                target="_blank"
+                rel="external nofollow noopener noreferrer">
+                
+              </a>
+            
+          
+            
+              <a href="https://music.163.com/#/user/home?id=424260524"
+                class="social fas fa-headphones-alt flat-btn"
+                target="_blank"
+                rel="external nofollow noopener noreferrer">
+                
+              </a>
+            
+          
+        </div>
+      
+    
+      
+        <div><p>博客内容遵循 <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</a></p>
+</div>
+      
+    
+      
+        <div class='copyright'>
+        <p><a target="_blank" rel="noopener" href="https://www.tcp404.com/">Copyright © 2019-2021 Mr. Boii</a></p>
+
+        </div>
+      
+    
+      
+        
+          <div><p><a target="_blank" rel="noopener" href="https://beian.miit.gov.cn/">粤ICP备18106475号</a></p>
+</div>
+        
+      
+    
+  </footer>
+
+
+        <a id="s-top" class="fas fa-arrow-up fa-fw" href="javascript:void(0)"></a>
+      </div>
+    </div>
+    <div>
+      <script>
+/************这个文件存放不需要重载的全局变量和全局函数*********/
+window.volantis={};
+window.volantis.loadcss=document.getElementById("loadcss");
+/******************** Pjax ********************************/
+function VPjax(){
+	this.list=[] // 存放回调函数
+	this.start=()=>{
+	  for(var i=0;i<this.list.length;i++){
+		this.list[i].run();
+	  }
+	}
+	this.push=(fn,name)=>{
+		var f=new PjaxItem(fn,name);
+		this.list.push(f);
+	}
+	// 构造一个可以run的对象
+	function PjaxItem(fn,name){
+		// 函数名称
+		this.name = name || fn.name
+		// run方法
+		this.run=()=>{
+			fn()
+		}
+	}
+}
+volantis.pjax={}
+volantis.pjax.method={
+	complete: new VPjax(),
+	error: new VPjax(),
+	send: new VPjax()
+}
+volantis.pjax={
+	...volantis.pjax,
+	push: volantis.pjax.method.complete.push,
+	error: volantis.pjax.method.error.push,
+	send: volantis.pjax.method.send.push
+}
+/********************脚本懒加载函数********************************/
+// 已经加入了setTimeout
+function loadScript(src, cb) {
+	setTimeout(function() {
+		var HEAD = document.getElementsByTagName('head')[0] || document.documentElement;
+		var script = document.createElement('script');
+		script.setAttribute('type','text/javascript');
+		if (cb) script.onload = cb;
+		script.setAttribute('src', src);
+		HEAD.appendChild(script);
+	});
+}
+//https://github.com/filamentgroup/loadCSS
+var loadCSS = function( href, before, media, attributes ){
+	var doc = window.document;
+	var ss = doc.createElement( "link" );
+	var ref;
+	if( before ){
+		ref = before;
+	}
+	else {
+		var refs = ( doc.body || doc.getElementsByTagName( "head" )[ 0 ] ).childNodes;
+		ref = refs[ refs.length - 1];
+	}
+	var sheets = doc.styleSheets;
+	if( attributes ){
+		for( var attributeName in attributes ){
+			if( attributes.hasOwnProperty( attributeName ) ){
+				ss.setAttribute( attributeName, attributes[attributeName] );
+			}
+		}
+	}
+	ss.rel = "stylesheet";
+	ss.href = href;
+	ss.media = "only x";
+	function ready( cb ){
+		if( doc.body ){
+			return cb();
+		}
+		setTimeout(function(){
+			ready( cb );
+		});
+	}
+	ready( function(){
+		ref.parentNode.insertBefore( ss, ( before ? ref : ref.nextSibling ) );
+	});
+	var onloadcssdefined = function( cb ){
+		var resolvedHref = ss.href;
+		var i = sheets.length;
+		while( i-- ){
+			if( sheets[ i ].href === resolvedHref ){
+				return cb();
+			}
+		}
+		setTimeout(function() {
+			onloadcssdefined( cb );
+		});
+	};
+	function loadCB(){
+		if( ss.addEventListener ){
+			ss.removeEventListener( "load", loadCB );
+		}
+		ss.media = media || "all";
+	}
+	if( ss.addEventListener ){
+		ss.addEventListener( "load", loadCB);
+	}
+	ss.onloadcssdefined = onloadcssdefined;
+	onloadcssdefined( loadCB );
+	return ss;
+};
+</script>
+<script>
+  
+  loadCSS("https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.14/css/all.min.css", window.volantis.loadcss);
+  
+  
+  loadCSS("https://cdn.jsdelivr.net/gh/l-lin/font-awesome-animation/dist/font-awesome-animation.min.css", window.volantis.loadcss);
+  
+  
+  loadCSS("https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.css", window.volantis.loadcss);
+  
+  
+</script>
+<!-- required -->
+
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5/dist/jquery.min.js"></script>
+
+<script>
+  function pjax_fancybox() {
+    $(".md .gallery").find("img").each(function () { //渲染 fancybox
+      var element = document.createElement("a"); // a 标签
+      $(element).attr("class", "fancybox");
+      $(element).attr("pjax-fancybox", "");  // 过滤 pjax
+      $(element).attr("href", $(this).attr("src"));
+      if ($(this).attr("data-original")) {
+        $(element).attr("href", $(this).attr("data-original"));
+      }
+      $(element).attr("data-fancybox", "images");
+      var caption = "";   // 描述信息
+      if ($(this).attr('alt')) {  // 判断当前页面是否存在描述信息
+        $(element).attr('data-caption', $(this).attr('alt'));
+        caption = $(this).attr('alt');
+      }
+      var div = document.createElement("div");
+      $(div).addClass("fancybox");
+      $(this).wrap(div); // 最外层套 div ，其实主要作用还是 class 样式
+      var span = document.createElement("span");
+      $(span).addClass("image-caption");
+      $(span).text(caption); // 加描述
+      $(this).after(span);  // 再套一层描述
+      $(this).wrap(element);  // 最后套 a 标签
+    })
+    $(".md .gallery").find("img").fancybox({
+      selector: '[data-fancybox="images"]',
+      hash: false,
+      loop: false,
+      closeClick: true,
+      helpers: {
+        overlay: {closeClick: true}
+      },
+      buttons: [
+        "zoom",
+        "close"
+      ]
+    });
+  };
+  function SCload_fancybox() {
+    if ($(".md .gallery").find("img").length == 0) return;
+    loadCSS("https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css", document.getElementById("loadcss"));
+    loadScript('https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js', pjax_fancybox)
+  };
+  $(function () {
+    SCload_fancybox();
+  });
+  function Pjax_SCload_fancybox(){
+	if (typeof $.fancybox == "undefined") {
+	 SCload_fancybox();
+    } else {
+	 pjax_fancybox();
+    }
+  }
+  volantis.pjax.push(Pjax_SCload_fancybox)
+  volantis.pjax.send(()=>{
+      if (typeof $.fancybox != "undefined") {
+        $.fancybox.close();    // 关闭弹窗
+      }
+  },'fancybox')
+</script>
+
+
+<!-- internal -->
+
+  
+  
+  
+    
+<script src="https://cdn.jsdelivr.net/npm/jquery-backstretch@2.1.18/jquery.backstretch.min.js"></script>
+
+    <script type="text/javascript">
+        var imgs=["https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/001.jpg", "https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/002.jpg", "https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/003.jpg", "https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/004.jpg", "https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/006.jpg", "https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/012.jpg", "https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/016.jpg", "https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/019.jpg", "https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/025.jpg", "https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/034.jpg", "https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/035.jpg", "https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/038.jpg", "https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/039.jpg", "https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/042.jpg", "https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/046.jpg", "https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/051.jpg", "https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/052.jpg", "https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/054.jpg", "https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/056.jpg"];
+        if ('true' == 'true') {
+          function shuffle(arr){
+            /*From countercurrent-time*/
+            var n = arr.length;
+            while(n--) {
+              var index = Math.floor(Math.random() * n);
+              var temp = arr[index];
+              arr[index] = arr[n];
+              arr[n] = temp;
+            }
+          }
+          shuffle(imgs);
+        }
+	  function Pjax_backstretch(){
+        
+          $.backstretch(
+            imgs,
+          {
+            duration: "10000",
+            fade: "1500"
+          });
+        
+	  }
+	  loadScript("https://cdn.jsdelivr.net/npm/jquery-backstretch@2.1.18/jquery.backstretch.min.js",Pjax_backstretch)
+    </script>
+  
+
+
+
+  
+  
+
+  <div id="rightmenu-wrapper">
+    <ul class="list-v rightmenu" id="rightmenu-content">
+      <li class='option'>
+        <a class='vlts-menu opt fix-cursor-default' id='menu-copy-text' onclick="document.execCommand('copy')"><i class='fa fa-copy fa-fw'></i>复制文本</a>
+        <hr id='hr-text'>
+        <a class='vlts-menu opt fix-cursor-default' id='menu-copy-href'><i class='fa fa-link fa-fw'></i>复制链接</a>
+        <a class='vlts-menu opt fix-cursor-default' id='menu-open-href'><i class='fa fa-external-link-square-alt fa-fw'></i>在新标签页打开</a>
+        <hr id='hr-href'>
+        <a class='vlts-menu opt fix-cursor-default' id='menu-copy-src'><i class='fa fa-image fa-fw'></i>复制图片地址</a>
+        <hr id='hr-src'>
+      </li>
+      
+        <li class='navigation'>
+          <a class='nav icon-only fix-cursor-default' onclick='history.back()'><i class='fa fa-arrow-left fa-fw'></i></a>
+          <a class='nav icon-only fix-cursor-default' onclick='history.forward()'><i class='fa fa-arrow-right fa-fw'></i></a>
+          <a class='nav icon-only fix-cursor-default' onclick='window.location.reload()'><i class='fa fa-redo fa-fw'></i></a>
+          <a class='nav icon-only fix-cursor-default' href='/'><i class='fa fa-home fa-fw'></i></a>
+        </li>
+      
+      <hr>
+      
+        
+      
+        
+          
+    <li>
+      <a class='vlts-menu fix-cursor-default ' href=/categories/Python/
+        
+        
+        
+        
+          id="categoriesPython"
+        >
+        <i class='fa fa-code fa-fw'></i> Python
+      </a>
+    </li>
+  
+        
+      
+        
+          <hr>
+        
+      
+        
+          
+    <li>
+      <a class='vlts-menu fix-cursor-default ' href=https://github.com/volantis-x/hexo-theme-volantis/
+        
+        
+        
+        
+          id="https:githubcomvolantis-xhexo-theme-volantis"
+        >
+        <i class='fa fa-code-branch fa-fw'></i> 主题源码
+      </a>
+    </li>
+  
+        
+      
+        
+          <hr>
+        
+      
+        
+          
+    <li>
+      <a class='vlts-menu fix-cursor-default ' 
+        
+        
+        
+          onclick="document.execCommand('print')"
+        
+        >
+        <i class='fa fa-print fa-fw'></i> 打印页面
+      </a>
+    </li>
+  
+        
+      
+        
+          <hr>
+        
+      
+        
+          <li class='music name'>
+            <p class='nav music-title fix-cursor-default'></p>
+          </li>
+          <li class='music ctrl'>
+            <a class='nav icon-only backward fix-cursor-default' onclick='aplayerBackward()'><i class='fa fa-step-backward fa-fw'></i></a>
+            <a class='nav icon-only toggle fix-cursor-default' onclick='aplayerToggle()'><i class='fa fa-play fa-fw'></i></a>
+            <a class='nav icon-only forward fix-cursor-default' onclick='aplayerForward()'><i class='fa fa-step-forward fa-fw'></i></a>
+          </li>
+          <li class='music volume'>
+            <a class='nav volume'>
+              <div class="aplayer-volume-bar-wrap">
+                <div class="aplayer-volume-bar fix-cursor-pointer">
+                  <div class="aplayer-volume"></div>
+                  <i class='left fa fa-volume-off fa-fw'></i>
+                  <i class='right fa fa-volume-up fa-fw'></i>
+                </div>
+              </div>
+            </a>
+          </li>
+        
+      
+    </ul>
+  </div>
+
+  <script>
+    window.document.oncontextmenu = function (event) {
+      if (event.ctrlKey) return true;
+      if (/Android|webOS|BlackBerry/i.test(navigator.userAgent)) return true;
+      return popMenu(event);
+    };
+    document.addEventListener("click", function (event) {
+      var mymenu = document.getElementById('rightmenu-wrapper');
+      mymenu.style.display = "none";
+    });
+    function popMenu(event) {
+      var mymenu = document.getElementById('rightmenu-wrapper');
+      var menuContent = document.getElementById('rightmenu-content');
+      var screenWidth = document.documentElement.clientWidth || document.body.clientWidth;
+      var screenHeight = document.documentElement.clientHeight || document.body.clientHeight;
+      mymenu.style.left = event.clientX + "px"; // 获取鼠标位置
+      mymenu.style.top = event.clientY + "px";
+      mymenu.style.display = 'block';
+      if (event.clientX * 2 > screenWidth) {
+        menuContent.classList.add('left');
+      } else {
+        menuContent.classList.remove('left');
+      }
+      if (event.clientY * 2 > screenHeight) {
+        menuContent.classList.add('top');
+      } else {
+        menuContent.classList.remove('top');
+      }
+
+      let hrText = document.getElementById('hr-text');
+      let hrSrc = document.getElementById('hr-src');
+      let hrHref = document.getElementById('hr-href');
+
+      // 选中图片
+      let copySrc = document.getElementById('menu-copy-src');
+      if (copySrc != undefined) {
+        if (event.target.currentSrc) {
+          copySrc.style.display = 'block';
+          copySrc.addEventListener("click", function (e) {
+            copyString(event.target.currentSrc);
+          },{once: true});
+          hrSrc.style.display = 'block';
+        } else {
+          copySrc.style.display = 'none';
+          hrSrc.style.display = 'none';
+        }
+      }
+
+      // 选中按钮
+      // 判断是不是按钮
+      let href = '';
+      if (event.path) {
+        for (i = 0; i < event.path.length; i++) {
+          if (event.path[i].href != undefined && event.path[i].href.length > 0) {
+            href = event.path[i].href;
+          }
+        }
+      }
+
+      let copyText = document.getElementById('menu-copy-text');
+      copyText.style.display = 'none';
+      hrText.style.display = 'none';
+      if (href.length == 0) {
+        // 选中文本
+        if (window.getSelection().toString()) {
+          if ('true' == 'true') {
+            copyText.style.display = 'block';
+            hrText.style.display = 'block';
+          }
+        }
+      }
+
+      // 在新标签页打开
+      let openHref = document.getElementById('menu-open-href');
+      if (openHref != undefined) {
+        if (href.length > 0) {
+          openHref.style.display = 'block';
+          openHref.addEventListener("click", function (e) {
+            window.open(href);
+          },{once: true});
+          hrHref.style.display = 'block';
+        } else {
+          openHref.style.display = 'none';
+          hrHref.style.display = 'none';
+        }
+      }
+      // 复制链接
+      let copyHref = document.getElementById('menu-copy-href');
+      if (copyHref != undefined) {
+        if (href.length > 0) {
+          copyHref.style.display = 'block';
+          copyHref.addEventListener("click", function (e) {
+            copyString(href);
+          },{once: true});
+        } else {
+          copyHref.style.display = 'none';
+        }
+      }
+      // 有音乐播放器 see: layout/_third-party/aplayer/script.ejs
+      
+      if(volantis.APlayerLoaded){ // APlayer加载完成？
+        // 如果有aplayer，初始化一下
+        checkAPlayer();
+      }
+      
+      return false; // 该行代码确保系统自带的右键菜单不会被调出
+    }
+    function hideMenu() {
+      document.getElementById('rightmenu-wrapper').style.display = 'none';
+    }
+    function copyString(str) {
+      const input = document.createElement('input');
+      input.setAttribute('readonly', 'readonly');
+      document.body.appendChild(input);
+      input.setAttribute('value', str);
+      input.select();
+      document.execCommand('copy');
+      document.body.removeChild(input);
+    }
+    document.execCommand('click');
+  </script>
+
+
+
+
+<script>
+  function loadIssuesJS() {
+    if ($(".md").find(".issues-api").length == 0) return;
+	
+	  loadScript('/js/issues.js');
+	
+  };
+  $(function () {
+    loadIssuesJS();
+  });
+  volantis.pjax.push(()=>{
+	if (typeof IssuesAPI == "undefined") {
+	  loadIssuesJS();
+	}
+  },"IssuesJS")
+</script>
+
+
+
+  <script defer src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@17.1.0/dist/lazyload.min.js"></script>
+<script>
+  // https://www.npmjs.com/package/vanilla-lazyload
+  // Set the options globally
+  // to make LazyLoad self-initialize
+  window.lazyLoadOptions = {
+    elements_selector: ".lazyload",
+    threshold: 0
+  };
+  // Listen to the initialization event
+  // and get the instance of LazyLoad
+  window.addEventListener(
+    "LazyLoad::Initialized",
+    function (event) {
+      window.lazyLoadInstance = event.detail.instance;
+    },
+    false
+  );
+  document.addEventListener('DOMContentLoaded', function () {
+    lazyLoadInstance.update();
+  });
+  document.addEventListener('pjax:complete', function () {
+    lazyLoadInstance.update();
+  });
+</script>
+
+
+
+
+  
+
+<script>
+  window.FPConfig = {
+	delay: 0,
+	ignoreKeywords: [],
+	maxRPS: 5,
+	hoverDelay: 25
+  };
+</script>
+<script defer src="https://cdn.jsdelivr.net/gh/gijo-varghese/flying-pages@2.1.2/flying-pages.min.js"></script>
+
+
+
+
+
+  <script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
+<script>
+    var clipboard = new ClipboardJS('.btn-copy', {
+        target: function (trigger) {
+            return trigger.nextElementSibling
+        }
+    });
+    function wait(callback, seconds) {
+        var timelag = null;
+        timelag = window.setTimeout(callback, seconds)
+    }
+    function pjax_initCopyCode() {
+        if ($(".highlight .code pre").length + $(".article pre code").length == 0) return;
+        var copyHtml = '';
+        copyHtml += '<button class="btn-copy" data-clipboard-snippet="">';
+        copyHtml += '<i class="fas fa-copy"></i><span>COPY</span>';
+        copyHtml += '</button>';
+        $(".highlight .code pre").before(copyHtml);
+        $(".article pre code").before(copyHtml);
+        clipboard.off('success').on('success', function (e) {
+            $.message({
+                title: '复制成功',
+                message: "代码已复制，请遵守相关授权协议。",
+                type: 'success'
+            });
+            let $btn = $(e.trigger);
+            $btn.addClass('copied');
+            let $icon = $($btn.find('i'));
+            $icon.removeClass('fa-copy');
+            $icon.addClass('fa-check-circle');
+            let $span = $($btn.find('span'));
+            $span[0].innerText = 'COPIED';
+            wait(function () {
+                $icon.removeClass('fa-check-circle');
+                $icon.addClass('fa-copy');
+                $span[0].innerText = 'COPY'
+            }, 2000)
+        });
+        clipboard.off('error').on('error', function (e) {
+            e.clearSelection();
+            let $btn = $(e.trigger);
+            $btn.addClass('copy-failed');
+            let $icon = $($btn.find('i'));
+            $icon.removeClass('fa-copy');
+            $icon.addClass('fa-times-circle');
+            let $span = $($btn.find('span'));
+            $span[0].innerText = 'COPY FAILED';
+            wait(function () {
+                $icon.removeClass('fa-times-circle');
+                $icon.addClass('fa-copy');
+                $span[0].innerText = 'COPY'
+            }, 2000)
+        })
+    }
+    $(function () {
+        pjax_initCopyCode()
+    });
+    volantis.pjax.push(pjax_initCopyCode)
+</script>
+
+
+
+   <script type="text/javascript">
+  loadScript("https://cdn.jsdelivr.net/npm/scrollreveal@4.0.6/dist/scrollreveal.min.js")
+  function pjax_scrollrebeal() {
+    ScrollReveal().reveal('.l_main .reveal', {
+      distance: '32px',
+      duration: '800',
+      interval: '20',
+      scale: '1',
+      easing: 'ease-out'
+    });
+  }
+  $(function () {
+  var checkScrollReveal = setInterval(function () {
+    if ($("#safearea").css("display")!="block") return
+    if (typeof ScrollReveal=="undefined") return
+    clearInterval(checkScrollReveal)
+	pjax_scrollrebeal();
+  }, 100)
+  });
+  volantis.pjax.push(pjax_scrollrebeal)
+</script>
+
+
+
+
+  <script>
+  let APlayerController = new Object();
+  APlayerController.id = '2798155811';  // 设定全局音乐播放ID
+  APlayerController.volume = '0.1';
+  loadCSS("https://cdn.jsdelivr.net/npm/aplayer@1.10/dist/APlayer.min.css", window.volantis.loadcss);
+  // APlayer 需要在  MetingJS 之前加载
+  loadScript("https://cdn.jsdelivr.net/npm/aplayer@1.10/dist/APlayer.min.js")
+  window.volantis.APlayerLoaded=0 // APlayer加载完成状态
+  var checkAPlayer = setInterval(function () {
+    if (!window.APlayer) return // APlayer加载完成？
+	  if ($("#safearea").css("display")!="block") return // 文章内容加载完成？ see: source/css/first.styl
+    clearInterval(checkAPlayer)
+	  if (!window.volantis.APlayerLoaded&&!window.MetingJSElement){ // APlayer只能加载一次
+      window.volantis.APlayerLoaded=1 // APlayer加载完成
+      loadScript("https://cdn.jsdelivr.net/npm/meting@2.0/dist/Meting.min.js") // 加载 MetingJS
+	  }
+  }, 2500) // 按照网速调节差分2.5s
+  // rightmenu see: layout/_partial/rightmenu.ejs
+
+  
+    loadScript("/js/aplayer.js")
+  
+
+</script>
+
+
+
+
+  
+  
+<script src="https://cdn.jsdelivr.net/npm/valine@1.4/dist/Valine.min.js"></script>
+
+
+<script>
+  function emoji(path, idx, ext) {
+    return path + "/" + path + "-" + idx + "." + ext;
+  }
+  var emojiMaps = {};
+  for (var i = 1; i <= 54; i++) {
+    emojiMaps['tieba-' + i] = emoji('tieba', i, 'png');
+  }
+  for (var i = 1; i <= 101; i++) {
+    emojiMaps['qq-' + i] = emoji('qq', i, 'gif');
+  }
+  for (var i = 1; i <= 116; i++) {
+    emojiMaps['aru-' + i] = emoji('aru', i, 'gif');
+  }
+  for (var i = 1; i <= 125; i++) {
+    emojiMaps['twemoji-' + i] = emoji('twemoji', i, 'png');
+  }
+  for (var i = 1; i <= 4; i++) {
+    emojiMaps['weibo-' + i] = emoji('weibo', i, 'png');
+  }
+  function pjax_valine() {
+    if(!document.querySelectorAll("#valine_container")[0])return;
+    let pagePlaceholder = pdata.commentPlaceholder || "Say something~";
+    let path = pdata.commentPath;
+    if (path.length == 0) {
+      let defaultPath = '';
+      path = defaultPath || decodeURI(window.location.pathname);
+    }
+    var valine = new Valine();
+    valine.init(Object.assign({"js":"https://cdn.jsdelivr.net/npm/valine@1.4/dist/Valine.min.js","path":null,"placeholder":"Say something~","appId":"ucd11s85GDQMICKSzeeGvQIt-9Nh9j0Va","appKey":"v1kYVcf5xfyA4HEVRQ5JxnY0","meta":["nick","mail","link"],"requiredFields":["nick","mail"],"enableQQ":true,"recordIP":false,"avatar":"robohash","pageSize":15,"lang":"zh-cn","highlight":true,"mathJax":true}, {
+      el: '#valine_container',
+      path: path,
+      placeholder: pagePlaceholder,
+      emojiCDN: 'https://cdn.jsdelivr.net/gh/volantis-x/cdn-emoji/valine/',
+      emojiMaps: emojiMaps,
+    }))
+  }
+  $(function () {
+    pjax_valine();
+  });
+  volantis.pjax.push(pjax_valine);
+</script>
+
+
+
+
+  <script defer src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-busuanzi@2.3/js/busuanzi.pure.mini.js" data-pjax></script>
+
+
+
+  
+<script src="/js/app.js"></script>
+
+
+
+<!-- optional -->
+
+  <script>
+const SearchServiceimagePath="https://cdn.jsdelivr.net/gh/volantis-x/cdn-volantis@master/img/";
+const ROOT =  ("/" || "/").endsWith('/') ? ("/" || "/") : ("//" || "/" );
+
+$('.input.u-search-input').one('focus',function(){
+	
+		loadScript('https://cdn.jsdelivr.net/gh/volantis-x/cdn-volantis@3.0/js/search.js',setSearchService);
+	
+})
+
+function listenSearch(){
+  
+    customSearch = new HexoSearch({
+      imagePath: SearchServiceimagePath
+    });
+  
+}
+function setSearchService() {
+	listenSearch();
+	
+		document.addEventListener("pjax:success", listenSearch);
+	
+}
+</script>
+
+
+
+
+
+  
+<script src="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.js"></script>
+
+<script type="text/javascript">
+$(function () {
+  Waves.attach('.flat-btn', ['waves-button']);
+  Waves.attach('.float-btn', ['waves-button', 'waves-float']);
+  Waves.attach('.float-btn-light', ['waves-button', 'waves-float', 'waves-light']);
+  Waves.attach('.flat-box', ['waves-block']);
+  Waves.attach('.float-box', ['waves-block', 'waves-float']);
+  Waves.attach('.waves-image');
+  Waves.init();
+});
+</script>
+
+
+
+
+
+
+
+
+
+  <script>
+const rootElement = document.documentElement;
+const darkModeStorageKey = "user-color-scheme";
+const rootElementDarkModeAttributeName = "data-user-color-scheme";
+
+const setLS = (k, v) => {
+    localStorage.setItem(k, v);
+};
+
+const removeLS = (k) => {
+    localStorage.removeItem(k);
+};
+
+const getLS = (k) => {
+    return localStorage.getItem(k);
+};
+
+const getModeFromCSSMediaQuery = () => {
+  return window.matchMedia("(prefers-color-scheme: dark)").matches
+    ? "dark"
+    : "light";
+};
+
+const resetRootDarkModeAttributeAndLS = () => {
+  rootElement.removeAttribute(rootElementDarkModeAttributeName);
+  removeLS(darkModeStorageKey);
+};
+
+const validColorModeKeys = {
+  dark: true,
+  light: true,
+};
+
+const applyCustomDarkModeSettings = (mode) => {
+  const currentSetting = mode || getLS(darkModeStorageKey);
+
+  if (currentSetting === getModeFromCSSMediaQuery()) {
+    resetRootDarkModeAttributeAndLS();
+  } else if (validColorModeKeys[currentSetting]) {
+    rootElement.setAttribute(rootElementDarkModeAttributeName, currentSetting);
+  } else {
+    resetRootDarkModeAttributeAndLS();
+  }
+};
+
+const invertDarkModeObj = {
+  dark: "light",
+  light: "dark",
+};
+
+/**
+ * get target mode
+ */
+const toggleCustomDarkMode = () => {
+  let currentSetting = getLS(darkModeStorageKey);
+
+  if (validColorModeKeys[currentSetting]) {
+    currentSetting = invertDarkModeObj[currentSetting];
+  } else if (currentSetting === null) {
+    currentSetting = invertDarkModeObj[getModeFromCSSMediaQuery()];
+  } else {
+    return;
+  }
+  setLS(darkModeStorageKey, currentSetting);
+  return currentSetting;
+};
+
+/**
+ * bind click event for toggle button
+ */
+var btn=$("#wrapper .toggle-mode-btn,#rightmenu-wrapper .toggle-mode-btn");
+function bindToggleButton() {
+    btn.on('click',(e) => {
+      const mode = toggleCustomDarkMode();
+      applyCustomDarkModeSettings(mode);
+    });
+}
+
+applyCustomDarkModeSettings();
+document.addEventListener("DOMContentLoaded", bindToggleButton);
+volantis.pjax.push(bindToggleButton);
+volantis.pjax.send(()=>{
+	btn.unbind('click');
+},'toggle-mode-btn-unbind');
+</script>
+
+
+
+
+
+<!-- baidu Analytics -->
+<script>
+var _hmt = _hmt || [];
+(function() {
+  setTimeout(function() {
+    loadScript("https://hm.baidu.com/hm.js?b5baf7ff160f5e44a127e9b73ee5f44f")
+  }, 5000);
+})();
+// 关于百度统计对 SPA 页面的处理：
+// 方案一：百度统计>管理>单页应用设置中，打开开启按钮即可对SPA进行统计。 https://tongji.baidu.com/web/help/article?id=324
+// 方案二：取消注释下列代码。 https://tongji.baidu.com/web/help/article?id=235
+volantis.pjax.push(()=>{_hmt.push(['_trackPageview', document.location.pathname]);},'baidu_analytics')
+</script>
+
+
+
+
+<script>
+function listennSidebarTOC() {
+  const navItems = document.querySelectorAll(".toc li");
+  if (!navItems.length) return;
+  const sections = [...navItems].map((element) => {
+    const link = element.querySelector(".toc-link");
+    const target = document.getElementById(
+      decodeURI(link.getAttribute("href")).replace("#", "")
+    );
+    link.addEventListener("click", (event) => {
+      event.preventDefault();
+      window.scrollTo({
+		top: target.offsetTop + 100,
+		
+		behavior: "smooth"
+		
+	  });
+    });
+    return target;
+  });
+
+  function activateNavByIndex(target) {
+    if (target.classList.contains("active-current")) return;
+
+    document.querySelectorAll(".toc .active").forEach((element) => {
+      element.classList.remove("active", "active-current");
+    });
+    target.classList.add("active", "active-current");
+    let parent = target.parentNode;
+    while (!parent.matches(".toc")) {
+      if (parent.matches("li")) parent.classList.add("active");
+      parent = parent.parentNode;
+    }
+  }
+
+  function findIndex(entries) {
+    let index = 0;
+    let entry = entries[index];
+    if (entry.boundingClientRect.top > 0) {
+      index = sections.indexOf(entry.target);
+      return index === 0 ? 0 : index - 1;
+    }
+    for (; index < entries.length; index++) {
+      if (entries[index].boundingClientRect.top <= 0) {
+        entry = entries[index];
+      } else {
+        return sections.indexOf(entry.target);
+      }
+    }
+    return sections.indexOf(entry.target);
+  }
+
+  function createIntersectionObserver(marginTop) {
+    marginTop = Math.floor(marginTop + 10000);
+    let intersectionObserver = new IntersectionObserver(
+      (entries, observe) => {
+        let scrollHeight = document.documentElement.scrollHeight + 100;
+        if (scrollHeight > marginTop) {
+          observe.disconnect();
+          createIntersectionObserver(scrollHeight);
+          return;
+        }
+        let index = findIndex(entries);
+        activateNavByIndex(navItems[index]);
+      },
+      {
+        rootMargin: marginTop + "px 0px -100% 0px",
+        threshold: 0,
+      }
+    );
+    sections.forEach((element) => {
+      element && intersectionObserver.observe(element);
+    });
+  }
+  createIntersectionObserver(document.documentElement.scrollHeight);
+}
+
+document.addEventListener("DOMContentLoaded", listennSidebarTOC);
+document.addEventListener("pjax:success", listennSidebarTOC);
+</script>
+
+<!-- more -->
+
+ 
+	   
+	    
+
+
+<script src="https://cdn.jsdelivr.net/npm/pjax@0.2.8/pjax.min.js"></script>
+
+
+<!-- 样式位于：source/css/_third-party/pjaxanimate.styl -->
+
+<div class="pjax-animate">
+  
+    <script src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js"></script>
+    <div id="loading-bar-wrapper"><script>NProgress.configure({parent:"#loading-bar-wrapper",trickleSpeed: 100})</script></div>
+    <script>
+      window.ShowLoading = function() {
+        NProgress.start();
+      };
+      window.HideLoading = function() {
+        NProgress.done();
+      }
+    </script>
+  
+	<script>
+		volantis.pjax.push(window.HideLoading,'HideLoading');
+		volantis.pjax.send(window.ShowLoading,'ShowLoading');
+		volantis.pjax.error(window.HideLoading,'HideLoading');
+	</script>
+</div>
+
+
+<script>
+    var pjax;
+    document.addEventListener('DOMContentLoaded', function () {
+      pjax = new Pjax({
+        elements: 'a[href]:not([href^="#"]):not([href="javascript:void(0)"]):not([pjax-fancybox])',
+        selectors: [
+          "title",
+          
+          "#pjax-container",
+          "#pjax-header-nav-list"
+        ],
+        cacheBust: false,   // url 地址追加时间戳，用以避免浏览器缓存
+        timeout: 5000
+      });
+    });
+
+    document.addEventListener('pjax:send', function (e) {
+      //window.stop(); // 相当于点击了浏览器的停止按钮
+
+      try {
+        var currentUrl = window.location.pathname;
+        var targetUrl = e.triggerElement.href;
+        var banUrl = [""];
+        if (banUrl[0] != "") {
+          banUrl.forEach(item => {
+            if(currentUrl.indexOf(item) != -1 || targetUrl.indexOf(item) != -1) {
+              window.location.href = targetUrl;
+            }
+          });
+        }
+      } catch (error) {}
+
+      window.subData = null; // 移除标题（用于一二级导航栏切换处）
+
+      volantis.$switcher.removeClass('active'); // 关闭移动端激活的搜索框
+      volantis.$header.removeClass('z_search-open'); // 关闭移动端激活的搜索框
+      volantis.$wrapper.removeClass('sub'); // 跳转页面时关闭二级导航
+
+      // 解绑事件 避免重复监听
+      volantis.$topBtn.unbind('click');
+      $('.menu a').unbind('click');
+      $(window).unbind('resize');
+      $(window).unbind('scroll');
+      $(document).unbind('scroll');
+      $(document).unbind('click');
+      $('body').unbind('click');
+	  // 使用 volantis.pjax.send 方法传入pjax:send回调函数 参见layout/_partial/scripts/global.ejs
+	  volantis.pjax.method.send.start();
+    });
+
+    document.addEventListener('pjax:complete', function () {
+      $('.nav-main').find('.list-v').not('.menu-phone').removeAttr("style",""); // 移除小尾巴的移除
+      $('.menu-phone.list-v').removeAttr("style",""); // 移除小尾巴的移除
+      $('script[data-pjax], .pjax-reload script').each(function () {
+        $(this).parent().append($(this).remove());
+      });
+      try{
+		// 使用 volantis.pjax.push 方法传入重载函数 参见layout/_partial/scripts/global.ejs
+		volantis.pjax.method.complete.start();
+      } catch (e) {
+        console.log(e);
+      }
+    });
+
+    document.addEventListener('pjax:error', function (e) {
+	  // 使用 volantis.pjax.error 方法传入pjax:error回调函数 参见layout/_partial/scripts/global.ejs
+	  volantis.pjax.method.error.start();
+      window.location.href = e.triggerElement.href;
+    });
+</script>
+ 
+	  
+    </div>
+  <script async>window.onload=function(){var a=document.createElement('script'),b=document.getElementsByTagName('script')[0];a.type='text/javascript',a.async=!0,a.src='/sw-register.js?v='+Date.now(),b.parentNode.insertBefore(a,b)};</script></body></html>
