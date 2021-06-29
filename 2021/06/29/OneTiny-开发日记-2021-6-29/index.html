@@ -22,13 +22,13 @@
 
   <!-- 页面元数据 -->
   
-  <title>OneTiny 开发日记 - Boii</title>
+  <title>OneTiny 开发日记-2021-6-29 - Boii</title>
   
     <meta name="keywords" content="OneTiny,FTP,局域网,gin,独立开发">
   
 
   
-    <meta name="description" content="开发 OneTiny 时的一点思路">
+    <meta name="description" content="新增访问层级限制">
   
 
   <!-- feed -->
@@ -649,20 +649,20 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
     <div class='headimg-div'>
       <a class='headimg-a'>
-        <img class='headimg' src='https://cdn.jsdelivr.net/gh/TCP404/Picgo/blog/illustration-pic/blog/illustration-pic/devlog/20210622134617.png'/>
+        <img class='headimg' src='https://cdn.jsdelivr.net/gh/TCP404/Picgo/blog/cover/dev-log-small.jpg'/>
       </a>
     </div>
   
   <div class="article-meta" id="top">
     
     
-      <a title='OneTiny 开发日记' href='/2021/06/22/OneTiny-%E5%BC%80%E5%8F%91%E6%97%A5%E8%AE%B0/'>
-        <img class='thumbnail' src='https://cdn.jsdelivr.net/gh/TCP404/Picgo/blog/illustration-pic/blog/thumbnail/oneTiny_128_128.png'>
+      <a title='OneTiny 开发日记-2021-6-29' href='/2021/06/29/OneTiny-%E5%BC%80%E5%8F%91%E6%97%A5%E8%AE%B0-2021-6-29/'>
+        <img class='thumbnail' src='https://cdn.jsdelivr.net/gh/TCP404/Picgo/blog/thumbnail/oneTiny_128_128.png'>
       </a>
     
     
       <h1 class="title">
-        OneTiny 开发日记
+        OneTiny 开发日记-2021-6-29
       </h1>
       <div class='new-meta-box'>
         
@@ -681,7 +681,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
             <div class="new-meta-item date">
   <a class='notlink'>
     <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
-    <p>发布于：2021年6月22日</p>
+    <p>发布于：2021年6月29日</p>
   </a>
 </div>
 
@@ -700,13 +700,13 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <div class="new-meta-item wordcount">
     <a class='notlink'>
       <i class="fas fa-keyboard fa-fw" aria-hidden="true"></i>
-      <p>字数：1.3k字</p>
+      <p>字数：893字</p>
     </a>
   </div>
   <div class="new-meta-item readtime">
     <a class='notlink'>
       <i class="fas fa-hourglass-half fa-fw" aria-hidden="true"></i>
-      <p>时长：4分钟</p>
+      <p>时长：3分钟</p>
     </a>
   </div>
 
@@ -737,57 +737,61 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
   
   
-  <p>开发 OneTiny 时的一点思路</p>
+  <p>新增访问层级限制</p>
 <span id="more"></span>
 
-<h2 id="需求"><a href="#需求" class="headerlink" title="需求"></a>需求</h2><p>自从买了台二手 Surface 二合一电脑以后，的确效率上去了，可以手写真香，手终于能跟上脑子了。<br>一开始拿来当出门用的备用机，轻便，但是使用久了以后，渐渐开始有和主力机之间传输文件的需求。<br>最简单的就是拿个 U 盘拷过来拷过去，一次两次还好，多了就烦了。</p>
-<p>于是经过搜索我发现了 Python 可以通过在命令行输入 <code>python -m http.server 8000</code> 来暂时开启一个共享目录，同一局域网内的主机就可以访问到这个目录的内容。<br>但是这条命令在 Linux 中可以，在 Windows 下不能执行。</p>
-<p>想想这玩意本质就是开启一个 HTTP 服务，指定当前目录为 HTTP 服务的根目录。刚好学了 <code>Gin</code> 框架，而 Golang 又可以编译独立的可执行文件，还可以交叉编译，于是说干就干开始干活。</p>
-<h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><p>开启一个 HTTP 服务以后，当有人访问时，需要返回目录下的内容。<br>返回的页面采用最简单的效果，基本没有 CSS 。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/TCP404/Picgo/blog/illustration-pic/blog/illustration-pic/devlog/20210622134240.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/TCP404/Picgo/blog/illustration-pic/blog/illustration-pic/devlog/20210622134240.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII="></p>
-<p><img src="https://cdn.jsdelivr.net/gh/TCP404/Picgo/blog/illustration-pic/blog/illustration-pic/devlog/20210622134617.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/TCP404/Picgo/blog/illustration-pic/blog/illustration-pic/devlog/20210622134617.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII="></p>
-<p><img src="https://cdn.jsdelivr.net/gh/TCP404/Picgo/blog/illustration-pic/blog/illustration-pic/devlog/20210622134734.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/TCP404/Picgo/blog/illustration-pic/blog/illustration-pic/devlog/20210622134734.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII="></p>
-<p><code>v0.1 版</code>非常简单，程序启动的时候通过 <code>-r</code> 指定目录，没有的话默认当前目录；通过 <code>-p</code> 可以指定程序运行的端口。</p>
-<p>当有人访问时，也就是程序接收到请求，读取目录下所有文件包括目录，交给 HTML 生成器 <code>generateHTML</code> 生成 HTML 内容，然后返回给访问者。</p>
-<p>如果用户点击的是目录，则遍历该目录、生成 HTML，返回；<br>如果用户点击的是文件，则触发下载行为，将文件传输给访问者。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/TCP404/Picgo/blog/illustration-pic/blog/illustration-pic/devlog/20210622150113.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/TCP404/Picgo/blog/illustration-pic/blog/illustration-pic/devlog/20210622150113.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII="></p>
-<p><code>v0.1.1 版</code>时重构了 获取IP 函数，解决了 Windows 下给出的无效 IP 的问题，并修复了下载文件异常的问题。</p>
-<p>到这里 OneTiny 作为一个局域网 FTP 工具已经可以提供稳定的服务了。</p>
-<p>但是只能单向下载文件还不够，如果能上传就好了，有来有回。</p>
-<p>于是 <code>v0.2 版</code>新增了上传功能，并且在 HTML 部分增加了显示文件大小、返回上一级目录的链接。</p>
-<p>这一版在新增功能的时候做了一部分重构。由于 0.1 版直接获取请求路径中的参数导致代码耦合度非常高，所以创建了一个 <code>FileStruction</code> 的模型，用于存储文件的绝对路径、相对路径、文件大小等信息。</p>
-<p><code>v0.2.1 版</code>的时候觉得，有时候开放一个目录供人下载文件，但不希望对方上传文件上来，所以需要一个开关来设置是否允许上传。于是增加了 <code>-a</code> 的参数，默认不可以上传，除非加上 <code>-a</code> 参数才会在客户端展示的时候展示出上传框。</p>
-<p><code>v0.2.2 版</code>对整个程序做了较大幅度的重构，将一些全局的变量移动到 config 包，然后把启动 Gin 实例的部分移动到 start 包，并做了对 <code>-p</code> 、<code>-r</code> 参数的校验，避免用户指定系统预留的端口，或者输入一个不存在的目录作为访问根目录。还另外增加了 color 包用于控制台彩色打印（windows 除外）。</p>
-<h2 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h2><p>这是我的第一个规范使用 Git 维护的独立项目，源自自身实际需求。<br>虽然市面上有许多现成的好看的功能更强大的 FTP 工具，但是我觉得那些太复杂，且需要安装等等。<br>我更愿意使用一个简简单单的只负责在局域网内的设备间传输文件的工具，除了必要的功能不添加太多复杂的功能，所以连界面也采用最简单的 “裸 HTML” 。<br>（我也不喜欢把时间花在写出华丽的界面上，而更愿意把时间拿来完善和增强本身的功能）</p>
-<p>简单、专注、无需安装，这些是 OneTiny 的特点，也是 OneTiny 的局限。<br>我希望除了图形界面版本，OneTiny 能一直保持这种大道至简的风格，专注与局域网 FTP 这个职责即可。</p>
-<p><em>Давай!</em></p>
-<h2 id="Todo"><a href="#Todo" class="headerlink" title="Todo"></a>Todo</h2><ul>
-<li><input checked="" disabled="" type="checkbox"> 上传功能</li>
-<li><input disabled="" type="checkbox"> 自动检查更新功能</li>
-<li><input disabled="" type="checkbox"> 密码验证功能（防止局域网内监听）</li>
-<li><input disabled="" type="checkbox"> 增加图形界面（使用 <a target="_blank" rel="noopener" href="https://fyne.io/">fyne</a>）</li>
-<li><input disabled="" type="checkbox"> 限定访问层级</li>
-<li><input disabled="" type="checkbox"> 限定允许上传位置</li>
-<li><input disabled="" type="checkbox"> 大文件多线程下载</li>
-<li><input disabled="" type="checkbox"> 断点续传</li>
-</ul>
-<h2 id="版本历史"><a href="#版本历史" class="headerlink" title="版本历史"></a>版本历史</h2><div class="timeline">
-<div class="timenode"><div class="meta"><p><p>2021-06-16 <a target="_blank" rel="noopener" href="https://github.com/TCP404/OneTiny/releases/tag/v0.2.2">0.2.1 -&gt; 0.2.2</a></p>
-</p></div><div class="body"><ol><li>Refactor: 对gin实例启动部分进行重构，移动至 start 包内；新增 config 包</li><li>Style：控制台增加彩色打印（windows除外）</li><li>Fix: 增加 flag 参数的验证</li></ol></div></div>
+<p>更新功能没写成，还是没想好怎么处理整个流程。</p>
+<p>摆在面前有两个问题：</p>
+<ol>
+<li>下载下来的新版本（可执行文件）放在哪</li>
+<li>如何关闭自己然后启动新版本</li>
+</ol>
+<p>所以暂时搁置，转头去实现访问层级限制功能。</p>
+<h2 id="使用中间件"><a href="#使用中间件" class="headerlink" title="使用中间件"></a>使用中间件</h2><p>这次把中间件用上了，还把之前对浏览器的默认行为：请求 favicon.ico 进行拦截的部分放在单独的中间件里，并且应用到全局。</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Start 函数负责启动 gin 实例，开始提供 HTTP 服务</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">Start</span><span class="params">()</span></span> &#123;</span><br><span class="line">    gin.SetMode(gin.ReleaseMode)</span><br><span class="line">    r := gin.New()</span><br><span class="line">    r.Use(gin.LoggerWithWriter(config.Output),gin.Recovery())</span><br><span class="line">    <span class="comment">// 中间件</span></span><br><span class="line">    r.Use(middleware.InterceptICO)</span><br><span class="line">    r.Use(middleware.CheckLevel)</span><br><span class="line"></span><br><span class="line">    r.NoRoute(controller.NotFound)</span><br><span class="line">    r.GET(<span class="string">&quot;/*filename&quot;</span>, controller.Handler)</span><br><span class="line">    r.POST(<span class="string">&quot;/upload&quot;</span>, controller.Upload)</span><br><span class="line"></span><br><span class="line">    printInfo()</span><br><span class="line"></span><br><span class="line">    err := r.Run(<span class="string">&quot;:&quot;</span> + config.Port)</span><br><span class="line">    <span class="keyword">if</span> _, ok := err.(*net.OpError); ok &#123;</span><br><span class="line">        log.Fatal(color.RedString(<span class="string">&quot;指定的 %s 端口已被占用，请换一个端口号。&quot;</span>, config.Port))</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<div class="timenode"><div class="meta"><p><p>2021-06-16 <a target="_blank" rel="noopener" href="https://github.com/TCP404/OneTiny/releases/tag/v0.2.1">v0.2 -&gt; v0.2.1</a></p>
-</p></div><div class="body"><ul><li>Feat: 新增 允许上传 flag <code>-a</code></li></ul></div></div>
+<p>拦截浏览器默认请求行为的中间件：</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> middleware</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> (</span><br><span class="line">    <span class="string">&quot;net/http&quot;</span></span><br><span class="line">    <span class="string">&quot;strings&quot;</span></span><br><span class="line"></span><br><span class="line">    <span class="string">&quot;github.com/gin-gonic/gin&quot;</span></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="comment">// InterceptICO 拦截浏览器默认请求 favicon.ico 的行为</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">InterceptICO</span><span class="params">(c *gin.Context)</span></span> &#123;</span><br><span class="line">    <span class="keyword">if</span> strings.HasSuffix(c.Param(<span class="string">&quot;filename&quot;</span>), <span class="string">&quot;.ico&quot;</span>) &#123;</span><br><span class="line">        c.Status(http.StatusOK)</span><br><span class="line">        c.Abort()</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<div class="timenode"><div class="meta"><p><p>2021-06-11 <a target="_blank" rel="noopener" href="https://github.com/TCP404/OneTiny/releases/tag/v0.2">v0.1.1 -&gt; v0.2</a></p>
-</p></div><div class="body"><ol><li>Feat: 新增上传功能</li><li>Style: 文件列表增加 文件大小，增加返回上一级目录链接</li></ol></div></div>
+<p>gin 的封装真的让 web 开发变得很方便，中间件也让代码更加清晰，耦合度降低。Nice！</p>
+<h2 id="新增参数-x"><a href="#新增参数-x" class="headerlink" title="新增参数 -x"></a>新增参数 -x</h2><p>这次新增一个访问层级限制的功能，使用参数 <code>-x</code> 或者 <code>--max</code> 可以指定。</p>
+<p>例如：</p>
+<p>用户指定共享目录为：<code>/a/b</code> , 最大层级为 2，则访问者最深可以访问到 <code>/a/b/c/d</code> 、<code>/a/b/c/d/file</code> 。</p>
+<div class='checkbox green checked'><input type="checkbox" checked="checked"/>
+            <p><code>/a/b</code></p>
+            </div>
+<div class='checkbox green checked'><input type="checkbox" checked="checked"/>
+            <p><code>/a/b/file</code></p>
+            </div>
+<div class='checkbox green checked'><input type="checkbox" checked="checked"/>
+            <p><code>/a/b/c</code></p>
+            </div>
+<div class='checkbox green checked'><input type="checkbox" checked="checked"/>
+            <p><code>/a/b/c/file</code></p>
+            </div>
+<div class='checkbox green checked'><input type="checkbox" checked="checked"/>
+            <p><code>/a/b/c/d</code></p>
+            </div>
+<div class='checkbox green checked'><input type="checkbox" checked="checked"/>
+            <p><code>/a/b/c/d/file</code></p>
+            </div>
+<div class='checkbox times red checked'><input type="checkbox" checked="checked"/>
+            <p><code>/a/b/c/d/e</code></p>
+            </div>
+<div class='checkbox times red checked'><input type="checkbox" checked="checked"/>
+            <p><code>/a/b/c/d/e/file</code></p>
+            </div>
 
-<div class="timenode"><div class="meta"><p><p>2021-06-11 <a target="_blank" rel="noopener" href="https://github.com/TCP404/OneTiny/releases/tag/v0.1.1">v0.1 -&gt; v0.1.1</a></p>
-</p></div><div class="body"><ol><li>Fix: 修复了下载文件异常</li><li>Refactor: 重构了获取IP函数</li></ol></div></div>
+<p>其实这个功能有点鸡肋，真实场景下限制访问层级可能不常用，只有一个场景会很常见。</p>
+<p>即：共享者只是想开放共享目录那一层给人访问，你可以看到这一层有什么子目录和文件，你可以下载这一层的所有文件，但不能深入访问子目录。</p>
+<p>所以我把参数的默认值设置为 0。即只能访问共享目录那一层，如果要开放子目录给人访问，就自己设置 <code>-x</code> 参数。</p>
+<p>最核心的就是这个函数：</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 检查当前访问的路径是否超过限定层级</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">isOverLevel</span><span class="params">(relPath <span class="keyword">string</span>, isFile <span class="keyword">bool</span>)</span> <span class="title">bool</span></span> &#123;</span><br><span class="line">    rel, _ := filepath.Rel(config.RootPath, filepath.Join(config.RootPath, relPath))</span><br><span class="line">    i := strings.Split(rel, config.SEPARATORS)</span><br><span class="line">    level := <span class="built_in">len</span>(i)</span><br><span class="line">    <span class="keyword">if</span> i[<span class="number">0</span>] == <span class="string">&quot;.&quot;</span> &#123;</span><br><span class="line">        level = <span class="number">0</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> isFile &#123;</span><br><span class="line">        level--</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> level &gt; <span class="keyword">int</span>(config.MaxLevel)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>通过 <code>filepath.Rel</code> 把当前访问路径切出来，按照路径分隔符 <code>config.SEPARATORS</code> 切割，判断切割出来的个数是否超过设定的最大访问层级。</p>
+<p>如果访问的是共享目录，<code>filepath.Rel</code> 会返回一个单元素切片 <code>[&quot;.&quot;]</code>，应该把 level 修正为 0 。<br>如果访问的是文件，会超出 1 级，应该把 level 自减 1 。</p>
+<p>例如 <code>filepath.Rel(&quot;/a/b&quot;, &quot;/a/b/c/file&quot;)</code> 会得到 <code>/c/file</code>，切割得到切片为 <code>[&quot;c&quot; &quot;file&quot;]</code>，level 为 2 。但这个 file 实际上是 c 目录下的一个文件，应该是与 c 同一层级 1，所以做一次自减来修正。</p>
+<h2 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h2><p>今晚想了想，这好像是个 FTP 工具，却用 HTTP 来实现，总感觉怪怪的。有时间研究研究 FTP 协议，看看能不能用 FTP 协议实现吧。</p>
 
-<div class="timenode"><div class="meta"><p><p>2021-06-11 <a target="_blank" rel="noopener" href="https://github.com/TCP404/OneTiny/releases/tag/v0.1">nil -&gt; v0.1</a></p>
-</p></div><div class="body"><ol><li>首个版本，具有局域网内单向共享文件的功能，未具有上传功能。</li><li>可通过 <code>-p</code> 指定端口，通过 <code>-r</code> 指定目录</li></ol></div></div>
-
-</div>
   
   
     
@@ -800,7 +804,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       <i class="fas fa-bookmark fa-fw" aria-hidden="true"></i><span>相关文章</span>
     </section>
     <section class='body'>
-      <div class="vlts-rps"><a class="item" href="/2019/05/13/当小程序开发完成后/" title="当小程序开发完成后" rel="bookmark "><img src="https://cdn.jsdelivr.net/gh/TCP404/Picgo/blog/illustration-pic/After-develop-minipro/界面设计1.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/TCP404/Picgo/blog/illustration-pic/After-develop-minipro/界面设计1.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" /><span class="title">当小程序开发完成后</span><span class="excerpt">开发小程序后的一点总结</span></a></div></section></div>
+      <div class="vlts-rps"><a class="item" href="/2021/06/22/OneTiny-开发日记-2021-6-22/" title="OneTiny 开发日记-2021-6-22" rel="bookmark "><img src="https://cdn.jsdelivr.net/gh/TCP404/Picgo/blog/cover/dev-log-small.jpg" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/TCP404/Picgo/blog/cover/dev-log-small.jpg" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" /><span class="title">OneTiny 开发日记-2021-6-22</span><span class="excerpt">开发 OneTiny 时的一点思路</span></a><a class="item" href="/2021/06/25/OneTiny-开发日记-2021-6-25/" title="OneTiny 开发日记-2021-6-25" rel="bookmark "><img src="https://cdn.jsdelivr.net/gh/TCP404/Picgo/blog/cover/dev-log-small.jpg" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/TCP404/Picgo/blog/cover/dev-log-small.jpg" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" /><span class="title">OneTiny 开发日记-2021-6-25</span><span class="excerpt">第一次修改别人的东西哈哈</span></a><a class="item" href="/2019/05/13/当小程序开发完成后/" title="当小程序开发完成后" rel="bookmark "><img src="https://cdn.jsdelivr.net/gh/TCP404/Picgo/blog/illustration-pic/After-develop-minipro/界面设计1.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/TCP404/Picgo/blog/illustration-pic/After-develop-minipro/界面设计1.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" /><span class="title">当小程序开发完成后</span><span class="excerpt">开发小程序后的一点总结</span></a></div></section></div>
       
       
         <div class='copyright'>
@@ -812,7 +816,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
               
             
               
-                <p>本文永久链接是：<a href=https://www.boii.xyz/2021/06/22/OneTiny-%E5%BC%80%E5%8F%91%E6%97%A5%E8%AE%B0/>https://www.boii.xyz/2021/06/22/OneTiny-%E5%BC%80%E5%8F%91%E6%97%A5%E8%AE%B0/</a></p>
+                <p>本文永久链接是：<a href=https://www.boii.xyz/2021/06/29/OneTiny-%E5%BC%80%E5%8F%91%E6%97%A5%E8%AE%B0-2021-6-29/>https://www.boii.xyz/2021/06/29/OneTiny-%E5%BC%80%E5%8F%91%E6%97%A5%E8%AE%B0-2021-6-29/</a></p>
               
             
           </blockquote>
@@ -829,10 +833,10 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-06-22T08:30:47+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-06-29T15:58:28+08:00">
   <a class='notlink'>
     <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：2021年6月22日</p>
+    <p>更新于：2021年6月29日</p>
   </a>
 </div>
 
@@ -854,7 +858,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://www.boii.xyz/2021/06/22/OneTiny-%E5%BC%80%E5%8F%91%E6%97%A5%E8%AE%B0/&title=OneTiny 开发日记 - Boii&pics=https://cdn.jsdelivr.net/gh/TCP404/Picgo/blog/illustration-pic/blog/thumbnail/oneTiny_128_128.png&summary=开发 OneTiny 时的一点思路"
+          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://www.boii.xyz/2021/06/29/OneTiny-%E5%BC%80%E5%8F%91%E6%97%A5%E8%AE%B0-2021-6-29/&title=OneTiny 开发日记-2021-6-29 - Boii&pics=https://cdn.jsdelivr.net/gh/TCP404/Picgo/blog/thumbnail/oneTiny_128_128.png&summary=新增访问层级限制"
           
           >
           
@@ -866,7 +870,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://www.boii.xyz/2021/06/22/OneTiny-%E5%BC%80%E5%8F%91%E6%97%A5%E8%AE%B0/&title=OneTiny 开发日记 - Boii&pics=https://cdn.jsdelivr.net/gh/TCP404/Picgo/blog/illustration-pic/blog/thumbnail/oneTiny_128_128.png&summary=开发 OneTiny 时的一点思路"
+          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://www.boii.xyz/2021/06/29/OneTiny-%E5%BC%80%E5%8F%91%E6%97%A5%E8%AE%B0-2021-6-29/&title=OneTiny 开发日记-2021-6-29 - Boii&pics=https://cdn.jsdelivr.net/gh/TCP404/Picgo/blog/thumbnail/oneTiny_128_128.png&summary=新增访问层级限制"
           
           >
           
@@ -878,7 +882,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="http://service.weibo.com/share/share.php?url=https://www.boii.xyz/2021/06/22/OneTiny-%E5%BC%80%E5%8F%91%E6%97%A5%E8%AE%B0/&title=OneTiny 开发日记 - Boii&pics=https://cdn.jsdelivr.net/gh/TCP404/Picgo/blog/illustration-pic/blog/thumbnail/oneTiny_128_128.png&summary=开发 OneTiny 时的一点思路"
+          target="_blank" href="http://service.weibo.com/share/share.php?url=https://www.boii.xyz/2021/06/29/OneTiny-%E5%BC%80%E5%8F%91%E6%97%A5%E8%AE%B0-2021-6-29/&title=OneTiny 开发日记-2021-6-29 - Boii&pics=https://cdn.jsdelivr.net/gh/TCP404/Picgo/blog/thumbnail/oneTiny_128_128.png&summary=新增访问层级限制"
           
           >
           
@@ -917,12 +921,12 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     <div class="prev-next">
       
       
-        <a class='next' href='/2021/02/23/DataStruction%20%5B8-%E5%9B%BE2%5D/'>
-          <p class='title'>DataStruction 0x08 图-2<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
-          <p class='content'>图的存储
+        <a class='next' href='/2021/06/25/OneTiny-%E5%BC%80%E5%8F%91%E6%97%A5%E8%AE%B0-2021-6-25/'>
+          <p class='title'>OneTiny 开发日记-2021-6-25<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
+          <p class='content'>第一次修改别人的东西哈哈
 
 
-8-图2图的ADT12345678910111213141516171819202122ADT 图 GraphData    顶点的有穷非空集合和边的集合Operation    ...</p>
+今天开始给 OneTiny 增加更新的功能，本来想做一个跟 oh-my-zsh 一样的效果，就是会突然跳出来问你是不是要更新，是的话就给你下载最新版然后重启一下终端...</p>
         </a>
       
     </div>
@@ -965,7 +969,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
 
     <div class='content'>
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%9C%80%E6%B1%82"><span class="toc-text">需求</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%80%9D%E8%B7%AF"><span class="toc-text">思路</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%90%8E%E8%AE%B0"><span class="toc-text">后记</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Todo"><span class="toc-text">Todo</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%89%88%E6%9C%AC%E5%8E%86%E5%8F%B2"><span class="toc-text">版本历史</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8%E4%B8%AD%E9%97%B4%E4%BB%B6"><span class="toc-text">使用中间件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%96%B0%E5%A2%9E%E5%8F%82%E6%95%B0-x"><span class="toc-text">新增参数 -x</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9C%80%E5%90%8E"><span class="toc-text">最后</span></a></li></ol>
     </div>
   </section>
 
@@ -984,7 +988,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 <script>
   window.pdata={}
   pdata.ispage=true;
-  pdata.postTitle="OneTiny 开发日记";
+  pdata.postTitle="OneTiny 开发日记-2021-6-29";
   pdata.commentPath="";
   pdata.commentPlaceholder="";
   // header 这里无论是否开启pjax都需要
@@ -2152,4 +2156,5 @@ document.addEventListener("pjax:success", listennSidebarTOC);
  
 	  
     </div>
-  <script async>window.onload=function(){var a=document.createElement('script'),b=document.getElementsByTagName('script')[0];a.type='text/javascript',a.async=!0,a.src='/sw-register.js?v='+Date.now(),b.parentNode.insertBefore(a,b)};</script></body></html>
+  </body>
+</html>
