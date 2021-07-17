@@ -768,7 +768,12 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 <h3 id="比较"><a href="#比较" class="headerlink" title="比较"></a>比较</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">compare</span><span class="params">(Str* s1, Str* s2)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// 遍历时将两个字符串逐个比较</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; s1-&gt;length &amp;&amp; i &lt; s2-&gt;length; i++) &#123;</span><br><span class="line">        <span class="keyword">if</span> (s1-&gt;str[i] != s2-&gt;str[i]) &#123;</span><br><span class="line">            <span class="keyword">return</span> s1-&gt;str[i] - s2-&gt;str[i];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p>遍历是串中较为重要的操作。</p>
-<p>逐个比较字符的ASCII码，若s1小于s2，返回负数；若s1大于s2，返回正数；若s1等于s2，返回0.</p>
+<p>逐个比较字符的ASCII码，</p>
+<ul>
+<li>若s1 &lt; s2，返回负数；</li>
+<li>若s1 &gt; s2，返回正数；</li>
+<li>若s1 = s2，返回0.</li>
+</ul>
 <h3 id="连接"><a href="#连接" class="headerlink" title="连接"></a>连接</h3><p>连接分两种情况讨论</p>
 <ol>
 <li><p>一种是定长数组实现的字符串的连接</p>
@@ -781,7 +786,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 <p> 变长数组一般没有剩余空间的情况，后面的空间是否是空闲空间也无从得知，所以变长数组的字符串在连接时，通常是开辟一块新的空间，长度为<code>A的长度+B的长度</code>，然后遍历A，逐个复制到新字符串，遍历B，逐个复制到新字符串A的后面，最后补<code>\0</code>。</p>
 </li>
 </ol>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">char</span>* <span class="title">contact</span><span class="params">(Str* s1, Str* s2)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// 创建一块新字符串空间，长度为 s1 + s2</span></span><br><span class="line">    <span class="keyword">char</span>* <span class="keyword">new</span> = (<span class="keyword">char</span>*)<span class="built_in">calloc</span>(s1-&gt;length + s2-&gt;length, <span class="keyword">sizeof</span>(<span class="keyword">char</span>));</span><br><span class="line"></span><br><span class="line">    <span class="keyword">int</span> i = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">while</span> (i &lt; s1-&gt;length) &#123; <span class="comment">// 把 s1 逐个字符赋值给新字符串</span></span><br><span class="line">        <span class="keyword">new</span>[i] = s1-&gt;str[i];</span><br><span class="line">        i++;</span><br><span class="line">    &#125;</span><br><span class="line">    i = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">while</span> (i &lt; s2-&gt;length) &#123; <span class="comment">// 把 s2 逐个字符赋值给新字符串</span></span><br><span class="line">        <span class="keyword">new</span>[s1-&gt;length + i] = s2-&gt;str[i];</span><br><span class="line">        i++;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">new</span>[s1-&gt;length + s2-&gt;length] = <span class="string">&#x27;\0&#x27;</span>;</span><br><span class="line">    s1-&gt;length += s2-&gt;length;</span><br><span class="line">    s1-&gt;str = <span class="keyword">new</span>; <span class="comment">// 让 s1 指向新字符串</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 将 s2 连接到 s1 后面</span></span><br><span class="line"><span class="function"><span class="keyword">char</span>* <span class="title">contact</span><span class="params">(Str* s1, Str* s2)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// 创建一块新字符串空间，长度为 s1 + s2</span></span><br><span class="line">    <span class="keyword">char</span>* <span class="keyword">new</span> = (<span class="keyword">char</span>*)<span class="built_in">calloc</span>(s1-&gt;length + s2-&gt;length, <span class="keyword">sizeof</span>(<span class="keyword">char</span>));</span><br><span class="line"></span><br><span class="line">    <span class="keyword">int</span> i = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">while</span> (i &lt; s1-&gt;length) &#123; <span class="comment">// 把 s1 逐个字符赋值给新字符串</span></span><br><span class="line">        <span class="keyword">new</span>[i] = s1-&gt;str[i];</span><br><span class="line">        i++;</span><br><span class="line">    &#125;</span><br><span class="line">    i = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">while</span> (i &lt; s2-&gt;length) &#123; <span class="comment">// 把 s2 逐个字符赋值给新字符串</span></span><br><span class="line">        <span class="keyword">new</span>[s1-&gt;length + i] = s2-&gt;str[i];</span><br><span class="line">        i++;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">new</span>[s1-&gt;length + s2-&gt;length] = <span class="string">&#x27;\0&#x27;</span>;</span><br><span class="line">    s1-&gt;length += s2-&gt;length;</span><br><span class="line">    s1-&gt;str = <span class="keyword">new</span>; <span class="comment">// 让 s1 指向新字符串</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 
 
@@ -852,10 +857,10 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-06-30T01:09:11+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-07-12T21:46:10+08:00">
   <a class='notlink'>
     <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：2021年6月30日</p>
+    <p>更新于：2021年7月12日</p>
   </a>
 </div>
 
@@ -941,10 +946,14 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         <a class='prev' href='/posts/48872'>
           <p class='title'><i class="fas fa-chevron-left" aria-hidden="true"></i>DataStruction 0x06 树</p>
-          <p class='content'>什么是数据结构？
+          <p class='content'>什么是树？
 
 
-6-树定义n个结点的有限集。n=0时称为空树。n&gt;1时，有且仅有一个特定的根节点 root，其余结点可分为 m（m&gt;0）个互不相交的有限集 T1、T2、…、Tm...</p>
+6-树前面的线性表、广义表、栈、队、串，都是一对一的数据结构。现在开始我们要讨论一种一对多的数据结构: 树。
+定义
+树是 n 个结点的有限集。
+
+n=0 时称为 空树。n&gt;...</p>
         </a>
       
       
@@ -953,9 +962,11 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
           <p class='content'>什么是队列？
 
 
-4-队列队列是只允许在一端进行插入操作，在另一端进行删除操作的受限的线性表。
-队列是一种先进先出（FIFO）的线性表，就像水管一样，从一头进去，从另一头出来
-队列有两个指针，一...</p>
+4-队列
+队列是只允许在一端进行插入操作，在另一端进行删除操作的受限的线性表。
+
+队列是一种 先进先出(FIFO) 的线性表，就像水管一样，从一头进去，从另一头出来
+队列有两个...</p>
         </a>
       
     </div>
@@ -2185,4 +2196,5 @@ document.addEventListener("pjax:success", listennSidebarTOC);
  
 	  
     </div>
-  <script async>window.onload=function(){var a=document.createElement('script'),b=document.getElementsByTagName('script')[0];a.type='text/javascript',a.async=!0,a.src='/sw-register.js?v='+Date.now(),b.parentNode.insertBefore(a,b)};</script></body></html>
+  </body>
+</html>

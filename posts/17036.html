@@ -757,7 +757,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 <li><strong>高效性</strong>：算法设计应该尽量满足时间效率高和存储量低的需求。</li>
 </ol>
 <h2 id="算法效率的度量方法"><a href="#算法效率的度量方法" class="headerlink" title="算法效率的度量方法"></a>算法效率的度量方法</h2><p>一个程序的运行时间，依赖于算法的好坏和问题的输入规模（输入规模：输入量的多少）。</p>
-<p>测定运算时间最可靠的方法就是计算<strong>对运行时间有消耗的基本操作的</strong>执行次数。<br>在分析程序运行时间时，最重要的是把程序看成是独立于程序设计语言的算法或一系列步骤。</p>
+<p>测定运算时间最可靠的方法就是计算<strong>对运行时间有消耗的基本操作</strong>的执行次数。<br>在分析程序运行时间时，最重要的是把程序看成是独立于程序设计语言的算法或一系列步骤。</p>
 <p>当输入规模变大以后，<strong>常数项、非最高阶项</strong>的影响微乎其微，所以判断一个算法的效率时，函数中的参数和其他次要项常常可以忽略，应该更关注主项（最高阶项）的阶数。</p>
 <h2 id="算法时间复杂度"><a href="#算法时间复杂度" class="headerlink" title="算法时间复杂度"></a>算法时间复杂度</h2><blockquote>
 <p>在进行算法分析时，语句总的执行次数 $T(n)$ 是关于问题规模 $n$的函数，进而分析 $T(n)$ 随 $n$ 的变化情况并确定 $T(n)$ 的数量级。<br>算法的时间复杂度，记作：$T(n) = O(f(n))$。表示随着问题规模 $n$ 的增大，算法执行时间的增长率和 $f(n)$ 的增长率相同。</p>
@@ -812,10 +812,10 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-06-30T01:08:53+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-07-11T14:34:24+08:00">
   <a class='notlink'>
     <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：2021年6月30日</p>
+    <p>更新于：2021年7月11日</p>
   </a>
 </div>
 
@@ -905,7 +905,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
 
 2-线性表
-0或n个数据元素的有限序列
+线性表指 0 或 n 个数据元素的有限序列
 
 特点：
 
@@ -913,7 +913,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 元素个数有限
 第一个无直接前驱元素
 最后一个无直接后继元素
-其余元素都有唯一一个直接前驱元素和唯一一个直接后...</p>
+其余元素都有唯一一个直接前驱元素...</p>
         </a>
       
       
@@ -922,9 +922,11 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
           <p class='content'>什么是数据结构？
 
 
-绪论声明：本系列文章系个人总结所写，执笔上偏于新手向，会有诸多用词不严谨之处，只为了方便理解。欢迎指正，拒绝指责。
-正文：
-程序 是一系列指令的集合。程序设计 = 数据结构...</p>
+
+本系列文章系个人总结所写，执笔上偏于新手向，会有诸多用词不严谨之处，只为了方便理解。欢迎指正，拒绝指责。
+
+
+绪论程序 是一系列指令的集合。程序设计 = 数据结构 + 算...</p>
         </a>
       
     </div>
@@ -2207,4 +2209,5 @@ document.addEventListener("pjax:success", listennSidebarTOC);
  
 	  
     </div>
-  <script async>window.onload=function(){var a=document.createElement('script'),b=document.getElementsByTagName('script')[0];a.type='text/javascript',a.async=!0,a.src='/sw-register.js?v='+Date.now(),b.parentNode.insertBefore(a,b)};</script></body></html>
+  </body>
+</html>

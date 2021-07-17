@@ -38,11 +38,11 @@
   --color-site-footer: #666;
   --color-card: #fff;
   --color-text: #444;
-  --color-block: #f6f6f6;
+  --color-block: #eaf7fd;
   --color-inlinecode: #c74f00;
-  --color-codeblock: #fff7ea;
-  --color-h1: #3a3a3a;
-  --color-h2: #3a3a3a;
+  --color-codeblock: #e3f2fd;
+  --color-h1: #40a9ff;
+  --color-h2: #40a9ff;
   --color-h3: #333;
   --color-h4: #444;
   --color-h5: #555;
@@ -107,7 +107,7 @@ body.modal-active {
   background: rgba(33,150,243,0.2);
 }
 h1 {
-  font-size: 1.5rem;
+  font-size: 1.75rem;
 }
 h2 {
   font-size: 1.5rem;
@@ -213,7 +213,7 @@ abbr[title] {
 }
 b,
 strong {
-  font-weight: bold;
+  font-weight: 1000;
 }
 dfn {
   font-style: italic;
@@ -354,25 +354,25 @@ table:not([class]) {
   vertical-align: text-top;
 }
 table:not([class]) th {
-  background-color: #f1f1f1;
+  background-color: #e1f3fc;
 }
 table:not([class]) td,
 table:not([class]) th {
   padding: 8px 16px;
-  border: 2px solid #f1f1f1;
+  border: 2px solid #e1f3fc;
   line-height: 1.5;
   font-size: 90%;
 }
 table:not([class]) tr {
   word-break: keep-all;
-  background-color: #fefefe;
+  background-color: #f8fcfe;
   transition: all 0.28s ease;
   -moz-transition: all 0.28s ease;
   -webkit-transition: all 0.28s ease;
   -o-transition: all 0.28s ease;
 }
 table:not([class]) tr:hover {
-  background-color: #f1f1f1;
+  background-color: #e1f3fc;
 }
 td,
 th {
@@ -1746,11 +1746,11 @@ ul.list-v >li>a:hover {
     --color-site-footer: #aaa;
     --color-card: #333;
     --color-text: #eee;
-    --color-block: #3a3a3a;
+    --color-block: #222;
     --color-codeblock: #343a3c;
     --color-inlinecode: #d56d28;
-    --color-h1: #eee;
-    --color-h2: #eee;
+    --color-h1: #01a5ff;
+    --color-h2: #01a5ff;
     --color-h3: #ddd;
     --color-h4: #ddd;
     --color-h5: #ddd;
@@ -1758,8 +1758,8 @@ ul.list-v >li>a:hover {
     --color-p: #bbb;
     --color-list: #aaa;
     --color-list-hl: #66baff;
-    --color-meta: #888;
-    --color-link: #888;
+    --color-meta: #01a5ff;
+    --color-link: #01a5ff;
   }
   :root:not([data-user-color-scheme]) .backstretch {
     background-color: #282c34 !important;
@@ -1924,11 +1924,11 @@ ul.list-v >li>a:hover {
   --color-site-footer: #aaa;
   --color-card: #333;
   --color-text: #eee;
-  --color-block: #3a3a3a;
+  --color-block: #222;
   --color-codeblock: #343a3c;
   --color-inlinecode: #d56d28;
-  --color-h1: #eee;
-  --color-h2: #eee;
+  --color-h1: #01a5ff;
+  --color-h2: #01a5ff;
   --color-h3: #ddd;
   --color-h4: #ddd;
   --color-h5: #ddd;
@@ -1936,8 +1936,8 @@ ul.list-v >li>a:hover {
   --color-p: #bbb;
   --color-list: #aaa;
   --color-list-hl: #66baff;
-  --color-meta: #888;
-  --color-link: #888;
+  --color-meta: #01a5ff;
+  --color-link: #01a5ff;
 }
 [data-user-color-scheme='dark'] .backstretch {
   background-color: #282c34 !important;
