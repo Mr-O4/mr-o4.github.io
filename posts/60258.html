@@ -24,7 +24,7 @@
   
   <title>C-Note - Boii</title>
   
-    <meta name="keywords" content="C Language,note">
+    <meta name="keywords" content="note,C Language">
   
 
   
@@ -690,7 +690,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
           
             
   
-  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/C-Language/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>C Language</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/note/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>note</p></a></div>
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/note/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>note</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/C-Language/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>C Language</p></a></div>
 
 
           
@@ -700,7 +700,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <div class="new-meta-item wordcount">
     <a class='notlink'>
       <i class="fas fa-keyboard fa-fw" aria-hidden="true"></i>
-      <p>字数：502字</p>
+      <p>字数：501字</p>
     </a>
   </div>
   <div class="new-meta-item readtime">
@@ -742,21 +742,20 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
 
 
-<h3 id="指针"><a href="#指针" class="headerlink" title="指针"></a>指针</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">定义指针: dataType * pointerName = <span class="literal">NULL</span>;</span><br><span class="line"><span class="keyword">int</span> * ptr_a = <span class="literal">NULL</span>;</span><br><span class="line">指针赋值：pointerName = &amp;varName;</span><br><span class="line"><span class="keyword">int</span> a = <span class="number">10</span>;</span><br><span class="line">ptr_a = &amp;a;</span><br></pre></td></tr></table></figure>
+<h3 id="指针"><a href="#指针" class="headerlink" title="指针"></a>指针</h3><p>定义指针：<code>dataType * pointerName = NULL</code>;</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> * ptr_a = <span class="literal">NULL</span>;</span><br></pre></td></tr></table></figure>
+<p>指针赋值：<code>pointerName = &amp;varName</code>;</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> a = <span class="number">10</span>;</span><br><span class="line">ptr_a = &amp;a;</span><br></pre></td></tr></table></figure>
 
 <p>对于指针，其实就是存放地址的变量</p>
 <p><code>int a = 10;</code> 这句话等于申请了一块内存，放了个值10进去，起个别命叫<code>a</code> 。那这个空间的地址假设是 0028FF，那<code>ptr_a = &amp;a</code> 这句话就是再申请一块内存，把0028FF放进去，起个别名叫<code>ptr_a</code> 。</p>
 <p><code>&amp;</code> 这个符号是取地址的意思</p>
 <p><code>*</code> 这个符号则是取这个指针变量中，那个地址的内存中的 值，也就是直接操作内存，修改内存里的内容</p>
 <h3 id="值传递-引用传递"><a href="#值传递-引用传递" class="headerlink" title="值传递  引用传递"></a>值传递  引用传递</h3><p>值传递：传递一份副本，传递后操作的只是副本，也就是对变量的副本进行操作，变量本身不会变化</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">change</span><span class="params">(<span class="keyword">int</span> num)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    num ++;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">4<span class="keyword">int</span> num = <span class="number">9</span>;</span><br><span class="line">4change(num);</span><br><span class="line">4<span class="built_in">printf</span>(<span class="string">&quot;num = %d&quot;</span>, num);</span><br><span class="line">&#125;</span><br><span class="line">结果：<span class="number">9</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">change</span><span class="params">(<span class="keyword">int</span> num)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    num ++;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">4<span class="keyword">int</span> num = <span class="number">9</span>;</span><br><span class="line">4change(num);</span><br><span class="line">4<span class="built_in">printf</span>(<span class="string">&quot;num = %d&quot;</span>, num);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 结果：9</span></span><br></pre></td></tr></table></figure>
 
-
-
-<p>引用传递：&amp;var， 传递的是地址，传递后操作的是该地址中的值，也就是对变量本身进行操作</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">change</span><span class="params">(<span class="keyword">int</span> * num)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">4*num ++;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">4<span class="keyword">int</span> num = <span class="number">9</span>;</span><br><span class="line">    change(&amp;num);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;num = %d&quot;</span>, num);</span><br><span class="line">&#125;</span><br><span class="line">结果：<span class="number">10</span></span><br></pre></td></tr></table></figure>
-
-
+<p>引用传递：<code>&amp;var</code>， 传递的是地址，传递后操作的是该地址中的值，也就是对变量本身进行操作</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">change</span><span class="params">(<span class="keyword">int</span> * num)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">4*num ++;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">4<span class="keyword">int</span> num = <span class="number">9</span>;</span><br><span class="line">    change(&amp;num);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;num = %d&quot;</span>, num);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 结果：10</span></span><br></pre></td></tr></table></figure>
 
 <p>值传递就是普通操作，引用传递就是操作指针（骚操作）</p>
 <h3 id="变量的生存周期"><a href="#变量的生存周期" class="headerlink" title="变量的生存周期"></a>变量的生存周期</h3><table>
@@ -805,7 +804,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       <i class="fas fa-bookmark fa-fw" aria-hidden="true"></i><span>相关文章</span>
     </section>
     <section class='body'>
-      <div class="vlts-rps"><a class="item" href="/posts/34681.html" title="Electron Note" rel="bookmark "><img src="https://cdn.jsdelivr.net/gh/TCP404/Picgo/blog/cover/electron.jpg" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/TCP404/Picgo/blog/cover/electron.jpg" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" /><span class="title">Electron Note</span><span class="excerpt">Note</span></a><a class="item" href="/posts/62154.html" title="GoLang-Note-one" rel="bookmark "><img src="https://cdn.jsdelivr.net/gh/TCP404/Picgo/blog/cover/go.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/TCP404/Picgo/blog/cover/go.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" /><span class="title">GoLang-Note-one</span><span class="excerpt">感觉Go会成为下一个C语言</span></a><a class="item" href="/posts/22089.html" title="Hexo-文件下载功能" rel="bookmark "><img src="https://cdn.jsdelivr.net/gh/TCP404/Picgo/blog/illustration-pic/Hexo-download/1.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/TCP404/Picgo/blog/illustration-pic/Hexo-download/1.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" /><span class="title">Hexo-文件下载功能</span><span class="excerpt">So easy~</span></a><a class="item" href="/posts/41079.html" title="多端同步管理Hexo博客" rel="bookmark "><img src="https://cdn.jsdelivr.net/gh/TCP404/Picgo/blog/cover/github+hexo.jpg" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/TCP404/Picgo/blog/cover/github+hexo.jpg" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" /><span class="title">多端同步管理Hexo博客</span><span class="excerpt">多端管理其实很简单。</span></a></div></section></div>
+      <div class="vlts-rps"><a class="item" href="/posts/34681.html" title="Electron Note" rel="bookmark "><img src="https://cdn.jsdelivr.net/gh/TCP404/Picgo/blog/cover/electron.jpg" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/TCP404/Picgo/blog/cover/electron.jpg" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" /><span class="title">Electron Note</span><span class="excerpt">Note</span></a><a class="item" href="/posts/22089.html" title="Hexo-文件下载功能" rel="bookmark "><img src="https://cdn.jsdelivr.net/gh/TCP404/Picgo/blog/illustration-pic/Hexo-download/1.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/TCP404/Picgo/blog/illustration-pic/Hexo-download/1.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" /><span class="title">Hexo-文件下载功能</span><span class="excerpt">So easy~</span></a><a class="item" href="/posts/41079.html" title="多端同步管理Hexo博客" rel="bookmark "><img src="https://cdn.jsdelivr.net/gh/TCP404/Picgo/blog/cover/github+hexo.jpg" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/TCP404/Picgo/blog/cover/github+hexo.jpg" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" /><span class="title">多端同步管理Hexo博客</span><span class="excerpt">多端管理其实很简单。</span></a><a class="item" href="/posts/6343.html" title="当小程序开发完成后" rel="bookmark "><img src="https://cdn.jsdelivr.net/gh/TCP404/Picgo/blog/illustration-pic/After-develop-minipro/界面设计1.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/TCP404/Picgo/blog/illustration-pic/After-develop-minipro/界面设计1.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" /><span class="title">当小程序开发完成后</span><span class="excerpt">开发小程序后的一点总结</span></a></div></section></div>
       
       
         <div class='copyright'>
@@ -834,10 +833,10 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-06-30T01:08:31+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-07-19T17:03:15+08:00">
   <a class='notlink'>
     <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：2021年6月30日</p>
+    <p>更新于：2021年7月19日</p>
   </a>
 </div>
 
@@ -846,7 +845,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         
           
   
-  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/C-Language/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>C Language</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/note/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>note</p></a></div>
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/note/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>note</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/C-Language/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>C Language</p></a></div>
 
 
         
@@ -906,7 +905,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         
           
   
-  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/C-Language/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>C Language</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/note/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>note</p></a></div>
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/note/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>note</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/C-Language/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>C Language</p></a></div>
 
 
         
@@ -2166,5 +2165,4 @@ document.addEventListener("pjax:success", listennSidebarTOC);
  
 	  
     </div>
-  </body>
-</html>
+  <script async>window.onload=function(){var a=document.createElement('script'),b=document.getElementsByTagName('script')[0];a.type='text/javascript',a.async=!0,a.src='/sw-register.js?v='+Date.now(),b.parentNode.insertBefore(a,b)};</script></body></html>

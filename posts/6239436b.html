@@ -22,7 +22,7 @@
 
   <!-- 页面元数据 -->
   
-  <title>Golang [11-包] - Boii</title>
+  <title>Golang [基础] 11-包 - Boii</title>
   
     <meta name="keywords" content="Golang">
   
@@ -649,20 +649,20 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
     <div class='headimg-div'>
       <a class='headimg-a'>
-        <img class='headimg' src='https://cdn.jsdelivr.net/gh/TCP404/Picgo/blog/cover/go.png'/>
+        <img class='headimg' src='https://cdn.jsdelivr.net/gh/TCP404/Picgo/blog/cover/go2.png'/>
       </a>
     </div>
   
   <div class="article-meta" id="top">
     
     
-      <a title='Golang [11-包]' href='/posts/6239436b'>
+      <a title='Golang [基础] 11-包' href='/posts/6239436b'>
         <img class='thumbnail' src='https://cdn.jsdelivr.net/gh/TCP404/Picgo/blog/thumbnail/golang.png'>
       </a>
     
     
       <h1 class="title">
-        Golang [11-包]
+        Golang [基础] 11-包
       </h1>
       <div class='new-meta-box'>
         
@@ -797,7 +797,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 <h3 id="多行"><a href="#多行" class="headerlink" title="多行"></a>多行</h3><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> (</span><br><span class="line">    . <span class="string">&quot;fmt&quot;</span>    <span class="comment">// 使用 . 作为别名，则使用时可以省略包名</span></span><br><span class="line">    t <span class="string">&quot;tcp404.com/study/go/test&quot;</span></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">    Println(t.Add(<span class="number">10</span>, <span class="number">20</span>))</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <h3 id="省略包名"><a href="#省略包名" class="headerlink" title="省略包名"></a>省略包名</h3><p>在给包起别名的时候，别名为 <code>.</code> ，在后面使用时可以直接使用包中的变量和方法等，不需要加包名。</p>
-<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> . <span class="string">&quot;fmt&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">4Println(<span class="string">&quot;Hello!&quot;</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> . <span class="string">&quot;fmt&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">    Println(<span class="string">&quot;Hello!&quot;</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 
 <h2 id="init-初始化函数"><a href="#init-初始化函数" class="headerlink" title="init() 初始化函数"></a>init() 初始化函数</h2><blockquote>
@@ -834,7 +834,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       <i class="fas fa-bookmark fa-fw" aria-hidden="true"></i><span>相关文章</span>
     </section>
     <section class='body'>
-      <div class="vlts-rps"><a class="item" href="/posts/913ad9ee.html" title="Golang [0-总叙]" rel="bookmark "><img src="https://cdn.jsdelivr.net/gh/TCP404/Picgo/blog/cover/go.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/TCP404/Picgo/blog/cover/go.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" /><span class="title">Golang [0-总叙]</span><span class="excerpt">Go 是一门好语言吗？</span></a><a class="item" href="/posts/7b9344b7.html" title="Golang [1-基础]" rel="bookmark "><img src="https://cdn.jsdelivr.net/gh/TCP404/Picgo/blog/cover/go.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/TCP404/Picgo/blog/cover/go.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" /><span class="title">Golang [1-基础]</span><span class="excerpt">基础语法</span></a><a class="item" href="/posts/ff53e8a4.html" title="Golang [10-结构体]" rel="bookmark "><img src="https://cdn.jsdelivr.net/gh/TCP404/Picgo/blog/cover/go.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/TCP404/Picgo/blog/cover/go.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" /><span class="title">Golang [10-结构体]</span><span class="excerpt">结构体的创建与使用</span></a><a class="item" href="/posts/19a13983.html" title="Golang [12-接口]" rel="bookmark "><img src="https://cdn.jsdelivr.net/gh/TCP404/Picgo/blog/cover/go.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/TCP404/Picgo/blog/cover/go.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" /><span class="title">Golang [12-接口]</span><span class="excerpt">接口的创建与使用</span></a><a class="item" href="/posts/62154.html" title="GoLang-Note-one" rel="bookmark "><img src="https://cdn.jsdelivr.net/gh/TCP404/Picgo/blog/cover/go.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/TCP404/Picgo/blog/cover/go.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" /><span class="title">GoLang-Note-one</span><span class="excerpt">感觉Go会成为下一个C语言</span></a></div></section></div>
+      <div class="vlts-rps"><a class="item" href="/posts/a6eafc24.html" title="Golang [进阶] 16-并发" rel="bookmark "><img src="https://cdn.jsdelivr.net/gh/TCP404/Picgo/blog/cover/go2.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/TCP404/Picgo/blog/cover/go2.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" /><span class="title">Golang [进阶] 16-并发</span><span class="excerpt">并发</span></a><a class="item" href="/posts/e3c7a27f.html" title="Golang [进阶] 17-Channel" rel="bookmark "><img src="https://cdn.jsdelivr.net/gh/TCP404/Picgo/blog/cover/go2.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/TCP404/Picgo/blog/cover/go2.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" /><span class="title">Golang [进阶] 17-Channel</span><span class="excerpt">不要通过共享内存来通信，而应该通过通信来共享内存</span></a><a class="item" href="/posts/65501a4c.html" title="Golang [进阶] 18-并发安全" rel="bookmark "><img src="https://cdn.jsdelivr.net/gh/TCP404/Picgo/blog/cover/go2.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/TCP404/Picgo/blog/cover/go2.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" /><span class="title">Golang [进阶] 18-并发安全</span><span class="excerpt">并发安全</span></a><a class="item" href="/posts/c8c5007f.html" title="Golang [进阶] 19-reflect" rel="bookmark "><img src="https://cdn.jsdelivr.net/gh/TCP404/Picgo/blog/cover/go2.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/TCP404/Picgo/blog/cover/go2.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" /><span class="title">Golang [进阶] 19-reflect</span><span class="excerpt">反射的操作</span></a><a class="item" href="/posts/913ad9ee.html" title="Golang [基础] 0-总叙" rel="bookmark "><img src="https://cdn.jsdelivr.net/gh/TCP404/Picgo/blog/cover/go2.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/TCP404/Picgo/blog/cover/go2.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" /><span class="title">Golang [基础] 0-总叙</span><span class="excerpt">Go 是一门好语言吗？</span></a></div></section></div>
       
       
         <div class='copyright'>
@@ -888,7 +888,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://www.boii.xyz/posts/6239436b&title=Golang [11-包] - Boii&pics=https://cdn.jsdelivr.net/gh/TCP404/Picgo/blog/thumbnail/golang.png&summary=包的使用"
+          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://www.boii.xyz/posts/6239436b&title=Golang [基础] 11-包 - Boii&pics=https://cdn.jsdelivr.net/gh/TCP404/Picgo/blog/thumbnail/golang.png&summary=包的使用"
           
           >
           
@@ -900,7 +900,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://www.boii.xyz/posts/6239436b&title=Golang [11-包] - Boii&pics=https://cdn.jsdelivr.net/gh/TCP404/Picgo/blog/thumbnail/golang.png&summary=包的使用"
+          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://www.boii.xyz/posts/6239436b&title=Golang [基础] 11-包 - Boii&pics=https://cdn.jsdelivr.net/gh/TCP404/Picgo/blog/thumbnail/golang.png&summary=包的使用"
           
           >
           
@@ -912,7 +912,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="http://service.weibo.com/share/share.php?url=https://www.boii.xyz/posts/6239436b&title=Golang [11-包] - Boii&pics=https://cdn.jsdelivr.net/gh/TCP404/Picgo/blog/thumbnail/golang.png&summary=包的使用"
+          target="_blank" href="http://service.weibo.com/share/share.php?url=https://www.boii.xyz/posts/6239436b&title=Golang [基础] 11-包 - Boii&pics=https://cdn.jsdelivr.net/gh/TCP404/Picgo/blog/thumbnail/golang.png&summary=包的使用"
           
           >
           
@@ -951,7 +951,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     <div class="prev-next">
       
         <a class='prev' href='/posts/19a13983'>
-          <p class='title'><i class="fas fa-chevron-left" aria-hidden="true"></i>Golang [12-接口]</p>
+          <p class='title'><i class="fas fa-chevron-left" aria-hidden="true"></i>Golang [基础] 12-接口</p>
           <p class='content'>接口的创建与使用
 
 
@@ -962,7 +962,7 @@ interface 是一组方法的集合，是 dack-type programming 的一种体...</
       
       
         <a class='next' href='/posts/ff53e8a4'>
-          <p class='title'>Golang [10-结构体]<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
+          <p class='title'>Golang [基础] 10-结构体<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
           <p class='content'>结构体的创建与使用
 
 
@@ -1029,7 +1029,7 @@ interface 是一组方法的集合，是 dack-type programming 的一种体...</
 <script>
   window.pdata={}
   pdata.ispage=true;
-  pdata.postTitle="Golang [11-包]";
+  pdata.postTitle="Golang [基础] 11-包";
   pdata.commentPath="";
   pdata.commentPlaceholder="";
   // header 这里无论是否开启pjax都需要
@@ -2197,5 +2197,4 @@ document.addEventListener("pjax:success", listennSidebarTOC);
  
 	  
     </div>
-  </body>
-</html>
+  <script async>window.onload=function(){var a=document.createElement('script'),b=document.getElementsByTagName('script')[0];a.type='text/javascript',a.async=!0,a.src='/sw-register.js?v='+Date.now(),b.parentNode.insertBefore(a,b)};</script></body></html>

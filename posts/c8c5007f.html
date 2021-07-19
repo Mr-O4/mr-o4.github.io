@@ -1,0 +1,2299 @@
+<!DOCTYPE html>
+<html lang="zh-CN,en,zh-HK,zh-TW,default">
+  <head hexo-theme='https://github.com/volantis-x/hexo-theme-volantis/tree/4.3.1'>
+  <meta charset="utf-8">
+  <!-- SEO相关 -->
+  
+    
+  
+  <!-- 渲染优化 -->
+  <meta http-equiv='x-dns-prefetch-control' content='on' />
+  <link rel='dns-prefetch' href='https://cdn.jsdelivr.net'>
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <meta name="renderer" content="webkit">
+  <meta name="force-rendering" content="webkit">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="HandheldFriendly" content="True" >
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+  <link rel="preload" href="/css/first.css" as="style">
+  
+
+  <!-- 页面元数据 -->
+  
+  <title>Golang [进阶] 19-reflect - Boii</title>
+  
+    <meta name="keywords" content="Golang">
+  
+
+  
+    <meta name="description" content="反射的操作">
+  
+
+  <!-- feed -->
+  
+    <link rel="alternate" href="/atom.xml" title="Boii" type="application/atom+xml">
+  
+
+  <!-- import meta -->
+  
+
+  <!-- link -->
+  
+    <link rel="shortcut icon" type='image/x-icon' href="/images/icon/favicon.png">
+  
+
+  <!-- import link -->
+  
+
+  
+  
+  
+  
+  
+  
+
+
+  
+    
+<link rel="stylesheet" href="/css/first.css">
+
+  
+
+  
+  <link rel="stylesheet" href="/css/style.css" media="print" onload="this.media='all';this.onload=null">
+  <noscript><link rel="stylesheet" href="/css/style.css"></noscript>
+  
+
+  <script id="loadcss"></script>
+
+  
+<script>
+if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMode))
+    document.write(
+	'<style>'+
+		'html{'+
+			'overflow-x: hidden !important;'+
+			'overflow-y: hidden !important;'+
+		'}'+
+		'.kill-ie{'+
+			'text-align:center;'+
+			'height: 100%;'+
+			'margin-top: 15%;'+
+			'margin-bottom: 5500%;'+
+		'}'+
+	'</style>'+
+    '<div class="kill-ie">'+
+        '<h1><b>抱歉，您的浏览器无法访问本站</b></h1>'+
+        '<h3>微软已经于2016年终止了对 Internet Explorer (IE) 10 及更早版本的支持，<br/>'+
+        '继续使用存在极大的安全隐患，请使用当代主流的浏览器进行访问。</h3><br/>'+
+        '<a target="_blank" rel="noopener" href="https://www.microsoft.com/zh-cn/WindowsForBusiness/End-of-IE-support"><strong>了解详情 ></strong></a>'+
+    '</div>');
+</script>
+
+
+<noscript>
+	<style>
+		html{
+			overflow-x: hidden !important;
+			overflow-y: hidden !important;
+		}
+		.kill-noscript{
+			text-align:center;
+			height: 100%;
+			margin-top: 15%;
+			margin-bottom: 5500%;
+		}
+	</style>
+    <div class="kill-noscript">
+        <h1><b>抱歉，您的浏览器无法访问本站</b></h1>
+        <h3>本页面需要浏览器支持（启用）JavaScript</h3><br/>
+        <a target="_blank" rel="noopener" href="https://www.baidu.com/s?wd=启用JavaScript"><strong>了解详情 ></strong></a>
+    </div>
+</noscript>
+
+</head>
+
+  <body>
+    
+
+<header id="l_header" class="l_header auto shadow blur show" style='opacity: 0' >
+  <div class='container'>
+  <div id='wrapper'>
+    <div class='nav-sub'>
+      <p class="title"></p>
+      <ul class='switcher nav-list-h m-phone' id="pjax-header-nav-list">
+        <li><a id="s-comment" class="fas fa-comments fa-fw" target="_self" href='javascript:void(0)'></a></li>
+        
+          <li><a id="s-toc" class="s-toc fas fa-list fa-fw" target="_self" href='javascript:void(0)'></a></li>
+        
+      </ul>
+    </div>
+		<div class="nav-main">
+      
+        
+        <a class="title flat-box" target="_self" href='/'>
+          
+            <img no-lazy class='logo' src='https://cdn.jsdelivr.net/gh/TCP404/HEXO-CDN/images/icon/bolgger.png'/>
+          
+          
+          
+        </a>
+      
+
+			<div class='menu navigation'>
+				<ul class='nav-list-h m-pc'>
+          
+          
+          
+            
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=/
+                  
+                  
+                  
+                    id="home"
+                  >
+                  <i class='fas fa-rss fa-fw'></i>博客
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" 
+                  
+                  
+                  >
+                  <i class='fas fa-laptop-code fa-fw'></i>项目
+                </a>
+                
+                  <ul class="list-v">
+                    
+                      
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=https://github.com/TCP404/TinyServer
+                  
+                  
+                  
+                    id="https:githubcomTCP404TinyServer"
+                  >
+                  <i class='fas fa-server fa-fw'></i>OneTiny
+                </a>
+                
+              </li>
+            
+          
+                    
+                      
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=https://github.com/TCP404/GoTE-miniprogram
+                  
+                  
+                  
+                    id="https:githubcomTCP404GoTE-miniprogram"
+                  >
+                  <i class='fas fa-car fa-fw'></i>GoTE
+                </a>
+                
+              </li>
+            
+          
+                    
+                  </ul>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" 
+                  
+                  
+                  >
+                  <i class='fas fa-indent fa-fw'></i>导航
+                </a>
+                
+                  <ul class="list-v">
+                    
+                      
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=/categories/
+                  
+                  
+                  
+                    id="categories"
+                  >
+                  <i class='fas fa-folder fa-fw'></i>分类
+                </a>
+                
+              </li>
+            
+          
+                    
+                      
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=/tags/
+                  
+                  
+                  
+                    id="tags"
+                  >
+                  <i class='fas fa-tags fa-fw'></i>标签
+                </a>
+                
+              </li>
+            
+          
+                    
+                      
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=/archives/
+                  
+                  
+                  
+                    id="archives"
+                  >
+                  <i class='fas fa-archive fa-fw'></i>归档
+                </a>
+                
+              </li>
+            
+          
+                    
+                  </ul>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=/about/
+                  
+                  
+                  
+                    id="about"
+                  >
+                  <i class='fas fa-user fa-fw'></i>关于
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=/friends/
+                  
+                  
+                  
+                    id="friends"
+                  >
+                  <i class='fas fa-link fa-fw'></i>友链
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              
+                <li>
+                  <a class="menuitem flat-box">
+                    <i class='fas fa-compact-disc fa-fw music'></i>BGM
+                  </a>
+                  <ul class="list-v">
+                    <li>
+                      <div class="aplayer-container">
+                        
+
+  
+    <meting-js
+      theme='#1BCDFC'
+      autoplay='false'
+      volume='0.1'
+      loop='all'
+      order='random'
+      fixed='false'
+      list-max-height='320px'
+      server='netease'
+      type='playlist'
+      id='2798155811'
+      list-folded='true'>
+    </meting-js>
+  
+
+
+                      </div>
+                    </li>
+                  </ul>
+                <li>
+              
+            
+          
+          
+            
+            
+              <li>
+                <a class="menuitem flat-box header toggle-mode-btn">
+                  <i class='fas fa-moon fa-fw'></i>开/关灯
+                </a>
+              <li>
+            
+          
+          
+				</ul>
+			</div>
+
+      <div class="m_search">
+        <form name="searchform" class="form u-search-form">
+          <i class="icon fas fa-search fa-fw"></i>
+          <input type="text" class="input u-search-input" placeholder="Search..." />
+        </form>
+      </div>
+
+			<ul class='switcher nav-list-h m-phone'>
+				
+					<li><a class="s-search fas fa-search fa-fw" target="_self" href='javascript:void(0)'></a></li>
+				
+				<li>
+          <a class="s-menu fas fa-bars fa-fw" target="_self" href='javascript:void(0)'></a>
+          <ul class="menu-phone list-v navigation white-box">
+            
+              
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=/
+                  
+                  
+                  
+                    id="home"
+                  >
+                  <i class='fas fa-rss fa-fw'></i>博客
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" 
+                  
+                  
+                  >
+                  <i class='fas fa-laptop-code fa-fw'></i>项目
+                </a>
+                
+                  <ul class="list-v">
+                    
+                      
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=https://github.com/TCP404/TinyServer
+                  
+                  
+                  
+                    id="https:githubcomTCP404TinyServer"
+                  >
+                  <i class='fas fa-server fa-fw'></i>OneTiny
+                </a>
+                
+              </li>
+            
+          
+                    
+                      
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=https://github.com/TCP404/GoTE-miniprogram
+                  
+                  
+                  
+                    id="https:githubcomTCP404GoTE-miniprogram"
+                  >
+                  <i class='fas fa-car fa-fw'></i>GoTE
+                </a>
+                
+              </li>
+            
+          
+                    
+                  </ul>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" 
+                  
+                  
+                  >
+                  <i class='fas fa-indent fa-fw'></i>导航
+                </a>
+                
+                  <ul class="list-v">
+                    
+                      
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=/categories/
+                  
+                  
+                  
+                    id="categories"
+                  >
+                  <i class='fas fa-folder fa-fw'></i>分类
+                </a>
+                
+              </li>
+            
+          
+                    
+                      
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=/tags/
+                  
+                  
+                  
+                    id="tags"
+                  >
+                  <i class='fas fa-tags fa-fw'></i>标签
+                </a>
+                
+              </li>
+            
+          
+                    
+                      
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=/archives/
+                  
+                  
+                  
+                    id="archives"
+                  >
+                  <i class='fas fa-archive fa-fw'></i>归档
+                </a>
+                
+              </li>
+            
+          
+                    
+                  </ul>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=/about/
+                  
+                  
+                  
+                    id="about"
+                  >
+                  <i class='fas fa-user fa-fw'></i>关于
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=/friends/
+                  
+                  
+                  
+                    id="friends"
+                  >
+                  <i class='fas fa-link fa-fw'></i>友链
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              
+            
+          
+            
+              
+            
+              <li>
+                <a class="menuitem flat-box header toggle-mode-btn">
+                  <i class='fas fa-moon fa-fw'></i>开/关灯
+                </a>
+              <li>
+            
+          
+            
+          </ul>
+        </li>
+			</ul>
+		</div>
+	</div>
+  </div>
+</header>
+
+    <div id="l_body">
+      <div id="l_cover">
+  
+    
+        <div id="full" class='cover-wrapper post search' style="display: none;">
+          
+            <div id='cover-backstretch'></div>
+          
+          <div class='cover-body'>
+  <div class='top'>
+    
+      <img no-lazy class='logo' src='https://cdn.jsdelivr.net/gh/TCP404/HEXO-CDN/images/icon/bolgger.png'/>
+    
+    
+      <p class="title">Mr.Boii</p>
+    
+    
+      <p class="subtitle">「Show me the code!」</p>
+    
+  </div>
+  <div class='bottom'>
+    
+      <div class="m_search">
+        <form name="searchform" class="form u-search-form">
+          <input type="text" class="input u-search-input" placeholder="Search..." />
+          <i class="icon fas fa-search fa-fw"></i>
+        </form>
+      </div>
+    
+    <div class='menu navigation'>
+      <div class='list-h'>
+        
+          
+            <a href="/"
+              
+              
+              id="home">
+              <i class='fas fa-book fa-fw'></i><p></p>
+            </a>
+          
+            <a target="_blank" rel="noopener" href="https://github.com/Mr-O4/GoTE-miniprogram"
+              
+              
+              id="https:githubcomMr-O4GoTE-miniprogram">
+              <i class='fas fa-laptop-code fa-fw'></i><p></p>
+            </a>
+          
+            <a href="/archives/"
+              
+              
+              id="archives">
+              <i class='fas fa-archive fa-fw'></i><p></p>
+            </a>
+          
+            <a href="/about/"
+              
+              
+              id="about">
+              <i class='fas fa-user fa-fw'></i><p></p>
+            </a>
+          
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+          <div id="scroll-down" style="display: none;"><i class="fa fa-chevron-down scroll-down-effects"></i></div>
+        </div>
+    
+  
+  </div>
+
+      <div id="safearea">
+        <div class="body-wrapper" id="pjax-container">
+          
+
+<div class='l_main'>
+  <article class="article post white-box reveal md shadow article-type-post" id="post" itemscope itemprop="blogPost">
+  
+
+
+  
+    <div class='headimg-div'>
+      <a class='headimg-a'>
+        <img class='headimg' src='https://cdn.jsdelivr.net/gh/TCP404/Picgo/blog/cover/go2.png'/>
+      </a>
+    </div>
+  
+  <div class="article-meta" id="top">
+    
+    
+      <a title='Golang [进阶] 19-reflect' href='/posts/c8c5007f'>
+        <img class='thumbnail' src='https://cdn.jsdelivr.net/gh/TCP404/Picgo/blog/thumbnail/golang.png'>
+      </a>
+    
+    
+      <h1 class="title">
+        Golang [进阶] 19-reflect
+      </h1>
+      <div class='new-meta-box'>
+        
+          
+            
+<div class='new-meta-item author'>
+  <a class='author' href="/" rel="nofollow">
+    <img no-lazy src="https://cdn.jsdelivr.net/gh/TCP404/HEXO-CDN/images/icon/favicon.png">
+    <p>Mr.Pro</p>
+  </a>
+</div>
+
+          
+        
+          
+            <div class="new-meta-item date">
+  <a class='notlink'>
+    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
+    <p>发布于：2021年7月19日</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+  
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/Golang/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>Golang</p></a></div>
+
+
+          
+        
+          
+            
+  <div class="new-meta-item wordcount">
+    <a class='notlink'>
+      <i class="fas fa-keyboard fa-fw" aria-hidden="true"></i>
+      <p>字数：5.7k字</p>
+    </a>
+  </div>
+  <div class="new-meta-item readtime">
+    <a class='notlink'>
+      <i class="fas fa-hourglass-half fa-fw" aria-hidden="true"></i>
+      <p>时长：25分钟</p>
+    </a>
+  </div>
+
+
+          
+        
+          
+            
+  <div class="new-meta-item browse busuanzi">
+    <a class='notlink'>
+      <i class="fas fa-eye fa-fw" aria-hidden="true"></i>
+      <p>
+        <span id="busuanzi_value_page_pv">
+          <i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i>
+        </span>
+        次浏览
+      </p>
+    </a>
+  </div>
+
+
+          
+        
+      </div>
+    
+  </div>
+
+
+  
+  
+  <p>反射的操作</p>
+<span id="more"></span>
+
+<h1 id="2-reflect"><a href="#2-reflect" class="headerlink" title="2-reflect"></a>2-reflect</h1><blockquote>
+<p>官方Doc中<strong>Rob Pike</strong>定义：<br>Reflection in computing is the ability of a program to examine its own structure, particularly through types; it’s a form of metaprogramming. It’s also a great source of confusion.</p>
+<p>在计算机领域，反射是一种让程序——主要是通过类型——理解其自身结构的一种能力。它是元编程的组成之一，同时它也是一大引人困惑的难题。</p>
+</blockquote>
+<blockquote>
+<p><strong>维基百科</strong>定义：<br>在计算机科学中，反射是指计算机程序在运行时（Run time）可以访问、检测和修改它本身状态或行为的一种能力。用比喻来说，反射就是程序在运行的时候能够“观察”并且修改自己的行为。</p>
+</blockquote>
+<blockquote>
+<p><strong>《Go 语言圣经》</strong>中这样定义：<br>Go 语言提供了一种机制在运行时更新变量和检查它们的值、调用它们的方法，但是在编译时并不知道这些变量的具体类型，这称为反射机制。</p>
+</blockquote>
+<ul>
+<li>反射应用场景<ol>
+<li>由于没约定好，或者传入的类型很多、这些类型不能统一表示，导致不确定函数参数类型，就需要用反射来确定类型。</li>
+<li>需要根据某些条件，如用户的输入，来决定调用哪个函数，则需要在运行期动态地执行函数。</li>
+</ol>
+</li>
+<li>不建议用反射的理由<ol>
+<li>反射代码难以阅读，降低代码可读性。</li>
+<li>静态语言的优势之一在于编译期就能发现一些类型错误，而反射这种运行期的怪物会导致这一优势的失去。包含反射的代码很可能运行很久，才会出错，而且经常是直接 <code>panic</code>，造成严重后果。</li>
+<li>反射对性能影响较大，相比正常代码慢出一两个数量级。</li>
+</ol>
+</li>
+</ul>
+<h2 id="相关基础"><a href="#相关基础" class="headerlink" title="相关基础"></a>相关基础</h2><h3 id="Golang-的类型"><a href="#Golang-的类型" class="headerlink" title="Golang 的类型"></a>Golang 的类型</h3><p>Golang 的类型：</p>
+<ul>
+<li>变量包括<code>（type，value）</code>两部分</li>
+<li><em>type</em> 包括 <em>static type</em> 和 <em>concrete type</em>。<ul>
+<li><em>static type</em> 就是在编码时看得见的类型，如：int、string</li>
+<li><em>concrete type</em> 是 runtime 系统看得见的类型。</li>
+</ul>
+</li>
+<li>类型能否断言成功，取决于变量的 <em>concrete type</em>。因此，一个 reader 变量如果它的 <em>concrete type</em> 实现了 write 方法，reader 也可以被断言为 writer。</li>
+</ul>
+<h3 id="静态类型和动态类型"><a href="#静态类型和动态类型" class="headerlink" title="静态类型和动态类型"></a>静态类型和动态类型</h3><p>在反射的概念中，编译时就知道的变量类型叫<strong>静态类型</strong>，运行时才知道的变量类型叫<strong>动态类型</strong>。</p>
+<ul>
+<li><p>静态类型：变量声明时赋予的类型。</p>
+  <figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">type</span> Myint <span class="keyword">int</span>    <span class="comment">// int 就是静态类型，type 是 static type</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">type</span> A <span class="keyword">struct</span> &#123;</span><br><span class="line">    Name <span class="keyword">string</span>   <span class="comment">// string 就是静态类型，type 是 static type</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> i *<span class="keyword">int</span>        <span class="comment">// *int 就是静态类型，type 是 static type</span></span><br></pre></td></tr></table></figure></li>
+<li><p>动态类型：运行时给这个变量赋值时，这个值的类型。如果值为 <code>nil</code> 则没有动态类型。<br>  一个变量的动态类型在运行时可能改变，则主要依赖于它的赋值，前提是这个变量是接口类型。</p>
+  <figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> A <span class="keyword">interface</span>&#123;&#125;    <span class="comment">// 静态类型 interface&#123;&#125;</span></span><br><span class="line">A = <span class="number">10</span>               <span class="comment">// 静态类型 interface&#123;&#125;    动态类型 int</span></span><br><span class="line">A = <span class="string">&quot;String&quot;</span>         <span class="comment">// 静态类型 interface&#123;&#125;    动态类型 string</span></span><br><span class="line"><span class="keyword">var</span> M *<span class="keyword">int</span></span><br><span class="line">A = M                <span class="comment">// 静态类型 interface&#123;&#125;    动态类型 *int</span></span><br></pre></td></tr></table></figure></li>
+</ul>
+<div class="note info"><p>Golang 的反射就是建立在类型之上的。<br>Golang 变量的指定类型是静态的，在创建变量的时候类型就已经确定，如指定 <code>int、string</code>，所以称之为 <em>static type</em>。<br>Golang 变量的指定类型是 interface 类型相关的，则类型在运行期才能确定，所以称之为 <em>concrete type</em>。</p><p>只有 interface 类型才有反射一说。</p></div>
+
+<h3 id="interface-类型"><a href="#interface-类型" class="headerlink" title="interface 类型"></a>interface 类型</h3><p>Golang 是通过接口实现的，任何 <strong>接口值</strong> 都是由一个 <strong>实际类型</strong> 和 <strong>实际类型的值</strong> 两个部分组成的。</p>
+<p>每个 interface 变量都有一个对应的 <em>pair</em>，<em>pair</em> 中记录了 type 的类型和值：</p>
+<figure class="highlight elm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="title">pair</span> -&gt; (concrete <span class="keyword">type</span>, value)</span><br></pre></td></tr></table></figure>
+<p><code>concrete type</code> 是实际变量的类型，<code>concrete value</code> 是实际变量的值。<br>一个 interface 变量包含了 2 个指针，一个指向实际值的类型，一个指向实际值。</p>
+<ul>
+<li><p>eg：打开文件会返回一个 <code>*os.File</code> 变量。</p>
+  <figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">f, err := os.OpenFile(<span class="string">&quot;/home/abc.txt&quot;</span>, os.O_RDWR, <span class="number">0777</span>)</span><br><span class="line"><span class="keyword">var</span> r io.Reader = f</span><br></pre></td></tr></table></figure>
+<p>  接口变量 r 的 <em>pair</em> 信息记录如下：<code>(f, *os.File)</code>。</p>
+<p>  <em>pair</em> 在接口变量管道连续赋值过程中是不变的，将接口变量 r 赋值给另一个接口变量 w，他们的 <em>pair</em> 是相同的。</p>
+  <figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> w io.Writer = r.(io.Writer)</span><br></pre></td></tr></table></figure>
+<p>  接口变量 w 的 <em>pair</em> 信息记录如下：<code>(f, *os.File)</code>。即使 w 是空接口类型， pair 也是不变的。</p>
+</li>
+</ul>
+<div class="note info"><p>interface及其pair的存在，是Golang中实现反射的前提，理解了pair，就更容易理解反射。<br>反射就是用来检测存储在接口变量内部<code>(类型concrete type, 值value)</code> pair对的一种机制。</p></div>
+
+
+<h2 id="反射的使用"><a href="#反射的使用" class="headerlink" title="反射的使用"></a>反射的使用</h2><ul>
+<li>reflect包提供了几个重要类型和函数：<ul>
+<li><strong>reflect.Type接口</strong>表示接口值的”具体类型”；<code>reflect.TypeOf()</code>函数返回类型的名称，也就是 <em>pair</em> 中的 type</li>
+<li><strong>reflect.Value结构</strong>表示接口值的”具体类型的值”；<code>reflect.ValueOf()</code>函数返回具体类型的值，也就是 <em>pair</em> 中的 value</li>
+</ul>
+</li>
+</ul>
+<ol>
+<li>先有一个接口类型的变量</li>
+<li>把接口变量转化成 <code>reflect</code> 对象（<code>reflect.Type</code> 或 <code>reflect.Value</code>）</li>
+<li>根据不同情况调用不同的函数</li>
+</ol>
+<p>最简单的基本使用：</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> main</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> (</span><br><span class="line">    <span class="string">&quot;fmt&quot;</span></span><br><span class="line">    <span class="string">&quot;reflect&quot;</span></span><br><span class="line">)</span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">    <span class="keyword">var</span> x <span class="keyword">float64</span> = <span class="number">1.23</span></span><br><span class="line"></span><br><span class="line">    t := reflect.TypeOf(x)	<span class="comment">/* 实例到type */</span></span><br><span class="line">    v := reflect.ValueOf(x)	<span class="comment">/* 实例到value */</span></span><br><span class="line">    fmt.Println(t)         <span class="comment">// float64</span></span><br><span class="line">    fmt.Println(v)         <span class="comment">// 1.23</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="reflect-Type"><a href="#reflect-Type" class="headerlink" title="reflect.Type"></a>reflect.Type</h3><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">type</span> Type <span class="keyword">interface</span> &#123;</span><br><span class="line">    <span class="comment">// Kind返回该接口的具体分类</span></span><br><span class="line">    Kind() Kind</span><br><span class="line"></span><br><span class="line">    <span class="comment">// Name返回该类型在自身包内的类型名，如果是未命名类型会返回&quot;&quot;</span></span><br><span class="line">    Name() <span class="keyword">string</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">// PkgPath返回类型的包路径，即明确指定包的import路径，如&quot;encoding/base64&quot;</span></span><br><span class="line">    <span class="comment">// 如果类型为内建类型(string, error)或未命名类型(*T, struct&#123;&#125;, []int)，会返回&quot;&quot;</span></span><br><span class="line">    PkgPath() <span class="keyword">string</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">// 返回类型的字符串表示。该字符串可能会使用短包名（如用base64代替&quot;encoding/base64&quot;）</span></span><br><span class="line">    <span class="comment">// 也不保证每个类型的字符串表示不同。如果要比较两个类型是否相等，请直接用Type类型比较。</span></span><br><span class="line">    String() <span class="keyword">string</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">// 返回要保存一个该类型的值需要多少字节；类似unsafe.Sizeof</span></span><br><span class="line">    Size() <span class="keyword">uintptr</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">// 返回当从内存中申请一个该类型值时，会对齐的字节数</span></span><br><span class="line">    Align() <span class="keyword">int</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">// 返回当该类型作为结构体的字段时，会对齐的字节数</span></span><br><span class="line">    FieldAlign() <span class="keyword">int</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">/* 判断相关 */</span></span><br><span class="line">    <span class="comment">// 如果该类型实现了u代表的接口，会返回真</span></span><br><span class="line">    Implements(u Type) <span class="keyword">bool</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">// 如果该类型的值可以直接赋值给u代表的类型，返回真</span></span><br><span class="line">    AssignableTo(u Type) <span class="keyword">bool</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">// 如该类型的值可以转换为u代表的类型，返回真</span></span><br><span class="line">    ConvertibleTo(u Type) <span class="keyword">bool</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">/* 类型相关 */</span></span><br><span class="line">    <span class="comment">// 返回该类型的字位数。如果该类型的Kind不是Int、Uint、Float或Complex，会panic</span></span><br><span class="line">    Bits() <span class="keyword">int</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">// 返回array类型的长度，如非数组类型将panic</span></span><br><span class="line">    Len() <span class="keyword">int</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">// 返回该类型的元素类型，如果该类型的Kind不是Array、Chan、Map、Ptr或Slice，会panic</span></span><br><span class="line">    Elem() Type</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 返回map类型的键的类型。如非映射类型将panic</span></span><br><span class="line">    Key() Type</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 返回一个channel类型的方向，如非通道类型将会panic</span></span><br><span class="line">    ChanDir() ChanDir</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">/* 结构体相关 */</span></span><br><span class="line">    <span class="comment">// 返回struct类型的字段数（匿名字段算作一个字段），如非结构体类型将panic</span></span><br><span class="line">    NumField() <span class="keyword">int</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">// 返回struct类型的第i个字段的类型，如非结构体或者i不在[0, NumField())内将会panic</span></span><br><span class="line">    Field(i <span class="keyword">int</span>) StructField</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 返回索引序列指定的嵌套字段的类型，</span></span><br><span class="line">    <span class="comment">// 等价于用索引中每个值链式调用本方法，如非结构体将会panic</span></span><br><span class="line">    FieldByIndex(index []<span class="keyword">int</span>) StructField</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 返回该类型名为name的字段（会查找匿名字段及其子字段），</span></span><br><span class="line">    <span class="comment">// 布尔值说明是否找到，如非结构体将panic</span></span><br><span class="line">    FieldByName(name <span class="keyword">string</span>) (StructField, <span class="keyword">bool</span>)</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 返回该类型第一个字段名满足函数match的字段，布尔值说明是否找到，如非结构体将会panic</span></span><br><span class="line">    FieldByNameFunc(match <span class="function"><span class="keyword">func</span><span class="params">(<span class="keyword">string</span>)</span> <span class="title">bool</span>) <span class="params">(StructField, <span class="keyword">bool</span>)</span></span> &#123;&#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 返回该类型的方法public方法的数目</span></span><br><span class="line">    <span class="comment">// 匿名字段的方法会被计算；主体类型的方法会屏蔽匿名字段的同名方法；</span></span><br><span class="line">    <span class="comment">// 匿名字段导致的歧义方法会滤除</span></span><br><span class="line">    NumMethod() <span class="keyword">int</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">// 返回该类型方法集中的第i个方法，i不在[0, NumMethod())范围内时，将导致panic</span></span><br><span class="line">    <span class="comment">// 对非接口类型T或*T，返回值的Type字段和Func字段描述方法的未绑定函数状态</span></span><br><span class="line">    <span class="comment">// 对接口类型，返回值的Type字段描述方法的签名，Func字段为nil</span></span><br><span class="line">    Method(<span class="keyword">int</span>) Method</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 根据方法名返回该类型方法集中的方法，使用一个布尔值说明是否发现该方法</span></span><br><span class="line">    <span class="comment">// 对非接口类型T或*T，返回值的Type字段和Func字段描述方法的未绑定函数状态</span></span><br><span class="line">    <span class="comment">// 对接口类型，返回值的Type字段描述方法的签名，Func字段为nil</span></span><br><span class="line">    MethodByName(<span class="keyword">string</span>) (Method, <span class="keyword">bool</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">/* 函数相关 */</span></span><br><span class="line">    <span class="comment">// 如果函数类型的最后一个输入参数是&quot;...&quot;形式的参数，IsVariadic返回真</span></span><br><span class="line">    <span class="comment">// 如果这样，t.In(t.NumIn() - 1)返回参数的隐式的实际类型（声明类型的切片）</span></span><br><span class="line">    <span class="comment">// 如非函数类型将panic</span></span><br><span class="line">    IsVariadic() <span class="keyword">bool</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">// 返回func类型的参数个数，如果不是函数，将会panic</span></span><br><span class="line">    NumIn() <span class="keyword">int</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">// 返回func类型的返回值个数，如果不是函数，将会panic</span></span><br><span class="line">    NumOut() <span class="keyword">int</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">// 返回func类型的第i个参数的类型，如非函数或者i不在[0, NumIn())内将会panic</span></span><br><span class="line">    In(i <span class="keyword">int</span>) Type</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 返回func类型的第i个返回值的类型，如非函数或者i不在[0, NumOut())内将会panic</span></span><br><span class="line">    Out(i <span class="keyword">int</span>) Type</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>Kind</strong> 有 <code>slice、map、ptr、struct、interface、string、Array、Funtcion、int</code> 或其他基本类型组成。<br><strong>Kind</strong> 和 <strong>Type</strong> 之间要做好区分。</p>
+<p>如：在 <code>main()</code> 中定义 <code>type Person struct &#123;&#125;</code>，那么 <strong>Kind</strong> 就是 <code>struct</code>，<strong>Type</strong> 就是 <code>main.Person</code>。</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">type</span> Person <span class="keyword">struct</span> &#123;</span><br><span class="line">    name <span class="keyword">string</span></span><br><span class="line">    age  <span class="keyword">int</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">    pers := person&#123;<span class="string">&quot;Boii&quot;</span>, <span class="number">18</span>&#125;</span><br><span class="line">    t := reflect.TypeOf(pers)</span><br><span class="line">    v := reflect.ValueOf(pers)</span><br><span class="line">    fmt.Println(v)             <span class="comment">// &#123;Boii 18&#125;</span></span><br><span class="line">    fmt.Println(t)             <span class="comment">// main.person</span></span><br><span class="line">    fmt.Println(t.Name())      <span class="comment">// person</span></span><br><span class="line">    fmt.Println(t.Kind())      <span class="comment">// struct</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="reflect-Value"><a href="#reflect-Value" class="headerlink" title="reflect.Value"></a>reflect.Value</h3><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 类型相关</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(v Value)</span> <span class="title">Addr</span><span class="params">()</span> <span class="title">Value</span></span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(v Value)</span> <span class="title">Bool</span><span class="params">()</span> <span class="title">bool</span></span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(v Value)</span> <span class="title">Bytes</span><span class="params">()</span> []<span class="title">byte</span></span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(v Value)</span> <span class="title">Complex</span><span class="params">()</span> <span class="title">complex128</span></span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(v Value)</span> <span class="title">Int</span><span class="params">()</span> <span class="title">int64</span></span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(v Value)</span> <span class="title">Slice</span><span class="params">(i, j <span class="keyword">int</span>)</span> <span class="title">Value</span></span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(v Value)</span> <span class="title">Slice3</span><span class="params">(i, j, k <span class="keyword">int</span>)</span> <span class="title">Value</span></span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(v Value)</span> <span class="title">String</span><span class="params">()</span> <span class="title">string</span></span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(v Value)</span> <span class="title">Uint</span><span class="params">()</span> <span class="title">uint64</span></span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(v Value)</span> <span class="title">Pointer</span><span class="params">()</span> <span class="title">uintptr</span></span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(v Value)</span> <span class="title">UnsafeAddr</span><span class="params">()</span> <span class="title">uintptr</span></span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(v Value)</span> <span class="title">Kind</span><span class="params">()</span> <span class="title">Kind</span></span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(v Value)</span> <span class="title">Type</span><span class="params">()</span> <span class="title">Type</span></span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(v Value)</span> <span class="title">InterfaceData</span><span class="params">()</span> [2]<span class="title">uintptr</span></span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">// 函数相关</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(v Value)</span> <span class="title">Call</span><span class="params">(in []Value)</span> []<span class="title">Value</span></span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(v Value)</span> <span class="title">CallSlice</span><span class="params">(in []Value)</span> []<span class="title">Value</span></span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">// 判断相关</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(v Value)</span> <span class="title">CanAddr</span><span class="params">()</span> <span class="title">bool</span></span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(v Value)</span> <span class="title">CanInterface</span><span class="params">()</span> <span class="title">bool</span></span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(v Value)</span> <span class="title">CanSet</span><span class="params">()</span> <span class="title">bool</span></span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(v Value)</span> <span class="title">IsNil</span><span class="params">()</span> <span class="title">bool</span></span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(v Value)</span> <span class="title">IsValid</span><span class="params">()</span> <span class="title">bool</span></span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(v Value)</span> <span class="title">IsZero</span><span class="params">()</span> <span class="title">bool</span></span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(v Value)</span> <span class="title">OverflowComplex</span><span class="params">(x <span class="keyword">complex128</span>)</span> <span class="title">bool</span></span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(v Value)</span> <span class="title">OverflowFloat</span><span class="params">(x <span class="keyword">float64</span>)</span> <span class="title">bool</span></span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(v Value)</span> <span class="title">OverflowInt</span><span class="params">(x <span class="keyword">int64</span>)</span> <span class="title">bool</span></span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(v Value)</span> <span class="title">OverflowUint</span><span class="params">(x <span class="keyword">uint64</span>)</span> <span class="title">bool</span></span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">// 转换相关</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(v Value)</span> <span class="title">Convert</span><span class="params">(t Type)</span> <span class="title">Value</span></span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(v Value)</span> <span class="title">Interface</span><span class="params">()</span> <span class="params">(i <span class="keyword">interface</span>&#123;&#125;)</span></span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(v Value)</span> <span class="title">Elem</span><span class="params">()</span> <span class="title">Value</span></span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">// struct 相关</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(v Value)</span> <span class="title">NumField</span><span class="params">()</span> <span class="title">int</span></span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(v Value)</span> <span class="title">NumMethod</span><span class="params">()</span> <span class="title">int</span></span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(v Value)</span> <span class="title">Field</span><span class="params">(i <span class="keyword">int</span>)</span> <span class="title">Value</span></span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(v Value)</span> <span class="title">FieldByIndex</span><span class="params">(index []<span class="keyword">int</span>)</span> <span class="title">Value</span></span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(v Value)</span> <span class="title">FieldByName</span><span class="params">(name <span class="keyword">string</span>)</span> <span class="title">Value</span></span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(v Value)</span> <span class="title">FieldByNameFunc</span><span class="params">(match <span class="keyword">func</span>(<span class="keyword">string</span>)</span> <span class="title">bool</span>) <span class="title">Value</span></span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(v Value)</span> <span class="title">Method</span><span class="params">(i <span class="keyword">int</span>)</span> <span class="title">Value</span></span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(v Value)</span> <span class="title">MethodByName</span><span class="params">(name <span class="keyword">string</span>)</span> <span class="title">Value</span></span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">// Array、Slice 相关</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(v Value)</span> <span class="title">Index</span><span class="params">(i <span class="keyword">int</span>)</span> <span class="title">Value</span></span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">// Map 相关</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(v Value)</span> <span class="title">MapIndex</span><span class="params">(key Value)</span> <span class="title">Value</span></span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(v Value)</span> <span class="title">MapKeys</span><span class="params">()</span> []<span class="title">Value</span></span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(v Value)</span> <span class="title">MapRange</span><span class="params">()</span> *<span class="title">MapIter</span></span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">// Array、Slice、Map 相关</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(v Value)</span> <span class="title">Cap</span><span class="params">()</span> <span class="title">int</span></span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(v Value)</span> <span class="title">Len</span><span class="params">()</span> <span class="title">int</span></span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">// 通道相关</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(v Value)</span> <span class="title">Recv</span><span class="params">()</span> <span class="params">(x Value, ok <span class="keyword">bool</span>)</span></span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(v Value)</span> <span class="title">Send</span><span class="params">(x Value)</span></span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(v Value)</span> <span class="title">TryRecv</span><span class="params">()</span> <span class="params">(x Value, ok <span class="keyword">bool</span>)</span></span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(v Value)</span> <span class="title">TrySend</span><span class="params">(x Value)</span> <span class="title">bool</span></span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(v Value)</span> <span class="title">Close</span><span class="params">()</span></span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">// 改值相关</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(v Value)</span> <span class="title">Set</span><span class="params">(x Value)</span></span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(v Value)</span> <span class="title">SetBool</span><span class="params">(x <span class="keyword">bool</span>)</span></span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(v Value)</span> <span class="title">SetBytes</span><span class="params">(x []<span class="keyword">byte</span>)</span></span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(v Value)</span> <span class="title">SetCap</span><span class="params">(n <span class="keyword">int</span>)</span></span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(v Value)</span> <span class="title">SetComplex</span><span class="params">(x <span class="keyword">complex128</span>)</span></span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(v Value)</span> <span class="title">SetFloat</span><span class="params">(x <span class="keyword">float64</span>)</span></span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(v Value)</span> <span class="title">SetInt</span><span class="params">(x <span class="keyword">int64</span>)</span></span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(v Value)</span> <span class="title">SetLen</span><span class="params">(n <span class="keyword">int</span>)</span></span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(v Value)</span> <span class="title">SetMapIndex</span><span class="params">(key, elem Value)</span></span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(v Value)</span> <span class="title">SetPointer</span><span class="params">(x unsafe.Pointer)</span></span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(v Value)</span> <span class="title">SetString</span><span class="params">(x <span class="keyword">string</span>)</span></span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(v Value)</span> <span class="title">SetUint</span><span class="params">(x <span class="keyword">uint64</span>)</span></span></span><br></pre></td></tr></table></figure>
+
+
+<p><code>reflect</code>中的结构体主要包括：<em>Type，Value，ChanDir，Kind，MapIter，Method，SelectCase，SelectDir，SliceHeader，StringHeader，StructField，StructTag，ValueError</em> 等。其中，Type 和 Value 之前已经介绍过了。</p>
+<ul>
+<li><code>ChanDir</code>：管道的方向，有三个值：<strong>RecvDir / SendDir / BothDir</strong>，分别为 <strong>接受，发送，双向</strong>；</li>
+<li><code>Kind</code>：Type中的类型信息，包括：Invalid, Bool, Int, Int8, Int16, Int32, Int64, Uint, Uint8, Uint16, Uint32, Uint64, Uintptr, Float32, Float64, Complex64, Complex128, Array, Chan, Func, Interface, Map, Ptr, Slice, String, Struct, UnsafePointer，</li>
+<li><code>MapIter</code>：Map的迭代器，包括三个方法：<strong>Key、Value、Next</strong>；</li>
+<li><code>Method</code>：描述方法的信息，包括：<strong>方法名，包路径，类型，函数，所处的下标</strong>；</li>
+<li><code>SelectCase</code>：描述select 操作的信息，<strong>case的方向SelectDir，使用的Channel，发送的值Send</strong>；</li>
+<li><code>SelectDir</code>：描述SelectCase中的方向，有三个值：<strong>SelectSend / SelectRecv / SelectDefault</strong></li>
+<li><code>SliceHeader</code>：描述切片Slice的信息，包括<strong>指针，长度，容量</strong>；</li>
+<li><code>StringHeader</code>：描述字符串string的信息，包括<strong>指针，长度</strong>；</li>
+<li><code>StructField</code>：描述结构体中的域field中的信息，包括：<strong>域名，包路径，类型，标签Tag，在结构体中的偏移量offset，Type.FieldByIndex中的下标index，是否是匿名</strong>；</li>
+<li><code>StructTag</code>：描述标签信息，有两个方法：<strong>Get、Lookup</strong>；</li>
+<li><code>ValueError</code>：在调用一个Value不支持的方法时会报错，并记录到ValueError中。</li>
+</ul>
+<h2 id="反射API"><a href="#反射API" class="headerlink" title="反射API"></a>反射API</h2><p><img src="https://cdn.jsdelivr.net/gh/TCP404/Picgo/blog/illustration-pic/Go/IMG/20210213215422285_5740.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/TCP404/Picgo/blog/illustration-pic/Go/IMG/20210213215422285_5740.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII="></p>
+<p>上图很好的概括了 所有的API</p>
+<p><code>Type</code> 表示 <code>reflect</code> 的 <code>Type</code> 类型： <code>reflect.Type</code><br><code>Value</code> 表示 <code>reflect</code> 的 <code>Value</code> 类型： <code>reflect.Value</code><br><code>interface&#123;&#125;</code> 表示接口实例、任意类型<br><code>Special Type</code> 表示其他特殊类型</p>
+<ul>
+<li><strong>Type -&gt; Value</strong>：通过 <code>reflect</code> 包的静态方法 <code>New()、NewAt()、Zero()</code></li>
+<li><strong>Value -&gt; Type</strong>：通过 <code>reflect对象</code>的 <code>Type()</code> 方法</li>
+<li><strong>interface{} -&gt; Type</strong>：通过 <code>reflect</code> 包的静态方法 <code>TypeOf()</code></li>
+<li><strong>interface{} -&gt; Value</strong>：通过 <code>reflect</code> 包的静态方法 <code>ValueOf()</code></li>
+<li>**Value -&gt; interface{}**：通过  <code>reflect对象</code>的 <code>Interface()</code> 方法，得到是一个静态类型</li>
+</ul>
+<h3 id="从-接口实例-获取-Type"><a href="#从-接口实例-获取-Type" class="headerlink" title="从 接口实例 获取 Type"></a>从 接口实例 获取 Type</h3><div class="note info"><p><strong>interface{} -&gt; Type</strong>：通过 <code>reflect</code> 包的静态方法 <code>TypeOf()</code></p><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">TypeOf</span><span class="params">(i <span class="keyword">interface</span>&#123;&#125;)</span> <span class="title">Type</span></span></span><br></pre></td></tr></table></figure></div>
+
+
+<p>eg：</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> x <span class="keyword">int</span> = <span class="number">10</span></span><br><span class="line">t := reflect.TypeOf(x)</span><br><span class="line"></span><br><span class="line">fmt.Printf(<span class="string">&quot;t的值：%v   \n&quot;</span>, t)    <span class="comment">// int</span></span><br><span class="line">fmt.Printf(<span class="string">&quot;t的类型：%T \n&quot;</span>, t)    <span class="comment">// *reflect.rtype</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="从-接口实例-获取-Value"><a href="#从-接口实例-获取-Value" class="headerlink" title="从 接口实例 获取 Value"></a>从 接口实例 获取 Value</h3><div class="note info"><p><strong>interface{} -&gt; Value</strong>：通过 <code>reflect</code> 包的静态方法 <code>ValueOf()</code></p><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">ValueOf</span><span class="params">(i <span class="keyword">interface</span>&#123;&#125;)</span> <span class="title">Value</span></span></span><br></pre></td></tr></table></figure></div>
+
+<p>eg：</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> x <span class="keyword">int</span> = <span class="number">10</span></span><br><span class="line">v := reflect.ValueOf(x)</span><br><span class="line"></span><br><span class="line">fmt.Printf(<span class="string">&quot;t的值：%v \n&quot;</span>, v)	<span class="comment">// 10</span></span><br><span class="line">fmt.Printf(<span class="string">&quot;t的类型：%T \n&quot;</span>, v)  <span class="comment">// reflect.Value</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="从-Type-获取-Value"><a href="#从-Type-获取-Value" class="headerlink" title="从 Type 获取 Value"></a>从 Type 获取 Value</h3><div class="note info"><p><strong>Type -&gt; Value</strong>：通过 <code>reflect</code> 包的静态方法 <code>New()、NewAt()、Zero()</code></p><p>Type 里面只有类型信息，所以直接从一个 Type 接口变量里面是无法获得实例的 Value 的，但可以通过该 Type 构建一个新实例的 Value。</p><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//New 返回的是一个 Value，该 Value 的 type 为 PtrTo(typ)，即 Value 的 Type 是指定 typ 的指针类型</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">New</span><span class="params">(typ Type)</span> <span class="title">Value</span></span></span><br></pre></td></tr></table></figure><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//Zero 返回的是一个 typ 类型的零佳，注意返回的 Value 不能寻址，位不可改变</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">Zero</span><span class="params">(typ Type)</span> <span class="title">Value</span></span></span><br></pre></td></tr></table></figure><p>如果知道一个类型值的底层存放地址，则还有一个函数是可以依据 type 和该地址值恢复出 Value 的：</p><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">NewAt</span><span class="params">(typ Type, p unsafe.Pointer)</span> <span class="title">Value</span></span></span><br></pre></td></tr></table></figure></div>
+
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> x <span class="keyword">int</span> = <span class="number">10</span></span><br><span class="line">t := reflect.TypeOf(x)</span><br><span class="line">newX := reflect.New(t)     <span class="comment">// Type -&gt; Value</span></span><br><span class="line">zeroX := reflect.Zero(t)   <span class="comment">// Type -&gt; Value</span></span><br><span class="line"></span><br><span class="line">fmt.Println(newX)          <span class="comment">// 0xc000012090</span></span><br><span class="line">fmt.Printf(<span class="string">&quot;%v \n&quot;</span>, newX)  <span class="comment">// 0xc000012090</span></span><br><span class="line">fmt.Printf(<span class="string">&quot;%T \n&quot;</span>, newX)  <span class="comment">// reflect.Value</span></span><br><span class="line"></span><br><span class="line">fmt.Println(zeroX)         <span class="comment">// 0</span></span><br><span class="line">fmt.Printf(<span class="string">&quot;%v \n&quot;</span>, zeroX) <span class="comment">// 0</span></span><br><span class="line">fmt.Printf(<span class="string">&quot;%T \n&quot;</span>, zeroX) <span class="comment">// reflect.Value</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="从-Value-获取-Type"><a href="#从-Value-获取-Type" class="headerlink" title="从 Value 获取 Type"></a>从 Value 获取 Type</h3><div class="note info"><p><strong>Value -&gt; Type</strong>：通过 <code>reflect对象</code>的 <code>Type()</code> 方法</p><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(v Value)</span> <span class="title">Type</span><span class="params">()</span> <span class="title">Type</span></span></span><br></pre></td></tr></table></figure></div>
+
+
+<p>eg：</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> x <span class="keyword">int</span> = <span class="number">10</span></span><br><span class="line">v := reflect.ValueOf(x)</span><br><span class="line"></span><br><span class="line">t := v.Type()                     <span class="comment">// value -&gt; type</span></span><br><span class="line">fmt.Printf(<span class="string">&quot;t的值：%v   \n&quot;</span>, t)    <span class="comment">// int</span></span><br><span class="line">fmt.Printf(<span class="string">&quot;t的类型：%T \n&quot;</span>, t)    <span class="comment">// *reflect.rtype</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="从-Value-获取-接口实例"><a href="#从-Value-获取-接口实例" class="headerlink" title="从 Value 获取 接口实例"></a>从 Value 获取 接口实例</h3><div class="note info"><p>**Value -&gt; interface{}**：通过  <code>reflect对象</code>的 <code>Interface()</code> 方法，得到是一个静态类型</p><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//该方法最通用，用来将 Value 转换为空接口，该空接口内部存放具体类型实例</span></span><br><span class="line"><span class="comment">//可以使用接口类型查询去还原为具体的类型</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(v Value)</span> <span class="title">Interface</span><span class="params">()</span> （<span class="title">i</span> <span class="title">interface</span></span>&#123;&#125;)</span><br><span class="line"></span><br><span class="line"><span class="comment">//Value 自身也提供丰富的方法，直接将 Value 转换为简单类型实例，如果类型不匹配，则直接引起 panic</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(v Value)</span> <span class="title">Bool</span> <span class="params">()</span> <span class="title">bool</span></span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(v Value)</span> <span class="title">Float</span><span class="params">()</span> <span class="title">float64</span></span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(v Value)</span> <span class="title">Int</span><span class="params">()</span> <span class="title">int64</span></span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(v Value)</span> <span class="title">Uint</span><span class="params">()</span> <span class="title">uint64</span></span></span><br></pre></td></tr></table></figure></div>
+
+<p>eg1：</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> x <span class="keyword">int</span> = <span class="number">10</span></span><br><span class="line">v := reflect.ValueOf(x)</span><br><span class="line"></span><br><span class="line">iInt := v.Interface()</span><br><span class="line">vType := iInt.(<span class="keyword">int</span>)</span><br><span class="line">vInt := v.Int()</span><br><span class="line"></span><br><span class="line">fmt.Println(iInt)            <span class="comment">// 10</span></span><br><span class="line">fmt.Printf(<span class="string">&quot;%T \n&quot;</span>, iInt)    <span class="comment">// int</span></span><br><span class="line">fmt.Println(vType)           <span class="comment">// 10</span></span><br><span class="line">fmt.Printf(<span class="string">&quot;%T \n&quot;</span>, vType)   <span class="comment">// int</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">fmt.Println(vInt)            <span class="comment">// 10</span></span><br><span class="line">fmt.Printf(<span class="string">&quot;%T \n&quot;</span>, vInt)    <span class="comment">// int64</span></span><br></pre></td></tr></table></figure>
+
+<p>eg2：</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> main</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> (</span><br><span class="line">    <span class="string">&quot;fmt&quot;</span></span><br><span class="line">    <span class="string">&quot;reflect&quot;</span></span><br><span class="line">)</span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">    <span class="keyword">var</span> x <span class="keyword">float64</span> = <span class="number">1.23</span></span><br><span class="line"></span><br><span class="line">    t := reflect.TypeOf(x)	<span class="comment">// 获得 reflect.Type  对象</span></span><br><span class="line">    v := reflect.ValueOf(x)	<span class="comment">// 获得 reflect.Value 对象</span></span><br><span class="line">    fmt.Println(t)          <span class="comment">// float64</span></span><br><span class="line">    fmt.Println(v)          <span class="comment">// 1.23</span></span><br><span class="line">    fmt.Println(v.Kind())   <span class="comment">// float64</span></span><br><span class="line">    fmt.Println(v.Type())   <span class="comment">// float64	/* value 到 type */</span></span><br><span class="line">    fmt.Println(v.Float())  <span class="comment">// 1.23	    /* value 到 实例 */</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">/* value 到 实例 */</span></span><br><span class="line">    v = reflect.ValueOf(x)                 <span class="comment">// 接口类型变量 -&gt; 反射类型对象</span></span><br><span class="line">    convertV := v.Interface().(<span class="keyword">float64</span>)    <span class="comment">// 反射类型对象 -&gt; 接口类型变量, 可以理解为 强制转换</span></span><br><span class="line">    fmt.Println(convertV)    <span class="comment">// 1.23</span></span><br><span class="line"></span><br><span class="line">    p := reflect.ValueOf(&amp;x)</span><br><span class="line">    convertP := p.Interface().(*<span class="keyword">float64</span>)</span><br><span class="line">    fmt.Println(convertP)    <span class="comment">// 0xc000012090</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="指针类型-与-值类型的转换"><a href="#指针类型-与-值类型的转换" class="headerlink" title="指针类型 与 值类型的转换"></a>指针类型 与 值类型的转换</h3><ul>
+<li><p><strong>指针 -&gt; 值</strong>：<code>t.Elem()</code>，t 只可以是引用类型</p>
+</li>
+<li><p><strong>指针 -&gt; 值</strong>：<code>v.Elem()</code>，v 只可以是指针</p>
+  <figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// t 必须是 Array、Chan、Map、Ptr、Slice，否则会引起 panic</span></span><br><span class="line"><span class="comment">// Elem 返回的是其内部元素的 Type</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(t *rtype)</span> <span class="title">Elem</span><span class="params">()</span> <span class="title">Type</span></span></span><br></pre></td></tr></table></figure>
+
+<p>  eg：</p>
+  <figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">    <span class="keyword">var</span> x <span class="keyword">int</span> = <span class="number">10</span></span><br><span class="line">    <span class="keyword">var</span> s []<span class="keyword">int</span> = []<span class="keyword">int</span>&#123;<span class="number">10</span>, <span class="number">20</span>, <span class="number">30</span>&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// TypeOf：只接受引用类型</span></span><br><span class="line">    t1 := reflect.TypeOf(s)</span><br><span class="line">    te1 := t1.Elem()</span><br><span class="line">    fmt.Println(te1)         <span class="comment">// int</span></span><br><span class="line">    fmt.Printf(<span class="string">&quot;%T \n&quot;</span>, te1) <span class="comment">// *reflect.rtype</span></span><br><span class="line"></span><br><span class="line">    t2 := reflect.TypeOf(&amp;s)</span><br><span class="line">    te2 := t2.Elem()</span><br><span class="line">    fmt.Println(te2)         <span class="comment">// []int</span></span><br><span class="line">    fmt.Printf(<span class="string">&quot;%T \n&quot;</span>, te2) <span class="comment">// *reflect.rtype</span></span><br><span class="line"></span><br><span class="line">    t3 := reflect.TypeOf(x)</span><br><span class="line">    te3 := t3.Elem() <span class="comment">// panic: reflect: Elem of invalid type int</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    t4 := reflect.TypeOf(&amp;x)</span><br><span class="line">    te4 := t4.Elem()</span><br><span class="line">    fmt.Println(te4)         <span class="comment">// int</span></span><br><span class="line">    fmt.Printf(<span class="string">&quot;%T \n&quot;</span>, te4) <span class="comment">// *reflect.rtype</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">// ValueOf：只接受prt类型</span></span><br><span class="line">    v1 := reflect.ValueOf(s)</span><br><span class="line">    ve1 := v1.Elem() <span class="comment">// panic: reflect: call of reflect.Value.Elem on slice Value</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    v2 := reflect.ValueOf(&amp;s)</span><br><span class="line">    ve2 := v2.Elem()</span><br><span class="line">    fmt.Println(ve2)         <span class="comment">// [10 20 30]</span></span><br><span class="line">    fmt.Printf(<span class="string">&quot;%T \n&quot;</span>, ve2) <span class="comment">// reflect.Value</span></span><br><span class="line"></span><br><span class="line">    v3 := reflect.ValueOf(x)</span><br><span class="line">    ve3 := v3.Elem() <span class="comment">// panic: reflect: call of reflect.Value.Elem on int Value</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    v4 := reflect.ValueOf(&amp;x)</span><br><span class="line">    ve4 := v4.Elem()</span><br><span class="line">    fmt.Println(ve4)         <span class="comment">// 10</span></span><br><span class="line">    fmt.Printf(<span class="string">&quot;%T \n&quot;</span>, ve4) <span class="comment">// reflect.Value</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
+<ul>
+<li><p><strong>值 -&gt; 指针</strong>：<code>PtrTo(t)</code></p>
+  <figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// PtrTo 返回的是指向 t 的指针型 Type</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">PtrTo</span><span class="params">(t Type)</span> <span class="title">Type</span></span></span><br></pre></td></tr></table></figure>
+
+<p>  eg：</p>
+  <figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">    <span class="keyword">var</span> x <span class="keyword">int</span> = <span class="number">10</span></span><br><span class="line">    <span class="keyword">var</span> s []<span class="keyword">int</span> = []<span class="keyword">int</span>&#123;<span class="number">10</span>, <span class="number">20</span>, <span class="number">30</span>&#125;</span><br><span class="line"></span><br><span class="line">    xt := reflect.TypeOf(x)</span><br><span class="line">    st := reflect.TypeOf(s)</span><br><span class="line"></span><br><span class="line">    px := reflect.PtrTo(xt)</span><br><span class="line">    ps := reflect.PtrTo(st)</span><br><span class="line"></span><br><span class="line">    fmt.Println(px) <span class="comment">// *int</span></span><br><span class="line">    fmt.Println(ps) <span class="comment">// *[]int</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h3 id="Value-的可修改性"><a href="#Value-的可修改性" class="headerlink" title="Value 的可修改性"></a>Value 的可修改性</h3><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//通过 CanSet 判断是否能修改</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(v Value)</span> <span class="title">CanSet</span><span class="params">()</span> <span class="title">bool</span></span> &#123;&#125;</span><br><span class="line"><span class="comment">//通过 Set 进行修改</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(v Value)</span> <span class="title">Set</span><span class="params">(x Value)</span></span> &#123;&#125;</span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(v Value)</span> <span class="title">SetBool</span><span class="params">(x <span class="keyword">bool</span>)</span></span> &#123;&#125;</span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(v Value)</span> <span class="title">SetBytes</span><span class="params">(x []<span class="keyword">byte</span>)</span></span> &#123;&#125;</span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(v Value)</span> <span class="title">SetCap</span><span class="params">(n <span class="keyword">int</span>)</span></span> &#123;&#125;</span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(v Value)</span> <span class="title">SetComplex</span><span class="params">(x <span class="keyword">complex128</span>)</span></span> &#123;&#125;</span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(v Value)</span> <span class="title">SetFloat</span><span class="params">(x <span class="keyword">float64</span>)</span></span> &#123;&#125;</span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(v Value)</span> <span class="title">SetInt</span><span class="params">(x <span class="keyword">int64</span>)</span></span> &#123;&#125;</span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(v Value)</span> <span class="title">SetLen</span><span class="params">(n <span class="keyword">int</span>)</span></span> &#123;&#125;</span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(v Value)</span> <span class="title">SetMapIndex</span><span class="params">(key, elem Value)</span></span> &#123;&#125;</span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(v Value)</span> <span class="title">SetPointer</span><span class="params">(x unsafe.Pointer)</span></span> &#123;&#125;</span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(v Value)</span> <span class="title">SetString</span><span class="params">(x <span class="keyword">string</span>)</span></span> &#123;&#125;</span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(v Value)</span> <span class="title">SetUint</span><span class="params">(x <span class="keyword">uint64</span>)</span></span> &#123;&#125;</span><br></pre></td></tr></table></figure>
+
+<p>eg：</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">    <span class="keyword">var</span> x <span class="keyword">int</span> = <span class="number">10</span></span><br><span class="line">    <span class="keyword">var</span> s []<span class="keyword">int</span> = []<span class="keyword">int</span>&#123;<span class="number">10</span>, <span class="number">20</span>, <span class="number">30</span>&#125;</span><br><span class="line"></span><br><span class="line">    vpx := reflect.ValueOf(&amp;x)</span><br><span class="line">    vepx := vpx.Elem()</span><br><span class="line">    <span class="keyword">if</span> vepx.CanSet() == <span class="literal">true</span> &#123;    <span class="comment">// CanSet 判断</span></span><br><span class="line">        vepx.SetInt(<span class="number">20</span>)           <span class="comment">// Set 设置</span></span><br><span class="line">    &#125;</span><br><span class="line">    fmt.Println(x) <span class="comment">// 20</span></span><br><span class="line"></span><br><span class="line">    vps := reflect.ValueOf(&amp;s)</span><br><span class="line">    veps := vps.Elem()</span><br><span class="line">    <span class="keyword">if</span> veps.CanSet() == <span class="literal">true</span> &#123;    <span class="comment">// CanSet 判断</span></span><br><span class="line">        veps.Index(<span class="number">1</span>).SetInt(<span class="number">345</span>) <span class="comment">// Index 获取元素，然后设置</span></span><br><span class="line">    &#125;</span><br><span class="line">    fmt.Println(s) <span class="comment">// [10 345 30]</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="反射结构体"><a href="#反射结构体" class="headerlink" title="反射结构体"></a>反射结构体</h3><p>结构体相比基本类型稍微多一点步骤。</p>
+<p>第一步，传入结构体指针，获取可修改的 <code>reflect</code> 对象<br>第二步，使用 <code>Elem()</code> 获得字段列表<br>第三步，使用 <code>Field()</code>系列方法 或 <code>Method()</code> 系列方法，获得指定字段或方法<br>第四步，使用 <code>Set()</code>系列方法修改数值 或 使用 <code>Call()</code> 调用结构体方法</p>
+<p>结构体的 <code>Type</code> 是 <code>main.person</code><br>结构体的 <code>Kind</code> 是 <code>struct</code><br>结构体的 <code>Name</code> 是 <code>person</code></p>
+<p><code>NumField()</code> 可以获得结构体字段的数量<br><code>NumMethod()</code> 可以获得结构体方法的数量，但只能获取 public 方法<br><code>Field(idx)</code> 可以通过下标获得指定的字段<br><code>FieldByName(fieldName)</code> 可以通过字段名字获得指定的字段<br><code>Method(idx)</code> 可以通过下标获得指定的方法<br><code>MethodByName(methodName)</code> 可以通过方法名获得指定的方法<br><code>NumIn()</code> 可以获得参数个数<br><code>NumOut()</code> 可以获得返回值个数</p>
+<h4 id="访问操作"><a href="#访问操作" class="headerlink" title="访问操作"></a>访问操作</h4><p>eg：访问结构体的字段和方法</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> main</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> (</span><br><span class="line">    <span class="string">&quot;fmt&quot;</span></span><br><span class="line">    <span class="string">&quot;reflect&quot;</span></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="keyword">type</span> person <span class="keyword">struct</span> &#123;</span><br><span class="line">    name <span class="keyword">string</span></span><br><span class="line">    Age  <span class="keyword">int</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(p person)</span> <span class="title">Eat</span><span class="params">()</span></span> &#123;</span><br><span class="line">    fmt.Println(<span class="string">&quot;eat&quot;</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(p person)</span> <span class="title">Run</span><span class="params">()</span></span> &#123;</span><br><span class="line">    fmt.Println(<span class="string">&quot;run&quot;</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(p person)</span> <span class="title">gogogo</span><span class="params">()</span></span> &#123;</span><br><span class="line">    fmt.Println(<span class="string">&quot;go&quot;</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line"></span><br><span class="line">    pers := person&#123;<span class="string">&quot;Boii&quot;</span>, <span class="number">18</span>&#125;</span><br><span class="line">    t := reflect.TypeOf(pers)</span><br><span class="line">    v := reflect.ValueOf(pers)</span><br><span class="line">    fmt.Println(v)             <span class="comment">// &#123;Boii 18&#125;</span></span><br><span class="line">    fmt.Println(t)             <span class="comment">// main.person</span></span><br><span class="line">    fmt.Println(t.Name())      <span class="comment">// person</span></span><br><span class="line">    fmt.Println(t.Kind())      <span class="comment">// struct</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">// 获取字段</span></span><br><span class="line">    <span class="comment">// &#123; Name   PkgPath  Type   Tag  Offset Index  Anonymous&#125;</span></span><br><span class="line">    <span class="comment">// &#123; name    main   string         0     [0]     false&#125;</span></span><br><span class="line">    <span class="comment">// &#123; Age     main    int           16    [1]     false&#125;</span></span><br><span class="line">    <span class="keyword">for</span> i := <span class="number">0</span>; i &lt; t.NumField(); i++ &#123;</span><br><span class="line">        field := t.Field(i)</span><br><span class="line">        value := v.Field(i)</span><br><span class="line">        fmt.Printf(<span class="string">&quot;字段名称: %s\t字段类型: %s\t字段数值: %v\n&quot;</span>, field.Name, field.Type, value)</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 字段名称: name  字段类型: string 字段数值: Boii</span></span><br><span class="line">    <span class="comment">// 字段名称: Age   字段类型: int    字段数值: 18</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> i := <span class="number">0</span>; i &lt; v.NumField(); i++ &#123;</span><br><span class="line">        fmt.Println(v.Field(i))</span><br><span class="line">        <span class="comment">// Boii</span></span><br><span class="line">        <span class="comment">// 18</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="comment">// 获取方法，t.NumMethod() 只能获取到 public 方法</span></span><br><span class="line">    <span class="comment">// &#123;Name  PkgPath           Type                          Func                  Index&#125;</span></span><br><span class="line">    <span class="comment">// &#123;Eat            func(main.person, string)  &lt;func(main.person, string) Value&gt;   0&#125;</span></span><br><span class="line">    <span class="comment">// &#123;Run            func(main.person)          &lt;func(main.person) Value&gt;           1&#125;</span></span><br><span class="line">    <span class="keyword">for</span> i := <span class="number">0</span>; i &lt; t.NumMethod(); i++ &#123;</span><br><span class="line">        method := t.Method(i)</span><br><span class="line">        fmt.Printf(<span class="string">&quot;方法名称: %s\t方法类型: %v\n&quot;</span>, method.Name, method.Type)</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 方法名称: Eat   方法类型: func(main.person)</span></span><br><span class="line">    <span class="comment">// 方法名称: Run   方法类型: func(main.person)</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> i := <span class="number">0</span>; i &lt; v.NumMethod(); i++ &#123;</span><br><span class="line">        fmt.Println(v.Method(i))</span><br><span class="line">        <span class="comment">// 0x433600</span></span><br><span class="line">        <span class="comment">// 0x433600</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="修改操作"><a href="#修改操作" class="headerlink" title="修改操作"></a>修改操作</h4><p>如果想要对结构体的字段等进行修改，需要传入结构体指针来获得 <code>reflect</code> 对象。</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> main</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> (</span><br><span class="line">    <span class="string">&quot;fmt&quot;</span></span><br><span class="line">    <span class="string">&quot;reflect&quot;</span></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="keyword">type</span> person <span class="keyword">struct</span> &#123;</span><br><span class="line">    name <span class="keyword">string</span></span><br><span class="line">    Age  <span class="keyword">int</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(p person)</span> <span class="title">Eat</span><span class="params">(food <span class="keyword">string</span>)</span></span> &#123;</span><br><span class="line">    fmt.Println(<span class="string">&quot;eat&quot;</span>, food)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(p person)</span> <span class="title">Run</span><span class="params">()</span></span> &#123;</span><br><span class="line">    fmt.Println(<span class="string">&quot;run&quot;</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(p person)</span> <span class="title">go</span><span class="params">()</span></span> &#123;</span><br><span class="line">    fmt.Println(<span class="string">&quot;go&quot;</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">    pers := person&#123;<span class="string">&quot;Boii&quot;</span>, <span class="number">18</span>&#125;</span><br><span class="line">    v := reflect.ValueOf(&amp;pers).Elem()</span><br><span class="line"></span><br><span class="line">    <span class="comment">// panic: reflect: reflect.Value.SetString using value obtained using unexported field</span></span><br><span class="line">    v.FieldByName(<span class="string">&quot;name&quot;</span>).SetString(<span class="string">&quot;Eva&quot;</span>)    <span class="comment">// 传入结构体指针以后，Field 只能访问到 public 字段</span></span><br><span class="line"></span><br><span class="line">    v.Field(<span class="number">1</span>).SetInt(<span class="number">20</span>)</span><br><span class="line">    fmt.Println(pers) <span class="comment">// &#123;Boii 20&#125;</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">// 调用有参方法</span></span><br><span class="line">    v.Method(<span class="number">0</span>).Call([]reflect.Value&#123;reflect.ValueOf(<span class="string">&quot;apple&quot;</span>)&#125;) <span class="comment">// eat apple</span></span><br><span class="line">    <span class="comment">// 调用无参方法</span></span><br><span class="line">    v.Method(<span class="number">1</span>).Call(<span class="literal">nil</span>)                                       <span class="comment">// run</span></span><br><span class="line">    v.Method(<span class="number">1</span>).Call(<span class="built_in">make</span>([]reflect.Value, <span class="number">0</span>))                  <span class="comment">// run</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>通过结构体指针获得的 <code>reflect</code> 对象，要注意3点</p>
+<ol>
+<li>需要 <code>Elem()</code> 方法获取到元素列表</li>
+<li>只能访问到 public 的 字段和方法</li>
+</ol>
+<p>通过 <code>Call()</code> 可以调用结构体的方法，<br>如果无参，可以传入 <code>nil</code> 或者空切片<br>如果有参，需传入Value切片 <code>[]reflect.Value</code></p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//没有参数，直接写nil</span></span><br><span class="line">.Call(<span class="literal">nil</span>)</span><br><span class="line"><span class="comment">// 或者</span></span><br><span class="line">args1 := <span class="built_in">make</span>([]reflect.Value, <span class="number">0</span>)</span><br><span class="line">.Call(args1)</span><br><span class="line"></span><br><span class="line"><span class="comment">// 有参数</span></span><br><span class="line">args2 := []reflect.Value&#123; reflect.ValueOf(<span class="string">&quot;反射机制&quot;</span>), reflect.ValueOf(<span class="number">100</span>), ...&#125;</span><br><span class="line">.Call(args2)</span><br></pre></td></tr></table></figure>
+<h3 id="反射调用函数"><a href="#反射调用函数" class="headerlink" title="反射调用函数"></a>反射调用函数</h3><p>反射调用函数和 调用方法其实差不多，可以通过函数名获得 <code>reflect</code> 对象，使用 <code>Call()</code> 调用</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> main</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> (</span><br><span class="line">    <span class="string">&quot;fmt&quot;</span></span><br><span class="line">    <span class="string">&quot;reflect&quot;</span></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">    <span class="comment">//函数的反射</span></span><br><span class="line">    f1 := fun1</span><br><span class="line">    value := reflect.ValueOf(f1)</span><br><span class="line">    fmt.Printf(<span class="string">&quot;Kind : %s , Type : %s\n&quot;</span>, value.Kind(), value.Type()) <span class="comment">//Kind : func , Type : func()</span></span><br><span class="line"></span><br><span class="line">    value2 := reflect.ValueOf(fun2)</span><br><span class="line">    fmt.Printf(<span class="string">&quot;Kind : %s , Type : %s\n&quot;</span>, value2.Kind(), value2.Type()) <span class="comment">//Kind : func , Type : func(int, string)</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">//通过反射调用函数</span></span><br><span class="line">    value.Call(<span class="literal">nil</span>)</span><br><span class="line"></span><br><span class="line">    args := []reflect.Value&#123;reflect.ValueOf(<span class="number">100</span>), reflect.ValueOf(<span class="string">&quot;hello&quot;</span>)&#125;</span><br><span class="line">    value2.Call(args)</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">fun1</span><span class="params">()</span></span>&#123;</span><br><span class="line">    fmt.Println(<span class="string">&quot;我是函数fun1()，无参的。。&quot;</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">fun2</span><span class="params">(i <span class="keyword">int</span>, s <span class="keyword">string</span>)</span></span>&#123;</span><br><span class="line">    fmt.Println(<span class="string">&quot;我是函数fun2()，有参数。。&quot;</span>,i,s)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+  
+  
+    
+    <div class='footer'>
+      
+      
+        
+  <div class="related_posts">
+    <section class='header'>
+      <i class="fas fa-bookmark fa-fw" aria-hidden="true"></i><span>相关文章</span>
+    </section>
+    <section class='body'>
+      <div class="vlts-rps"><a class="item" href="/posts/a6eafc24.html" title="Golang [进阶] 16-并发" rel="bookmark "><img src="https://cdn.jsdelivr.net/gh/TCP404/Picgo/blog/cover/go2.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/TCP404/Picgo/blog/cover/go2.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" /><span class="title">Golang [进阶] 16-并发</span><span class="excerpt">并发</span></a><a class="item" href="/posts/e3c7a27f.html" title="Golang [进阶] 17-Channel" rel="bookmark "><img src="https://cdn.jsdelivr.net/gh/TCP404/Picgo/blog/cover/go2.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/TCP404/Picgo/blog/cover/go2.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" /><span class="title">Golang [进阶] 17-Channel</span><span class="excerpt">不要通过共享内存来通信，而应该通过通信来共享内存</span></a><a class="item" href="/posts/65501a4c.html" title="Golang [进阶] 18-并发安全" rel="bookmark "><img src="https://cdn.jsdelivr.net/gh/TCP404/Picgo/blog/cover/go2.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/TCP404/Picgo/blog/cover/go2.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" /><span class="title">Golang [进阶] 18-并发安全</span><span class="excerpt">并发安全</span></a><a class="item" href="/posts/913ad9ee.html" title="Golang [基础] 0-总叙" rel="bookmark "><img src="https://cdn.jsdelivr.net/gh/TCP404/Picgo/blog/cover/go2.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/TCP404/Picgo/blog/cover/go2.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" /><span class="title">Golang [基础] 0-总叙</span><span class="excerpt">Go 是一门好语言吗？</span></a></div></section></div>
+      
+      
+        <div class='copyright'>
+          <blockquote>
+            
+              
+                <p>博客内容遵循 署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</p>
+
+              
+            
+              
+                <p>本文永久链接是：<a href=https://www.boii.xyz/posts/c8c5007f>https://www.boii.xyz/posts/c8c5007f</a></p>
+              
+            
+          </blockquote>
+        </div>
+      
+      
+    </div>
+  
+  
+    
+
+
+  <div class='article-meta' id="bottom">
+    <div class='new-meta-box'>
+      
+        
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-07-19T17:50:43+08:00">
+  <a class='notlink'>
+    <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
+    <p>更新于：2021年7月19日</p>
+  </a>
+</div>
+
+        
+      
+        
+          
+  
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/Golang/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>Golang</p></a></div>
+
+
+        
+      
+        
+          
+  <div class="new-meta-item share -mob-share-list">
+  <div class="-mob-share-list share-body">
+    
+      
+        <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://www.boii.xyz/posts/c8c5007f&title=Golang [进阶] 19-reflect - Boii&pics=https://cdn.jsdelivr.net/gh/TCP404/Picgo/blog/thumbnail/golang.png&summary=反射的操作"
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qq.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qq.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://www.boii.xyz/posts/c8c5007f&title=Golang [进阶] 19-reflect - Boii&pics=https://cdn.jsdelivr.net/gh/TCP404/Picgo/blog/thumbnail/golang.png&summary=反射的操作"
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qzone.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qzone.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="http://service.weibo.com/share/share.php?url=https://www.boii.xyz/posts/c8c5007f&title=Golang [进阶] 19-reflect - Boii&pics=https://cdn.jsdelivr.net/gh/TCP404/Picgo/blog/thumbnail/golang.png&summary=反射的操作"
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/weibo.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/weibo.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=">
+          
+        </a>
+      
+    
+      
+    
+      
+    
+  </div>
+</div>
+
+
+
+        
+      
+        
+          
+  
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/Golang/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>Golang</p></a></div>
+
+
+        
+      
+    </div>
+  </div>
+
+
+  
+  
+
+  
+    <div class="prev-next">
+      
+        <a class='prev' href='/posts/1937010b'>
+          <p class='title'><i class="fas fa-chevron-left" aria-hidden="true"></i>Gin [1-返回数据]</p>
+          <p class='content'>Gin 返回数据格式
+
+
+返回在接收到请求，经过一番处理之后，我们需要返回结果，也就是响应请求。
+响应请求的格式有 &gt;= 5种格式：
+
+[]byte
+string
+JSON
+XML
+YAM...</p>
+        </a>
+      
+      
+        <a class='next' href='/posts/65501a4c'>
+          <p class='title'>Golang [进阶] 18-并发安全<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
+          <p class='content'>并发安全
+
+
+1-并发安全
+竞态竞态 是指多个 goroutine 按某些交错顺序执行时，争抢使用同一份临界资源，导致程序无法给出正确的结果。串行程序中（一个程序只有一个 goroutine），...</p>
+        </a>
+      
+    </div>
+  
+</article>
+
+
+  
+
+  <article class="post white-box reveal shadow" id="comments">
+    <p ct><i class='fas fa-comments'></i> 哔哔</p>
+    
+    <div id="valine_container" class="valine_thread">
+  <i class="fas fa-cog fa-spin fa-fw fa-2x"></i>
+</div>
+
+  </article>
+
+
+
+
+
+
+</div>
+<aside class='l_side'>
+  
+  
+    
+    
+
+
+
+  <section class="widget toc-wrapper shadow desktop mobile" id="toc-div" >
+    
+  <header>
+    
+      <i class="fas fa-list fa-fw" aria-hidden="true"></i><span class='name'>本文目录</span>
+    
+  </header>
+
+
+    <div class='content'>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%9B%B8%E5%85%B3%E5%9F%BA%E7%A1%80"><span class="toc-text">相关基础</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Golang-%E7%9A%84%E7%B1%BB%E5%9E%8B"><span class="toc-text">Golang 的类型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%9D%99%E6%80%81%E7%B1%BB%E5%9E%8B%E5%92%8C%E5%8A%A8%E6%80%81%E7%B1%BB%E5%9E%8B"><span class="toc-text">静态类型和动态类型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#interface-%E7%B1%BB%E5%9E%8B"><span class="toc-text">interface 类型</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%8D%E5%B0%84%E7%9A%84%E4%BD%BF%E7%94%A8"><span class="toc-text">反射的使用</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#reflect-Type"><span class="toc-text">reflect.Type</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#reflect-Value"><span class="toc-text">reflect.Value</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%8D%E5%B0%84API"><span class="toc-text">反射API</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%8E-%E6%8E%A5%E5%8F%A3%E5%AE%9E%E4%BE%8B-%E8%8E%B7%E5%8F%96-Type"><span class="toc-text">从 接口实例 获取 Type</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%8E-%E6%8E%A5%E5%8F%A3%E5%AE%9E%E4%BE%8B-%E8%8E%B7%E5%8F%96-Value"><span class="toc-text">从 接口实例 获取 Value</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%8E-Type-%E8%8E%B7%E5%8F%96-Value"><span class="toc-text">从 Type 获取 Value</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%8E-Value-%E8%8E%B7%E5%8F%96-Type"><span class="toc-text">从 Value 获取 Type</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%8E-Value-%E8%8E%B7%E5%8F%96-%E6%8E%A5%E5%8F%A3%E5%AE%9E%E4%BE%8B"><span class="toc-text">从 Value 获取 接口实例</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8C%87%E9%92%88%E7%B1%BB%E5%9E%8B-%E4%B8%8E-%E5%80%BC%E7%B1%BB%E5%9E%8B%E7%9A%84%E8%BD%AC%E6%8D%A2"><span class="toc-text">指针类型 与 值类型的转换</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Value-%E7%9A%84%E5%8F%AF%E4%BF%AE%E6%94%B9%E6%80%A7"><span class="toc-text">Value 的可修改性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%8D%E5%B0%84%E7%BB%93%E6%9E%84%E4%BD%93"><span class="toc-text">反射结构体</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%AE%BF%E9%97%AE%E6%93%8D%E4%BD%9C"><span class="toc-text">访问操作</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BF%AE%E6%94%B9%E6%93%8D%E4%BD%9C"><span class="toc-text">修改操作</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%8D%E5%B0%84%E8%B0%83%E7%94%A8%E5%87%BD%E6%95%B0"><span class="toc-text">反射调用函数</span></a></li></ol></li></ol>
+    </div>
+  </section>
+
+
+  
+
+
+</aside>
+
+
+
+		  
+		  <!--此文件用来存放一些不方便取值的变量-->
+<!--思路大概是将值藏到重加载的区域内-->
+
+<script>
+  window.pdata={}
+  pdata.ispage=true;
+  pdata.postTitle="Golang [进阶] 19-reflect";
+  pdata.commentPath="";
+  pdata.commentPlaceholder="";
+  // header 这里无论是否开启pjax都需要
+  var l_header=document.getElementById("l_header");
+  
+  l_header.classList.add("show");
+  
+  
+    // cover
+    var cover_wrapper=document.querySelector('.cover-wrapper');
+    
+    cover_wrapper.id="none";
+    cover_wrapper.style.display="none";
+    
+  
+</script>
+
+        </div>
+        
+  
+  <footer class="footer clearfix">
+    <br><br>
+    
+      
+        <div class="aplayer-container">
+          
+
+  
+    <meting-js
+      theme='#1BCDFC'
+      autoplay='false'
+      volume='0.1'
+      loop='all'
+      order='random'
+      fixed='false'
+      list-max-height='320px'
+      server='netease'
+      type='playlist'
+      id='2798155811'
+      list-folded='true'>
+    </meting-js>
+  
+
+
+        </div>
+      
+    
+      
+        <br>
+        <div class="social-wrapper">
+          
+            
+              <a href="/"
+                class="social fas fa-rss flat-btn"
+                target="_blank"
+                rel="external nofollow noopener noreferrer">
+                
+              </a>
+            
+          
+            
+              <a href="mailto:i@tcp404.com"
+                class="social fas fa-envelope flat-btn"
+                target="_blank"
+                rel="external nofollow noopener noreferrer">
+                
+              </a>
+            
+          
+            
+              <a href="https://github.com/TCP404"
+                class="social fab fa-github flat-btn"
+                target="_blank"
+                rel="external nofollow noopener noreferrer">
+                
+              </a>
+            
+          
+            
+              <a href="https://music.163.com/#/user/home?id=424260524"
+                class="social fas fa-headphones-alt flat-btn"
+                target="_blank"
+                rel="external nofollow noopener noreferrer">
+                
+              </a>
+            
+          
+        </div>
+      
+    
+      
+        <div><p>博客内容遵循 <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</a></p>
+</div>
+      
+    
+      
+        <div class='copyright'>
+        <p><a target="_blank" rel="noopener" href="https://www.tcp404.com/">Copyright © 2019-2021 Mr. Boii</a></p>
+
+        </div>
+      
+    
+      
+        
+          <div><p><a target="_blank" rel="noopener" href="https://beian.miit.gov.cn/">粤ICP备18106475号</a></p>
+</div>
+        
+      
+    
+  </footer>
+
+
+        <a id="s-top" class="fas fa-arrow-up fa-fw" href="javascript:void(0)"></a>
+      </div>
+    </div>
+    <div>
+      <script>
+/************这个文件存放不需要重载的全局变量和全局函数*********/
+window.volantis={};
+window.volantis.loadcss=document.getElementById("loadcss");
+/******************** Pjax ********************************/
+function VPjax(){
+	this.list=[] // 存放回调函数
+	this.start=()=>{
+	  for(var i=0;i<this.list.length;i++){
+		this.list[i].run();
+	  }
+	}
+	this.push=(fn,name)=>{
+		var f=new PjaxItem(fn,name);
+		this.list.push(f);
+	}
+	// 构造一个可以run的对象
+	function PjaxItem(fn,name){
+		// 函数名称
+		this.name = name || fn.name
+		// run方法
+		this.run=()=>{
+			fn()
+		}
+	}
+}
+volantis.pjax={}
+volantis.pjax.method={
+	complete: new VPjax(),
+	error: new VPjax(),
+	send: new VPjax()
+}
+volantis.pjax={
+	...volantis.pjax,
+	push: volantis.pjax.method.complete.push,
+	error: volantis.pjax.method.error.push,
+	send: volantis.pjax.method.send.push
+}
+/********************脚本懒加载函数********************************/
+// 已经加入了setTimeout
+function loadScript(src, cb) {
+	setTimeout(function() {
+		var HEAD = document.getElementsByTagName('head')[0] || document.documentElement;
+		var script = document.createElement('script');
+		script.setAttribute('type','text/javascript');
+		if (cb) script.onload = cb;
+		script.setAttribute('src', src);
+		HEAD.appendChild(script);
+	});
+}
+//https://github.com/filamentgroup/loadCSS
+var loadCSS = function( href, before, media, attributes ){
+	var doc = window.document;
+	var ss = doc.createElement( "link" );
+	var ref;
+	if( before ){
+		ref = before;
+	}
+	else {
+		var refs = ( doc.body || doc.getElementsByTagName( "head" )[ 0 ] ).childNodes;
+		ref = refs[ refs.length - 1];
+	}
+	var sheets = doc.styleSheets;
+	if( attributes ){
+		for( var attributeName in attributes ){
+			if( attributes.hasOwnProperty( attributeName ) ){
+				ss.setAttribute( attributeName, attributes[attributeName] );
+			}
+		}
+	}
+	ss.rel = "stylesheet";
+	ss.href = href;
+	ss.media = "only x";
+	function ready( cb ){
+		if( doc.body ){
+			return cb();
+		}
+		setTimeout(function(){
+			ready( cb );
+		});
+	}
+	ready( function(){
+		ref.parentNode.insertBefore( ss, ( before ? ref : ref.nextSibling ) );
+	});
+	var onloadcssdefined = function( cb ){
+		var resolvedHref = ss.href;
+		var i = sheets.length;
+		while( i-- ){
+			if( sheets[ i ].href === resolvedHref ){
+				return cb();
+			}
+		}
+		setTimeout(function() {
+			onloadcssdefined( cb );
+		});
+	};
+	function loadCB(){
+		if( ss.addEventListener ){
+			ss.removeEventListener( "load", loadCB );
+		}
+		ss.media = media || "all";
+	}
+	if( ss.addEventListener ){
+		ss.addEventListener( "load", loadCB);
+	}
+	ss.onloadcssdefined = onloadcssdefined;
+	onloadcssdefined( loadCB );
+	return ss;
+};
+</script>
+<script>
+  
+  loadCSS("https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.14/css/all.min.css", window.volantis.loadcss);
+  
+  
+  loadCSS("https://cdn.jsdelivr.net/gh/l-lin/font-awesome-animation/dist/font-awesome-animation.min.css", window.volantis.loadcss);
+  
+  
+  loadCSS("https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.css", window.volantis.loadcss);
+  
+  
+</script>
+<!-- required -->
+
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5/dist/jquery.min.js"></script>
+
+<script>
+  function pjax_fancybox() {
+    $(".md .gallery").find("img").each(function () { //渲染 fancybox
+      var element = document.createElement("a"); // a 标签
+      $(element).attr("class", "fancybox");
+      $(element).attr("pjax-fancybox", "");  // 过滤 pjax
+      $(element).attr("href", $(this).attr("src"));
+      if ($(this).attr("data-original")) {
+        $(element).attr("href", $(this).attr("data-original"));
+      }
+      $(element).attr("data-fancybox", "images");
+      var caption = "";   // 描述信息
+      if ($(this).attr('alt')) {  // 判断当前页面是否存在描述信息
+        $(element).attr('data-caption', $(this).attr('alt'));
+        caption = $(this).attr('alt');
+      }
+      var div = document.createElement("div");
+      $(div).addClass("fancybox");
+      $(this).wrap(div); // 最外层套 div ，其实主要作用还是 class 样式
+      var span = document.createElement("span");
+      $(span).addClass("image-caption");
+      $(span).text(caption); // 加描述
+      $(this).after(span);  // 再套一层描述
+      $(this).wrap(element);  // 最后套 a 标签
+    })
+    $(".md .gallery").find("img").fancybox({
+      selector: '[data-fancybox="images"]',
+      hash: false,
+      loop: false,
+      closeClick: true,
+      helpers: {
+        overlay: {closeClick: true}
+      },
+      buttons: [
+        "zoom",
+        "close"
+      ]
+    });
+  };
+  function SCload_fancybox() {
+    if ($(".md .gallery").find("img").length == 0) return;
+    loadCSS("https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css", document.getElementById("loadcss"));
+    loadScript('https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js', pjax_fancybox)
+  };
+  $(function () {
+    SCload_fancybox();
+  });
+  function Pjax_SCload_fancybox(){
+	if (typeof $.fancybox == "undefined") {
+	 SCload_fancybox();
+    } else {
+	 pjax_fancybox();
+    }
+  }
+  volantis.pjax.push(Pjax_SCload_fancybox)
+  volantis.pjax.send(()=>{
+      if (typeof $.fancybox != "undefined") {
+        $.fancybox.close();    // 关闭弹窗
+      }
+  },'fancybox')
+</script>
+
+
+<!-- internal -->
+
+  
+  
+  
+    
+<script src="https://cdn.jsdelivr.net/npm/jquery-backstretch@2.1.18/jquery.backstretch.min.js"></script>
+
+    <script type="text/javascript">
+        var imgs=["https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/001.jpg", "https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/002.jpg", "https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/003.jpg", "https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/004.jpg", "https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/006.jpg", "https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/012.jpg", "https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/016.jpg", "https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/019.jpg", "https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/025.jpg", "https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/034.jpg", "https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/035.jpg", "https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/038.jpg", "https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/039.jpg", "https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/042.jpg", "https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/046.jpg", "https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/051.jpg", "https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/052.jpg", "https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/054.jpg", "https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/056.jpg"];
+        if ('true' == 'true') {
+          function shuffle(arr){
+            /*From countercurrent-time*/
+            var n = arr.length;
+            while(n--) {
+              var index = Math.floor(Math.random() * n);
+              var temp = arr[index];
+              arr[index] = arr[n];
+              arr[n] = temp;
+            }
+          }
+          shuffle(imgs);
+        }
+	  function Pjax_backstretch(){
+        
+          $.backstretch(
+            imgs,
+          {
+            duration: "10000",
+            fade: "1500"
+          });
+        
+	  }
+	  loadScript("https://cdn.jsdelivr.net/npm/jquery-backstretch@2.1.18/jquery.backstretch.min.js",Pjax_backstretch)
+    </script>
+  
+
+
+
+  
+  
+
+  <div id="rightmenu-wrapper">
+    <ul class="list-v rightmenu" id="rightmenu-content">
+      <li class='option'>
+        <a class='vlts-menu opt fix-cursor-default' id='menu-copy-text' onclick="document.execCommand('copy')"><i class='fa fa-copy fa-fw'></i>复制文本</a>
+        <hr id='hr-text'>
+        <a class='vlts-menu opt fix-cursor-default' id='menu-copy-href'><i class='fa fa-link fa-fw'></i>复制链接</a>
+        <a class='vlts-menu opt fix-cursor-default' id='menu-open-href'><i class='fa fa-external-link-square-alt fa-fw'></i>在新标签页打开</a>
+        <hr id='hr-href'>
+        <a class='vlts-menu opt fix-cursor-default' id='menu-copy-src'><i class='fa fa-image fa-fw'></i>复制图片地址</a>
+        <hr id='hr-src'>
+      </li>
+      
+        <li class='navigation'>
+          <a class='nav icon-only fix-cursor-default' onclick='history.back()'><i class='fa fa-arrow-left fa-fw'></i></a>
+          <a class='nav icon-only fix-cursor-default' onclick='history.forward()'><i class='fa fa-arrow-right fa-fw'></i></a>
+          <a class='nav icon-only fix-cursor-default' onclick='window.location.reload()'><i class='fa fa-redo fa-fw'></i></a>
+          <a class='nav icon-only fix-cursor-default' href='/'><i class='fa fa-home fa-fw'></i></a>
+        </li>
+      
+      <hr>
+      
+        
+      
+        
+          
+    <li>
+      <a class='vlts-menu fix-cursor-default ' href=/categories/Python/
+        
+        
+        
+        
+          id="categoriesPython"
+        >
+        <i class='fa fa-code fa-fw'></i> Python
+      </a>
+    </li>
+  
+        
+      
+        
+          <hr>
+        
+      
+        
+          
+    <li>
+      <a class='vlts-menu fix-cursor-default ' href=https://github.com/volantis-x/hexo-theme-volantis/
+        
+        
+        
+        
+          id="https:githubcomvolantis-xhexo-theme-volantis"
+        >
+        <i class='fa fa-code-branch fa-fw'></i> 主题源码
+      </a>
+    </li>
+  
+        
+      
+        
+          <hr>
+        
+      
+        
+          
+    <li>
+      <a class='vlts-menu fix-cursor-default ' 
+        
+        
+        
+          onclick="document.execCommand('print')"
+        
+        >
+        <i class='fa fa-print fa-fw'></i> 打印页面
+      </a>
+    </li>
+  
+        
+      
+        
+          <hr>
+        
+      
+        
+          <li class='music name'>
+            <p class='nav music-title fix-cursor-default'></p>
+          </li>
+          <li class='music ctrl'>
+            <a class='nav icon-only backward fix-cursor-default' onclick='aplayerBackward()'><i class='fa fa-step-backward fa-fw'></i></a>
+            <a class='nav icon-only toggle fix-cursor-default' onclick='aplayerToggle()'><i class='fa fa-play fa-fw'></i></a>
+            <a class='nav icon-only forward fix-cursor-default' onclick='aplayerForward()'><i class='fa fa-step-forward fa-fw'></i></a>
+          </li>
+          <li class='music volume'>
+            <a class='nav volume'>
+              <div class="aplayer-volume-bar-wrap">
+                <div class="aplayer-volume-bar fix-cursor-pointer">
+                  <div class="aplayer-volume"></div>
+                  <i class='left fa fa-volume-off fa-fw'></i>
+                  <i class='right fa fa-volume-up fa-fw'></i>
+                </div>
+              </div>
+            </a>
+          </li>
+        
+      
+    </ul>
+  </div>
+
+  <script>
+    window.document.oncontextmenu = function (event) {
+      if (event.ctrlKey) return true;
+      if (/Android|webOS|BlackBerry/i.test(navigator.userAgent)) return true;
+      return popMenu(event);
+    };
+    document.addEventListener("click", function (event) {
+      var mymenu = document.getElementById('rightmenu-wrapper');
+      mymenu.style.display = "none";
+    });
+    function popMenu(event) {
+      var mymenu = document.getElementById('rightmenu-wrapper');
+      var menuContent = document.getElementById('rightmenu-content');
+      var screenWidth = document.documentElement.clientWidth || document.body.clientWidth;
+      var screenHeight = document.documentElement.clientHeight || document.body.clientHeight;
+      mymenu.style.left = event.clientX + "px"; // 获取鼠标位置
+      mymenu.style.top = event.clientY + "px";
+      mymenu.style.display = 'block';
+      if (event.clientX * 2 > screenWidth) {
+        menuContent.classList.add('left');
+      } else {
+        menuContent.classList.remove('left');
+      }
+      if (event.clientY * 2 > screenHeight) {
+        menuContent.classList.add('top');
+      } else {
+        menuContent.classList.remove('top');
+      }
+
+      let hrText = document.getElementById('hr-text');
+      let hrSrc = document.getElementById('hr-src');
+      let hrHref = document.getElementById('hr-href');
+
+      // 选中图片
+      let copySrc = document.getElementById('menu-copy-src');
+      if (copySrc != undefined) {
+        if (event.target.currentSrc) {
+          copySrc.style.display = 'block';
+          copySrc.addEventListener("click", function (e) {
+            copyString(event.target.currentSrc);
+          },{once: true});
+          hrSrc.style.display = 'block';
+        } else {
+          copySrc.style.display = 'none';
+          hrSrc.style.display = 'none';
+        }
+      }
+
+      // 选中按钮
+      // 判断是不是按钮
+      let href = '';
+      if (event.path) {
+        for (i = 0; i < event.path.length; i++) {
+          if (event.path[i].href != undefined && event.path[i].href.length > 0) {
+            href = event.path[i].href;
+          }
+        }
+      }
+
+      let copyText = document.getElementById('menu-copy-text');
+      copyText.style.display = 'none';
+      hrText.style.display = 'none';
+      if (href.length == 0) {
+        // 选中文本
+        if (window.getSelection().toString()) {
+          if ('true' == 'true') {
+            copyText.style.display = 'block';
+            hrText.style.display = 'block';
+          }
+        }
+      }
+
+      // 在新标签页打开
+      let openHref = document.getElementById('menu-open-href');
+      if (openHref != undefined) {
+        if (href.length > 0) {
+          openHref.style.display = 'block';
+          openHref.addEventListener("click", function (e) {
+            window.open(href);
+          },{once: true});
+          hrHref.style.display = 'block';
+        } else {
+          openHref.style.display = 'none';
+          hrHref.style.display = 'none';
+        }
+      }
+      // 复制链接
+      let copyHref = document.getElementById('menu-copy-href');
+      if (copyHref != undefined) {
+        if (href.length > 0) {
+          copyHref.style.display = 'block';
+          copyHref.addEventListener("click", function (e) {
+            copyString(href);
+          },{once: true});
+        } else {
+          copyHref.style.display = 'none';
+        }
+      }
+      // 有音乐播放器 see: layout/_third-party/aplayer/script.ejs
+      
+      if(volantis.APlayerLoaded){ // APlayer加载完成？
+        // 如果有aplayer，初始化一下
+        checkAPlayer();
+      }
+      
+      return false; // 该行代码确保系统自带的右键菜单不会被调出
+    }
+    function hideMenu() {
+      document.getElementById('rightmenu-wrapper').style.display = 'none';
+    }
+    function copyString(str) {
+      const input = document.createElement('input');
+      input.setAttribute('readonly', 'readonly');
+      document.body.appendChild(input);
+      input.setAttribute('value', str);
+      input.select();
+      document.execCommand('copy');
+      document.body.removeChild(input);
+    }
+    document.execCommand('click');
+  </script>
+
+
+
+
+<script>
+  function loadIssuesJS() {
+    if ($(".md").find(".issues-api").length == 0) return;
+	
+	  loadScript('/js/issues.js');
+	
+  };
+  $(function () {
+    loadIssuesJS();
+  });
+  volantis.pjax.push(()=>{
+	if (typeof IssuesAPI == "undefined") {
+	  loadIssuesJS();
+	}
+  },"IssuesJS")
+</script>
+
+
+
+  <script defer src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@17.1.0/dist/lazyload.min.js"></script>
+<script>
+  // https://www.npmjs.com/package/vanilla-lazyload
+  // Set the options globally
+  // to make LazyLoad self-initialize
+  window.lazyLoadOptions = {
+    elements_selector: ".lazyload",
+    threshold: 0
+  };
+  // Listen to the initialization event
+  // and get the instance of LazyLoad
+  window.addEventListener(
+    "LazyLoad::Initialized",
+    function (event) {
+      window.lazyLoadInstance = event.detail.instance;
+    },
+    false
+  );
+  document.addEventListener('DOMContentLoaded', function () {
+    lazyLoadInstance.update();
+  });
+  document.addEventListener('pjax:complete', function () {
+    lazyLoadInstance.update();
+  });
+</script>
+
+
+
+
+  
+
+<script>
+  window.FPConfig = {
+	delay: 0,
+	ignoreKeywords: [],
+	maxRPS: 5,
+	hoverDelay: 25
+  };
+</script>
+<script defer src="https://cdn.jsdelivr.net/gh/gijo-varghese/flying-pages@2.1.2/flying-pages.min.js"></script>
+
+
+
+
+
+  <script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
+<script>
+    var clipboard = new ClipboardJS('.btn-copy', {
+        target: function (trigger) {
+            return trigger.nextElementSibling
+        }
+    });
+    function wait(callback, seconds) {
+        var timelag = null;
+        timelag = window.setTimeout(callback, seconds)
+    }
+    function pjax_initCopyCode() {
+        if ($(".highlight .code pre").length + $(".article pre code").length == 0) return;
+        var copyHtml = '';
+        copyHtml += '<button class="btn-copy" data-clipboard-snippet="">';
+        copyHtml += '<i class="fas fa-copy"></i><span>COPY</span>';
+        copyHtml += '</button>';
+        $(".highlight .code pre").before(copyHtml);
+        $(".article pre code").before(copyHtml);
+        clipboard.off('success').on('success', function (e) {
+            $.message({
+                title: '复制成功',
+                message: "代码已复制，请遵守相关授权协议。",
+                type: 'success'
+            });
+            let $btn = $(e.trigger);
+            $btn.addClass('copied');
+            let $icon = $($btn.find('i'));
+            $icon.removeClass('fa-copy');
+            $icon.addClass('fa-check-circle');
+            let $span = $($btn.find('span'));
+            $span[0].innerText = 'COPIED';
+            wait(function () {
+                $icon.removeClass('fa-check-circle');
+                $icon.addClass('fa-copy');
+                $span[0].innerText = 'COPY'
+            }, 2000)
+        });
+        clipboard.off('error').on('error', function (e) {
+            e.clearSelection();
+            let $btn = $(e.trigger);
+            $btn.addClass('copy-failed');
+            let $icon = $($btn.find('i'));
+            $icon.removeClass('fa-copy');
+            $icon.addClass('fa-times-circle');
+            let $span = $($btn.find('span'));
+            $span[0].innerText = 'COPY FAILED';
+            wait(function () {
+                $icon.removeClass('fa-times-circle');
+                $icon.addClass('fa-copy');
+                $span[0].innerText = 'COPY'
+            }, 2000)
+        })
+    }
+    $(function () {
+        pjax_initCopyCode()
+    });
+    volantis.pjax.push(pjax_initCopyCode)
+</script>
+
+
+
+   <script type="text/javascript">
+  loadScript("https://cdn.jsdelivr.net/npm/scrollreveal@4.0.6/dist/scrollreveal.min.js")
+  function pjax_scrollrebeal() {
+    ScrollReveal().reveal('.l_main .reveal', {
+      distance: '32px',
+      duration: '800',
+      interval: '20',
+      scale: '1',
+      easing: 'ease-out'
+    });
+  }
+  $(function () {
+  var checkScrollReveal = setInterval(function () {
+    if ($("#safearea").css("display")!="block") return
+    if (typeof ScrollReveal=="undefined") return
+    clearInterval(checkScrollReveal)
+	pjax_scrollrebeal();
+  }, 100)
+  });
+  volantis.pjax.push(pjax_scrollrebeal)
+</script>
+
+
+
+
+  <script>
+  let APlayerController = new Object();
+  APlayerController.id = '2798155811';  // 设定全局音乐播放ID
+  APlayerController.volume = '0.1';
+  loadCSS("https://cdn.jsdelivr.net/npm/aplayer@1.10/dist/APlayer.min.css", window.volantis.loadcss);
+  // APlayer 需要在  MetingJS 之前加载
+  loadScript("https://cdn.jsdelivr.net/npm/aplayer@1.10/dist/APlayer.min.js")
+  window.volantis.APlayerLoaded=0 // APlayer加载完成状态
+  var checkAPlayer = setInterval(function () {
+    if (!window.APlayer) return // APlayer加载完成？
+	  if ($("#safearea").css("display")!="block") return // 文章内容加载完成？ see: source/css/first.styl
+    clearInterval(checkAPlayer)
+	  if (!window.volantis.APlayerLoaded&&!window.MetingJSElement){ // APlayer只能加载一次
+      window.volantis.APlayerLoaded=1 // APlayer加载完成
+      loadScript("https://cdn.jsdelivr.net/npm/meting@2.0/dist/Meting.min.js") // 加载 MetingJS
+	  }
+  }, 2500) // 按照网速调节差分2.5s
+  // rightmenu see: layout/_partial/rightmenu.ejs
+
+  
+    loadScript("/js/aplayer.js")
+  
+
+</script>
+
+
+
+
+  
+  
+<script src="https://cdn.jsdelivr.net/npm/valine@1.4/dist/Valine.min.js"></script>
+
+
+<script>
+  function emoji(path, idx, ext) {
+    return path + "/" + path + "-" + idx + "." + ext;
+  }
+  var emojiMaps = {};
+  for (var i = 1; i <= 54; i++) {
+    emojiMaps['tieba-' + i] = emoji('tieba', i, 'png');
+  }
+  for (var i = 1; i <= 101; i++) {
+    emojiMaps['qq-' + i] = emoji('qq', i, 'gif');
+  }
+  for (var i = 1; i <= 116; i++) {
+    emojiMaps['aru-' + i] = emoji('aru', i, 'gif');
+  }
+  for (var i = 1; i <= 125; i++) {
+    emojiMaps['twemoji-' + i] = emoji('twemoji', i, 'png');
+  }
+  for (var i = 1; i <= 4; i++) {
+    emojiMaps['weibo-' + i] = emoji('weibo', i, 'png');
+  }
+  function pjax_valine() {
+    if(!document.querySelectorAll("#valine_container")[0])return;
+    let pagePlaceholder = pdata.commentPlaceholder || "Say something~";
+    let path = pdata.commentPath;
+    if (path.length == 0) {
+      let defaultPath = '';
+      path = defaultPath || decodeURI(window.location.pathname);
+    }
+    var valine = new Valine();
+    valine.init(Object.assign({"js":"https://cdn.jsdelivr.net/npm/valine@1.4/dist/Valine.min.js","path":null,"placeholder":"Say something~","appId":"ucd11s85GDQMICKSzeeGvQIt-9Nh9j0Va","appKey":"v1kYVcf5xfyA4HEVRQ5JxnY0","meta":["nick","mail","link"],"requiredFields":["nick","mail"],"enableQQ":true,"recordIP":false,"avatar":"robohash","pageSize":15,"lang":"zh-cn","highlight":true,"mathJax":true}, {
+      el: '#valine_container',
+      path: path,
+      placeholder: pagePlaceholder,
+      emojiCDN: 'https://cdn.jsdelivr.net/gh/volantis-x/cdn-emoji/valine/',
+      emojiMaps: emojiMaps,
+    }))
+  }
+  $(function () {
+    pjax_valine();
+  });
+  volantis.pjax.push(pjax_valine);
+</script>
+
+
+
+
+  <script defer src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-busuanzi@2.3/js/busuanzi.pure.mini.js" data-pjax></script>
+
+
+
+  
+<script src="/js/app.js"></script>
+
+
+
+<!-- optional -->
+
+  <script>
+const SearchServiceimagePath="https://cdn.jsdelivr.net/gh/volantis-x/cdn-volantis@master/img/";
+const ROOT =  ("/" || "/").endsWith('/') ? ("/" || "/") : ("//" || "/" );
+
+$('.input.u-search-input').one('focus',function(){
+	
+		loadScript('https://cdn.jsdelivr.net/gh/volantis-x/cdn-volantis@3.0/js/search.js',setSearchService);
+	
+})
+
+function listenSearch(){
+  
+    customSearch = new HexoSearch({
+      imagePath: SearchServiceimagePath
+    });
+  
+}
+function setSearchService() {
+	listenSearch();
+	
+		document.addEventListener("pjax:success", listenSearch);
+	
+}
+</script>
+
+
+
+
+
+  
+<script src="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.js"></script>
+
+<script type="text/javascript">
+$(function () {
+  Waves.attach('.flat-btn', ['waves-button']);
+  Waves.attach('.float-btn', ['waves-button', 'waves-float']);
+  Waves.attach('.float-btn-light', ['waves-button', 'waves-float', 'waves-light']);
+  Waves.attach('.flat-box', ['waves-block']);
+  Waves.attach('.float-box', ['waves-block', 'waves-float']);
+  Waves.attach('.waves-image');
+  Waves.init();
+});
+</script>
+
+
+
+
+
+
+
+
+
+  <script>
+const rootElement = document.documentElement;
+const darkModeStorageKey = "user-color-scheme";
+const rootElementDarkModeAttributeName = "data-user-color-scheme";
+
+const setLS = (k, v) => {
+    localStorage.setItem(k, v);
+};
+
+const removeLS = (k) => {
+    localStorage.removeItem(k);
+};
+
+const getLS = (k) => {
+    return localStorage.getItem(k);
+};
+
+const getModeFromCSSMediaQuery = () => {
+  return window.matchMedia("(prefers-color-scheme: dark)").matches
+    ? "dark"
+    : "light";
+};
+
+const resetRootDarkModeAttributeAndLS = () => {
+  rootElement.removeAttribute(rootElementDarkModeAttributeName);
+  removeLS(darkModeStorageKey);
+};
+
+const validColorModeKeys = {
+  dark: true,
+  light: true,
+};
+
+const applyCustomDarkModeSettings = (mode) => {
+  const currentSetting = mode || getLS(darkModeStorageKey);
+
+  if (currentSetting === getModeFromCSSMediaQuery()) {
+    resetRootDarkModeAttributeAndLS();
+  } else if (validColorModeKeys[currentSetting]) {
+    rootElement.setAttribute(rootElementDarkModeAttributeName, currentSetting);
+  } else {
+    resetRootDarkModeAttributeAndLS();
+  }
+};
+
+const invertDarkModeObj = {
+  dark: "light",
+  light: "dark",
+};
+
+/**
+ * get target mode
+ */
+const toggleCustomDarkMode = () => {
+  let currentSetting = getLS(darkModeStorageKey);
+
+  if (validColorModeKeys[currentSetting]) {
+    currentSetting = invertDarkModeObj[currentSetting];
+  } else if (currentSetting === null) {
+    currentSetting = invertDarkModeObj[getModeFromCSSMediaQuery()];
+  } else {
+    return;
+  }
+  setLS(darkModeStorageKey, currentSetting);
+  return currentSetting;
+};
+
+/**
+ * bind click event for toggle button
+ */
+var btn=$("#wrapper .toggle-mode-btn,#rightmenu-wrapper .toggle-mode-btn");
+function bindToggleButton() {
+    btn.on('click',(e) => {
+      const mode = toggleCustomDarkMode();
+      applyCustomDarkModeSettings(mode);
+    });
+}
+
+applyCustomDarkModeSettings();
+document.addEventListener("DOMContentLoaded", bindToggleButton);
+volantis.pjax.push(bindToggleButton);
+volantis.pjax.send(()=>{
+	btn.unbind('click');
+},'toggle-mode-btn-unbind');
+</script>
+
+
+
+
+
+<!-- baidu Analytics -->
+<script>
+var _hmt = _hmt || [];
+(function() {
+  setTimeout(function() {
+    loadScript("https://hm.baidu.com/hm.js?b5baf7ff160f5e44a127e9b73ee5f44f")
+  }, 5000);
+})();
+// 关于百度统计对 SPA 页面的处理：
+// 方案一：百度统计>管理>单页应用设置中，打开开启按钮即可对SPA进行统计。 https://tongji.baidu.com/web/help/article?id=324
+// 方案二：取消注释下列代码。 https://tongji.baidu.com/web/help/article?id=235
+volantis.pjax.push(()=>{_hmt.push(['_trackPageview', document.location.pathname]);},'baidu_analytics')
+</script>
+
+
+
+
+<script>
+function listennSidebarTOC() {
+  const navItems = document.querySelectorAll(".toc li");
+  if (!navItems.length) return;
+  const sections = [...navItems].map((element) => {
+    const link = element.querySelector(".toc-link");
+    const target = document.getElementById(
+      decodeURI(link.getAttribute("href")).replace("#", "")
+    );
+    link.addEventListener("click", (event) => {
+      event.preventDefault();
+      window.scrollTo({
+		top: target.offsetTop + 100,
+		
+		behavior: "smooth"
+		
+	  });
+    });
+    return target;
+  });
+
+  function activateNavByIndex(target) {
+    if (target.classList.contains("active-current")) return;
+
+    document.querySelectorAll(".toc .active").forEach((element) => {
+      element.classList.remove("active", "active-current");
+    });
+    target.classList.add("active", "active-current");
+    let parent = target.parentNode;
+    while (!parent.matches(".toc")) {
+      if (parent.matches("li")) parent.classList.add("active");
+      parent = parent.parentNode;
+    }
+  }
+
+  function findIndex(entries) {
+    let index = 0;
+    let entry = entries[index];
+    if (entry.boundingClientRect.top > 0) {
+      index = sections.indexOf(entry.target);
+      return index === 0 ? 0 : index - 1;
+    }
+    for (; index < entries.length; index++) {
+      if (entries[index].boundingClientRect.top <= 0) {
+        entry = entries[index];
+      } else {
+        return sections.indexOf(entry.target);
+      }
+    }
+    return sections.indexOf(entry.target);
+  }
+
+  function createIntersectionObserver(marginTop) {
+    marginTop = Math.floor(marginTop + 10000);
+    let intersectionObserver = new IntersectionObserver(
+      (entries, observe) => {
+        let scrollHeight = document.documentElement.scrollHeight + 100;
+        if (scrollHeight > marginTop) {
+          observe.disconnect();
+          createIntersectionObserver(scrollHeight);
+          return;
+        }
+        let index = findIndex(entries);
+        activateNavByIndex(navItems[index]);
+      },
+      {
+        rootMargin: marginTop + "px 0px -100% 0px",
+        threshold: 0,
+      }
+    );
+    sections.forEach((element) => {
+      element && intersectionObserver.observe(element);
+    });
+  }
+  createIntersectionObserver(document.documentElement.scrollHeight);
+}
+
+document.addEventListener("DOMContentLoaded", listennSidebarTOC);
+document.addEventListener("pjax:success", listennSidebarTOC);
+</script>
+
+<!-- more -->
+
+ 
+	   
+	    
+
+
+<script src="https://cdn.jsdelivr.net/npm/pjax@0.2.8/pjax.min.js"></script>
+
+
+<!-- 样式位于：source/css/_third-party/pjaxanimate.styl -->
+
+<div class="pjax-animate">
+  
+    <script src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js"></script>
+    <div id="loading-bar-wrapper"><script>NProgress.configure({parent:"#loading-bar-wrapper",trickleSpeed: 100})</script></div>
+    <script>
+      window.ShowLoading = function() {
+        NProgress.start();
+      };
+      window.HideLoading = function() {
+        NProgress.done();
+      }
+    </script>
+  
+	<script>
+		volantis.pjax.push(window.HideLoading,'HideLoading');
+		volantis.pjax.send(window.ShowLoading,'ShowLoading');
+		volantis.pjax.error(window.HideLoading,'HideLoading');
+	</script>
+</div>
+
+
+<script>
+    var pjax;
+    document.addEventListener('DOMContentLoaded', function () {
+      pjax = new Pjax({
+        elements: 'a[href]:not([href^="#"]):not([href="javascript:void(0)"]):not([pjax-fancybox])',
+        selectors: [
+          "title",
+          
+          "#pjax-container",
+          "#pjax-header-nav-list"
+        ],
+        cacheBust: false,   // url 地址追加时间戳，用以避免浏览器缓存
+        timeout: 5000
+      });
+    });
+
+    document.addEventListener('pjax:send', function (e) {
+      //window.stop(); // 相当于点击了浏览器的停止按钮
+
+      try {
+        var currentUrl = window.location.pathname;
+        var targetUrl = e.triggerElement.href;
+        var banUrl = [""];
+        if (banUrl[0] != "") {
+          banUrl.forEach(item => {
+            if(currentUrl.indexOf(item) != -1 || targetUrl.indexOf(item) != -1) {
+              window.location.href = targetUrl;
+            }
+          });
+        }
+      } catch (error) {}
+
+      window.subData = null; // 移除标题（用于一二级导航栏切换处）
+
+      volantis.$switcher.removeClass('active'); // 关闭移动端激活的搜索框
+      volantis.$header.removeClass('z_search-open'); // 关闭移动端激活的搜索框
+      volantis.$wrapper.removeClass('sub'); // 跳转页面时关闭二级导航
+
+      // 解绑事件 避免重复监听
+      volantis.$topBtn.unbind('click');
+      $('.menu a').unbind('click');
+      $(window).unbind('resize');
+      $(window).unbind('scroll');
+      $(document).unbind('scroll');
+      $(document).unbind('click');
+      $('body').unbind('click');
+	  // 使用 volantis.pjax.send 方法传入pjax:send回调函数 参见layout/_partial/scripts/global.ejs
+	  volantis.pjax.method.send.start();
+    });
+
+    document.addEventListener('pjax:complete', function () {
+      $('.nav-main').find('.list-v').not('.menu-phone').removeAttr("style",""); // 移除小尾巴的移除
+      $('.menu-phone.list-v').removeAttr("style",""); // 移除小尾巴的移除
+      $('script[data-pjax], .pjax-reload script').each(function () {
+        $(this).parent().append($(this).remove());
+      });
+      try{
+		// 使用 volantis.pjax.push 方法传入重载函数 参见layout/_partial/scripts/global.ejs
+		volantis.pjax.method.complete.start();
+      } catch (e) {
+        console.log(e);
+      }
+    });
+
+    document.addEventListener('pjax:error', function (e) {
+	  // 使用 volantis.pjax.error 方法传入pjax:error回调函数 参见layout/_partial/scripts/global.ejs
+	  volantis.pjax.method.error.start();
+      window.location.href = e.triggerElement.href;
+    });
+</script>
+ 
+	  
+    </div>
+  <script async>window.onload=function(){var a=document.createElement('script'),b=document.getElementsByTagName('script')[0];a.type='text/javascript',a.async=!0,a.src='/sw-register.js?v='+Date.now(),b.parentNode.insertBefore(a,b)};</script></body></html>
