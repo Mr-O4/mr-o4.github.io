@@ -178,11 +178,11 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
                       
             
               <li>
-                <a class="menuitem flat-box faa-parent animated-hover" href=https://github.com/TCP404/TinyServer
+                <a class="menuitem flat-box faa-parent animated-hover" href=https://github.com/TCP404/OneTiny
                   
                   
                   
-                    id="https:githubcomTCP404TinyServer"
+                    id="https:githubcomTCP404OneTiny"
                   >
                   <i class='fas fa-server fa-fw'></i>OneTiny
                 </a>
@@ -407,11 +407,11 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
                       
             
               <li>
-                <a class="menuitem flat-box faa-parent animated-hover" href=https://github.com/TCP404/TinyServer
+                <a class="menuitem flat-box faa-parent animated-hover" href=https://github.com/TCP404/OneTiny
                   
                   
                   
-                    id="https:githubcomTCP404TinyServer"
+                    id="https:githubcomTCP404OneTiny"
                   >
                   <i class='fas fa-server fa-fw'></i>OneTiny
                 </a>
@@ -604,10 +604,10 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
               <i class='fas fa-book fa-fw'></i><p></p>
             </a>
           
-            <a target="_blank" rel="noopener" href="https://github.com/Mr-O4/GoTE-miniprogram"
+            <a target="_blank" rel="noopener" href="https://github.com/TCP404/OneTiny"
               
               
-              id="https:githubcomMr-O4GoTE-miniprogram">
+              id="https:githubcomTCP404OneTiny">
               <i class='fas fa-laptop-code fa-fw'></i><p></p>
             </a>
           
@@ -700,7 +700,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <div class="new-meta-item wordcount">
     <a class='notlink'>
       <i class="fas fa-keyboard fa-fw" aria-hidden="true"></i>
-      <p>字数：4k字</p>
+      <p>字数：4.2k字</p>
     </a>
   </div>
   <div class="new-meta-item readtime">
@@ -869,25 +869,22 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 <p>那么我们也可以在 Golang 中，定义一个接口IAer，接口中定义一些抽象方法；</p>
 <p>然后定义一个 Aer 作为公共的结构体（类），由它来实现公共的部分</p>
 <p>然后其他结构体嵌套这个公共结构体，并实现接口 IAer 的方法，这样就能达到与抽象类相同的效果。</p>
-<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 抽象类 -- start</span></span><br><span class="line"><span class="keyword">type</span> IAnimal <span class="keyword">interface</span> &#123;</span><br><span class="line">    kind() <span class="keyword">string</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">type</span> Animal <span class="keyword">struct</span> &#123;&#125;</span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(a *Animal)</span> <span class="title">run</span><span class="params">(this IAnimal)</span></span> &#123;    <span class="comment">// !注意这里接受的是接口变量</span></span><br><span class="line">    fmt.Println(this.kind + <span class="string">&quot;is running.&quot;</span>)</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 抽象类 -- end</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">// 继承抽象类</span></span><br><span class="line"><span class="keyword">type</span> cat <span class="keyword">struct</span> &#123; Animal &#125;</span><br><span class="line"><span class="comment">// 实现抽象方法</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(c *cat)</span> <span class="title">kind</span><span class="params">()</span> <span class="title">string</span></span> &#123; <span class="keyword">return</span> <span class="string">&quot;cat&quot;</span> &#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 继承抽象类</span></span><br><span class="line"><span class="keyword">type</span> dog <span class="keyword">struct</span> &#123; Animal &#125;</span><br><span class="line"><span class="comment">// 实现抽象方法</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(d *dog)</span> <span class="title">kind</span><span class="params">()</span> <span class="title">string</span></span> &#123; <span class="keyword">return</span> <span class="string">&quot;dog&quot;</span> &#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// -- 抽象类 -- start</span></span><br><span class="line"><span class="keyword">type</span> IAbsClass <span class="keyword">interface</span> &#123;</span><br><span class="line">    absMethod1()</span><br><span class="line">    absMethod2()</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">AbsClass</span> <span class="title">struct</span></span> &#123;&#125;	<span class="comment">// 公共结构体</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(a AbsClass)</span> <span class="title">commonMethod1</span><span class="params">()</span></span> &#123;	<span class="comment">// 公共结构体实现公共方法1</span></span><br><span class="line">    fmt.Println(<span class="string">&quot;AbsClass commonMethod1&quot;</span>)</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(a AbsClass)</span> <span class="title">commonMethod2</span><span class="params">()</span></span> &#123;	<span class="comment">// 公共结构体实现公共方法2</span></span><br><span class="line">    fmt.Println(<span class="string">&quot;AbsClass commonMethod2&quot;</span>)</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// -- 抽象类 -- end</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">// -- 子类继承抽象类</span></span><br><span class="line"><span class="keyword">type</span> subClass1 <span class="keyword">struct</span> &#123;</span><br><span class="line">    AbsClass	<span class="comment">// 继承抽象类</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 子类实现抽象方法</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(s subClass1)</span> <span class="title">absMethod1</span><span class="params">()</span></span> &#123;	<span class="comment">// 子类实现抽象方法1</span></span><br><span class="line">    fmt.Println(<span class="string">&quot;subClass1 absMethod1&quot;</span>)</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(s subClass1)</span> <span class="title">absMethod2</span><span class="params">()</span></span> &#123;	<span class="comment">// 子类实现抽象方法2</span></span><br><span class="line">    fmt.Println(<span class="string">&quot;subClass1 absMethod2&quot;</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 此时子类 subClass1 拥有 4 种方法：</span></span><br><span class="line"><span class="comment">// absClass.commonMethod1()</span></span><br><span class="line"><span class="comment">// absClass.commonMethod2()</span></span><br><span class="line"><span class="comment">// subClass1.absMethod1()</span></span><br><span class="line"><span class="comment">// subClass1.absMethod2()</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">// -- 子类继承抽象类</span></span><br><span class="line"><span class="keyword">type</span> subClass2 <span class="keyword">struct</span> &#123;</span><br><span class="line">    AbsClass	<span class="comment">// 继承抽象类</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 子类实现抽象方法</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(s subClass2)</span> <span class="title">absMethod1</span><span class="params">()</span></span> &#123;	<span class="comment">// 子类实现抽象方法1</span></span><br><span class="line">    fmt.Println(<span class="string">&quot;subClass2 absMethod1&quot;</span>)</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(s subClass2)</span> <span class="title">absMethod2</span><span class="params">()</span></span> &#123;	<span class="comment">// 子类实现抽象方法2</span></span><br><span class="line">    fmt.Println(<span class="string">&quot;subClass2 absMethod2&quot;</span>)</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 子类重写公共方法2</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(s subClass2)</span> <span class="title">commonMethod2</span><span class="params">()</span></span> &#123;</span><br><span class="line">    fmt.Println(<span class="string">&quot;subClass2 commonMethod1&quot;</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 此时子类 subClass2 拥有 4 种方法：</span></span><br><span class="line"><span class="comment">// absClass.commonMethod1()</span></span><br><span class="line"><span class="comment">// subClass2.commonMethod2()</span></span><br><span class="line"><span class="comment">// subClass2.absMethod1()</span></span><br><span class="line"><span class="comment">// subClass2.absMethod2()</span></span><br></pre></td></tr></table></figure>
 
-<p>接口定义抽象方法，公共结构体实现公共方法，其他要继承象类的子类只要<span class='p yellow'>匿名嵌套</span>公共结构体即可</p>
-<p>另外在公共结构体实现公共方法时，其至少接收一个接口类型的参数，这个参数相当于<code>this</code>。</p>
+<p>接口定义<strong>抽象方法</strong>；<br>公共结构体实现<strong>公共方法</strong>；<br>其他要继承抽象类的子类只要<span class='p yellow'>匿名嵌套</span>公共结构体即可。</p>
 <p>调用：</p>
-<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">    c := &amp;cat&#123;&#125;</span><br><span class="line">    c.run(c)</span><br><span class="line"></span><br><span class="line">    d := &amp;dog&#123;&#125;</span><br><span class="line">    d.run(d)</span><br><span class="line">    fmt.Println(<span class="string">&quot;kind(): &quot;</span>, d.kind())</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>输出：</p>
-<figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">cat <span class="keyword">is</span> <span class="built_in">running</span></span><br><span class="line">dog <span class="keyword">is</span> <span class="built_in">running</span></span><br><span class="line">kind(): dog</span><br></pre></td></tr></table></figure>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">    c := &amp;cat&#123;&#125;</span><br><span class="line">    c.run(c)</span><br><span class="line"></span><br><span class="line">    d := &amp;dog&#123;&#125;</span><br><span class="line">    d.run(d)</span><br><span class="line">    fmt.Println(<span class="string">&quot;kind(): &quot;</span>, d.kind())</span><br><span class="line">    </span><br><span class="line">    s1 := subClass1&#123;&#125;</span><br><span class="line">    s1.commonMethod1()	<span class="comment">// 打印：AbsClass commonMethod1</span></span><br><span class="line">    s1.commonMethod2()	<span class="comment">// 打印：AbsClass commonMethod2</span></span><br><span class="line">    s1.absMethod1()		<span class="comment">// 打印：subClass1 absMethod1</span></span><br><span class="line">    s1.absMethod2()		<span class="comment">// 打印：subClass1 absMethod2</span></span><br><span class="line">    </span><br><span class="line">    s2 := subClass2&#123;&#125;</span><br><span class="line">    s2.commonMethod1()	<span class="comment">// 打印：AbsClass commonMethod1</span></span><br><span class="line">    s2.commonMethod2()	<span class="comment">// 打印：subClass2 commonMethod2</span></span><br><span class="line">    s2.absMethod1()		<span class="comment">// 打印：subClass2 absMethod1</span></span><br><span class="line">    s2.absMethod2()		<span class="comment">// 打印：subClass2 absMethod2</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <h3 id="小结-1"><a href="#小结-1" class="headerlink" title="小结"></a>小结</h3><p>Golang 中实现抽象类：</p>
 <ol>
-<li>抽象的方法放在接口中</li>
-<li>公共的方法定义一个公共结构体去实现，需要用到 this 的地方使用接口变量</li>
+<li><strong>抽象的方法</strong>放在<strong>接口</strong>中</li>
+<li><strong>公共的方法</strong>定义一个<strong>公共结构体</strong>去实现，需要用到 <code>this</code> 的地方使用接口变量</li>
 <li>继承抽象类的子类要做两件事：<ul>
 <li>匿名嵌套公共结构体</li>
 <li>实现接口中的所有方法</li>
 </ul>
 </li>
-<li>在调用公共方法时，需要将子类自己传进去。</li>
+<li>在调用公共方法时，需要 <code>this</code> 的地方，将子类自己传进去。</li>
 </ol>
 <h2 id="泛型"><a href="#泛型" class="headerlink" title="泛型"></a>泛型</h2><p>据说在 Go 1.17 出</p>
 <h2 id="单例模式"><a href="#单例模式" class="headerlink" title="单例模式"></a>单例模式</h2><ul>
@@ -1011,14 +1008,6 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   </div>
 </div>
 
-
-
-        
-      
-        
-          
-  
-  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/Golang/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>Golang</p></a></div>
 
 
         
