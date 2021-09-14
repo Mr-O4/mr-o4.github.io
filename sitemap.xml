@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://www.boii.xyz/posts/2e4490bf.html</loc>
+    
+    <lastmod>2021-09-14</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://www.boii.xyz/posts/55493.html</loc>
     
     <lastmod>2021-09-14</lastmod>
@@ -1223,6 +1230,13 @@
   
   <url>
     <loc>https://www.boii.xyz/tags/%E6%8A%BD%E8%B1%A1%E7%B1%BB/</loc>
+    <lastmod>2021-09-14</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.boii.xyz/tags/commit/</loc>
     <lastmod>2021-09-14</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
