@@ -135,7 +135,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         
         <a class="title flat-box" target="_self" href='/'>
           
-            <img no-lazy class='logo' src='https://cdn.jsdelivr.net/gh/TCP404/HEXO-CDN/images/icon/bolgger.png'/>
+            <img no-lazy class='logo' src='https://xcdn.loli.top/gh/TCP404/HEXO-CDN/images/icon/bolgger.png'/>
           
           
           
@@ -607,7 +607,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
           <div class='cover-body'>
   <div class='top'>
     
-      <img no-lazy class='logo' src='https://cdn.jsdelivr.net/gh/TCP404/HEXO-CDN/images/icon/bolgger.png'/>
+      <img no-lazy class='logo' src='https://xcdn.loli.top/gh/TCP404/HEXO-CDN/images/icon/bolgger.png'/>
     
     
       <p class="title">Mr.Boii</p>
@@ -628,13 +628,6 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     <div class='menu navigation'>
       <div class='list-h'>
         
-          
-            <a href="/"
-              
-              
-              id="home">
-              <i class='fas fa-book fa-fw'></i><p></p>
-            </a>
           
             <a target="_blank" rel="noopener" href="https://github.com/TCP404/OneTiny"
               
@@ -695,7 +688,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
     <div class='headimg-div'>
       <a class='headimg-a'>
-        <img class='headimg' src='https://cdn.jsdelivr.net/gh/TCP404/Picgo/blog/cover/Graph.png'/>
+        <img class='headimg' src='https://xcdn.loli.top/gh/TCP404/Picgo/blog/cover/Graph.png'/>
       </a>
     </div>
   
@@ -703,7 +696,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     
     
       <a title='DataStruction 0x08 图-2' href='/posts/55493.html'>
-        <img class='thumbnail' src='https://cdn.jsdelivr.net/gh/TCP404/Picgo/blog/thumbnail/algorithms.png'>
+        <img class='thumbnail' src='https://xcdn.loli.top/gh/TCP404/Picgo/blog/thumbnail/algorithms.png'>
       </a>
     
     
@@ -716,7 +709,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
             
 <div class='new-meta-item author'>
   <a class='author' href="/" rel="nofollow">
-    <img no-lazy src="https://cdn.jsdelivr.net/gh/TCP404/HEXO-CDN/images/icon/favicon.png">
+    <img no-lazy src="https://xcdn.loli.top/gh/TCP404/HEXO-CDN/images/icon/favicon.png">
     <p>Mr.Pro</p>
   </a>
 </div>
@@ -802,11 +795,11 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 <p>设 图G 有 n 个顶点，则邻接矩阵是一个 $n \times n$ 的方阵，定义为：</p>
 <p>$$<br>Arc[i][j] =<br>\begin{cases}<br>1, &amp; {(v_i, v_j) \in E 或 \langle v_i, v_j \rangle \in E} \\<br>0, &amp; {反之}<br>\end{cases}<br>$$</p>
 <h4 id="无向图"><a href="#无向图" class="headerlink" title="无向图"></a>无向图</h4><h5 id="理论描述"><a href="#理论描述" class="headerlink" title="理论描述"></a>理论描述</h5><p><strong>顶点集</strong>很容易表示，使用顶点结构类型的一维数组来存储顶点信息。<br><strong>边集</strong>可以用 <strong>矩阵(Metrix)</strong> 来表示，而矩阵在计算机中可以使用二维数组来实现。</p>
-<p>eg: <img src="https://cdn.jsdelivr.net/gh/TCP404/Picgo/blog/illustration-pic/DataStruction/20201221132810429_2398.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/TCP404/Picgo/blog/illustration-pic/DataStruction/20201221132810429_2398.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII="> </p>
+<p>eg: <img src="https://xcdn.loli.top/gh/TCP404/Picgo/blog/illustration-pic/DataStruction/20201221132810429_2398.png" class="lazyload" data-srcset="https://xcdn.loli.top/gh/TCP404/Picgo/blog/illustration-pic/DataStruction/20201221132810429_2398.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII="> </p>
 <p>这个图的边集可以变成下面的矩阵：</p>
 <p>$$<br>\begin{bmatrix}<br>0 &amp; 1 &amp; 1 &amp; 0 \\<br>1 &amp; 0 &amp; 1 &amp; 0 \\<br>1 &amp; 1 &amp; 0 &amp; 1 \\<br>0 &amp; 0 &amp; 1 &amp; 0<br>\end{bmatrix}<br>$$</p>
 <p>所以对于图 <strong>G =（V, {E}）</strong>，可以使用一个一维数组来存储顶点集 V，再用一个二维数组来存储边集 E。<br>于是一张图可以变成下图所示：</p>
-<p><img src="https://cdn.jsdelivr.net/gh/TCP404/Picgo/blog/illustration-pic/DataStruction/20201221172548767_15519.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/TCP404/Picgo/blog/illustration-pic/DataStruction/20201221172548767_15519.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" alt="无向图邻接矩阵"></p>
+<p><img src="https://xcdn.loli.top/gh/TCP404/Picgo/blog/illustration-pic/DataStruction/20201221172548767_15519.png" class="lazyload" data-srcset="https://xcdn.loli.top/gh/TCP404/Picgo/blog/illustration-pic/DataStruction/20201221172548767_15519.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" alt="无向图邻接矩阵"></p>
 <p>上图中，有一个结构体 <code>struct Graph</code>，结构体中包含一个一维数组 <code>Vertex[]</code> 和一个二维数组 <code>Edge[][]</code>，一个 <code>v_count</code> 存储顶点数，一个 <code>e_count</code> 存储边数。</p>
 <p><code>Vertex[]</code> 用来存储顶点信息，<code>Edge[][]</code> 用来存储边的信息。</p>
 <p>例如 (v1, v2) 就将 <code>Edge[0][1]</code> 置为1；而 (v1, v2) 也可以表示为 (v2, v1) ，所以 <code>Edge[1][0]</code> 也应置为1。<br>而简单图不会有自己邻接自己的边，所以 <code>Edge[0][0]、Edge[1][1]、Edge[2][2]、Edge[3][3]</code> 均为0。</p>
@@ -835,7 +828,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 <div class="note done"><p>口诀：</p><ul><li><code>Arc[行][列]</code></li><li><code>Arc[出][入]</code></li><li><strong>列头入，行尾出</strong>：即 列为弧头、入度；行为弧尾、出度。</li></ul></div>
 
 
-<p><img src="https://cdn.jsdelivr.net/gh/TCP404/Picgo/blog/illustration-pic/DataStruction/20201221172927072_32706.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/TCP404/Picgo/blog/illustration-pic/DataStruction/20201221172927072_32706.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" alt="有向图邻接矩阵"></p>
+<p><img src="https://xcdn.loli.top/gh/TCP404/Picgo/blog/illustration-pic/DataStruction/20201221172927072_32706.png" class="lazyload" data-srcset="https://xcdn.loli.top/gh/TCP404/Picgo/blog/illustration-pic/DataStruction/20201221172927072_32706.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" alt="有向图邻接矩阵"></p>
 <h5 id="代码实现-1"><a href="#代码实现-1" class="headerlink" title="代码实现"></a>代码实现</h5><p>在代码实现上，有向图与无向图唯一的区别在于：录入弧的数据之后，只需要执行赋值一次就可以。</p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">G-&gt;edges[x][y] = <span class="number">1</span>;</span><br><span class="line"><span class="comment">// G-&gt;edges[y][x] = 1;</span></span><br></pre></td></tr></table></figure>
 
@@ -849,7 +842,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 <h5 id="理论描述-2"><a href="#理论描述-2" class="headerlink" title="理论描述"></a>理论描述</h5><p>设 图G 有 n 个顶点，则邻接矩阵是一个 $n \times n$ 的方阵，定义为：</p>
 <p>$$<br>Arc[i][j] =<br>\begin{cases}<br>W_{ij}, &amp; {(v_i, v_j) \in E 或 \langle v_i, v_j \rangle \in E} \\<br>0, &amp; {i=j} \\<br>∞, &amp; {反之}<br>\end{cases}<br>$$</p>
 <p>这里 $W_{ij}$ 表示 $\langle v_i, v_j \rangle$ 或 $(v_i, v_j)$ 上的权值。<br>$\infty$ 表示一个计算机允许的、大于所有边上权值的值，即一个不可能的极限值，在C语言中可以使用 <code>INT_MAX</code> 来表示无穷。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/TCP404/Picgo/blog/illustration-pic/DataStruction/20201221215629050_25484.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/TCP404/Picgo/blog/illustration-pic/DataStruction/20201221215629050_25484.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" alt="网的邻接矩阵"></p>
+<p><img src="https://xcdn.loli.top/gh/TCP404/Picgo/blog/illustration-pic/DataStruction/20201221215629050_25484.png" class="lazyload" data-srcset="https://xcdn.loli.top/gh/TCP404/Picgo/blog/illustration-pic/DataStruction/20201221215629050_25484.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" alt="网的邻接矩阵"></p>
 <h5 id="代码实现-2"><a href="#代码实现-2" class="headerlink" title="代码实现"></a>代码实现</h5><p>网的大部分代码与有向图和无向图的相同的，只有几处需要修改。</p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 初始化邻接矩阵，所有边的权值设置为无穷</span></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; G-&gt;v_count; i++) &#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; G-&gt;v_count; j++) &#123;</span><br><span class="line">        G-&gt;edges[i][j] = INT_MAX;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>在初始化时，不能初始化为0，而要初始化为 <code>INT_MAX</code>。</p>
@@ -866,7 +859,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 <li>图的边/弧集用单链表存储，链表结点由 <code>邻接点域(adjvex)</code> + <code>指针域(next)</code> 构成；</li>
 </ul>
 <p><code>首邻接点域</code> 指的是顶点的第一个边链表结点的地址，链表中的 <code>邻接点域</code> 存储的是邻接点的在顶点数组中的下标。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/TCP404/Picgo/blog/illustration-pic/DataStruction/20201222123713244_31065.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/TCP404/Picgo/blog/illustration-pic/DataStruction/20201222123713244_31065.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" alt="邻接表"></p>
+<p><img src="https://xcdn.loli.top/gh/TCP404/Picgo/blog/illustration-pic/DataStruction/20201222123713244_31065.png" class="lazyload" data-srcset="https://xcdn.loli.top/gh/TCP404/Picgo/blog/illustration-pic/DataStruction/20201222123713244_31065.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" alt="邻接表"></p>
 <p>从上图可以看出，一个无向图可以用一个顶点类型的一维数组来存储顶点，每个顶点都各自有一条边链表，存储着该顶点的所有邻接点；</p>
 <p>顶点数组中的某个顶点 <code>Vertex[i]</code> 和 对应边链表中的任一个结点构成了一条边。</p>
 <p>eg：</p>
@@ -881,7 +874,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 </ul>
 <h4 id="有向图的邻接表"><a href="#有向图的邻接表" class="headerlink" title="有向图的邻接表"></a>有向图的邻接表</h4><p>有向图的邻接表是类似的，但有向图区分方向。</p>
 <p>我们以顶点为弧尾来存储边链表，并称这样的边链表为<strong>出边表</strong>，或<strong>正邻接表</strong><br>我们以顶点为弧头来存储边链表，并称这样的边链表为<strong>入边表</strong>，或<strong>逆邻接表</strong></p>
-<div class="img-wrap"><div class="img-bg"><img class="img lazyload" src="https://cdn.jsdelivr.net/gh/TCP404/Picgo/blog/illustration-pic/DataStruction/20201222123739148_26529.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/TCP404/Picgo/blog/illustration-pic/DataStruction/20201222123739148_26529.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" alt="右上出边表 和 右下入边表"/></div><span class="image-caption">右上出边表 和 右下入边表</span></div>
+<div class="img-wrap"><div class="img-bg"><img class="img lazyload" src="https://xcdn.loli.top/gh/TCP404/Picgo/blog/illustration-pic/DataStruction/20201222123739148_26529.png" class="lazyload" data-srcset="https://xcdn.loli.top/gh/TCP404/Picgo/blog/illustration-pic/DataStruction/20201222123739148_26529.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" alt="右上出边表 和 右下入边表"/></div><span class="image-caption">右上出边表 和 右下入边表</span></div>
 
 <p>右上为出边表，右下为入边表</p>
 <p>出边表中，顶点 v1 作为弧尾，邻接弧头 v2，所以首邻接点与指向出边表的第一个结点，结点中的数据域存储着弧头 v2 的下标 1。所以 v1 和 <code>Vertex[1]</code> 共同组成一条弧。</p>
@@ -895,7 +888,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 <li>弧的总数 = 所有边链表的结点的总数之和</li>
 </ul>
 <h4 id="有向网的邻接表"><a href="#有向网的邻接表" class="headerlink" title="有向网的邻接表"></a>有向网的邻接表</h4><p>有向网和无向网的邻接表仅仅只是在边链表中的结点增加一个变量 weight 来存储权值。同样有有向无向、出边入边之分。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/TCP404/Picgo/blog/illustration-pic/DataStruction/20201222123823531_26765.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/TCP404/Picgo/blog/illustration-pic/DataStruction/20201222123823531_26765.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" alt="网的邻接表"></p>
+<p><img src="https://xcdn.loli.top/gh/TCP404/Picgo/blog/illustration-pic/DataStruction/20201222123823531_26765.png" class="lazyload" data-srcset="https://xcdn.loli.top/gh/TCP404/Picgo/blog/illustration-pic/DataStruction/20201222123823531_26765.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" alt="网的邻接表"></p>
 <h4 id="代码实现-3"><a href="#代码实现-3" class="headerlink" title="代码实现"></a>代码实现</h4><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 边链表结点类型</span></span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">node</span>&#123;</span></span><br><span class="line">    <span class="keyword">int</span> adjvex;          <span class="comment">// 邻接点域、邻接点下标</span></span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">node</span>* <span class="title">next</span>;</span>   <span class="comment">// 指针域</span></span><br><span class="line">&#125; EdgeNode, ArcNode;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 顶点类型</span></span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">char</span>* Vertex;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 顶点结点类型</span></span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> &#123;</span></span><br><span class="line">    Vertex data;         <span class="comment">// 数据域</span></span><br><span class="line">    EdgeNode firstEdge;  <span class="comment">// 首邻接点域</span></span><br><span class="line">&#125; VertexNode;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 图类型</span></span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> &#123;</span></span><br><span class="line">    VertexNode vexs[MAX];    <span class="comment">// 顶点结点数组</span></span><br><span class="line">    <span class="keyword">int</span> v_count;             <span class="comment">// 顶点数量</span></span><br><span class="line">    <span class="keyword">int</span> e_count;             <span class="comment">// 边/弧数量</span></span><br><span class="line">    GraphKind kind;          <span class="comment">// 图类型</span></span><br><span class="line">&#125; AdjListGraph;</span><br></pre></td></tr></table></figure>
 
 <h3 id="十字链表-Orthogonal-List"><a href="#十字链表-Orthogonal-List" class="headerlink" title="十字链表 Orthogonal List"></a>十字链表 Orthogonal List</h3><div class="note quote"><p>十字链表主要针对有向图，适用于需要<strong>频繁获取顶点的入度和出度，频繁地判断一个点是不是另一个点</strong>的邻接点等的情况。</p><p>其核心思想是<strong>将出边表和入边表整合起来</strong>。</p></div>
@@ -903,23 +896,23 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 <p>有向图的邻接表只有表示出度的出边表，或者表示入度的入边表，鱼和熊掌不可兼得。</p>
 <p>对于这种情况，小孩子才做选择，大人全都要！</p>
 <p>于是我们可以改造一下顶点数组，让一个顶点数组的元素包含 <code>顶点</code>、<code>出边表的首邻接点域</code>、<code>入边表的首邻接点域</code></p>
-<p><img src="https://cdn.jsdelivr.net/gh/TCP404/Picgo/blog/illustration-pic/DataStruction/20201223125912346_19343.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/TCP404/Picgo/blog/illustration-pic/DataStruction/20201223125912346_19343.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII="></p>
+<p><img src="https://xcdn.loli.top/gh/TCP404/Picgo/blog/illustration-pic/DataStruction/20201223125912346_19343.png" class="lazyload" data-srcset="https://xcdn.loli.top/gh/TCP404/Picgo/blog/illustration-pic/DataStruction/20201223125912346_19343.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII="></p>
 <p><code>data</code> 表示顶点，<code>iFirst</code> 表示入边表的首邻接点域，<code>oFirst</code> 表示出边表的首邻接点域。</p>
 <p>于是我们可以得到一个这样的双邻接表：</p>
-<div class="img-wrap"><div class="img-bg"><img class="img lazyload" src="https://cdn.jsdelivr.net/gh/TCP404/Picgo/blog/illustration-pic/DataStruction/20201223132930617_4233.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/TCP404/Picgo/blog/illustration-pic/DataStruction/20201223132930617_4233.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" alt="←图结构，↑出边表，↓入边表，→双邻接表"/></div><span class="image-caption">←图结构，↑出边表，↓入边表，→双邻接表</span></div>
+<div class="img-wrap"><div class="img-bg"><img class="img lazyload" src="https://xcdn.loli.top/gh/TCP404/Picgo/blog/illustration-pic/DataStruction/20201223132930617_4233.png" class="lazyload" data-srcset="https://xcdn.loli.top/gh/TCP404/Picgo/blog/illustration-pic/DataStruction/20201223132930617_4233.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" alt="←图结构，↑出边表，↓入边表，→双邻接表"/></div><span class="image-caption">←图结构，↑出边表，↓入边表，→双邻接表</span></div>
 <p>最左边是图结构，中间上面是出边表，中间下面是入边表，将它们结合，就成了最右边的双邻接表</p>
-<p>下一步我们改造一下边链表的结点，让它由 <code>弧尾下标</code> + <code>弧尾边链的指针域</code> + <code>弧头下标</code> + <code>弧头边链的指针域</code> 构成。<br><img src="https://cdn.jsdelivr.net/gh/TCP404/Picgo/blog/illustration-pic/DataStruction/20201223130924330_32433.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/TCP404/Picgo/blog/illustration-pic/DataStruction/20201223130924330_32433.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII="></p>
+<p>下一步我们改造一下边链表的结点，让它由 <code>弧尾下标</code> + <code>弧尾边链的指针域</code> + <code>弧头下标</code> + <code>弧头边链的指针域</code> 构成。<br><img src="https://xcdn.loli.top/gh/TCP404/Picgo/blog/illustration-pic/DataStruction/20201223130924330_32433.png" class="lazyload" data-srcset="https://xcdn.loli.top/gh/TCP404/Picgo/blog/illustration-pic/DataStruction/20201223130924330_32433.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII="></p>
 <p><code>oVex</code> 表示弧中出边的结点，即弧尾结点，的下标；<code>oNext</code> 替代了原出边表结点里的指针域；<br><code>iVex</code> 表示弧中入边的结点，即弧头结点，的下标；<code>iNext</code> 替代了原入边表结点里的指针域；</p>
-<p>现在对双邻接表进行改造：<br><img src="https://cdn.jsdelivr.net/gh/TCP404/Picgo/blog/illustration-pic/DataStruction/20201223133027047_23264.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/TCP404/Picgo/blog/illustration-pic/DataStruction/20201223133027047_23264.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" alt="改造边链表结点"></p>
-<p>然后我们会发现有很多重复的结点，我们保留一个，删除一个：<br><img src="https://cdn.jsdelivr.net/gh/TCP404/Picgo/blog/illustration-pic/DataStruction/20201223133122257_6587.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/TCP404/Picgo/blog/illustration-pic/DataStruction/20201223133122257_6587.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" alt="删除重复结点"></p>
+<p>现在对双邻接表进行改造：<br><img src="https://xcdn.loli.top/gh/TCP404/Picgo/blog/illustration-pic/DataStruction/20201223133027047_23264.png" class="lazyload" data-srcset="https://xcdn.loli.top/gh/TCP404/Picgo/blog/illustration-pic/DataStruction/20201223133027047_23264.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" alt="改造边链表结点"></p>
+<p>然后我们会发现有很多重复的结点，我们保留一个，删除一个：<br><img src="https://xcdn.loli.top/gh/TCP404/Picgo/blog/illustration-pic/DataStruction/20201223133122257_6587.png" class="lazyload" data-srcset="https://xcdn.loli.top/gh/TCP404/Picgo/blog/illustration-pic/DataStruction/20201223133122257_6587.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" alt="删除重复结点"></p>
 <p>接着把被删除的地方的链指向保留下来的那个结点：</p>
-<p><img src="https://cdn.jsdelivr.net/gh/TCP404/Picgo/blog/illustration-pic/DataStruction/20201223135115072_2208.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/TCP404/Picgo/blog/illustration-pic/DataStruction/20201223135115072_2208.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" alt="改链"></p>
+<p><img src="https://xcdn.loli.top/gh/TCP404/Picgo/blog/illustration-pic/DataStruction/20201223135115072_2208.png" class="lazyload" data-srcset="https://xcdn.loli.top/gh/TCP404/Picgo/blog/illustration-pic/DataStruction/20201223135115072_2208.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" alt="改链"></p>
 <p>例如 v1 的出边表第一个结点（v1 红色线条指向的那个 0 和 1 的结点） 和 v2 的入边表的第一个节点（v2 蓝色线条指向的那个 0 和 1 的结点），</p>
 <p>这两个结点相同，</p>
 <p>于是我删掉其中 v2 的那个，然后让 v2 的蓝色线指向 v1 的第一个结点，其他结点也是同样操作。</p>
 <p>最后整理一下就是下图的样子：</p>
-<p><img src="https://cdn.jsdelivr.net/gh/TCP404/Picgo/blog/illustration-pic/DataStruction/20201223135135896_26333.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/TCP404/Picgo/blog/illustration-pic/DataStruction/20201223135135896_26333.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" alt="十字链表"></p>
-<p>对比一下该图的顶点 v2 的出边表和十字链表：<br><img src="https://cdn.jsdelivr.net/gh/TCP404/Picgo/blog/illustration-pic/DataStruction/20201223140240032_28522.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/TCP404/Picgo/blog/illustration-pic/DataStruction/20201223140240032_28522.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" alt="出边表 VS 十字链表"></p>
+<p><img src="https://xcdn.loli.top/gh/TCP404/Picgo/blog/illustration-pic/DataStruction/20201223135135896_26333.png" class="lazyload" data-srcset="https://xcdn.loli.top/gh/TCP404/Picgo/blog/illustration-pic/DataStruction/20201223135135896_26333.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" alt="十字链表"></p>
+<p>对比一下该图的顶点 v2 的出边表和十字链表：<br><img src="https://xcdn.loli.top/gh/TCP404/Picgo/blog/illustration-pic/DataStruction/20201223140240032_28522.png" class="lazyload" data-srcset="https://xcdn.loli.top/gh/TCP404/Picgo/blog/illustration-pic/DataStruction/20201223140240032_28522.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" alt="出边表 VS 十字链表"></p>
 <p>可以看到没有损失任何信息。</p>
 <h4 id="代码实现-4"><a href="#代码实现-4" class="headerlink" title="代码实现"></a>代码实现</h4><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/** 顶点类型 */</span></span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">char</span>* Vertex;</span><br><span class="line"></span><br><span class="line"><span class="comment">/** 十字链表结点 */</span></span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">node</span>&#123;</span></span><br><span class="line">    Vertex oVex;        <span class="comment">// 弧头下标</span></span><br><span class="line">    Vertex iVex;        <span class="comment">// 弧尾下标</span></span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">node</span>* <span class="title">oNext</span>;</span> <span class="comment">// 出边表指针域</span></span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">node</span>* <span class="title">iNext</span>;</span> <span class="comment">// 入边表指针域</span></span><br><span class="line">    <span class="keyword">int</span> weight;         <span class="comment">// 权值</span></span><br><span class="line">&#125; OrthoNode;</span><br><span class="line"></span><br><span class="line"><span class="comment">/** 顶点数组元素类型 */</span></span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> &#123;</span></span><br><span class="line">    Vertex data;        <span class="comment">// 顶点</span></span><br><span class="line">    OrthoNode iFirst;   <span class="comment">// 入边表的首个结点</span></span><br><span class="line">    OrthoNode oFirst;   <span class="comment">// 出边表的首个节点</span></span><br><span class="line">&#125; VertexNode;</span><br><span class="line"></span><br><span class="line"><span class="comment">/** 图结构 */</span></span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> &#123;</span></span><br><span class="line">    VertexNode vexArray[MAX];    <span class="comment">// 顶点数组</span></span><br><span class="line">    <span class="keyword">int</span> v_count;                 <span class="comment">// 顶点数量</span></span><br><span class="line">    <span class="keyword">int</span> a_count;                 <span class="comment">// 弧的数量</span></span><br><span class="line">    GraphKind kind;              <span class="comment">// 图的类型（有向图/有向网）</span></span><br><span class="line">&#125; OrthoGraph;</span><br></pre></td></tr></table></figure>
 
@@ -928,32 +921,32 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
 <h3 id="邻接多重表-Adjacent-Multilist-List"><a href="#邻接多重表-Adjacent-Multilist-List" class="headerlink" title="邻接多重表 Adjacent Multilist List"></a>邻接多重表 Adjacent Multilist List</h3><div class="note quote"><p>邻接多重表主要是针对无向图。</p></div>
 
-<p><img src="https://cdn.jsdelivr.net/gh/TCP404/Picgo/blog/illustration-pic/DataStruction/20201222185711829_15128.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/TCP404/Picgo/blog/illustration-pic/DataStruction/20201222185711829_15128.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" alt="无向图的邻接表表示法"></p>
+<p><img src="https://xcdn.loli.top/gh/TCP404/Picgo/blog/illustration-pic/DataStruction/20201222185711829_15128.png" class="lazyload" data-srcset="https://xcdn.loli.top/gh/TCP404/Picgo/blog/illustration-pic/DataStruction/20201222185711829_15128.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" alt="无向图的邻接表表示法"></p>
 <p>从图中可以发现边链结点很多都是重复的。当删除一条边时，需要到两条边链中删除。<br>例如删除 边(v1, v3)，需要找到 v1 的边链，删除第二个结点，然后还要找到 v3 的边链，然后删除第一个结点。显然这是比较繁琐的。</p>
 <p>所以邻接多重表就在邻接表的基础上对边链的结点进行改造。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/TCP404/Picgo/blog/illustration-pic/DataStruction/20201222191259613_26797.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/TCP404/Picgo/blog/illustration-pic/DataStruction/20201222191259613_26797.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII="></p>
+<p><img src="https://xcdn.loli.top/gh/TCP404/Picgo/blog/illustration-pic/DataStruction/20201222191259613_26797.png" class="lazyload" data-srcset="https://xcdn.loli.top/gh/TCP404/Picgo/blog/illustration-pic/DataStruction/20201222191259613_26797.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII="></p>
 <p>邻接表的结点由 <code>邻接点的下标</code> <strong>+</strong> <code>下一结点指针</code> 构成<br>邻接多重表的结点由 <code>顶点下标</code> <strong>+</strong> <code>顶点的下一结点的指针</code> <strong>+</strong> <code>邻接点下标</code> <strong>+</strong> <code>邻接点的下一结点的指针</code> 构成</p>
 <div class="note quote"><p>其思想是<strong>将所有顶点的边链整合起来</strong>，即节省空间，也提高了操作效率。</p></div>
 
 
 <p>下面介绍一下如何将邻接表改为邻接多重表：</p>
-<p><img src="https://cdn.jsdelivr.net/gh/TCP404/Picgo/blog/illustration-pic/DataStruction/20201222224547724_28766.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/TCP404/Picgo/blog/illustration-pic/DataStruction/20201222224547724_28766.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" alt="改造边链结点"></p>
+<p><img src="https://xcdn.loli.top/gh/TCP404/Picgo/blog/illustration-pic/DataStruction/20201222224547724_28766.png" class="lazyload" data-srcset="https://xcdn.loli.top/gh/TCP404/Picgo/blog/illustration-pic/DataStruction/20201222224547724_28766.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" alt="改造边链结点"></p>
 <ol>
 <li>首先将 边链的结点进行改造：边链结点中不仅要填入邻接点的下标，还要填入顶点自己的下标。</li>
 </ol>
 <p>例如 顶点 v1 有两个邻接点 v2 和 v3，所以要在两个结点中的 ivex 处填入 v1 的下标 0。其他结点同理。看不懂可以对比两个图的边链。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/TCP404/Picgo/blog/illustration-pic/DataStruction/20201222225410133_12444.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/TCP404/Picgo/blog/illustration-pic/DataStruction/20201222225410133_12444.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" alt="删除重复结点"></p>
+<p><img src="https://xcdn.loli.top/gh/TCP404/Picgo/blog/illustration-pic/DataStruction/20201222225410133_12444.png" class="lazyload" data-srcset="https://xcdn.loli.top/gh/TCP404/Picgo/blog/illustration-pic/DataStruction/20201222225410133_12444.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" alt="删除重复结点"></p>
 <ol start="2">
 <li>例如 v1 的第一个边链结点中有 0 和 1，代表 v1 的地址和 v2 的地址；v2 的第一个边链结点也有 1 和 0，所以随便保留哪一个都可以。</li>
 </ol>
 <p>图中将 v2 的第一个边链结点删除，然后让 v1 的第一个边链结点也成为 v2 的边链结点。</p>
 <p>这一步怎么删，删完指向谁可能有点乱，请看下面的图。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/TCP404/Picgo/blog/illustration-pic/DataStruction/20201222225336253_30848.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/TCP404/Picgo/blog/illustration-pic/DataStruction/20201222225336253_30848.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" alt="对比图"></p>
+<p><img src="https://xcdn.loli.top/gh/TCP404/Picgo/blog/illustration-pic/DataStruction/20201222225336253_30848.png" class="lazyload" data-srcset="https://xcdn.loli.top/gh/TCP404/Picgo/blog/illustration-pic/DataStruction/20201222225336253_30848.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" alt="对比图"></p>
 <ol start="3">
 <li>这里左侧两个图结构是同一个，第二个图结构多做了4条辅助线用来对照，实际真正的图是第一个的图结构，不要混淆。<br>对照第二个的图结构，和右侧的邻接多重表：</li>
 </ol>
 <p>顶点 v1 有两条边，邻接 v2 和 v3，在邻接多重表中用红色线连接起来了。单独观察 <code>VertexNode[0]</code> 和 <code>红色线连接的两个结点</code>，是不是跟邻接表相似？</p>
-<p><img src="https://cdn.jsdelivr.net/gh/TCP404/Picgo/blog/illustration-pic/DataStruction/20201222230310803_2534.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/TCP404/Picgo/blog/illustration-pic/DataStruction/20201222230310803_2534.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" alt="左：邻接多重表 右：邻接表"></p>
+<p><img src="https://xcdn.loli.top/gh/TCP404/Picgo/blog/illustration-pic/DataStruction/20201222230310803_2534.png" class="lazyload" data-srcset="https://xcdn.loli.top/gh/TCP404/Picgo/blog/illustration-pic/DataStruction/20201222230310803_2534.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" alt="左：邻接多重表 右：邻接表"></p>
 <p>同样道理可以继续观察 v2、v3、v4。</p>
 <p>我们会发现邻接多重表的结点数少了，而且<strong>结点总数刚好就是边数</strong>。</p>
 <p>现在再来体会那句：<strong>将所有边链整合起来</strong>，再体会体会为什么要增加 <code>inext</code> 和 <code>jnext</code> 两个元素在结点中，其实就是为了保留原本的信息。</p>
@@ -963,7 +956,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
 <h3 id="边集数组-Edgeset-Array"><a href="#边集数组-Edgeset-Array" class="headerlink" title="边集数组 Edgeset Array"></a>边集数组 Edgeset Array</h3><div class="note quote"><p>边集数组是由两个一维数组构成，一个是存储顶点的信息，另一个是存储边的信息。这个边数组的每个元素由一条边的起点下标 (begin) 、终点下标 (end) 和权 (weight) 组成。</p><p>边集数组关注的是边的集合。</p><p>在边集数组中要查找一个顶点的度需要扫描整个边数组，效率不高，因此更适合对边依次进行处理的操作，而不适合对顶点相关的操作。</p></div>
 
-<p><img src="https://cdn.jsdelivr.net/gh/TCP404/Picgo/blog/illustration-pic/DataStruction/20201222233340163_16644.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/TCP404/Picgo/blog/illustration-pic/DataStruction/20201222233340163_16644.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" alt="边集数组"></p>
+<p><img src="https://xcdn.loli.top/gh/TCP404/Picgo/blog/illustration-pic/DataStruction/20201222233340163_16644.png" class="lazyload" data-srcset="https://xcdn.loli.top/gh/TCP404/Picgo/blog/illustration-pic/DataStruction/20201222233340163_16644.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" alt="边集数组"></p>
 <h3 id="适用情况总结"><a href="#适用情况总结" class="headerlink" title="适用情况总结"></a>适用情况总结</h3><ul>
 <li>邻接矩阵适合处理稠密图</li>
 <li>邻接表适合处理稀疏图</li>
@@ -977,10 +970,10 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 <p>从某一个顶点 vi 出发，则当前顶点为 vi；</p>
 <p>先将该顶点标记为已访问，然后遍历其所有邻接点，找到 <strong>第一个未访问的邻接点 vj</strong> 并置为当前顶点；</p>
 <p>接着从该顶点 vj 出发，先标记为已访问，然后遍历找到 <strong>第一个未访问的邻接点 vk</strong> 并置为当前顶点… 以此类推</p>
-<p><img src="https://cdn.jsdelivr.net/gh/TCP404/Picgo/blog/illustration-pic/DataStruction/20201227104338200_15211.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/TCP404/Picgo/blog/illustration-pic/DataStruction/20201227104338200_15211.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII="></p>
+<p><img src="https://xcdn.loli.top/gh/TCP404/Picgo/blog/illustration-pic/DataStruction/20201227104338200_15211.png" class="lazyload" data-srcset="https://xcdn.loli.top/gh/TCP404/Picgo/blog/illustration-pic/DataStruction/20201227104338200_15211.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII="></p>
 <p>例如上图左边是一个图，我们可以转换一下思维，像右图一样把那两条边当作没有，就可以看成一棵二叉树</p>
 <p>运用树的前序遍历法可以得到：<strong>v0 -&gt; v1 -&gt; v5 -&gt; v2 -&gt; v4 -&gt; v3</strong>，而这正好就是 DFS 的结果。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/TCP404/Picgo/blog/illustration-pic/DataStruction/20201227104426654_6400.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/TCP404/Picgo/blog/illustration-pic/DataStruction/20201227104426654_6400.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII="><br>回过头来重新看着左边的图，假设从 v0 出发（其实图是无序的，从任何一点出发都可以）；</p>
+<p><img src="https://xcdn.loli.top/gh/TCP404/Picgo/blog/illustration-pic/DataStruction/20201227104426654_6400.png" class="lazyload" data-srcset="https://xcdn.loli.top/gh/TCP404/Picgo/blog/illustration-pic/DataStruction/20201227104426654_6400.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII="><br>回过头来重新看着左边的图，假设从 v0 出发（其实图是无序的，从任何一点出发都可以）；</p>
 <ul>
 <li>v0 有两个邻接点 v1 和 v3，我们先选择 v1，然后从 v1 出发；</li>
 <li>v1 有两个邻接点 v5 和 v0，v0 已经访问过了，只能选择 v5，然后从 v5 出发；</li>
@@ -992,7 +985,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 <p>如果仔细阅读上面6个步骤会发现，当我们遍历时，我们需要知道这个顶点是不是被访问过了，所以我们需要一个状态数组来记录；</p>
 <p>而当有多个邻接点可以访问时，我们选择的依据，其实是顶点在顶点数组中存储的顺序所决定的。</p>
 <p>例如在 v5 的时候，选择了 v2 而不是 v3，其实是我们默认顶点数组是按照 <code>v0、v1、v2、v3、v4、v5</code> 的顺序存储，假设是按照 <code>v0、v1、v3、v2、v4、v5</code> 存储，v3 在 v2 前，则会先访问 v3。</p>
-<h4 id="邻接矩阵的-DFS"><a href="#邻接矩阵的-DFS" class="headerlink" title="邻接矩阵的 DFS"></a>邻接矩阵的 DFS</h4><p><img src="https://cdn.jsdelivr.net/gh/TCP404/Picgo/blog/illustration-pic/DataStruction/20201227102907217_22966.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/TCP404/Picgo/blog/illustration-pic/DataStruction/20201227102907217_22966.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" alt="邻接矩阵的 DFS"></p>
+<h4 id="邻接矩阵的-DFS"><a href="#邻接矩阵的-DFS" class="headerlink" title="邻接矩阵的 DFS"></a>邻接矩阵的 DFS</h4><p><img src="https://xcdn.loli.top/gh/TCP404/Picgo/blog/illustration-pic/DataStruction/20201227102907217_22966.png" class="lazyload" data-srcset="https://xcdn.loli.top/gh/TCP404/Picgo/blog/illustration-pic/DataStruction/20201227102907217_22966.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" alt="邻接矩阵的 DFS"></p>
 <p>先将图的边用矩阵表示，在计算机中使用二维数组存储。<br>然后设置一个状态数组，长度和顶点数组相同。</p>
 <p>接下来就可以执行 DFS 了。</p>
 <p>第一步：先初始化状态数组为未访问状态，即最开始所有顶点都未访问。<br>第二步：遍历顶点数组，让数组里每个顶点都放入遍历执行函数中，不过在调用遍历执行函数之前要先判断顶点是否已被访问。</p>
@@ -1007,7 +1000,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * @description: 深度优先搜索的核心算法</span></span><br><span class="line"><span class="comment"> * @param G 要搜索的图</span></span><br><span class="line"><span class="comment"> * @param index 要搜索的顶点的下标</span></span><br><span class="line"><span class="comment"> * @return 无</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">DFS_AMG</span><span class="params">(MatrixGraph* G, <span class="keyword">int</span> index)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;-&gt; %s &quot;</span>, G-&gt;vexes[index]); <span class="comment">// 访问当前顶点</span></span><br><span class="line">    visited[index] = VISITED; <span class="comment">// 更改当前顶点的访问状态</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; G-&gt;v_count; j++)</span><br><span class="line">        <span class="keyword">if</span> (G-&gt;matrix[index][j] &amp;&amp; !visited[j]) <span class="comment">// 获取第一个未访问的邻接点下标然后递归进去</span></span><br><span class="line">            DFS_AMG(G, j);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/** DFS end */</span></span><br></pre></td></tr></table></figure>
 
 <p>在邻接矩阵中，获取某个顶点的所有邻接点就是遍历其所在的行，找到第一个未访问的邻接点。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/TCP404/Picgo/blog/illustration-pic/DataStruction/20201227111845411_7573.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/TCP404/Picgo/blog/illustration-pic/DataStruction/20201227111845411_7573.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII="></p>
+<p><img src="https://xcdn.loli.top/gh/TCP404/Picgo/blog/illustration-pic/DataStruction/20201227111845411_7573.png" class="lazyload" data-srcset="https://xcdn.loli.top/gh/TCP404/Picgo/blog/illustration-pic/DataStruction/20201227111845411_7573.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII="></p>
 <p>从邻接矩阵中看如上图</p>
 <ul>
 <li>最开始从第 0 行进行（箭头1），找到第一个邻接点的下标，其列标为 1，于是跳到第 1 行（箭头2）</li>
@@ -1015,7 +1008,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 <li>第 5 行第一个邻接点的 v1，已经访问过，所以跳过（箭头5），接下去找到第二个邻接点 v2，其列标为 2，于是跳到第 2 行（箭头6）</li>
 <li>接下去的步骤都是这个思路，画出来太乱就没画了。</li>
 </ul>
-<h4 id="邻接表的-DFS"><a href="#邻接表的-DFS" class="headerlink" title="邻接表的 DFS"></a>邻接表的 DFS</h4><p>邻接表的具体代码实现跟邻接矩阵稍稍不同而已，只不过把数组处理换成了链表处理<br><img src="https://cdn.jsdelivr.net/gh/TCP404/Picgo/blog/illustration-pic/DataStruction/20201227115455825_10282.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/TCP404/Picgo/blog/illustration-pic/DataStruction/20201227115455825_10282.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII="></p>
+<h4 id="邻接表的-DFS"><a href="#邻接表的-DFS" class="headerlink" title="邻接表的 DFS"></a>邻接表的 DFS</h4><p>邻接表的具体代码实现跟邻接矩阵稍稍不同而已，只不过把数组处理换成了链表处理<br><img src="https://xcdn.loli.top/gh/TCP404/Picgo/blog/illustration-pic/DataStruction/20201227115455825_10282.png" class="lazyload" data-srcset="https://xcdn.loli.top/gh/TCP404/Picgo/blog/illustration-pic/DataStruction/20201227115455825_10282.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII="></p>
 <ul>
 <li>最开始从 v1 开始（箭头1），访问 v1 的边链上第一个结点（箭头2），得到了 v2 的下标，于是跳到 v2（箭头3）</li>
 <li>接着从 v2 开始，先访问 v2，然后遍历 v2 的边链上的结点（箭头4），第一个结点 0 是 v1 的下标，已经访问过了，于是继续下一个结点，得到了 v3 的下标，于是跳到 v3（箭头5）</li>
@@ -1024,7 +1017,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 </ul>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">DFSTraverse_ALG</span><span class="params">(AdjListGraph* G)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">//  初始化状态数组</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; G-&gt;v_count; i++)</span><br><span class="line">        visited[i] = UNVISITED;</span><br><span class="line">    <span class="comment">// DFS遍历</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; G-&gt;v_count; i++)</span><br><span class="line">        <span class="keyword">if</span> (!visited[i]) <span class="comment">// 如果顶点没有被访问，就递归调用</span></span><br><span class="line">            DFS_ALG(G, i);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">DFS_ALG</span><span class="params">(AdjListGraph* G, <span class="keyword">int</span> index)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot; -&gt; %s&quot;</span>, G-&gt;vexes[index].data);    <span class="comment">// 访问顶点</span></span><br><span class="line">    visited[index] = VISITED;                  <span class="comment">// 更改状态</span></span><br><span class="line"></span><br><span class="line">   <span class="comment">// 寻找邻接点</span></span><br><span class="line">    EdgeNode* eNode = G-&gt;vexes[index].firstEdge;</span><br><span class="line">    <span class="keyword">while</span> (eNode) &#123;</span><br><span class="line">        <span class="keyword">if</span> (!visited[eNode-&gt;adjvex]) <span class="comment">// 如果邻接点未访问就递归访问</span></span><br><span class="line">            DFS_ALG(G, eNode-&gt;adjvex);</span><br><span class="line">        eNode = eNode-&gt;nextEdge;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p><code>DFSTraverse_ALG()</code> 和 <code>DFSTraverse_AMG()</code> 是一样的，初始化状态数组，然后遍历顶点数组，调用 DFS 算法</p>
-<p><code>DFS_AMG()</code> 中是遍历某一行，<code>DFS_ALG()</code> 中是遍历某一条链表，执行的逻辑都是如果邻接点为访问就递归。<br><img src="https://cdn.jsdelivr.net/gh/TCP404/Picgo/blog/illustration-pic/DataStruction/20201227114050613_21706.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/TCP404/Picgo/blog/illustration-pic/DataStruction/20201227114050613_21706.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII="></p>
+<p><code>DFS_AMG()</code> 中是遍历某一行，<code>DFS_ALG()</code> 中是遍历某一条链表，执行的逻辑都是如果邻接点为访问就递归。<br><img src="https://xcdn.loli.top/gh/TCP404/Picgo/blog/illustration-pic/DataStruction/20201227114050613_21706.png" class="lazyload" data-srcset="https://xcdn.loli.top/gh/TCP404/Picgo/blog/illustration-pic/DataStruction/20201227114050613_21706.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII="></p>
 <h4 id="时间复杂度"><a href="#时间复杂度" class="headerlink" title="时间复杂度"></a>时间复杂度</h4><p>在遍历图时，对图中每个顶点至多调用一次 DFS 函数，因为一旦某个顶点被标志成已访问后，就不再从它出发进行搜索。<br>因此，深度遍历图的过程实质上是对每个顶点查找其邻接点的过程，其耗费时间取决于所采用的存储结构。</p>
 <ul>
 <li>当用邻接矩阵时，使用的是二位数组，查找每个顶点的邻接点所需时间为 $O(n^2)$，n 为图中顶点数。</li>
@@ -1035,7 +1028,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
 
 <p>BFS 的思想是，把顶点都放到队列中，当访问一个顶点，即为出队一个元素；当出队一个元素时，需将其所有未访问的邻接点入队。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/TCP404/Picgo/blog/illustration-pic/DataStruction/20201227214919073_23879.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/TCP404/Picgo/blog/illustration-pic/DataStruction/20201227214919073_23879.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII="></p>
+<p><img src="https://xcdn.loli.top/gh/TCP404/Picgo/blog/illustration-pic/DataStruction/20201227214919073_23879.png" class="lazyload" data-srcset="https://xcdn.loli.top/gh/TCP404/Picgo/blog/illustration-pic/DataStruction/20201227214919073_23879.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII="></p>
 <ol>
 <li>先从 v0 开始遍历，打印 v0，然后 v0 入队</li>
 <li>队列不为空，v0 出队，同时 v0 的未入队且未访问的邻接点 v1、v3 入队，然后访问 v1、v3</li>
@@ -1095,7 +1088,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       <i class="fas fa-bookmark fa-fw" aria-hidden="true"></i><span>相关文章</span>
     </section>
     <section class='body'>
-      <div class="vlts-rps"><a class="item" href="/posts/44644.html" title="DataStruction 0x00 绪论" rel="bookmark "><img src="https://cdn.jsdelivr.net/gh/TCP404/Picgo/blog/cover/DataStruction.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/TCP404/Picgo/blog/cover/DataStruction.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" /><span class="title">DataStruction 0x00 绪论</span><span class="excerpt">什么是数据结构？</span></a><a class="item" href="/posts/17036.html" title="DataStruction 0x01 算法" rel="bookmark "><img src="https://cdn.jsdelivr.net/gh/TCP404/Picgo/blog/cover/DataStruction.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/TCP404/Picgo/blog/cover/DataStruction.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" /><span class="title">DataStruction 0x01 算法</span><span class="excerpt">什么是算法？</span></a><a class="item" href="/posts/21668.html" title="DataStruction 0x02 线性表" rel="bookmark "><img src="https://cdn.jsdelivr.net/gh/TCP404/Picgo/blog/cover/Sequence.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/TCP404/Picgo/blog/cover/Sequence.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" /><span class="title">DataStruction 0x02 线性表</span><span class="excerpt">什么是线性表？</span></a><a class="item" href="/posts/29925.html" title="DataStruction 0x03 栈" rel="bookmark "><img src="https://cdn.jsdelivr.net/gh/TCP404/Picgo/blog/cover/Stack.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/TCP404/Picgo/blog/cover/Stack.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" /><span class="title">DataStruction 0x03 栈</span><span class="excerpt">什么是栈？</span></a><a class="item" href="/posts/50917.html" title="DataStruction 0x04 队列" rel="bookmark "><img src="https://cdn.jsdelivr.net/gh/TCP404/Picgo/blog/cover/Queue.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/TCP404/Picgo/blog/cover/Queue.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" /><span class="title">DataStruction 0x04 队列</span><span class="excerpt">什么是队列？</span></a></div></section></div>
+      <div class="vlts-rps"><a class="item" href="/posts/44644.html" title="DataStruction 0x00 绪论" rel="bookmark "><img src="https://xcdn.loli.top/gh/TCP404/Picgo/blog/cover/DataStruction.png" class="lazyload" data-srcset="https://xcdn.loli.top/gh/TCP404/Picgo/blog/cover/DataStruction.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" /><span class="title">DataStruction 0x00 绪论</span><span class="excerpt">什么是数据结构？</span></a><a class="item" href="/posts/17036.html" title="DataStruction 0x01 算法" rel="bookmark "><img src="https://xcdn.loli.top/gh/TCP404/Picgo/blog/cover/DataStruction.png" class="lazyload" data-srcset="https://xcdn.loli.top/gh/TCP404/Picgo/blog/cover/DataStruction.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" /><span class="title">DataStruction 0x01 算法</span><span class="excerpt">什么是算法？</span></a><a class="item" href="/posts/21668.html" title="DataStruction 0x02 线性表" rel="bookmark "><img src="https://xcdn.loli.top/gh/TCP404/Picgo/blog/cover/Sequence.png" class="lazyload" data-srcset="https://xcdn.loli.top/gh/TCP404/Picgo/blog/cover/Sequence.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" /><span class="title">DataStruction 0x02 线性表</span><span class="excerpt">什么是线性表？</span></a><a class="item" href="/posts/29925.html" title="DataStruction 0x03 栈" rel="bookmark "><img src="https://xcdn.loli.top/gh/TCP404/Picgo/blog/cover/Stack.png" class="lazyload" data-srcset="https://xcdn.loli.top/gh/TCP404/Picgo/blog/cover/Stack.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" /><span class="title">DataStruction 0x03 栈</span><span class="excerpt">什么是栈？</span></a><a class="item" href="/posts/50917.html" title="DataStruction 0x04 队列" rel="bookmark "><img src="https://xcdn.loli.top/gh/TCP404/Picgo/blog/cover/Queue.png" class="lazyload" data-srcset="https://xcdn.loli.top/gh/TCP404/Picgo/blog/cover/Queue.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" /><span class="title">DataStruction 0x04 队列</span><span class="excerpt">什么是队列？</span></a></div></section></div>
       
       
         <div class='copyright'>
@@ -1124,10 +1117,10 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-09-14T15:17:06+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2022-03-17T14:58:34+08:00">
   <a class='notlink'>
     <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：2021年9月14日</p>
+    <p>更新于：2022年3月17日</p>
   </a>
 </div>
 
@@ -1149,11 +1142,11 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://www.boii.xyz/posts/55493.html&title=DataStruction 0x08 图-2 - Boii&pics=https://cdn.jsdelivr.net/gh/TCP404/Picgo/blog/thumbnail/algorithms.png&summary=图的存储"
+          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://www.boii.xyz/posts/55493.html&title=DataStruction 0x08 图-2 - Boii&pics=https://xcdn.loli.top/gh/TCP404/Picgo/blog/thumbnail/algorithms.png&summary=图的存储"
           
           >
           
-            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qq.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qq.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=">
+            <img src="https://xcdn.loli.top/gh/volantis-x/cdn-org/logo/128/qq.png" class="lazyload" data-srcset="https://xcdn.loli.top/gh/volantis-x/cdn-org/logo/128/qq.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=">
           
         </a>
       
@@ -1161,11 +1154,11 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://www.boii.xyz/posts/55493.html&title=DataStruction 0x08 图-2 - Boii&pics=https://cdn.jsdelivr.net/gh/TCP404/Picgo/blog/thumbnail/algorithms.png&summary=图的存储"
+          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://www.boii.xyz/posts/55493.html&title=DataStruction 0x08 图-2 - Boii&pics=https://xcdn.loli.top/gh/TCP404/Picgo/blog/thumbnail/algorithms.png&summary=图的存储"
           
           >
           
-            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qzone.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qzone.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=">
+            <img src="https://xcdn.loli.top/gh/volantis-x/cdn-org/logo/128/qzone.png" class="lazyload" data-srcset="https://xcdn.loli.top/gh/volantis-x/cdn-org/logo/128/qzone.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=">
           
         </a>
       
@@ -1173,11 +1166,11 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="http://service.weibo.com/share/share.php?url=https://www.boii.xyz/posts/55493.html&title=DataStruction 0x08 图-2 - Boii&pics=https://cdn.jsdelivr.net/gh/TCP404/Picgo/blog/thumbnail/algorithms.png&summary=图的存储"
+          target="_blank" href="http://service.weibo.com/share/share.php?url=https://www.boii.xyz/posts/55493.html&title=DataStruction 0x08 图-2 - Boii&pics=https://xcdn.loli.top/gh/TCP404/Picgo/blog/thumbnail/algorithms.png&summary=图的存储"
           
           >
           
-            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/weibo.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/weibo.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=">
+            <img src="https://xcdn.loli.top/gh/volantis-x/cdn-org/logo/128/weibo.png" class="lazyload" data-srcset="https://xcdn.loli.top/gh/volantis-x/cdn-org/logo/128/weibo.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=">
           
         </a>
       
@@ -1567,19 +1560,19 @@ var loadCSS = function( href, before, media, attributes ){
 </script>
 <script>
   
-  loadCSS("https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.14/css/all.min.css", window.volantis.loadcss);
+  loadCSS("https://xcdn.loli.top/npm/@fortawesome/fontawesome-free@5.14/css/all.min.css", window.volantis.loadcss);
   
   
-  loadCSS("https://cdn.jsdelivr.net/gh/l-lin/font-awesome-animation/dist/font-awesome-animation.min.css", window.volantis.loadcss);
+  loadCSS("https://xcdn.loli.top/gh/l-lin/font-awesome-animation/dist/font-awesome-animation.min.css", window.volantis.loadcss);
   
   
-  loadCSS("https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.css", window.volantis.loadcss);
+  loadCSS("https://xcdn.loli.top/npm/node-waves@0.7.6/dist/waves.min.css", window.volantis.loadcss);
   
   
 </script>
 <!-- required -->
 
-<script src="https://cdn.jsdelivr.net/npm/jquery@3.5/dist/jquery.min.js"></script>
+<script src="https://xcdn.loli.top/npm/jquery@3.5/dist/jquery.min.js"></script>
 
 <script>
   function pjax_fancybox() {
@@ -1623,7 +1616,7 @@ var loadCSS = function( href, before, media, attributes ){
   function SCload_fancybox() {
     if ($(".md .gallery").find("img").length == 0) return;
     loadCSS("https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css", document.getElementById("loadcss"));
-    loadScript('https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js', pjax_fancybox)
+    loadScript('https://xcdn.loli.top/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js', pjax_fancybox)
   };
   $(function () {
     SCload_fancybox();
@@ -1650,10 +1643,10 @@ var loadCSS = function( href, before, media, attributes ){
   
   
     
-<script src="https://cdn.jsdelivr.net/npm/jquery-backstretch@2.1.18/jquery.backstretch.min.js"></script>
+<script src="https://xcdn.loli.top/npm/jquery-backstretch@2.1.18/jquery.backstretch.min.js"></script>
 
     <script type="text/javascript">
-        var imgs=["https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/001.jpg", "https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/002.jpg", "https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/003.jpg", "https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/004.jpg", "https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/006.jpg", "https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/012.jpg", "https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/016.jpg", "https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/019.jpg", "https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/025.jpg", "https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/034.jpg", "https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/035.jpg", "https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/038.jpg", "https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/039.jpg", "https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/042.jpg", "https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/046.jpg", "https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/051.jpg", "https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/052.jpg", "https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/054.jpg", "https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/056.jpg"];
+        var imgs=["https://xcdn.loli.top/gh/volantis-x/cdn-wallpaper-minimalist/2020/001.jpg", "https://xcdn.loli.top/gh/volantis-x/cdn-wallpaper-minimalist/2020/002.jpg", "https://xcdn.loli.top/gh/volantis-x/cdn-wallpaper-minimalist/2020/003.jpg", "https://xcdn.loli.top/gh/volantis-x/cdn-wallpaper-minimalist/2020/004.jpg", "https://xcdn.loli.top/gh/volantis-x/cdn-wallpaper-minimalist/2020/006.jpg", "https://xcdn.loli.top/gh/volantis-x/cdn-wallpaper-minimalist/2020/012.jpg", "https://xcdn.loli.top/gh/volantis-x/cdn-wallpaper-minimalist/2020/016.jpg", "https://xcdn.loli.top/gh/volantis-x/cdn-wallpaper-minimalist/2020/019.jpg", "https://xcdn.loli.top/gh/volantis-x/cdn-wallpaper-minimalist/2020/025.jpg", "https://xcdn.loli.top/gh/volantis-x/cdn-wallpaper-minimalist/2020/034.jpg", "https://xcdn.loli.top/gh/volantis-x/cdn-wallpaper-minimalist/2020/035.jpg", "https://xcdn.loli.top/gh/volantis-x/cdn-wallpaper-minimalist/2020/038.jpg", "https://xcdn.loli.top/gh/volantis-x/cdn-wallpaper-minimalist/2020/039.jpg", "https://xcdn.loli.top/gh/volantis-x/cdn-wallpaper-minimalist/2020/042.jpg", "https://xcdn.loli.top/gh/volantis-x/cdn-wallpaper-minimalist/2020/046.jpg", "https://xcdn.loli.top/gh/volantis-x/cdn-wallpaper-minimalist/2020/051.jpg", "https://xcdn.loli.top/gh/volantis-x/cdn-wallpaper-minimalist/2020/052.jpg", "https://xcdn.loli.top/gh/volantis-x/cdn-wallpaper-minimalist/2020/054.jpg", "https://xcdn.loli.top/gh/volantis-x/cdn-wallpaper-minimalist/2020/056.jpg"];
         if ('true' == 'true') {
           function shuffle(arr){
             /*From countercurrent-time*/
@@ -1677,7 +1670,7 @@ var loadCSS = function( href, before, media, attributes ){
           });
         
 	  }
-	  loadScript("https://cdn.jsdelivr.net/npm/jquery-backstretch@2.1.18/jquery.backstretch.min.js",Pjax_backstretch)
+	  loadScript("https://xcdn.loli.top/npm/jquery-backstretch@2.1.18/jquery.backstretch.min.js",Pjax_backstretch)
     </script>
   
 
@@ -1938,7 +1931,7 @@ var loadCSS = function( href, before, media, attributes ){
 
 
 
-  <script defer src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@17.1.0/dist/lazyload.min.js"></script>
+  <script defer src="https://xcdn.loli.top/npm/vanilla-lazyload@17.1.0/dist/lazyload.min.js"></script>
 <script>
   // https://www.npmjs.com/package/vanilla-lazyload
   // Set the options globally
@@ -1977,13 +1970,13 @@ var loadCSS = function( href, before, media, attributes ){
 	hoverDelay: 25
   };
 </script>
-<script defer src="https://cdn.jsdelivr.net/gh/gijo-varghese/flying-pages@2.1.2/flying-pages.min.js"></script>
+<script defer src="https://xcdn.loli.top/gh/gijo-varghese/flying-pages@2.1.2/flying-pages.min.js"></script>
 
 
 
 
 
-  <script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
+  <script src="https://xcdn.loli.top/npm/clipboard@2/dist/clipboard.min.js"></script>
 <script>
     var clipboard = new ClipboardJS('.btn-copy', {
         target: function (trigger) {
@@ -2046,7 +2039,7 @@ var loadCSS = function( href, before, media, attributes ){
 
 
    <script type="text/javascript">
-  loadScript("https://cdn.jsdelivr.net/npm/scrollreveal@4.0.6/dist/scrollreveal.min.js")
+  loadScript("https://xcdn.loli.top/npm/scrollreveal@4.0.6/dist/scrollreveal.min.js")
   function pjax_scrollrebeal() {
     ScrollReveal().reveal('.l_main .reveal', {
       distance: '32px',
@@ -2076,7 +2069,7 @@ var loadCSS = function( href, before, media, attributes ){
   APlayerController.volume = '0.1';
   loadCSS("https://cdn.jsdelivr.net/npm/aplayer@1.10/dist/APlayer.min.css", window.volantis.loadcss);
   // APlayer 需要在  MetingJS 之前加载
-  loadScript("https://cdn.jsdelivr.net/npm/aplayer@1.10/dist/APlayer.min.js")
+  loadScript("https://xcdn.loli.top/npm/aplayer@1.10/dist/APlayer.min.js")
   window.volantis.APlayerLoaded=0 // APlayer加载完成状态
   var checkAPlayer = setInterval(function () {
     if (!window.APlayer) return // APlayer加载完成？
@@ -2084,7 +2077,7 @@ var loadCSS = function( href, before, media, attributes ){
     clearInterval(checkAPlayer)
 	  if (!window.volantis.APlayerLoaded&&!window.MetingJSElement){ // APlayer只能加载一次
       window.volantis.APlayerLoaded=1 // APlayer加载完成
-      loadScript("https://cdn.jsdelivr.net/npm/meting@2.0/dist/Meting.min.js") // 加载 MetingJS
+      loadScript("https://xcdn.loli.top/npm/meting@2.0/dist/Meting.min.js") // 加载 MetingJS
 	  }
   }, 2500) // 按照网速调节差分2.5s
   // rightmenu see: layout/_partial/rightmenu.ejs
@@ -2100,7 +2093,7 @@ var loadCSS = function( href, before, media, attributes ){
 
   
   
-<script src="https://cdn.jsdelivr.net/npm/valine@1.4/dist/Valine.min.js"></script>
+<script src="https://xcdn.loli.top/npm/valine@1.4/dist/Valine.min.js"></script>
 
 
 <script>
@@ -2132,11 +2125,11 @@ var loadCSS = function( href, before, media, attributes ){
       path = defaultPath || decodeURI(window.location.pathname);
     }
     var valine = new Valine();
-    valine.init(Object.assign({"js":"https://cdn.jsdelivr.net/npm/valine@1.4/dist/Valine.min.js","path":null,"placeholder":"Say something~","appId":"ucd11s85GDQMICKSzeeGvQIt-9Nh9j0Va","appKey":"v1kYVcf5xfyA4HEVRQ5JxnY0","meta":["nick","mail","link"],"requiredFields":["nick","mail"],"enableQQ":true,"recordIP":false,"avatar":"robohash","pageSize":15,"lang":"zh-cn","highlight":true,"mathJax":true}, {
+    valine.init(Object.assign({"js":"https://xcdn.loli.top/npm/valine@1.4/dist/Valine.min.js","path":null,"placeholder":"Say something~","appId":"ucd11s85GDQMICKSzeeGvQIt-9Nh9j0Va","appKey":"v1kYVcf5xfyA4HEVRQ5JxnY0","meta":["nick","mail","link"],"requiredFields":["nick","mail"],"enableQQ":true,"recordIP":false,"avatar":"robohash","pageSize":15,"lang":"zh-cn","highlight":true,"mathJax":true}, {
       el: '#valine_container',
       path: path,
       placeholder: pagePlaceholder,
-      emojiCDN: 'https://cdn.jsdelivr.net/gh/volantis-x/cdn-emoji/valine/',
+      emojiCDN: 'https://xcdn.loli.top/gh/volantis-x/cdn-emoji/valine/',
       emojiMaps: emojiMaps,
     }))
   }
@@ -2149,7 +2142,7 @@ var loadCSS = function( href, before, media, attributes ){
 
 
 
-  <script defer src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-busuanzi@2.3/js/busuanzi.pure.mini.js" data-pjax></script>
+  <script defer src="https://xcdn.loli.top/gh/volantis-x/cdn-busuanzi@2.3/js/busuanzi.pure.mini.js" data-pjax></script>
 
 
 
@@ -2161,12 +2154,12 @@ var loadCSS = function( href, before, media, attributes ){
 <!-- optional -->
 
   <script>
-const SearchServiceimagePath="https://cdn.jsdelivr.net/gh/volantis-x/cdn-volantis@master/img/";
+const SearchServiceimagePath="https://xcdn.loli.top/gh/volantis-x/cdn-volantis@master/img/";
 const ROOT =  ("/" || "/").endsWith('/') ? ("/" || "/") : ("//" || "/" );
 
 $('.input.u-search-input').one('focus',function(){
 	
-		loadScript('https://cdn.jsdelivr.net/gh/volantis-x/cdn-volantis@3.0/js/search.js',setSearchService);
+		loadScript('https://xcdn.loli.top/gh/volantis-x/cdn-volantis@3.0/js/search.js',setSearchService);
 	
 })
 
@@ -2190,7 +2183,7 @@ function setSearchService() {
 
 
   
-<script src="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.js"></script>
+<script src="https://xcdn.loli.top/npm/node-waves@0.7.6/dist/waves.min.js"></script>
 
 <script type="text/javascript">
 $(function () {
@@ -2506,4 +2499,5 @@ document.addEventListener("pjax:success", listennSidebarTOC);
  
 	  
     </div>
-  <script async>window.onload=function(){var a=document.createElement('script'),b=document.getElementsByTagName('script')[0];a.type='text/javascript',a.async=!0,a.src='/sw-register.js?v='+Date.now(),b.parentNode.insertBefore(a,b)};</script></body></html>
+  </body>
+</html>
