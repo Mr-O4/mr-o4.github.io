@@ -135,7 +135,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         
         <a class="title flat-box" target="_self" href='/'>
           
-            <img no-lazy class='logo' src='https://xcdn.loli.top/gh/TCP404/HEXO-CDN/images/icon/bolgger.png'/>
+            <img no-lazy class='logo' src='https://cdn.jsdelivr.net/gh/TCP404/HEXO-CDN/images/icon/bolgger.png'/>
           
           
           
@@ -607,7 +607,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
           <div class='cover-body'>
   <div class='top'>
     
-      <img no-lazy class='logo' src='https://xcdn.loli.top/gh/TCP404/HEXO-CDN/images/icon/bolgger.png'/>
+      <img no-lazy class='logo' src='https://cdn.jsdelivr.net/gh/TCP404/HEXO-CDN/images/icon/bolgger.png'/>
     
     
       <p class="title">Mr.Boii</p>
@@ -688,7 +688,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
     <div class='headimg-div'>
       <a class='headimg-a'>
-        <img class='headimg' src='https://xcdn.loli.top/gh/TCP404/Picgo/blog/cover/go2.png'/>
+        <img class='headimg' src='https://cdn.jsdelivr.net/gh/TCP404/Picgo/blog/cover/go2.png'/>
       </a>
     </div>
   
@@ -696,7 +696,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     
     
       <a title='Golang [深入理解] 4-string 实现原理' href='/posts/bf9901b3.html'>
-        <img class='thumbnail' src='https://xcdn.loli.top/gh/TCP404/Picgo/blog/thumbnail/golang.png'>
+        <img class='thumbnail' src='https://cdn.jsdelivr.net/gh/TCP404/Picgo/blog/thumbnail/golang.png'>
       </a>
     
     
@@ -709,7 +709,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
             
 <div class='new-meta-item author'>
   <a class='author' href="/" rel="nofollow">
-    <img no-lazy src="https://xcdn.loli.top/gh/TCP404/HEXO-CDN/images/icon/favicon.png">
+    <img no-lazy src="https://cdn.jsdelivr.net/gh/TCP404/HEXO-CDN/images/icon/favicon.png">
     <p>Mr.Pro</p>
   </a>
 </div>
@@ -785,7 +785,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 <p>于是，在计算机中，不管我们要表示任何数，只要转换成二进制，并替换成计算机中的高低电平，既可以在计算机中确切的表示一个数。</p>
 <p>但是人类世界不仅有数，还有文字。文字由一个一个字符组成，正如英文由字母组成，汉字由笔画组成。在计算机中无法直接表示文字，于是计算机先驱们想出了使用“编号约定”的办法，为每一个字符编一个数字编号，这样就使得文字和数字之间有了映射关系，进而可以在计算机中表示文字。</p>
 <p>最初的“编号约定”是 ASCII 码表，由于计算机发展于西方，西文的基本单位 26 个字母，大小写一共 52 个，加上一些符号、控制字符，组成了 ASCII 码表。</p>
-<p><img src="https://xcdn.loli.top/gh/TCP404/Picgo//blog/illustration-pic/Go/IMG/20210905115324.png" class="lazyload" data-srcset="https://xcdn.loli.top/gh/TCP404/Picgo//blog/illustration-pic/Go/IMG/20210905115324.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII="></p>
+<p><img src="https://cdn.jsdelivr.net/gh/TCP404/Picgo//blog/illustration-pic/Go/IMG/20210905115324.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/TCP404/Picgo//blog/illustration-pic/Go/IMG/20210905115324.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII="></p>
 <p>基础 ASCII 码表只有 127 个字符，使用 7 个比特（7 位二进制数）即可表示，而在计算机中 8 个比特组成 1 个字节，所以基础 ASCII 码表也好，扩展 ASCII 码表也好，用 1 个字节足矣。</p>
 <p>但是人类语言不止英文一种，还有中文、俄文、日文等等，每种语言一个编码表又使得相互之间会导致码值冲突，混乱不堪。所以 Unicode 通用学术学会便制定了一个通用字符集 UTF，国内也称作“万国码”，由此促进了文字在每一台计算机上的兼容性，防止两台计算机采用不同的编码方式导致 A 计算机的文字到 B 计算机上变成乱码。</p>
 <p>UTF 采用的是变长编码（有兴趣的同学自行了解为什么不是定长编码 <a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1hv411x7we">Golang string</a> ），小编号的字符占少字节，大编号占多字节。每一个字符的编码中的每一个字节都有几个位来用作“前缀”，通过前缀识别出该字节属于哪一个区间。具体如下：</p>
@@ -883,7 +883,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       <i class="fas fa-bookmark fa-fw" aria-hidden="true"></i><span>相关文章</span>
     </section>
     <section class='body'>
-      <div class="vlts-rps"><a class="item" href="/posts/cd747566.html" title="Golang [深入理解] 2-slice 实现原理" rel="bookmark "><img src="https://xcdn.loli.top/gh/TCP404/Picgo/blog/cover/go2.png" class="lazyload" data-srcset="https://xcdn.loli.top/gh/TCP404/Picgo/blog/cover/go2.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" /><span class="title">Golang [深入理解] 2-slice 实现原理</span><span class="excerpt">关于你可能知道的 slice</span></a><a class="item" href="/posts/b56ec5ea.html" title="Golang [深入理解] 1-for & range" rel="bookmark "><img src="https://xcdn.loli.top/gh/TCP404/Picgo/blog/cover/go2.png" class="lazyload" data-srcset="https://xcdn.loli.top/gh/TCP404/Picgo/blog/cover/go2.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" /><span class="title">Golang [深入理解] 1-for & range</span><span class="excerpt">两种遍历方式的使用与区别</span></a><a class="item" href="/posts/dc573b7e.html" title="Golang [深入理解] 10-实现抽象类" rel="bookmark "><img src="https://xcdn.loli.top/gh/TCP404/Picgo/blog/cover/go2.png" class="lazyload" data-srcset="https://xcdn.loli.top/gh/TCP404/Picgo/blog/cover/go2.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" /><span class="title">Golang [深入理解] 10-实现抽象类</span><span class="excerpt">虽然不推荐，但免不了要用到。</span></a><a class="item" href="/posts/655173cc.html" title="Golang [深入理解] 7-关于 nil" rel="bookmark "><img src="https://xcdn.loli.top/gh/TCP404/Picgo/blog/cover/go2.png" class="lazyload" data-srcset="https://xcdn.loli.top/gh/TCP404/Picgo/blog/cover/go2.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" /><span class="title">Golang [深入理解] 7-关于 nil</span><span class="excerpt">关于你可能知道的 nil 的使用</span></a><a class="item" href="/posts/aabd6c1b.html" title="Golang [深入理解] 9-值实现 VS 指针实现" rel="bookmark "><img src="https://xcdn.loli.top/gh/TCP404/Picgo/blog/cover/go2.png" class="lazyload" data-srcset="https://xcdn.loli.top/gh/TCP404/Picgo/blog/cover/go2.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" /><span class="title">Golang [深入理解] 9-值实现 VS 指针实现</span><span class="excerpt">都是实现，有啥区别？</span></a></div></section></div>
+      <div class="vlts-rps"><a class="item" href="/posts/cd747566.html" title="Golang [深入理解] 2-slice 实现原理" rel="bookmark "><img src="https://cdn.jsdelivr.net/gh/TCP404/Picgo/blog/cover/go2.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/TCP404/Picgo/blog/cover/go2.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" /><span class="title">Golang [深入理解] 2-slice 实现原理</span><span class="excerpt">关于你可能知道的 slice</span></a><a class="item" href="/posts/b56ec5ea.html" title="Golang [深入理解] 1-for & range" rel="bookmark "><img src="https://cdn.jsdelivr.net/gh/TCP404/Picgo/blog/cover/go2.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/TCP404/Picgo/blog/cover/go2.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" /><span class="title">Golang [深入理解] 1-for & range</span><span class="excerpt">两种遍历方式的使用与区别</span></a><a class="item" href="/posts/dc573b7e.html" title="Golang [深入理解] 10-实现抽象类" rel="bookmark "><img src="https://cdn.jsdelivr.net/gh/TCP404/Picgo/blog/cover/go2.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/TCP404/Picgo/blog/cover/go2.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" /><span class="title">Golang [深入理解] 10-实现抽象类</span><span class="excerpt">虽然不推荐，但免不了要用到。</span></a><a class="item" href="/posts/655173cc.html" title="Golang [深入理解] 7-关于 nil" rel="bookmark "><img src="https://cdn.jsdelivr.net/gh/TCP404/Picgo/blog/cover/go2.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/TCP404/Picgo/blog/cover/go2.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" /><span class="title">Golang [深入理解] 7-关于 nil</span><span class="excerpt">关于你可能知道的 nil 的使用</span></a><a class="item" href="/posts/aabd6c1b.html" title="Golang [深入理解] 9-值实现 VS 指针实现" rel="bookmark "><img src="https://cdn.jsdelivr.net/gh/TCP404/Picgo/blog/cover/go2.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/TCP404/Picgo/blog/cover/go2.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" /><span class="title">Golang [深入理解] 9-值实现 VS 指针实现</span><span class="excerpt">都是实现，有啥区别？</span></a></div></section></div>
       
       
         <div class='copyright'>
@@ -937,11 +937,11 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://www.boii.xyz/posts/bf9901b3.html&title=Golang [深入理解] 4-string 实现原理 - Boii&pics=https://xcdn.loli.top/gh/TCP404/Picgo/blog/thumbnail/golang.png&summary=关于你可能知道的 string"
+          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://www.boii.xyz/posts/bf9901b3.html&title=Golang [深入理解] 4-string 实现原理 - Boii&pics=https://cdn.jsdelivr.net/gh/TCP404/Picgo/blog/thumbnail/golang.png&summary=关于你可能知道的 string"
           
           >
           
-            <img src="https://xcdn.loli.top/gh/volantis-x/cdn-org/logo/128/qq.png" class="lazyload" data-srcset="https://xcdn.loli.top/gh/volantis-x/cdn-org/logo/128/qq.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=">
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qq.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qq.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=">
           
         </a>
       
@@ -949,11 +949,11 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://www.boii.xyz/posts/bf9901b3.html&title=Golang [深入理解] 4-string 实现原理 - Boii&pics=https://xcdn.loli.top/gh/TCP404/Picgo/blog/thumbnail/golang.png&summary=关于你可能知道的 string"
+          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://www.boii.xyz/posts/bf9901b3.html&title=Golang [深入理解] 4-string 实现原理 - Boii&pics=https://cdn.jsdelivr.net/gh/TCP404/Picgo/blog/thumbnail/golang.png&summary=关于你可能知道的 string"
           
           >
           
-            <img src="https://xcdn.loli.top/gh/volantis-x/cdn-org/logo/128/qzone.png" class="lazyload" data-srcset="https://xcdn.loli.top/gh/volantis-x/cdn-org/logo/128/qzone.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=">
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qzone.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qzone.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=">
           
         </a>
       
@@ -961,11 +961,11 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="http://service.weibo.com/share/share.php?url=https://www.boii.xyz/posts/bf9901b3.html&title=Golang [深入理解] 4-string 实现原理 - Boii&pics=https://xcdn.loli.top/gh/TCP404/Picgo/blog/thumbnail/golang.png&summary=关于你可能知道的 string"
+          target="_blank" href="http://service.weibo.com/share/share.php?url=https://www.boii.xyz/posts/bf9901b3.html&title=Golang [深入理解] 4-string 实现原理 - Boii&pics=https://cdn.jsdelivr.net/gh/TCP404/Picgo/blog/thumbnail/golang.png&summary=关于你可能知道的 string"
           
           >
           
-            <img src="https://xcdn.loli.top/gh/volantis-x/cdn-org/logo/128/weibo.png" class="lazyload" data-srcset="https://xcdn.loli.top/gh/volantis-x/cdn-org/logo/128/weibo.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=">
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/weibo.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/weibo.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=">
           
         </a>
       
@@ -1353,19 +1353,19 @@ var loadCSS = function( href, before, media, attributes ){
 </script>
 <script>
   
-  loadCSS("https://xcdn.loli.top/npm/@fortawesome/fontawesome-free@5.14/css/all.min.css", window.volantis.loadcss);
+  loadCSS("https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.14/css/all.min.css", window.volantis.loadcss);
   
   
-  loadCSS("https://xcdn.loli.top/gh/l-lin/font-awesome-animation/dist/font-awesome-animation.min.css", window.volantis.loadcss);
+  loadCSS("https://cdn.jsdelivr.net/gh/l-lin/font-awesome-animation/dist/font-awesome-animation.min.css", window.volantis.loadcss);
   
   
-  loadCSS("https://xcdn.loli.top/npm/node-waves@0.7.6/dist/waves.min.css", window.volantis.loadcss);
+  loadCSS("https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.css", window.volantis.loadcss);
   
   
 </script>
 <!-- required -->
 
-<script src="https://xcdn.loli.top/npm/jquery@3.5/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5/dist/jquery.min.js"></script>
 
 <script>
   function pjax_fancybox() {
@@ -1409,7 +1409,7 @@ var loadCSS = function( href, before, media, attributes ){
   function SCload_fancybox() {
     if ($(".md .gallery").find("img").length == 0) return;
     loadCSS("https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css", document.getElementById("loadcss"));
-    loadScript('https://xcdn.loli.top/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js', pjax_fancybox)
+    loadScript('https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js', pjax_fancybox)
   };
   $(function () {
     SCload_fancybox();
@@ -1436,10 +1436,10 @@ var loadCSS = function( href, before, media, attributes ){
   
   
     
-<script src="https://xcdn.loli.top/npm/jquery-backstretch@2.1.18/jquery.backstretch.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery-backstretch@2.1.18/jquery.backstretch.min.js"></script>
 
     <script type="text/javascript">
-        var imgs=["https://xcdn.loli.top/gh/volantis-x/cdn-wallpaper-minimalist/2020/001.jpg", "https://xcdn.loli.top/gh/volantis-x/cdn-wallpaper-minimalist/2020/002.jpg", "https://xcdn.loli.top/gh/volantis-x/cdn-wallpaper-minimalist/2020/003.jpg", "https://xcdn.loli.top/gh/volantis-x/cdn-wallpaper-minimalist/2020/004.jpg", "https://xcdn.loli.top/gh/volantis-x/cdn-wallpaper-minimalist/2020/006.jpg", "https://xcdn.loli.top/gh/volantis-x/cdn-wallpaper-minimalist/2020/012.jpg", "https://xcdn.loli.top/gh/volantis-x/cdn-wallpaper-minimalist/2020/016.jpg", "https://xcdn.loli.top/gh/volantis-x/cdn-wallpaper-minimalist/2020/019.jpg", "https://xcdn.loli.top/gh/volantis-x/cdn-wallpaper-minimalist/2020/025.jpg", "https://xcdn.loli.top/gh/volantis-x/cdn-wallpaper-minimalist/2020/034.jpg", "https://xcdn.loli.top/gh/volantis-x/cdn-wallpaper-minimalist/2020/035.jpg", "https://xcdn.loli.top/gh/volantis-x/cdn-wallpaper-minimalist/2020/038.jpg", "https://xcdn.loli.top/gh/volantis-x/cdn-wallpaper-minimalist/2020/039.jpg", "https://xcdn.loli.top/gh/volantis-x/cdn-wallpaper-minimalist/2020/042.jpg", "https://xcdn.loli.top/gh/volantis-x/cdn-wallpaper-minimalist/2020/046.jpg", "https://xcdn.loli.top/gh/volantis-x/cdn-wallpaper-minimalist/2020/051.jpg", "https://xcdn.loli.top/gh/volantis-x/cdn-wallpaper-minimalist/2020/052.jpg", "https://xcdn.loli.top/gh/volantis-x/cdn-wallpaper-minimalist/2020/054.jpg", "https://xcdn.loli.top/gh/volantis-x/cdn-wallpaper-minimalist/2020/056.jpg"];
+        var imgs=["https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/001.jpg", "https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/002.jpg", "https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/003.jpg", "https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/004.jpg", "https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/006.jpg", "https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/012.jpg", "https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/016.jpg", "https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/019.jpg", "https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/025.jpg", "https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/034.jpg", "https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/035.jpg", "https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/038.jpg", "https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/039.jpg", "https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/042.jpg", "https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/046.jpg", "https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/051.jpg", "https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/052.jpg", "https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/054.jpg", "https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/056.jpg"];
         if ('true' == 'true') {
           function shuffle(arr){
             /*From countercurrent-time*/
@@ -1463,7 +1463,7 @@ var loadCSS = function( href, before, media, attributes ){
           });
         
 	  }
-	  loadScript("https://xcdn.loli.top/npm/jquery-backstretch@2.1.18/jquery.backstretch.min.js",Pjax_backstretch)
+	  loadScript("https://cdn.jsdelivr.net/npm/jquery-backstretch@2.1.18/jquery.backstretch.min.js",Pjax_backstretch)
     </script>
   
 
@@ -1724,7 +1724,7 @@ var loadCSS = function( href, before, media, attributes ){
 
 
 
-  <script defer src="https://xcdn.loli.top/npm/vanilla-lazyload@17.1.0/dist/lazyload.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@17.1.0/dist/lazyload.min.js"></script>
 <script>
   // https://www.npmjs.com/package/vanilla-lazyload
   // Set the options globally
@@ -1763,13 +1763,13 @@ var loadCSS = function( href, before, media, attributes ){
 	hoverDelay: 25
   };
 </script>
-<script defer src="https://xcdn.loli.top/gh/gijo-varghese/flying-pages@2.1.2/flying-pages.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/gh/gijo-varghese/flying-pages@2.1.2/flying-pages.min.js"></script>
 
 
 
 
 
-  <script src="https://xcdn.loli.top/npm/clipboard@2/dist/clipboard.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
 <script>
     var clipboard = new ClipboardJS('.btn-copy', {
         target: function (trigger) {
@@ -1832,7 +1832,7 @@ var loadCSS = function( href, before, media, attributes ){
 
 
    <script type="text/javascript">
-  loadScript("https://xcdn.loli.top/npm/scrollreveal@4.0.6/dist/scrollreveal.min.js")
+  loadScript("https://cdn.jsdelivr.net/npm/scrollreveal@4.0.6/dist/scrollreveal.min.js")
   function pjax_scrollrebeal() {
     ScrollReveal().reveal('.l_main .reveal', {
       distance: '32px',
@@ -1862,7 +1862,7 @@ var loadCSS = function( href, before, media, attributes ){
   APlayerController.volume = '0.1';
   loadCSS("https://cdn.jsdelivr.net/npm/aplayer@1.10/dist/APlayer.min.css", window.volantis.loadcss);
   // APlayer 需要在  MetingJS 之前加载
-  loadScript("https://xcdn.loli.top/npm/aplayer@1.10/dist/APlayer.min.js")
+  loadScript("https://cdn.jsdelivr.net/npm/aplayer@1.10/dist/APlayer.min.js")
   window.volantis.APlayerLoaded=0 // APlayer加载完成状态
   var checkAPlayer = setInterval(function () {
     if (!window.APlayer) return // APlayer加载完成？
@@ -1870,7 +1870,7 @@ var loadCSS = function( href, before, media, attributes ){
     clearInterval(checkAPlayer)
 	  if (!window.volantis.APlayerLoaded&&!window.MetingJSElement){ // APlayer只能加载一次
       window.volantis.APlayerLoaded=1 // APlayer加载完成
-      loadScript("https://xcdn.loli.top/npm/meting@2.0/dist/Meting.min.js") // 加载 MetingJS
+      loadScript("https://cdn.jsdelivr.net/npm/meting@2.0/dist/Meting.min.js") // 加载 MetingJS
 	  }
   }, 2500) // 按照网速调节差分2.5s
   // rightmenu see: layout/_partial/rightmenu.ejs
@@ -1886,7 +1886,7 @@ var loadCSS = function( href, before, media, attributes ){
 
   
   
-<script src="https://xcdn.loli.top/npm/valine@1.4/dist/Valine.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/valine@1.4/dist/Valine.min.js"></script>
 
 
 <script>
@@ -1918,11 +1918,11 @@ var loadCSS = function( href, before, media, attributes ){
       path = defaultPath || decodeURI(window.location.pathname);
     }
     var valine = new Valine();
-    valine.init(Object.assign({"js":"https://xcdn.loli.top/npm/valine@1.4/dist/Valine.min.js","path":null,"placeholder":"Say something~","appId":"ucd11s85GDQMICKSzeeGvQIt-9Nh9j0Va","appKey":"v1kYVcf5xfyA4HEVRQ5JxnY0","meta":["nick","mail","link"],"requiredFields":["nick","mail"],"enableQQ":true,"recordIP":false,"avatar":"robohash","pageSize":15,"lang":"zh-cn","highlight":true,"mathJax":true}, {
+    valine.init(Object.assign({"js":"https://cdn.jsdelivr.net/npm/valine@1.4/dist/Valine.min.js","path":null,"placeholder":"Say something~","appId":"ucd11s85GDQMICKSzeeGvQIt-9Nh9j0Va","appKey":"v1kYVcf5xfyA4HEVRQ5JxnY0","meta":["nick","mail","link"],"requiredFields":["nick","mail"],"enableQQ":true,"recordIP":false,"avatar":"robohash","pageSize":15,"lang":"zh-cn","highlight":true,"mathJax":true}, {
       el: '#valine_container',
       path: path,
       placeholder: pagePlaceholder,
-      emojiCDN: 'https://xcdn.loli.top/gh/volantis-x/cdn-emoji/valine/',
+      emojiCDN: 'https://cdn.jsdelivr.net/gh/volantis-x/cdn-emoji/valine/',
       emojiMaps: emojiMaps,
     }))
   }
@@ -1935,7 +1935,7 @@ var loadCSS = function( href, before, media, attributes ){
 
 
 
-  <script defer src="https://xcdn.loli.top/gh/volantis-x/cdn-busuanzi@2.3/js/busuanzi.pure.mini.js" data-pjax></script>
+  <script defer src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-busuanzi@2.3/js/busuanzi.pure.mini.js" data-pjax></script>
 
 
 
@@ -1947,12 +1947,12 @@ var loadCSS = function( href, before, media, attributes ){
 <!-- optional -->
 
   <script>
-const SearchServiceimagePath="https://xcdn.loli.top/gh/volantis-x/cdn-volantis@master/img/";
+const SearchServiceimagePath="https://cdn.jsdelivr.net/gh/volantis-x/cdn-volantis@master/img/";
 const ROOT =  ("/" || "/").endsWith('/') ? ("/" || "/") : ("//" || "/" );
 
 $('.input.u-search-input').one('focus',function(){
 	
-		loadScript('https://xcdn.loli.top/gh/volantis-x/cdn-volantis@3.0/js/search.js',setSearchService);
+		loadScript('https://cdn.jsdelivr.net/gh/volantis-x/cdn-volantis@3.0/js/search.js',setSearchService);
 	
 })
 
@@ -1976,7 +1976,7 @@ function setSearchService() {
 
 
   
-<script src="https://xcdn.loli.top/npm/node-waves@0.7.6/dist/waves.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.js"></script>
 
 <script type="text/javascript">
 $(function () {

@@ -135,7 +135,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         
         <a class="title flat-box" target="_self" href='/'>
           
-            <img no-lazy class='logo' src='https://xcdn.loli.top/gh/TCP404/HEXO-CDN/images/icon/bolgger.png'/>
+            <img no-lazy class='logo' src='https://cdn.jsdelivr.net/gh/TCP404/HEXO-CDN/images/icon/bolgger.png'/>
           
           
           
@@ -607,7 +607,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
           <div class='cover-body'>
   <div class='top'>
     
-      <img no-lazy class='logo' src='https://xcdn.loli.top/gh/TCP404/HEXO-CDN/images/icon/bolgger.png'/>
+      <img no-lazy class='logo' src='https://cdn.jsdelivr.net/gh/TCP404/HEXO-CDN/images/icon/bolgger.png'/>
     
     
       <p class="title">Mr.Boii</p>
@@ -688,7 +688,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
     <div class='headimg-div'>
       <a class='headimg-a'>
-        <img class='headimg' src='https://xcdn.loli.top/gh/TCP404/Picgo/blog/cover/Sequence.png'/>
+        <img class='headimg' src='https://cdn.jsdelivr.net/gh/TCP404/Picgo/blog/cover/Sequence.png'/>
       </a>
     </div>
   
@@ -696,7 +696,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     
     
       <a title='DataStruction 0x02 线性表' href='/posts/21668.html'>
-        <img class='thumbnail' src='https://xcdn.loli.top/gh/TCP404/Picgo/blog/thumbnail/algorithms.png'>
+        <img class='thumbnail' src='https://cdn.jsdelivr.net/gh/TCP404/Picgo/blog/thumbnail/algorithms.png'>
       </a>
     
     
@@ -709,7 +709,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
             
 <div class='new-meta-item author'>
   <a class='author' href="/" rel="nofollow">
-    <img no-lazy src="https://xcdn.loli.top/gh/TCP404/HEXO-CDN/images/icon/favicon.png">
+    <img no-lazy src="https://cdn.jsdelivr.net/gh/TCP404/HEXO-CDN/images/icon/favicon.png">
     <p>Mr.Pro</p>
   </a>
 </div>
@@ -790,7 +790,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 <li>最后一个无直接后继元素</li>
 <li>其余元素都有唯一一个直接前驱元素和唯一一个直接后继元素</li>
 </ol>
-<p><img src="https://xcdn.loli.top/gh/TCP404/Picgo/blog/illustration-pic/DataStruction/20201018201506104_12047.png" class="lazyload" data-srcset="https://xcdn.loli.top/gh/TCP404/Picgo/blog/illustration-pic/DataStruction/20201018201506104_12047.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII="></p>
+<p><img src="https://cdn.jsdelivr.net/gh/TCP404/Picgo/blog/illustration-pic/DataStruction/20201018201506104_12047.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/TCP404/Picgo/blog/illustration-pic/DataStruction/20201018201506104_12047.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII="></p>
 <p>线性表元素的个数 $n(n&gt;=0)$ 即为<strong>线性表的长度</strong>；当 n=0 时，称为<strong>空表</strong>。</p>
 <p>非空表中每个数据元素都有一个确定的位置，如$a_1$是首个元素，$a_n$是最后元素，$a_i$是第$i$个元素（称 $i$ 为数据元素 $a_i$ 在线性表中的位序）</p>
 <blockquote>
@@ -801,7 +801,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 <p>线性表的顺序存储结构，指的是用一段连续的存储单元一次存储线性表的数据元素。<br>例如数组，知道了第一个元素的地址，后面的元素都可以快速的计算出来。<br>假设第一个元素的<strong>地址为 A</strong>，每个元素<strong>占 k 个字节</strong>，则可知<strong>第 i 个元素</strong>的地址为 <span class='p blue'>A + i * k</span>。</p>
 </blockquote>
 <p>顺序结构在查找时，不论要查找的元素在任何位置，时间复杂度都为 $O(1)$，但在插入和删除时，平均时间复杂度为 $O(n)$。</p>
-<h2 id="顺序结构代码实现"><a href="#顺序结构代码实现" class="headerlink" title="顺序结构代码实现"></a>顺序结构代码实现</h2><p><img src="https://xcdn.loli.top/gh/TCP404/Picgo/blog/illustration-pic/DataStruction/20201018171008169_28518.png" class="lazyload" data-srcset="https://xcdn.loli.top/gh/TCP404/Picgo/blog/illustration-pic/DataStruction/20201018171008169_28518.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII="></p>
+<h2 id="顺序结构代码实现"><a href="#顺序结构代码实现" class="headerlink" title="顺序结构代码实现"></a>顺序结构代码实现</h2><p><img src="https://cdn.jsdelivr.net/gh/TCP404/Picgo/blog/illustration-pic/DataStruction/20201018171008169_28518.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/TCP404/Picgo/blog/illustration-pic/DataStruction/20201018171008169_28518.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII="></p>
 <p>先放上各专业术语的关系图，以做对照。</p>
 <h3 id="数据元素"><a href="#数据元素" class="headerlink" title="数据元素"></a>数据元素</h3><p>各种操作的基本单位是<strong>数据元素</strong>，数据元素又由各<strong>数据项</strong>构成。</p>
 <p>在代码中，用 <strong>结构体类型(C语言中是结构体，Java等语言是类)</strong> 来实现数据元素，<br>用各种 <strong>基本类型(int、char、float、其他结构体等)</strong> 来实现数据项。（注意数据项也可以是结构体）</p>
@@ -850,9 +850,9 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 <p>线性表的链式结构是指，指的是用不连续的存储单元存储线性表的数据元素。</p>
 </blockquote>
 <p>在链式结构中，除了存储数据元素之外，还要存储其后继元素的地址。<br>存储数据元素信息的域称为<strong>数据域</strong>，存储后继元素地址的域称为<strong>指针域</strong>；<br>这两部分共同组成一个结点，n个结点链结成一个链表，即为线性表的链式存储结构。</p>
-<p><img src="https://xcdn.loli.top/gh/TCP404/Picgo/blog/illustration-pic/DataStruction/20210711154902.png" class="lazyload" data-srcset="https://xcdn.loli.top/gh/TCP404/Picgo/blog/illustration-pic/DataStruction/20210711154902.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII="></p>
+<p><img src="https://cdn.jsdelivr.net/gh/TCP404/Picgo/blog/illustration-pic/DataStruction/20210711154902.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/TCP404/Picgo/blog/illustration-pic/DataStruction/20210711154902.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII="></p>
 <p>链表的起始结点称为<strong>头结点</strong>，头结点中的指针域称为<strong>头指针</strong>。<br>头结点的数据域可以不存储任何信息，也可以存储线性表长度等附加信息；<br>头结点的指针域指向第一个结点（第一个结点可以称为<strong>首元结点</strong>）；<br>头结点的指针域为空时（即头指针为空时），为空链表。</p>
-<p><img src="https://xcdn.loli.top/gh/TCP404/Picgo/blog/illustration-pic/DataStruction/20210711162258.png" class="lazyload" data-srcset="https://xcdn.loli.top/gh/TCP404/Picgo/blog/illustration-pic/DataStruction/20210711162258.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII="></p>
+<p><img src="https://cdn.jsdelivr.net/gh/TCP404/Picgo/blog/illustration-pic/DataStruction/20210711162258.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/TCP404/Picgo/blog/illustration-pic/DataStruction/20210711162258.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII="></p>
 <p>因此，<br>每个结点只包含一个<strong>后继指针域</strong>（指向后继元素的指针域），称为 <span class='p blue'>单向链表</span>；<br>每个结点包含一个<strong>后继指针域</strong>（指向后继元素的指针域）和一个<strong>前驱指针域</strong>（指向前驱元素的指针域），称为<span class='p blue'>双向链表</span>；</p>
 <p>链表的最后一个结点称为<strong>尾结点</strong>，尾结点的指针域可以为空（通常用 <code>NULL</code> 或 <code>^</code> 表示）<br>尾结点的<strong>后继指针域</strong>为空时，称为 <span class='p blue'>单链表</span>；<br>尾结点的<strong>后继指针域</strong>指向首元结点的地址时（指向首元结点不是头结点），称为 <span class='p blue'>循环链表</span>。</p>
 <p>同理，<br>尾结点的<strong>后继指针域</strong>指 $\to$ 向<strong>首元结点</strong>的地址，首元结点的<strong>前驱指针域</strong>指 $\to$ 向<strong>尾结点</strong>时，称为 <span class='p blue'>双向循环链表</span>。</p>
@@ -883,7 +883,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 <blockquote>
 <p> 链表插入的重点在于要先将 <strong>前一个结点的指针域 新节点的指针域 newNode-&gt;next = p-&gt;next</strong> ，然后再把 <strong>新节点的地址给前一个结点的指针域 p-&gt;next = newNode</strong> ，这两者顺序不能颠倒，否则会插入失败。</p>
 </blockquote>
-<p><img src="https://xcdn.loli.top/gh/TCP404/Picgo/blog/illustration-pic/DataStruction/20210711164948.png" class="lazyload" data-srcset="https://xcdn.loli.top/gh/TCP404/Picgo/blog/illustration-pic/DataStruction/20210711164948.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII="></p>
+<p><img src="https://cdn.jsdelivr.net/gh/TCP404/Picgo/blog/illustration-pic/DataStruction/20210711164948.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/TCP404/Picgo/blog/illustration-pic/DataStruction/20210711164948.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII="></p>
 <h4 id="初始化链表"><a href="#初始化链表" class="headerlink" title="初始化链表"></a>初始化链表</h4><p>初始化链表时需要将<strong>头结点</strong>和<strong>元素数组</strong>传给函数</p>
 <p>上面我们已经定义好了 创建链表函数，插入结点函数，所以在初始化时非常方便，只需要调用<code>Create()</code>创建链表，然后遍历元素数组，调用<code>Insert()</code>即可。</p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">Status <span class="title">Init</span><span class="params">(HeadNode *head, Element *datas)</span></span>&#123;</span><br><span class="line">    <span class="comment">// 创建链表</span></span><br><span class="line">    <span class="keyword">if</span>(Create(head))&#123;</span><br><span class="line">        <span class="comment">// 遍历元素数组</span></span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; (<span class="keyword">sizeof</span> datas / <span class="keyword">sizeof</span> datas[<span class="number">0</span>]); i++)</span><br><span class="line">            Insert(head, datas[i], i + <span class="number">1</span>);</span><br><span class="line">        <span class="keyword">return</span> OK;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> ERROR;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 调用时</span></span><br><span class="line">Element datas = &#123;</span><br><span class="line">    &#123;<span class="string">&quot;Alice&quot;</span>, <span class="number">18</span>&#125;,</span><br><span class="line">    &#123;<span class="string">&quot;Boii&quot;</span>, <span class="number">20</span>&#125;,</span><br><span class="line">    &#123;<span class="string">&quot;Candy&quot;</span>, <span class="number">22</span>&#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">HeadNode head;</span><br><span class="line">Init(&amp;head, datas);</span><br></pre></td></tr></table></figure>
@@ -916,8 +916,8 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 <p>C语言需要自己管理内存，自己管理指针释放指针，所以在删除之前要先将被删除结点保存起来，改链（p-&gt;next = q-&gt;next）之后将被删除结点的内存释放，最后把函数里创建的指针置空。</p>
 <p>删除 i 结点其实就是让 i - 1 结点指向 i + 1.</p>
 </blockquote>
-<p><img src="https://xcdn.loli.top/gh/TCP404/Picgo/blog/illustration-pic/DataStruction/20210711171703.png" class="lazyload" data-srcset="https://xcdn.loli.top/gh/TCP404/Picgo/blog/illustration-pic/DataStruction/20210711171703.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII="></p>
-<h3 id="循环链表"><a href="#循环链表" class="headerlink" title="循环链表"></a>循环链表</h3><p><img src="https://xcdn.loli.top/gh/TCP404/Picgo/blog/illustration-pic/DataStruction/20210711171957.png" class="lazyload" data-srcset="https://xcdn.loli.top/gh/TCP404/Picgo/blog/illustration-pic/DataStruction/20210711171957.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII="></p>
+<p><img src="https://cdn.jsdelivr.net/gh/TCP404/Picgo/blog/illustration-pic/DataStruction/20210711171703.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/TCP404/Picgo/blog/illustration-pic/DataStruction/20210711171703.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII="></p>
+<h3 id="循环链表"><a href="#循环链表" class="headerlink" title="循环链表"></a>循环链表</h3><p><img src="https://cdn.jsdelivr.net/gh/TCP404/Picgo/blog/illustration-pic/DataStruction/20210711171957.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/TCP404/Picgo/blog/illustration-pic/DataStruction/20210711171957.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII="></p>
 <p>循环链表与单链表相比多了一个<strong>尾元结点指向首元节点</strong>。可以把尾元结点的指针称为<strong>尾指针</strong>。</p>
 <p>当遍历循环链表时，可以通过判断 <code>尾元结点-&gt;next == 头结点-&gt;next</code>得知是否遍历了一圈了。</p>
 <p>其实循环链表可以有2种实现形式：</p>
@@ -937,12 +937,12 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">Status <span class="title">Insert</span><span class="params">(HeadNode *head, Element e, <span class="keyword">int</span> pos)</span></span>&#123;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">if</span>(pos &gt; head-&gt;length) <span class="keyword">return</span> ERROR;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 创建新结点</span></span><br><span class="line">    Node *newNode = (Node*)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span> Node);</span><br><span class="line">    newNode-&gt;data = e;</span><br><span class="line">    newNode-&gt;next = <span class="literal">NULL</span>;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">/** 1. 链表为空 */</span></span><br><span class="line">    <span class="keyword">if</span>(!head-&gt;length)&#123;</span><br><span class="line">        newNode-&gt;next = newNode;    <span class="comment">// 让新结点的后继指针指向自己</span></span><br><span class="line">        head-&gt;next = newNode;       <span class="comment">// 让头结点指向新结点</span></span><br><span class="line">        head-&gt;length++;</span><br><span class="line">        <span class="keyword">return</span> OK;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">/** 链表不为空 */</span></span><br><span class="line">    <span class="comment">/** 2. 插入位置为首元结点 */</span></span><br><span class="line">    <span class="keyword">if</span>(pos == <span class="number">1</span>)&#123;</span><br><span class="line">        <span class="comment">// 先把新结点做插入操作</span></span><br><span class="line">        newNode-&gt;next = head-&gt;next;</span><br><span class="line">        head-&gt;next = newNode;</span><br><span class="line">        head-&gt;length++;</span><br><span class="line">        <span class="comment">// 找到尾结点</span></span><br><span class="line">        Node *last = head-&gt;next;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; head-&gt;length; i++) last = last-&gt;next;</span><br><span class="line">        <span class="comment">// 让尾指针指向新结点</span></span><br><span class="line">        last-&gt;next = newNode;</span><br><span class="line">        <span class="keyword">return</span> OK;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">/** 3. 插入位置为尾元结点 */</span></span><br><span class="line">    <span class="keyword">if</span>(pos == head-&gt;length)&#123;</span><br><span class="line">        <span class="comment">// 找到尾结点</span></span><br><span class="line">        Node *last = head-&gt;next;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; head-&gt;length; i++) last = last-&gt;next;</span><br><span class="line">        <span class="comment">// 让新结点指向头结点，让尾结点指向新结点</span></span><br><span class="line">        newNode-&gt;next = head-&gt;next;</span><br><span class="line">        last-&gt;next = newNode;</span><br><span class="line">        head-&gt;length++;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> OK;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">/** 4. 插入位置为中间结点*/</span></span><br><span class="line">    <span class="keyword">if</span>(pos != head-&gt;length)&#123;</span><br><span class="line">        <span class="comment">// 找到目标位置的前一个</span></span><br><span class="line">        Node *p = head-&gt;next;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; p &amp;&amp; i &lt; pos - <span class="number">1</span>; i++) p = p-&gt;next;</span><br><span class="line">        <span class="comment">// 做普通插入操作</span></span><br><span class="line">        newNode-&gt;next = p-&gt;next;</span><br><span class="line">        p-&gt;next = newNode;</span><br><span class="line">        head-&gt;length++;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> OK;</span><br><span class="line">    &#125;    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <ul>
-<li><p>当链表为空时，插入新结点只需要让新结点指向自己，然后让头结点指向新结点即可<br><img src="https://xcdn.loli.top/gh/TCP404/Picgo/blog/illustration-pic/DataStruction/20201108141810398_2941.png" class="lazyload" data-srcset="https://xcdn.loli.top/gh/TCP404/Picgo/blog/illustration-pic/DataStruction/20201108141810398_2941.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII="></p>
+<li><p>当链表为空时，插入新结点只需要让新结点指向自己，然后让头结点指向新结点即可<br><img src="https://cdn.jsdelivr.net/gh/TCP404/Picgo/blog/illustration-pic/DataStruction/20201108141810398_2941.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/TCP404/Picgo/blog/illustration-pic/DataStruction/20201108141810398_2941.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII="></p>
 </li>
 <li><p>当链表不为空</p>
 <ul>
-<li>插入位置为首元结点时，先做一个普通的插入操作，然后找到尾结点让尾指针指向新结点即可<br><img src="https://xcdn.loli.top/gh/TCP404/Picgo/blog/illustration-pic/DataStruction/20201108142944261_12884.png" class="lazyload" data-srcset="https://xcdn.loli.top/gh/TCP404/Picgo/blog/illustration-pic/DataStruction/20201108142944261_12884.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII="><br><img src="https://xcdn.loli.top/gh/TCP404/Picgo/blog/illustration-pic/DataStruction/20201108143058806_22741.png" class="lazyload" data-srcset="https://xcdn.loli.top/gh/TCP404/Picgo/blog/illustration-pic/DataStruction/20201108143058806_22741.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII="><br><img src="https://xcdn.loli.top/gh/TCP404/Picgo/blog/illustration-pic/DataStruction/20201108143136326_25958.png" class="lazyload" data-srcset="https://xcdn.loli.top/gh/TCP404/Picgo/blog/illustration-pic/DataStruction/20201108143136326_25958.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII="><br><img src="https://xcdn.loli.top/gh/TCP404/Picgo/blog/illustration-pic/DataStruction/20201108143218765_26724.png" class="lazyload" data-srcset="https://xcdn.loli.top/gh/TCP404/Picgo/blog/illustration-pic/DataStruction/20201108143218765_26724.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII="></li>
-<li>插入位置为尾元结点时，找到尾元结点，让新结点指向头结点，让尾指针指向新结点即可<br><img src="https://xcdn.loli.top/gh/TCP404/Picgo/blog/illustration-pic/DataStruction/20201108143435454_10891.png" class="lazyload" data-srcset="https://xcdn.loli.top/gh/TCP404/Picgo/blog/illustration-pic/DataStruction/20201108143435454_10891.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII="><br><img src="https://xcdn.loli.top/gh/TCP404/Picgo/blog/illustration-pic/DataStruction/20201108143551702_29475.png" class="lazyload" data-srcset="https://xcdn.loli.top/gh/TCP404/Picgo/blog/illustration-pic/DataStruction/20201108143551702_29475.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII="></li>
+<li>插入位置为首元结点时，先做一个普通的插入操作，然后找到尾结点让尾指针指向新结点即可<br><img src="https://cdn.jsdelivr.net/gh/TCP404/Picgo/blog/illustration-pic/DataStruction/20201108142944261_12884.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/TCP404/Picgo/blog/illustration-pic/DataStruction/20201108142944261_12884.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII="><br><img src="https://cdn.jsdelivr.net/gh/TCP404/Picgo/blog/illustration-pic/DataStruction/20201108143058806_22741.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/TCP404/Picgo/blog/illustration-pic/DataStruction/20201108143058806_22741.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII="><br><img src="https://cdn.jsdelivr.net/gh/TCP404/Picgo/blog/illustration-pic/DataStruction/20201108143136326_25958.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/TCP404/Picgo/blog/illustration-pic/DataStruction/20201108143136326_25958.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII="><br><img src="https://cdn.jsdelivr.net/gh/TCP404/Picgo/blog/illustration-pic/DataStruction/20201108143218765_26724.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/TCP404/Picgo/blog/illustration-pic/DataStruction/20201108143218765_26724.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII="></li>
+<li>插入位置为尾元结点时，找到尾元结点，让新结点指向头结点，让尾指针指向新结点即可<br><img src="https://cdn.jsdelivr.net/gh/TCP404/Picgo/blog/illustration-pic/DataStruction/20201108143435454_10891.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/TCP404/Picgo/blog/illustration-pic/DataStruction/20201108143435454_10891.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII="><br><img src="https://cdn.jsdelivr.net/gh/TCP404/Picgo/blog/illustration-pic/DataStruction/20201108143551702_29475.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/TCP404/Picgo/blog/illustration-pic/DataStruction/20201108143551702_29475.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII="></li>
 <li>插入位置为中间结点时，找到目标位置前一个结点，做一个普通插入操作即可</li>
 </ul>
 </li>
@@ -966,7 +966,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       <i class="fas fa-bookmark fa-fw" aria-hidden="true"></i><span>相关文章</span>
     </section>
     <section class='body'>
-      <div class="vlts-rps"><a class="item" href="/posts/44644.html" title="DataStruction 0x00 绪论" rel="bookmark "><img src="https://xcdn.loli.top/gh/TCP404/Picgo/blog/cover/DataStruction.png" class="lazyload" data-srcset="https://xcdn.loli.top/gh/TCP404/Picgo/blog/cover/DataStruction.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" /><span class="title">DataStruction 0x00 绪论</span><span class="excerpt">什么是数据结构？</span></a><a class="item" href="/posts/17036.html" title="DataStruction 0x01 算法" rel="bookmark "><img src="https://xcdn.loli.top/gh/TCP404/Picgo/blog/cover/DataStruction.png" class="lazyload" data-srcset="https://xcdn.loli.top/gh/TCP404/Picgo/blog/cover/DataStruction.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" /><span class="title">DataStruction 0x01 算法</span><span class="excerpt">什么是算法？</span></a><a class="item" href="/posts/29925.html" title="DataStruction 0x03 栈" rel="bookmark "><img src="https://xcdn.loli.top/gh/TCP404/Picgo/blog/cover/Stack.png" class="lazyload" data-srcset="https://xcdn.loli.top/gh/TCP404/Picgo/blog/cover/Stack.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" /><span class="title">DataStruction 0x03 栈</span><span class="excerpt">什么是栈？</span></a><a class="item" href="/posts/50917.html" title="DataStruction 0x04 队列" rel="bookmark "><img src="https://xcdn.loli.top/gh/TCP404/Picgo/blog/cover/Queue.png" class="lazyload" data-srcset="https://xcdn.loli.top/gh/TCP404/Picgo/blog/cover/Queue.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" /><span class="title">DataStruction 0x04 队列</span><span class="excerpt">什么是队列？</span></a><a class="item" href="/posts/42822.html" title="DataStruction 0x05 串" rel="bookmark "><img src="https://xcdn.loli.top/gh/TCP404/Picgo/blog/cover/String.png" class="lazyload" data-srcset="https://xcdn.loli.top/gh/TCP404/Picgo/blog/cover/String.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" /><span class="title">DataStruction 0x05 串</span><span class="excerpt">什么是串？</span></a></div></section></div>
+      <div class="vlts-rps"><a class="item" href="/posts/44644.html" title="DataStruction 0x00 绪论" rel="bookmark "><img src="https://cdn.jsdelivr.net/gh/TCP404/Picgo/blog/cover/DataStruction.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/TCP404/Picgo/blog/cover/DataStruction.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" /><span class="title">DataStruction 0x00 绪论</span><span class="excerpt">什么是数据结构？</span></a><a class="item" href="/posts/17036.html" title="DataStruction 0x01 算法" rel="bookmark "><img src="https://cdn.jsdelivr.net/gh/TCP404/Picgo/blog/cover/DataStruction.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/TCP404/Picgo/blog/cover/DataStruction.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" /><span class="title">DataStruction 0x01 算法</span><span class="excerpt">什么是算法？</span></a><a class="item" href="/posts/29925.html" title="DataStruction 0x03 栈" rel="bookmark "><img src="https://cdn.jsdelivr.net/gh/TCP404/Picgo/blog/cover/Stack.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/TCP404/Picgo/blog/cover/Stack.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" /><span class="title">DataStruction 0x03 栈</span><span class="excerpt">什么是栈？</span></a><a class="item" href="/posts/50917.html" title="DataStruction 0x04 队列" rel="bookmark "><img src="https://cdn.jsdelivr.net/gh/TCP404/Picgo/blog/cover/Queue.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/TCP404/Picgo/blog/cover/Queue.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" /><span class="title">DataStruction 0x04 队列</span><span class="excerpt">什么是队列？</span></a><a class="item" href="/posts/42822.html" title="DataStruction 0x05 串" rel="bookmark "><img src="https://cdn.jsdelivr.net/gh/TCP404/Picgo/blog/cover/String.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/TCP404/Picgo/blog/cover/String.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" /><span class="title">DataStruction 0x05 串</span><span class="excerpt">什么是串？</span></a></div></section></div>
       
       
         <div class='copyright'>
@@ -1020,11 +1020,11 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://www.boii.xyz/posts/21668.html&title=DataStruction 0x02 线性表 - Boii&pics=https://xcdn.loli.top/gh/TCP404/Picgo/blog/thumbnail/algorithms.png&summary=什么是线性表？"
+          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://www.boii.xyz/posts/21668.html&title=DataStruction 0x02 线性表 - Boii&pics=https://cdn.jsdelivr.net/gh/TCP404/Picgo/blog/thumbnail/algorithms.png&summary=什么是线性表？"
           
           >
           
-            <img src="https://xcdn.loli.top/gh/volantis-x/cdn-org/logo/128/qq.png" class="lazyload" data-srcset="https://xcdn.loli.top/gh/volantis-x/cdn-org/logo/128/qq.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=">
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qq.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qq.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=">
           
         </a>
       
@@ -1032,11 +1032,11 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://www.boii.xyz/posts/21668.html&title=DataStruction 0x02 线性表 - Boii&pics=https://xcdn.loli.top/gh/TCP404/Picgo/blog/thumbnail/algorithms.png&summary=什么是线性表？"
+          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://www.boii.xyz/posts/21668.html&title=DataStruction 0x02 线性表 - Boii&pics=https://cdn.jsdelivr.net/gh/TCP404/Picgo/blog/thumbnail/algorithms.png&summary=什么是线性表？"
           
           >
           
-            <img src="https://xcdn.loli.top/gh/volantis-x/cdn-org/logo/128/qzone.png" class="lazyload" data-srcset="https://xcdn.loli.top/gh/volantis-x/cdn-org/logo/128/qzone.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=">
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qzone.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qzone.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=">
           
         </a>
       
@@ -1044,11 +1044,11 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="http://service.weibo.com/share/share.php?url=https://www.boii.xyz/posts/21668.html&title=DataStruction 0x02 线性表 - Boii&pics=https://xcdn.loli.top/gh/TCP404/Picgo/blog/thumbnail/algorithms.png&summary=什么是线性表？"
+          target="_blank" href="http://service.weibo.com/share/share.php?url=https://www.boii.xyz/posts/21668.html&title=DataStruction 0x02 线性表 - Boii&pics=https://cdn.jsdelivr.net/gh/TCP404/Picgo/blog/thumbnail/algorithms.png&summary=什么是线性表？"
           
           >
           
-            <img src="https://xcdn.loli.top/gh/volantis-x/cdn-org/logo/128/weibo.png" class="lazyload" data-srcset="https://xcdn.loli.top/gh/volantis-x/cdn-org/logo/128/weibo.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=">
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/weibo.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/weibo.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=">
           
         </a>
       
@@ -1440,19 +1440,19 @@ var loadCSS = function( href, before, media, attributes ){
 </script>
 <script>
   
-  loadCSS("https://xcdn.loli.top/npm/@fortawesome/fontawesome-free@5.14/css/all.min.css", window.volantis.loadcss);
+  loadCSS("https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.14/css/all.min.css", window.volantis.loadcss);
   
   
-  loadCSS("https://xcdn.loli.top/gh/l-lin/font-awesome-animation/dist/font-awesome-animation.min.css", window.volantis.loadcss);
+  loadCSS("https://cdn.jsdelivr.net/gh/l-lin/font-awesome-animation/dist/font-awesome-animation.min.css", window.volantis.loadcss);
   
   
-  loadCSS("https://xcdn.loli.top/npm/node-waves@0.7.6/dist/waves.min.css", window.volantis.loadcss);
+  loadCSS("https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.css", window.volantis.loadcss);
   
   
 </script>
 <!-- required -->
 
-<script src="https://xcdn.loli.top/npm/jquery@3.5/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5/dist/jquery.min.js"></script>
 
 <script>
   function pjax_fancybox() {
@@ -1496,7 +1496,7 @@ var loadCSS = function( href, before, media, attributes ){
   function SCload_fancybox() {
     if ($(".md .gallery").find("img").length == 0) return;
     loadCSS("https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css", document.getElementById("loadcss"));
-    loadScript('https://xcdn.loli.top/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js', pjax_fancybox)
+    loadScript('https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js', pjax_fancybox)
   };
   $(function () {
     SCload_fancybox();
@@ -1523,10 +1523,10 @@ var loadCSS = function( href, before, media, attributes ){
   
   
     
-<script src="https://xcdn.loli.top/npm/jquery-backstretch@2.1.18/jquery.backstretch.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery-backstretch@2.1.18/jquery.backstretch.min.js"></script>
 
     <script type="text/javascript">
-        var imgs=["https://xcdn.loli.top/gh/volantis-x/cdn-wallpaper-minimalist/2020/001.jpg", "https://xcdn.loli.top/gh/volantis-x/cdn-wallpaper-minimalist/2020/002.jpg", "https://xcdn.loli.top/gh/volantis-x/cdn-wallpaper-minimalist/2020/003.jpg", "https://xcdn.loli.top/gh/volantis-x/cdn-wallpaper-minimalist/2020/004.jpg", "https://xcdn.loli.top/gh/volantis-x/cdn-wallpaper-minimalist/2020/006.jpg", "https://xcdn.loli.top/gh/volantis-x/cdn-wallpaper-minimalist/2020/012.jpg", "https://xcdn.loli.top/gh/volantis-x/cdn-wallpaper-minimalist/2020/016.jpg", "https://xcdn.loli.top/gh/volantis-x/cdn-wallpaper-minimalist/2020/019.jpg", "https://xcdn.loli.top/gh/volantis-x/cdn-wallpaper-minimalist/2020/025.jpg", "https://xcdn.loli.top/gh/volantis-x/cdn-wallpaper-minimalist/2020/034.jpg", "https://xcdn.loli.top/gh/volantis-x/cdn-wallpaper-minimalist/2020/035.jpg", "https://xcdn.loli.top/gh/volantis-x/cdn-wallpaper-minimalist/2020/038.jpg", "https://xcdn.loli.top/gh/volantis-x/cdn-wallpaper-minimalist/2020/039.jpg", "https://xcdn.loli.top/gh/volantis-x/cdn-wallpaper-minimalist/2020/042.jpg", "https://xcdn.loli.top/gh/volantis-x/cdn-wallpaper-minimalist/2020/046.jpg", "https://xcdn.loli.top/gh/volantis-x/cdn-wallpaper-minimalist/2020/051.jpg", "https://xcdn.loli.top/gh/volantis-x/cdn-wallpaper-minimalist/2020/052.jpg", "https://xcdn.loli.top/gh/volantis-x/cdn-wallpaper-minimalist/2020/054.jpg", "https://xcdn.loli.top/gh/volantis-x/cdn-wallpaper-minimalist/2020/056.jpg"];
+        var imgs=["https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/001.jpg", "https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/002.jpg", "https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/003.jpg", "https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/004.jpg", "https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/006.jpg", "https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/012.jpg", "https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/016.jpg", "https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/019.jpg", "https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/025.jpg", "https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/034.jpg", "https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/035.jpg", "https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/038.jpg", "https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/039.jpg", "https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/042.jpg", "https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/046.jpg", "https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/051.jpg", "https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/052.jpg", "https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/054.jpg", "https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/056.jpg"];
         if ('true' == 'true') {
           function shuffle(arr){
             /*From countercurrent-time*/
@@ -1550,7 +1550,7 @@ var loadCSS = function( href, before, media, attributes ){
           });
         
 	  }
-	  loadScript("https://xcdn.loli.top/npm/jquery-backstretch@2.1.18/jquery.backstretch.min.js",Pjax_backstretch)
+	  loadScript("https://cdn.jsdelivr.net/npm/jquery-backstretch@2.1.18/jquery.backstretch.min.js",Pjax_backstretch)
     </script>
   
 
@@ -1811,7 +1811,7 @@ var loadCSS = function( href, before, media, attributes ){
 
 
 
-  <script defer src="https://xcdn.loli.top/npm/vanilla-lazyload@17.1.0/dist/lazyload.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@17.1.0/dist/lazyload.min.js"></script>
 <script>
   // https://www.npmjs.com/package/vanilla-lazyload
   // Set the options globally
@@ -1850,13 +1850,13 @@ var loadCSS = function( href, before, media, attributes ){
 	hoverDelay: 25
   };
 </script>
-<script defer src="https://xcdn.loli.top/gh/gijo-varghese/flying-pages@2.1.2/flying-pages.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/gh/gijo-varghese/flying-pages@2.1.2/flying-pages.min.js"></script>
 
 
 
 
 
-  <script src="https://xcdn.loli.top/npm/clipboard@2/dist/clipboard.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
 <script>
     var clipboard = new ClipboardJS('.btn-copy', {
         target: function (trigger) {
@@ -1919,7 +1919,7 @@ var loadCSS = function( href, before, media, attributes ){
 
 
    <script type="text/javascript">
-  loadScript("https://xcdn.loli.top/npm/scrollreveal@4.0.6/dist/scrollreveal.min.js")
+  loadScript("https://cdn.jsdelivr.net/npm/scrollreveal@4.0.6/dist/scrollreveal.min.js")
   function pjax_scrollrebeal() {
     ScrollReveal().reveal('.l_main .reveal', {
       distance: '32px',
@@ -1949,7 +1949,7 @@ var loadCSS = function( href, before, media, attributes ){
   APlayerController.volume = '0.1';
   loadCSS("https://cdn.jsdelivr.net/npm/aplayer@1.10/dist/APlayer.min.css", window.volantis.loadcss);
   // APlayer 需要在  MetingJS 之前加载
-  loadScript("https://xcdn.loli.top/npm/aplayer@1.10/dist/APlayer.min.js")
+  loadScript("https://cdn.jsdelivr.net/npm/aplayer@1.10/dist/APlayer.min.js")
   window.volantis.APlayerLoaded=0 // APlayer加载完成状态
   var checkAPlayer = setInterval(function () {
     if (!window.APlayer) return // APlayer加载完成？
@@ -1957,7 +1957,7 @@ var loadCSS = function( href, before, media, attributes ){
     clearInterval(checkAPlayer)
 	  if (!window.volantis.APlayerLoaded&&!window.MetingJSElement){ // APlayer只能加载一次
       window.volantis.APlayerLoaded=1 // APlayer加载完成
-      loadScript("https://xcdn.loli.top/npm/meting@2.0/dist/Meting.min.js") // 加载 MetingJS
+      loadScript("https://cdn.jsdelivr.net/npm/meting@2.0/dist/Meting.min.js") // 加载 MetingJS
 	  }
   }, 2500) // 按照网速调节差分2.5s
   // rightmenu see: layout/_partial/rightmenu.ejs
@@ -1973,7 +1973,7 @@ var loadCSS = function( href, before, media, attributes ){
 
   
   
-<script src="https://xcdn.loli.top/npm/valine@1.4/dist/Valine.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/valine@1.4/dist/Valine.min.js"></script>
 
 
 <script>
@@ -2005,11 +2005,11 @@ var loadCSS = function( href, before, media, attributes ){
       path = defaultPath || decodeURI(window.location.pathname);
     }
     var valine = new Valine();
-    valine.init(Object.assign({"js":"https://xcdn.loli.top/npm/valine@1.4/dist/Valine.min.js","path":null,"placeholder":"Say something~","appId":"ucd11s85GDQMICKSzeeGvQIt-9Nh9j0Va","appKey":"v1kYVcf5xfyA4HEVRQ5JxnY0","meta":["nick","mail","link"],"requiredFields":["nick","mail"],"enableQQ":true,"recordIP":false,"avatar":"robohash","pageSize":15,"lang":"zh-cn","highlight":true,"mathJax":true}, {
+    valine.init(Object.assign({"js":"https://cdn.jsdelivr.net/npm/valine@1.4/dist/Valine.min.js","path":null,"placeholder":"Say something~","appId":"ucd11s85GDQMICKSzeeGvQIt-9Nh9j0Va","appKey":"v1kYVcf5xfyA4HEVRQ5JxnY0","meta":["nick","mail","link"],"requiredFields":["nick","mail"],"enableQQ":true,"recordIP":false,"avatar":"robohash","pageSize":15,"lang":"zh-cn","highlight":true,"mathJax":true}, {
       el: '#valine_container',
       path: path,
       placeholder: pagePlaceholder,
-      emojiCDN: 'https://xcdn.loli.top/gh/volantis-x/cdn-emoji/valine/',
+      emojiCDN: 'https://cdn.jsdelivr.net/gh/volantis-x/cdn-emoji/valine/',
       emojiMaps: emojiMaps,
     }))
   }
@@ -2022,7 +2022,7 @@ var loadCSS = function( href, before, media, attributes ){
 
 
 
-  <script defer src="https://xcdn.loli.top/gh/volantis-x/cdn-busuanzi@2.3/js/busuanzi.pure.mini.js" data-pjax></script>
+  <script defer src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-busuanzi@2.3/js/busuanzi.pure.mini.js" data-pjax></script>
 
 
 
@@ -2034,12 +2034,12 @@ var loadCSS = function( href, before, media, attributes ){
 <!-- optional -->
 
   <script>
-const SearchServiceimagePath="https://xcdn.loli.top/gh/volantis-x/cdn-volantis@master/img/";
+const SearchServiceimagePath="https://cdn.jsdelivr.net/gh/volantis-x/cdn-volantis@master/img/";
 const ROOT =  ("/" || "/").endsWith('/') ? ("/" || "/") : ("//" || "/" );
 
 $('.input.u-search-input').one('focus',function(){
 	
-		loadScript('https://xcdn.loli.top/gh/volantis-x/cdn-volantis@3.0/js/search.js',setSearchService);
+		loadScript('https://cdn.jsdelivr.net/gh/volantis-x/cdn-volantis@3.0/js/search.js',setSearchService);
 	
 })
 
@@ -2063,7 +2063,7 @@ function setSearchService() {
 
 
   
-<script src="https://xcdn.loli.top/npm/node-waves@0.7.6/dist/waves.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.js"></script>
 
 <script type="text/javascript">
 $(function () {
