@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>命令 on Mr.Boii</title>
+    <link>https://boii.xyz/tags/%E5%91%BD%E4%BB%A4/</link>
+    <description>Recent content in 命令 on Mr.Boii</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Thu, 18 Jul 2019 08:09:37 +0000</lastBuildDate><atom:link href="https://boii.xyz/tags/%E5%91%BD%E4%BB%A4/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Git-基本操作说明</title>
+      <link>https://boii.xyz/posts/git/git-%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C%E8%AF%B4%E6%98%8E/</link>
+      <pubDate>Thu, 18 Jul 2019 08:09:37 +0000</pubDate>
+      
+      <guid>https://boii.xyz/posts/git/git-%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C%E8%AF%B4%E6%98%8E/</guid>
+      <description>&lt;p&gt;Git Yes!&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Git命令大全</title>
+      <link>https://boii.xyz/posts/git/git%E5%91%BD%E4%BB%A4%E5%A4%A7%E5%85%A8/</link>
+      <pubDate>Sun, 19 May 2019 15:15:19 +0000</pubDate>
+      
+      <guid>https://boii.xyz/posts/git/git%E5%91%BD%E4%BB%A4%E5%A4%A7%E5%85%A8/</guid>
+      <description>&lt;p&gt;One more thing&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

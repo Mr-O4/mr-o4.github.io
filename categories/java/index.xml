@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Java on Mr.Boii</title>
+    <link>https://boii.xyz/categories/java/</link>
+    <description>Recent content in Java on Mr.Boii</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Sun, 14 Jul 2019 23:19:12 +0000</lastBuildDate><atom:link href="https://boii.xyz/categories/java/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>SSM-配置文件</title>
+      <link>https://boii.xyz/posts/java/ssm/ssm-%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6/</link>
+      <pubDate>Sun, 14 Jul 2019 23:19:12 +0000</pubDate>
+      
+      <guid>https://boii.xyz/posts/java/ssm/ssm-%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6/</guid>
+      <description>先把配置文件捋清楚
+前言 SSM框架中有几个比较重要的配置文件，一开始学起来会很模糊，这里做一下整理
+ 当一个web程序启动时，Tomcat服务器最先会读取 web.xml 文件，这个文件中会启动一些配置，还会启动Spring配置文件**applicationContext.xml** 和SpringMVC配置文件 springMVC-servlet.xml 这两个文件，在运行 applicationContext.xml 的时候会启动MyBatis的配置文件 myBatis.xml，并且会调用到 jdbc.properties 和 log4J.properties 两个资源属性文件里的属性。
+ web.xml 接下来先看看最先启动的 web.xml 是都怎么配置。
+在Spring配置中和在Servlet配置中，就启动了applicationContext 和 SpringMVC-servlet 两个配置文件
+ 启动applicationContext  1 2 3 4  &amp;lt;context-param&amp;gt; &amp;lt;param-name&amp;gt;contextConfigLocation&amp;lt;/param-name&amp;gt; &amp;lt;param-value&amp;gt;classpath:applicationContext.xml&amp;lt;/param-value&amp;gt; &amp;lt;/context-param&amp;gt;    启动SpringMVC-servlet  1 2 3 4 5 6 7 8 9 10 11  &amp;lt;!--部署Servlet分发器 DispatcherServlet--&amp;gt; &amp;lt;servlet&amp;gt; &amp;lt;servlet-name&amp;gt;springer&amp;lt;/servlet-name&amp;gt; &amp;lt;servlet-class&amp;gt;org.springframework.web.servlet.DispatcherServlet&amp;lt;/servlet-class&amp;gt; &amp;lt;!--注册DispatcherServlet的配置文件--&amp;gt; &amp;lt;init-param&amp;gt; &amp;lt;param-name&amp;gt;contextConfigLocation&amp;lt;/param-name&amp;gt; &amp;lt;param-value&amp;gt;classpath:springer-servlet.xml&amp;lt;/param-value&amp;gt; &amp;lt;/init-param&amp;gt; &amp;lt;load-on-startup&amp;gt;1&amp;lt;/load-on-startup&amp;gt; &amp;lt;/servlet&amp;gt;   运行到这的时候就会调用到上述两个文件。</description>
+    </item>
+    
+    <item>
+      <title>SSM-8-Spring事务管理</title>
+      <link>https://boii.xyz/posts/java/ssm/ssm-8-spring%E4%BA%8B%E5%8A%A1%E7%AE%A1%E7%90%86/</link>
+      <pubDate>Sat, 13 Jul 2019 17:04:13 +0000</pubDate>
+      
+      <guid>https://boii.xyz/posts/java/ssm/ssm-8-spring%E4%BA%8B%E5%8A%A1%E7%AE%A1%E7%90%86/</guid>
+      <description>有了事务好管理
+前言 事务：也就是一个用户操作中，需要包含哪些具体操作。这些操作集合在一起，就是事务。这些操作必须是具体的，必要的，不可分割的。要么全部完成，要么全部失败。
+比如你给你朋友转账1000块的操作，分成几个步骤就是：
+ 自己的账户扣1000块钱 对方的账户加1000块钱 把这笔转账行为记录在服务器中  这三个步骤就具备了原子性，一致性，隔离性，持久性。
+原子性：**要么全部完成，有一个完成不了就全部回滚。**比如自己的账户扣钱成功，但是对方的账户加钱失败，那么就回滚，自己的账户的钱恢复到转账钱的余额。
+一致性： **一致性代表了底层数据存储的完整性。**例如你转账给朋友1000块，那你的账户要扣1000块，你朋友的账户得增加1000块，如果只增加了500块，那就是不一致。
+隔离性：**隔离性意味着事务必须在不干扰其他进程或事务的前提下独立执行。**也就是，在事务或工作单元执行完毕之前，其所访问的数据不能受系统其他部分的影响。比如你在给朋友转账的时候，别人给你转账是转不了的。因为要确保你的账户的隔离。
+持久性：**持久性表示在某个事务的执行过程中，对数据所作的所有改动都必须在事务成功结束前保存至某种物理存储设备。**转账后要把这次转账记录在服务器里，不管过了多久都可以查。
+事务的三个主要方法：开启事务 BeginTranscation()，提交 commit() ，回滚 rollback()</description>
+    </item>
+    
+    <item>
+      <title>SSM-7-统一异常处理</title>
+      <link>https://boii.xyz/posts/java/ssm/ssm-7-%E7%BB%9F%E4%B8%80%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86/</link>
+      <pubDate>Thu, 11 Jul 2019 20:55:10 +0000</pubDate>
+      
+      <guid>https://boii.xyz/posts/java/ssm/ssm-7-%E7%BB%9F%E4%B8%80%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86/</guid>
+      <description>遇到异常不要慌～
+摘要 程序运行过程中总会遇到一些可预知的，不可预知的异常。如果不对这些异常进行捕捉和处理，就会导致程序崩溃、停止运行、闪退等诸多令人体验极差的现象。如果对这些异常一个一个单独处理，则代码显得很臃肿，耦合度高（独立性差），所以要用统一异常处理对所有的代码进行异常处理
+SpringMVC处理异常有三种方式：
+ 简单异常处理SimpleMappingExceptionResolver 实现HandlerExceptionResolver接口自定义异常 使用@ExceptionHandler注解实现异常处理  在程序中可能出现异常的地方进行捕捉，程序发生异常被捕捉到后，就会调用我们编写的统一异常处理类进行处理
+效果图 使用步骤 由于我们太完美了程序暂时没有什么异常，所以我们得自己制造点异常。
+我们先做一个列表，把控制层，业务层，模型层的各种异常集中链接在这里。
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19  &amp;lt;%@ page contentType=&amp;#34;text/html;charset=UTF-8&amp;#34; %&amp;gt; &amp;lt;%@ page isELIgnored=&amp;#34;false&amp;#34; %&amp;gt; &amp;lt;% String path = request.getContextPath(); String basePath = request.getScheme() + &amp;#34;://&amp;#34; + request.getServerName() + &amp;#34;:&amp;#34; + request.getServerPort() + path + &amp;#34;/&amp;#34;; %&amp;gt; &amp;lt;html&amp;gt; &amp;lt;head&amp;gt; &amp;lt;base href=&amp;#34;&amp;lt;%=basePath%&amp;gt;&amp;#34;/&amp;gt; &amp;lt;title&amp;gt;Exception&amp;lt;/title&amp;gt; &amp;lt;/head&amp;gt; &amp;lt;body&amp;gt; &amp;lt;div id=&amp;#34;body&amp;#34;&amp;gt; &amp;lt;h3&amp;gt;&amp;lt;a href=&amp;#34;db&amp;#34;&amp;gt;控制器中数据库异常&amp;lt;/a&amp;gt;&amp;lt;/h3&amp;gt; &amp;lt;h3&amp;gt;&amp;lt;a href=&amp;#34;my&amp;#34;&amp;gt;控制器中自定义异常&amp;lt;/a&amp;gt;&amp;lt;/h3&amp;gt; &amp;lt;h3&amp;gt;&amp;lt;a href=&amp;#34;no&amp;#34;&amp;gt;控制器中未知异常&amp;lt;/a&amp;gt;&amp;lt;/h3&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;/body&amp;gt; &amp;lt;/html&amp;gt;   如下图：</description>
+    </item>
+    
+    <item>
+      <title>SSM-6-上传和下载</title>
+      <link>https://boii.xyz/posts/java/ssm/ssm-6-%E4%B8%8A%E4%BC%A0%E5%92%8C%E4%B8%8B%E8%BD%BD/</link>
+      <pubDate>Wed, 10 Jul 2019 01:04:18 +0000</pubDate>
+      
+      <guid>https://boii.xyz/posts/java/ssm/ssm-6-%E4%B8%8A%E4%BC%A0%E5%92%8C%E4%B8%8B%E8%BD%BD/</guid>
+      <description>来了，上下都来了～
+摘要 文件上传和下载是web经常要面对的问题。
+上传的方式有多种，包括：
+ 使用文件流手工编程上传 基于commons-fileupload组件的文件上传 基于Servlet3及以上版本文件上传  下载经常有两种方式：
+ 通过超链接实现下载，但是会暴露下载文件的真实位置，并且只能下载存放在web应用所在的目录下的文件。 利用程序编码实现下载，可以增加安全访问控制，还可以从任意位置提供下载的数据，比如数据库。  效果图 上传 选择文件前
+选择文件后
+上传文件后
+下载 可以被下载的文件列表
+选择文件存储位置
+使用步骤 导入jar包 SpringMVC框架的文件上传是基于commons-fileupload组件，所以需要commons-fileupload和commons-io的jar包。
+maven项目：配置pom.xml
+1 2 3 4 5 6 7 8 9 10 11  &amp;lt;!--上传下载--&amp;gt; &amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;commons-fileupload&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;commons-fileupload&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;1.4&amp;lt;/version&amp;gt; &amp;lt;/dependency&amp;gt; &amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;commons-io&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;commons-io&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;2.6&amp;lt;/version&amp;gt; &amp;lt;/dependency&amp;gt;   非maven项目：将下载好的 commons-fileupload 和 commons-io 的jar放到 webapps\WEB-INF\lib 目录下
+单文件上传 1. 编写领域模型 文件上传后保存在服务器里是一个对象，这个对象我们得定义它的属性。文件上传的时候的文件描述（备注），文件的创建时间等等，最重要的文件本身的类型是 MultipartFile
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20  public class FileDomain { private String description; private MultipartFile myFile; public String getDescription() { return description; } public void setDescription(String description) { this.</description>
+    </item>
+    
+    <item>
+      <title>SSM-5-拦截器</title>
+      <link>https://boii.xyz/posts/java/ssm/ssm-5-%E6%8B%A6%E6%88%AA%E5%99%A8/</link>
+      <pubDate>Sun, 07 Jul 2019 12:04:18 +0000</pubDate>
+      
+      <guid>https://boii.xyz/posts/java/ssm/ssm-5-%E6%8B%A6%E6%88%AA%E5%99%A8/</guid>
+      <description>拦截器其实就是一种中间件
+摘要 拦截器 Interceptor 主要用于在 请求到达控制器之前进行验证 ，有点类似过滤器。主要用于拦截用户请求并做出相应的处理。通常应用在权限验证，记录请求信息的日志，判断用户是否登录等功能上。
+主要的实现方法有两种：
+ 通过实现 HandlerInterceptor接口 或继承 HandlerInterceptor接口 的实现类来定义。 通过实现 WebRequestInterceptor接口 或继承WebRequestInterceptor接口 的实现类来定义。  效果图 拦截器的拦截时间点在这里面分三种：
+ 请求到达控制器之前调用，比如点击我的购物车的时候，判断用户有没有登录先 控制器调用之后，返回视图之前。 解析试图之后。比如访问了XXX的QQ空间，就在视图解析完后记录到访问记录中  &amp;gt;_
+这里的案例只是在这些方法里打印了一些话来表示出拦截器在什么时间点做了什么
+使用步骤 1. 配置 先在springmvc-servlet.xml中配置拦截器。
+1 2 3  &amp;lt;mvc:interceptors&amp;gt; &amp;lt;bean class=&amp;#34;interceptor.AllInterceptor&amp;#34;/&amp;gt; &amp;lt;/mvc:interceptors&amp;gt;   这样的配置方式默认对所有请求拦截，也就是任何请求要到达控制器之前都会经过拦截器。
+这种方式的话就是拦截所有的请求，但是请求如果是到/abc这个控制器的话就例外，不拦截。
+1 2 3 4 5 6 7  &amp;lt;mvc:interceptors&amp;gt; &amp;lt;mvc:interceptor&amp;gt; &amp;lt;mvc:mapping path=&amp;#34;/**&amp;#34;/&amp;gt; &amp;lt;mvc:exclude-mapping path=&amp;#34;/abc&amp;#34;/&amp;gt; &amp;lt;bean class=&amp;#34;interceptor.Interceptor1&amp;#34;/&amp;gt; &amp;lt;/mvc:interceptor&amp;gt; &amp;lt;/mvc:interceptors&amp;gt;   这种呢就是对发送到/6这个控制器的请求，进行指定的拦截器拦截。
+1 2 3 4 5 6  &amp;lt;mvc:interceptors&amp;gt; &amp;lt;mvc:interceptor&amp;gt; &amp;lt;mvc:mapping path=&amp;#34;/6&amp;#34;/&amp;gt; &amp;lt;bean class=&amp;#34;interceptor.</description>
+    </item>
+    
+    <item>
+      <title>SSM-4-数据绑定</title>
+      <link>https://boii.xyz/posts/java/ssm/ssm-4-%E6%95%B0%E6%8D%AE%E7%BB%91%E5%AE%9A/</link>
+      <pubDate>Sun, 07 Jul 2019 10:04:18 +0000</pubDate>
+      
+      <guid>https://boii.xyz/posts/java/ssm/ssm-4-%E6%95%B0%E6%8D%AE%E7%BB%91%E5%AE%9A/</guid>
+      <description>&lt;p&gt;先把数据绑定起来&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Java-About-Hash</title>
+      <link>https://boii.xyz/posts/java/java-about-hash/</link>
+      <pubDate>Sun, 09 Jun 2019 01:26:48 +0000</pubDate>
+      
+      <guid>https://boii.xyz/posts/java/java-about-hash/</guid>
+      <description>Hash 是一种很神奇的数据结构
+HashTable HashTable 散列表 哈希表： 是一种数据结构，它提供快速的插入和查找操作，不管表中有多少数据，插入删除和查找的时间都接近O(1)
+**优点：**HashTable其实是基于数组的，所以在查询方面非常的快，同时它不像普通数组那样紧密排列，在数值未满的时候所有的值其实是散部在数组中的某个位置上的，所以在插入和删除的时候不用像普通数组一样让余下的值一个个的挪。
+**缺点：**同时也因为它的基于数组的，所以创建以后难以扩展，当HashTable被基本填满的时候，性能严重下降，而且不能顺序遍历。
+一个输入传进来的时候会经过散列函数，计算出一个值，这个值就是这个输入在HashTable中的位置，称为HashCode 哈希值 散列值。
+当HashTable中的值还不多的时候各种操作的效率是非常高的，但是HashTable快满的时候各种操作的效率就开始变低了
+开放寻址法 线性探测方法  比如一个HashTable的长度是8，现在只剩下 ~6~ 这个位置是空的
+而一个输入经过散列函数计算之后得到的结果是 ~7~ ，一看 ~7~ 上面有人占了，怎么办呢？
+往下找空位咯，~7~ 下面是 ~0~ ，有人了，下一个 ~1~ ，有人了，下一个 ~2~ ，有人了&amp;hellip;下一个 ~6~ ，耶没人，上去！
+这样几乎遍历了一整个数组，效率是非常低的，HashTable小的时候还能忍受，如果HashTable长度是2000呢?20000呢？
+ 上述的方法其实就是当散列函数计算出来的值上面已经有值的时候的解决方法之一，开放寻址法中的线性探测，往下找空位，找到进填进去。最坏的情况下就是几乎遍历整个数组。
+二次探测方法 另一种的思路有那么点像二分查找法，叫做二次探测方法
+ 比如表中只有 ~3~ 是有空位的，其余都是满的
+而一个输入经过散列函数计算之后得到的结果是 ~7~，一看 ~7~ 上面有人了，怎么办呢？
+CurrentCode + 0，CurrentCode + 1^2^ ，CurrentCode - 1 ^2^，CurrentCode + 2^2^，CurrentCode - 2^2^，……
+7不行就 + 1^2^ = 8，8还是不行，那就7 - 1^2^ = 6，6还是不行，那就7 - 2^2^ = 3，3可以，上去！</description>
+    </item>
+    
+    <item>
+      <title>Java-反射</title>
+      <link>https://boii.xyz/posts/java/java-%E5%8F%8D%E5%B0%84/</link>
+      <pubDate>Sun, 09 Jun 2019 00:58:48 +0000</pubDate>
+      
+      <guid>https://boii.xyz/posts/java/java-%E5%8F%8D%E5%B0%84/</guid>
+      <description>Java 神器：反射
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19  Person p = new Person(); /**获取*/ Class&amp;lt;?&amp;gt; clazz = p.getClass(); // 得知道类对象 Class&amp;lt;?&amp;gt; clazz = Person.class;	//得知道类名 Class&amp;lt;?&amp;gt; clazz = Class.forName(&amp;#34;com.tcp404.Person&amp;#34;);//得知道类的全路径名  /** 获取方法 */ Method method = clazz.getDeclaredMethod(&amp;#34;方法名&amp;#34;, new Class(){[参数类型.class, 参数类型.class, ...]}); Methods[] methods = clazz.getDeclaredMethods(); /** 获取属性 */ Field field = clazz.getDeclaredField(&amp;#34;属性名字&amp;#34;); Field[] fields = clazz.getDeclaredFields(); /** 获取构造器 */ Constructor&amp;lt;?</description>
+    </item>
+    
+    <item>
+      <title>几句话区分并行和并发</title>
+      <link>https://boii.xyz/posts/note/%E5%87%A0%E5%8F%A5%E8%AF%9D%E5%8C%BA%E5%88%86%E5%B9%B6%E8%A1%8C%E5%92%8C%E5%B9%B6%E5%8F%91/</link>
+      <pubDate>Wed, 15 May 2019 10:04:18 +0000</pubDate>
+      
+      <guid>https://boii.xyz/posts/note/%E5%87%A0%E5%8F%A5%E8%AF%9D%E5%8C%BA%E5%88%86%E5%B9%B6%E8%A1%8C%E5%92%8C%E5%B9%B6%E5%8F%91/</guid>
+      <description>&lt;p&gt;吃饭和打电话你选择哪个？&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

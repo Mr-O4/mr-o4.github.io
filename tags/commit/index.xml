@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>commit on Mr.Boii</title>
+    <link>https://boii.xyz/tags/commit/</link>
+    <description>Recent content in commit on Mr.Boii</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Tue, 14 Sep 2021 16:34:15 +0000</lastBuildDate><atom:link href="https://boii.xyz/tags/commit/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Git-commit message 编写指南</title>
+      <link>https://boii.xyz/posts/git/git-commit-message-%E7%BC%96%E5%86%99%E6%8C%87%E5%8D%97/</link>
+      <pubDate>Tue, 14 Sep 2021 16:34:15 +0000</pubDate>
+      
+      <guid>https://boii.xyz/posts/git/git-commit-message-%E7%BC%96%E5%86%99%E6%8C%87%E5%8D%97/</guid>
+      <description>&lt;p&gt;commit message 不要乱写&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

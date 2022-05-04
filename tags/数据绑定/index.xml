@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>数据绑定 on Mr.Boii</title>
+    <link>https://boii.xyz/tags/%E6%95%B0%E6%8D%AE%E7%BB%91%E5%AE%9A/</link>
+    <description>Recent content in 数据绑定 on Mr.Boii</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Sun, 07 Jul 2019 10:04:18 +0000</lastBuildDate><atom:link href="https://boii.xyz/tags/%E6%95%B0%E6%8D%AE%E7%BB%91%E5%AE%9A/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>SSM-4-数据绑定</title>
+      <link>https://boii.xyz/posts/java/ssm/ssm-4-%E6%95%B0%E6%8D%AE%E7%BB%91%E5%AE%9A/</link>
+      <pubDate>Sun, 07 Jul 2019 10:04:18 +0000</pubDate>
+      
+      <guid>https://boii.xyz/posts/java/ssm/ssm-4-%E6%95%B0%E6%8D%AE%E7%BB%91%E5%AE%9A/</guid>
+      <description>&lt;p&gt;先把数据绑定起来&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

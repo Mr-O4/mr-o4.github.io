@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>git on Mr.Boii</title>
+    <link>https://boii.xyz/tags/git/</link>
+    <description>Recent content in git on Mr.Boii</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Tue, 14 Sep 2021 16:34:15 +0000</lastBuildDate><atom:link href="https://boii.xyz/tags/git/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Git-commit message 编写指南</title>
+      <link>https://boii.xyz/posts/git/git-commit-message-%E7%BC%96%E5%86%99%E6%8C%87%E5%8D%97/</link>
+      <pubDate>Tue, 14 Sep 2021 16:34:15 +0000</pubDate>
+      
+      <guid>https://boii.xyz/posts/git/git-commit-message-%E7%BC%96%E5%86%99%E6%8C%87%E5%8D%97/</guid>
+      <description>&lt;p&gt;commit message 不要乱写&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Hexo-文件下载功能</title>
+      <link>https://boii.xyz/posts/hexo/hexo-%E6%96%87%E4%BB%B6%E4%B8%8B%E8%BD%BD%E5%8A%9F%E8%83%BD/</link>
+      <pubDate>Sun, 23 Aug 2020 16:00:35 +0000</pubDate>
+      
+      <guid>https://boii.xyz/posts/hexo/hexo-%E6%96%87%E4%BB%B6%E4%B8%8B%E8%BD%BD%E5%8A%9F%E8%83%BD/</guid>
+      <description>&lt;p&gt;So easy~&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Git-基本操作说明</title>
+      <link>https://boii.xyz/posts/git/git-%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C%E8%AF%B4%E6%98%8E/</link>
+      <pubDate>Thu, 18 Jul 2019 08:09:37 +0000</pubDate>
+      
+      <guid>https://boii.xyz/posts/git/git-%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C%E8%AF%B4%E6%98%8E/</guid>
+      <description>&lt;p&gt;Git Yes!&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Git命令大全</title>
+      <link>https://boii.xyz/posts/git/git%E5%91%BD%E4%BB%A4%E5%A4%A7%E5%85%A8/</link>
+      <pubDate>Sun, 19 May 2019 15:15:19 +0000</pubDate>
+      
+      <guid>https://boii.xyz/posts/git/git%E5%91%BD%E4%BB%A4%E5%A4%A7%E5%85%A8/</guid>
+      <description>&lt;p&gt;One more thing&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>多端同步管理Hexo博客</title>
+      <link>https://boii.xyz/posts/hexo/%E5%A4%9A%E7%AB%AF%E5%90%8C%E6%AD%A5%E7%AE%A1%E7%90%86hexo%E5%8D%9A%E5%AE%A2/</link>
+      <pubDate>Sat, 18 May 2019 11:37:35 +0000</pubDate>
+      
+      <guid>https://boii.xyz/posts/hexo/%E5%A4%9A%E7%AB%AF%E5%90%8C%E6%AD%A5%E7%AE%A1%E7%90%86hexo%E5%8D%9A%E5%AE%A2/</guid>
+      <description>&lt;p&gt;多端管理其实很简单。&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

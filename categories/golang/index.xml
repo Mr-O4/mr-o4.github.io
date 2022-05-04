@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Golang on Mr.Boii</title>
+    <link>https://boii.xyz/categories/golang/</link>
+    <description>Recent content in Golang on Mr.Boii</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Sat, 08 Jan 2022 01:50:48 +0800</lastBuildDate><atom:link href="https://boii.xyz/categories/golang/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Golang [技术启发] 安全函数 SaveFunc</title>
+      <link>https://boii.xyz/posts/go/golang-%E6%8A%80%E6%9C%AF%E5%90%AF%E5%8F%91-savefunc/</link>
+      <pubDate>Sat, 08 Jan 2022 01:50:48 +0800</pubDate>
+      
+      <guid>https://boii.xyz/posts/go/golang-%E6%8A%80%E6%9C%AF%E5%90%AF%E5%8F%91-savefunc/</guid>
+      <description>&lt;p&gt;安全地执行不安全的函数&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Golang [深入理解] 10-实现抽象类</title>
+      <link>https://boii.xyz/posts/go/golang-%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3-10-%E5%AE%9E%E7%8E%B0%E6%8A%BD%E8%B1%A1%E7%B1%BB/</link>
+      <pubDate>Tue, 14 Sep 2021 15:10:01 +0000</pubDate>
+      
+      <guid>https://boii.xyz/posts/go/golang-%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3-10-%E5%AE%9E%E7%8E%B0%E6%8A%BD%E8%B1%A1%E7%B1%BB/</guid>
+      <description>&lt;p&gt;虽然不推荐，但免不了要用到。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Golang [深入理解] 9-值实现 VS 指针实现</title>
+      <link>https://boii.xyz/posts/go/golang-%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3-9-%E5%80%BC%E5%AE%9E%E7%8E%B0-vs-%E6%8C%87%E9%92%88%E5%AE%9E%E7%8E%B0/</link>
+      <pubDate>Tue, 14 Sep 2021 15:09:50 +0000</pubDate>
+      
+      <guid>https://boii.xyz/posts/go/golang-%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3-9-%E5%80%BC%E5%AE%9E%E7%8E%B0-vs-%E6%8C%87%E9%92%88%E5%AE%9E%E7%8E%B0/</guid>
+      <description>&lt;p&gt;都是实现，有啥区别？&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Golang [深入理解] 7-关于 nil</title>
+      <link>https://boii.xyz/posts/go/golang-%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3-7-%E5%85%B3%E4%BA%8E-nil/</link>
+      <pubDate>Tue, 14 Sep 2021 15:09:02 +0000</pubDate>
+      
+      <guid>https://boii.xyz/posts/go/golang-%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3-7-%E5%85%B3%E4%BA%8E-nil/</guid>
+      <description>&lt;p&gt;关于你可能知道的 nil 的使用&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Golang [深入理解] 4-string 实现原理</title>
+      <link>https://boii.xyz/posts/go/golang-%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3-4-string-%E5%AE%9E%E7%8E%B0%E5%8E%9F%E7%90%86/</link>
+      <pubDate>Tue, 14 Sep 2021 15:08:20 +0000</pubDate>
+      
+      <guid>https://boii.xyz/posts/go/golang-%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3-4-string-%E5%AE%9E%E7%8E%B0%E5%8E%9F%E7%90%86/</guid>
+      <description>&lt;p&gt;关于你可能知道的 string&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Golang [深入理解] 2-slice 实现原理</title>
+      <link>https://boii.xyz/posts/go/golang-%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3-2-slice-%E5%AE%9E%E7%8E%B0%E5%8E%9F%E7%90%86/</link>
+      <pubDate>Tue, 14 Sep 2021 15:07:18 +0000</pubDate>
+      
+      <guid>https://boii.xyz/posts/go/golang-%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3-2-slice-%E5%AE%9E%E7%8E%B0%E5%8E%9F%E7%90%86/</guid>
+      <description>&lt;p&gt;关于你可能知道的 slice&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Golang [深入理解] 1-for &amp; range</title>
+      <link>https://boii.xyz/posts/go/golang-%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3-1-for-range/</link>
+      <pubDate>Tue, 14 Sep 2021 15:06:47 +0000</pubDate>
+      
+      <guid>https://boii.xyz/posts/go/golang-%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3-1-for-range/</guid>
+      <description>&lt;p&gt;两种遍历方式的使用与区别&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

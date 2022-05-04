@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>值实现 on Mr.Boii</title>
+    <link>https://boii.xyz/tags/%E5%80%BC%E5%AE%9E%E7%8E%B0/</link>
+    <description>Recent content in 值实现 on Mr.Boii</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Tue, 14 Sep 2021 15:09:50 +0000</lastBuildDate><atom:link href="https://boii.xyz/tags/%E5%80%BC%E5%AE%9E%E7%8E%B0/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Golang [深入理解] 9-值实现 VS 指针实现</title>
+      <link>https://boii.xyz/posts/go/golang-%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3-9-%E5%80%BC%E5%AE%9E%E7%8E%B0-vs-%E6%8C%87%E9%92%88%E5%AE%9E%E7%8E%B0/</link>
+      <pubDate>Tue, 14 Sep 2021 15:09:50 +0000</pubDate>
+      
+      <guid>https://boii.xyz/posts/go/golang-%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3-9-%E5%80%BC%E5%AE%9E%E7%8E%B0-vs-%E6%8C%87%E9%92%88%E5%AE%9E%E7%8E%B0/</guid>
+      <description>&lt;p&gt;都是实现，有啥区别？&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

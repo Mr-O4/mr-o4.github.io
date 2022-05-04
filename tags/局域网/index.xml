@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>局域网 on Mr.Boii</title>
+    <link>https://boii.xyz/tags/%E5%B1%80%E5%9F%9F%E7%BD%91/</link>
+    <description>Recent content in 局域网 on Mr.Boii</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Mon, 16 Aug 2021 15:57:17 +0000</lastBuildDate><atom:link href="https://boii.xyz/tags/%E5%B1%80%E5%9F%9F%E7%BD%91/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>OneTiny 开发日记4-2021-8-16</title>
+      <link>https://boii.xyz/posts/other/onetiny-%E5%BC%80%E5%8F%91%E6%97%A5%E8%AE%B04-2021-8-16/</link>
+      <pubDate>Mon, 16 Aug 2021 15:57:17 +0000</pubDate>
+      
+      <guid>https://boii.xyz/posts/other/onetiny-%E5%BC%80%E5%8F%91%E6%97%A5%E8%AE%B04-2021-8-16/</guid>
+      <description>&lt;p&gt;基础不牢，地动山摇&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>OneTiny 开发日记3-2021-6-29</title>
+      <link>https://boii.xyz/posts/other/onetiny-%E5%BC%80%E5%8F%91%E6%97%A5%E8%AE%B03-2021-6-29/</link>
+      <pubDate>Tue, 29 Jun 2021 15:58:28 +0000</pubDate>
+      
+      <guid>https://boii.xyz/posts/other/onetiny-%E5%BC%80%E5%8F%91%E6%97%A5%E8%AE%B03-2021-6-29/</guid>
+      <description>新增访问层级限制
+更新功能没写成，还是没想好怎么处理整个流程。
+摆在面前有两个问题：
+ 下载下来的新版本（可执行文件）放在哪 如何关闭自己然后启动新版本  所以暂时搁置，转头去实现访问层级限制功能。
+使用中间件 这次把中间件用上了，还把之前对浏览器的默认行为：请求 favicon.ico 进行拦截的部分放在单独的中间件里，并且应用到全局。
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20  // Start 函数负责启动 gin 实例，开始提供 HTTP 服务 func Start() { gin.SetMode(gin.ReleaseMode) r := gin.New() r.Use(gin.LoggerWithWriter(config.Output),gin.Recovery()) // 中间件  r.Use(middleware.InterceptICO) r.Use(middleware.CheckLevel) r.NoRoute(controller.NotFound) r.GET(&amp;#34;/*filename&amp;#34;, controller.Handler) r.POST(&amp;#34;/upload&amp;#34;, controller.Upload) printInfo() err := r.Run(&amp;#34;:&amp;#34; + config.Port) if _, ok := err.(*net.OpError); ok { log.</description>
+    </item>
+    
+    <item>
+      <title>OneTiny 开发日记2-2021-6-25</title>
+      <link>https://boii.xyz/posts/other/onetiny-%E5%BC%80%E5%8F%91%E6%97%A5%E8%AE%B02-2021-6-25/</link>
+      <pubDate>Fri, 25 Jun 2021 12:57:42 +0000</pubDate>
+      
+      <guid>https://boii.xyz/posts/other/onetiny-%E5%BC%80%E5%8F%91%E6%97%A5%E8%AE%B02-2021-6-25/</guid>
+      <description>&lt;p&gt;第一次修改别人的东西哈哈&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>OneTiny 开发日记1-2021-6-22</title>
+      <link>https://boii.xyz/posts/other/onetiny-%E5%BC%80%E5%8F%91%E6%97%A5%E8%AE%B01-2021-6-22/</link>
+      <pubDate>Tue, 22 Jun 2021 08:30:47 +0000</pubDate>
+      
+      <guid>https://boii.xyz/posts/other/onetiny-%E5%BC%80%E5%8F%91%E6%97%A5%E8%AE%B01-2021-6-22/</guid>
+      <description>&lt;p&gt;开发 OneTiny 时的一点思路&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

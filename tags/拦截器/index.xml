@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>拦截器 on Mr.Boii</title>
+    <link>https://boii.xyz/tags/%E6%8B%A6%E6%88%AA%E5%99%A8/</link>
+    <description>Recent content in 拦截器 on Mr.Boii</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Sun, 07 Jul 2019 12:04:18 +0000</lastBuildDate><atom:link href="https://boii.xyz/tags/%E6%8B%A6%E6%88%AA%E5%99%A8/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>SSM-5-拦截器</title>
+      <link>https://boii.xyz/posts/java/ssm/ssm-5-%E6%8B%A6%E6%88%AA%E5%99%A8/</link>
+      <pubDate>Sun, 07 Jul 2019 12:04:18 +0000</pubDate>
+      
+      <guid>https://boii.xyz/posts/java/ssm/ssm-5-%E6%8B%A6%E6%88%AA%E5%99%A8/</guid>
+      <description>拦截器其实就是一种中间件
+摘要 拦截器 Interceptor 主要用于在 请求到达控制器之前进行验证 ，有点类似过滤器。主要用于拦截用户请求并做出相应的处理。通常应用在权限验证，记录请求信息的日志，判断用户是否登录等功能上。
+主要的实现方法有两种：
+ 通过实现 HandlerInterceptor接口 或继承 HandlerInterceptor接口 的实现类来定义。 通过实现 WebRequestInterceptor接口 或继承WebRequestInterceptor接口 的实现类来定义。  效果图 拦截器的拦截时间点在这里面分三种：
+ 请求到达控制器之前调用，比如点击我的购物车的时候，判断用户有没有登录先 控制器调用之后，返回视图之前。 解析试图之后。比如访问了XXX的QQ空间，就在视图解析完后记录到访问记录中  &amp;gt;_
+这里的案例只是在这些方法里打印了一些话来表示出拦截器在什么时间点做了什么
+使用步骤 1. 配置 先在springmvc-servlet.xml中配置拦截器。
+1 2 3  &amp;lt;mvc:interceptors&amp;gt; &amp;lt;bean class=&amp;#34;interceptor.AllInterceptor&amp;#34;/&amp;gt; &amp;lt;/mvc:interceptors&amp;gt;   这样的配置方式默认对所有请求拦截，也就是任何请求要到达控制器之前都会经过拦截器。
+这种方式的话就是拦截所有的请求，但是请求如果是到/abc这个控制器的话就例外，不拦截。
+1 2 3 4 5 6 7  &amp;lt;mvc:interceptors&amp;gt; &amp;lt;mvc:interceptor&amp;gt; &amp;lt;mvc:mapping path=&amp;#34;/**&amp;#34;/&amp;gt; &amp;lt;mvc:exclude-mapping path=&amp;#34;/abc&amp;#34;/&amp;gt; &amp;lt;bean class=&amp;#34;interceptor.Interceptor1&amp;#34;/&amp;gt; &amp;lt;/mvc:interceptor&amp;gt; &amp;lt;/mvc:interceptors&amp;gt;   这种呢就是对发送到/6这个控制器的请求，进行指定的拦截器拦截。
+1 2 3 4 5 6  &amp;lt;mvc:interceptors&amp;gt; &amp;lt;mvc:interceptor&amp;gt; &amp;lt;mvc:mapping path=&amp;#34;/6&amp;#34;/&amp;gt; &amp;lt;bean class=&amp;#34;interceptor.</description>
+    </item>
+    
+  </channel>
+</rss>

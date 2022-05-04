@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>SSM配置 on Mr.Boii</title>
+    <link>https://boii.xyz/tags/ssm%E9%85%8D%E7%BD%AE/</link>
+    <description>Recent content in SSM配置 on Mr.Boii</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Sun, 14 Jul 2019 23:19:12 +0000</lastBuildDate><atom:link href="https://boii.xyz/tags/ssm%E9%85%8D%E7%BD%AE/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>SSM-配置文件</title>
+      <link>https://boii.xyz/posts/java/ssm/ssm-%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6/</link>
+      <pubDate>Sun, 14 Jul 2019 23:19:12 +0000</pubDate>
+      
+      <guid>https://boii.xyz/posts/java/ssm/ssm-%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6/</guid>
+      <description>先把配置文件捋清楚
+前言 SSM框架中有几个比较重要的配置文件，一开始学起来会很模糊，这里做一下整理
+ 当一个web程序启动时，Tomcat服务器最先会读取 web.xml 文件，这个文件中会启动一些配置，还会启动Spring配置文件**applicationContext.xml** 和SpringMVC配置文件 springMVC-servlet.xml 这两个文件，在运行 applicationContext.xml 的时候会启动MyBatis的配置文件 myBatis.xml，并且会调用到 jdbc.properties 和 log4J.properties 两个资源属性文件里的属性。
+ web.xml 接下来先看看最先启动的 web.xml 是都怎么配置。
+在Spring配置中和在Servlet配置中，就启动了applicationContext 和 SpringMVC-servlet 两个配置文件
+ 启动applicationContext  1 2 3 4  &amp;lt;context-param&amp;gt; &amp;lt;param-name&amp;gt;contextConfigLocation&amp;lt;/param-name&amp;gt; &amp;lt;param-value&amp;gt;classpath:applicationContext.xml&amp;lt;/param-value&amp;gt; &amp;lt;/context-param&amp;gt;    启动SpringMVC-servlet  1 2 3 4 5 6 7 8 9 10 11  &amp;lt;!--部署Servlet分发器 DispatcherServlet--&amp;gt; &amp;lt;servlet&amp;gt; &amp;lt;servlet-name&amp;gt;springer&amp;lt;/servlet-name&amp;gt; &amp;lt;servlet-class&amp;gt;org.springframework.web.servlet.DispatcherServlet&amp;lt;/servlet-class&amp;gt; &amp;lt;!--注册DispatcherServlet的配置文件--&amp;gt; &amp;lt;init-param&amp;gt; &amp;lt;param-name&amp;gt;contextConfigLocation&amp;lt;/param-name&amp;gt; &amp;lt;param-value&amp;gt;classpath:springer-servlet.xml&amp;lt;/param-value&amp;gt; &amp;lt;/init-param&amp;gt; &amp;lt;load-on-startup&amp;gt;1&amp;lt;/load-on-startup&amp;gt; &amp;lt;/servlet&amp;gt;   运行到这的时候就会调用到上述两个文件。</description>
+    </item>
+    
+  </channel>
+</rss>

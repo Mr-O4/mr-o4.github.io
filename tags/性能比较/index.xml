@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>性能比较 on Mr.Boii</title>
+    <link>https://boii.xyz/tags/%E6%80%A7%E8%83%BD%E6%AF%94%E8%BE%83/</link>
+    <description>Recent content in 性能比较 on Mr.Boii</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Tue, 14 Sep 2021 15:06:47 +0000</lastBuildDate><atom:link href="https://boii.xyz/tags/%E6%80%A7%E8%83%BD%E6%AF%94%E8%BE%83/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Golang [深入理解] 1-for &amp; range</title>
+      <link>https://boii.xyz/posts/go/golang-%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3-1-for-range/</link>
+      <pubDate>Tue, 14 Sep 2021 15:06:47 +0000</pubDate>
+      
+      <guid>https://boii.xyz/posts/go/golang-%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3-1-for-range/</guid>
+      <description>&lt;p&gt;两种遍历方式的使用与区别&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

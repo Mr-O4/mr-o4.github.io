@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>抽象类 on Mr.Boii</title>
+    <link>https://boii.xyz/tags/%E6%8A%BD%E8%B1%A1%E7%B1%BB/</link>
+    <description>Recent content in 抽象类 on Mr.Boii</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Tue, 14 Sep 2021 15:10:01 +0000</lastBuildDate><atom:link href="https://boii.xyz/tags/%E6%8A%BD%E8%B1%A1%E7%B1%BB/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Golang [深入理解] 10-实现抽象类</title>
+      <link>https://boii.xyz/posts/go/golang-%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3-10-%E5%AE%9E%E7%8E%B0%E6%8A%BD%E8%B1%A1%E7%B1%BB/</link>
+      <pubDate>Tue, 14 Sep 2021 15:10:01 +0000</pubDate>
+      
+      <guid>https://boii.xyz/posts/go/golang-%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3-10-%E5%AE%9E%E7%8E%B0%E6%8A%BD%E8%B1%A1%E7%B1%BB/</guid>
+      <description>&lt;p&gt;虽然不推荐，但免不了要用到。&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

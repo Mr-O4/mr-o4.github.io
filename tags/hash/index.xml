@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Hash on Mr.Boii</title>
+    <link>https://boii.xyz/tags/hash/</link>
+    <description>Recent content in Hash on Mr.Boii</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Sun, 09 Jun 2019 01:26:48 +0000</lastBuildDate><atom:link href="https://boii.xyz/tags/hash/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Java-About-Hash</title>
+      <link>https://boii.xyz/posts/java/java-about-hash/</link>
+      <pubDate>Sun, 09 Jun 2019 01:26:48 +0000</pubDate>
+      
+      <guid>https://boii.xyz/posts/java/java-about-hash/</guid>
+      <description>Hash 是一种很神奇的数据结构
+HashTable HashTable 散列表 哈希表： 是一种数据结构，它提供快速的插入和查找操作，不管表中有多少数据，插入删除和查找的时间都接近O(1)
+**优点：**HashTable其实是基于数组的，所以在查询方面非常的快，同时它不像普通数组那样紧密排列，在数值未满的时候所有的值其实是散部在数组中的某个位置上的，所以在插入和删除的时候不用像普通数组一样让余下的值一个个的挪。
+**缺点：**同时也因为它的基于数组的，所以创建以后难以扩展，当HashTable被基本填满的时候，性能严重下降，而且不能顺序遍历。
+一个输入传进来的时候会经过散列函数，计算出一个值，这个值就是这个输入在HashTable中的位置，称为HashCode 哈希值 散列值。
+当HashTable中的值还不多的时候各种操作的效率是非常高的，但是HashTable快满的时候各种操作的效率就开始变低了
+开放寻址法 线性探测方法  比如一个HashTable的长度是8，现在只剩下 ~6~ 这个位置是空的
+而一个输入经过散列函数计算之后得到的结果是 ~7~ ，一看 ~7~ 上面有人占了，怎么办呢？
+往下找空位咯，~7~ 下面是 ~0~ ，有人了，下一个 ~1~ ，有人了，下一个 ~2~ ，有人了&amp;hellip;下一个 ~6~ ，耶没人，上去！
+这样几乎遍历了一整个数组，效率是非常低的，HashTable小的时候还能忍受，如果HashTable长度是2000呢?20000呢？
+ 上述的方法其实就是当散列函数计算出来的值上面已经有值的时候的解决方法之一，开放寻址法中的线性探测，往下找空位，找到进填进去。最坏的情况下就是几乎遍历整个数组。
+二次探测方法 另一种的思路有那么点像二分查找法，叫做二次探测方法
+ 比如表中只有 ~3~ 是有空位的，其余都是满的
+而一个输入经过散列函数计算之后得到的结果是 ~7~，一看 ~7~ 上面有人了，怎么办呢？
+CurrentCode + 0，CurrentCode + 1^2^ ，CurrentCode - 1 ^2^，CurrentCode + 2^2^，CurrentCode - 2^2^，……
+7不行就 + 1^2^ = 8，8还是不行，那就7 - 1^2^ = 6，6还是不行，那就7 - 2^2^ = 3，3可以，上去！</description>
+    </item>
+    
+  </channel>
+</rss>

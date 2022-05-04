@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Electron on Mr.Boii</title>
+    <link>https://boii.xyz/tags/electron/</link>
+    <description>Recent content in Electron on Mr.Boii</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Sat, 21 Mar 2020 16:55:25 +0000</lastBuildDate><atom:link href="https://boii.xyz/tags/electron/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Electron Note</title>
+      <link>https://boii.xyz/posts/electron/electron-note/</link>
+      <pubDate>Sat, 21 Mar 2020 16:55:25 +0000</pubDate>
+      
+      <guid>https://boii.xyz/posts/electron/electron-note/</guid>
+      <description>&lt;p&gt;Note&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>
