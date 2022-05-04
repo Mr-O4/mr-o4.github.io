@@ -2,92 +2,92 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Categories on Mr.Boii</title>
-    <link>https://boii.xyz/categories/</link>
+    <link>https://www.boii.xyz/categories/</link>
     <description>Recent content in Categories on Mr.Boii</description>
     <image>
-      <url>https://boii.xyz/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
-      <link>https://boii.xyz/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+      <url>https://www.boii.xyz/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>https://www.boii.xyz/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sat, 08 Jan 2022 01:50:48 +0800</lastBuildDate><atom:link href="https://boii.xyz/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 08 Jan 2022 01:50:48 +0800</lastBuildDate><atom:link href="https://www.boii.xyz/categories/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Advanced</title>
-      <link>https://boii.xyz/categories/advanced/</link>
+      <link>https://www.boii.xyz/categories/advanced/</link>
       <pubDate>Sat, 08 Jan 2022 01:50:48 +0800</pubDate>
       
-      <guid>https://boii.xyz/categories/advanced/</guid>
+      <guid>https://www.boii.xyz/categories/advanced/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Golang</title>
-      <link>https://boii.xyz/categories/golang/</link>
+      <link>https://www.boii.xyz/categories/golang/</link>
       <pubDate>Sat, 08 Jan 2022 01:50:48 +0800</pubDate>
       
-      <guid>https://boii.xyz/categories/golang/</guid>
+      <guid>https://www.boii.xyz/categories/golang/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Git</title>
-      <link>https://boii.xyz/categories/git/</link>
+      <link>https://www.boii.xyz/categories/git/</link>
       <pubDate>Tue, 14 Sep 2021 16:34:15 +0000</pubDate>
       
-      <guid>https://boii.xyz/categories/git/</guid>
+      <guid>https://www.boii.xyz/categories/git/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Other</title>
-      <link>https://boii.xyz/categories/other/</link>
+      <link>https://www.boii.xyz/categories/other/</link>
       <pubDate>Mon, 16 Aug 2021 15:57:17 +0000</pubDate>
       
-      <guid>https://boii.xyz/categories/other/</guid>
+      <guid>https://www.boii.xyz/categories/other/</guid>
       <description></description>
     </item>
     
     <item>
       <title>HEXO</title>
-      <link>https://boii.xyz/categories/hexo/</link>
+      <link>https://www.boii.xyz/categories/hexo/</link>
       <pubDate>Mon, 06 Apr 2020 10:47:03 +0000</pubDate>
       
-      <guid>https://boii.xyz/categories/hexo/</guid>
+      <guid>https://www.boii.xyz/categories/hexo/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Java</title>
-      <link>https://boii.xyz/categories/java/</link>
+      <link>https://www.boii.xyz/categories/java/</link>
       <pubDate>Sun, 14 Jul 2019 23:19:12 +0000</pubDate>
       
-      <guid>https://boii.xyz/categories/java/</guid>
+      <guid>https://www.boii.xyz/categories/java/</guid>
       <description></description>
     </item>
     
     <item>
       <title>SSM</title>
-      <link>https://boii.xyz/categories/ssm/</link>
+      <link>https://www.boii.xyz/categories/ssm/</link>
       <pubDate>Sun, 14 Jul 2019 23:19:12 +0000</pubDate>
       
-      <guid>https://boii.xyz/categories/ssm/</guid>
+      <guid>https://www.boii.xyz/categories/ssm/</guid>
       <description></description>
     </item>
     
     <item>
       <title>RSA</title>
-      <link>https://boii.xyz/categories/rsa/</link>
+      <link>https://www.boii.xyz/categories/rsa/</link>
       <pubDate>Fri, 26 Apr 2019 09:54:27 +0000</pubDate>
       
-      <guid>https://boii.xyz/categories/rsa/</guid>
+      <guid>https://www.boii.xyz/categories/rsa/</guid>
       <description></description>
     </item>
     
     <item>
       <title>LeetCode</title>
-      <link>https://boii.xyz/categories/leetcode/</link>
+      <link>https://www.boii.xyz/categories/leetcode/</link>
       <pubDate>Thu, 25 Apr 2019 11:30:48 +0000</pubDate>
       
-      <guid>https://boii.xyz/categories/leetcode/</guid>
+      <guid>https://www.boii.xyz/categories/leetcode/</guid>
       <description></description>
     </item>
     

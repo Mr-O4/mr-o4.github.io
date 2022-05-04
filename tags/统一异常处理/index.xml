@@ -2,20 +2,20 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>统一异常处理 on Mr.Boii</title>
-    <link>https://boii.xyz/tags/%E7%BB%9F%E4%B8%80%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86/</link>
+    <link>https://www.boii.xyz/tags/%E7%BB%9F%E4%B8%80%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86/</link>
     <description>Recent content in 统一异常处理 on Mr.Boii</description>
     <image>
-      <url>https://boii.xyz/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
-      <link>https://boii.xyz/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+      <url>https://www.boii.xyz/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>https://www.boii.xyz/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Thu, 11 Jul 2019 20:55:10 +0000</lastBuildDate><atom:link href="https://boii.xyz/tags/%E7%BB%9F%E4%B8%80%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 11 Jul 2019 20:55:10 +0000</lastBuildDate><atom:link href="https://www.boii.xyz/tags/%E7%BB%9F%E4%B8%80%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>SSM-7-统一异常处理</title>
-      <link>https://boii.xyz/posts/java/ssm/ssm-7-%E7%BB%9F%E4%B8%80%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86/</link>
+      <link>https://www.boii.xyz/posts/java/ssm/ssm-7-%E7%BB%9F%E4%B8%80%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86/</link>
       <pubDate>Thu, 11 Jul 2019 20:55:10 +0000</pubDate>
       
-      <guid>https://boii.xyz/posts/java/ssm/ssm-7-%E7%BB%9F%E4%B8%80%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86/</guid>
+      <guid>https://www.boii.xyz/posts/java/ssm/ssm-7-%E7%BB%9F%E4%B8%80%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86/</guid>
       <description>遇到异常不要慌～
 摘要 程序运行过程中总会遇到一些可预知的，不可预知的异常。如果不对这些异常进行捕捉和处理，就会导致程序崩溃、停止运行、闪退等诸多令人体验极差的现象。如果对这些异常一个一个单独处理，则代码显得很臃肿，耦合度高（独立性差），所以要用统一异常处理对所有的代码进行异常处理
 SpringMVC处理异常有三种方式：

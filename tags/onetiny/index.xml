@@ -2,29 +2,29 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>OneTiny on Mr.Boii</title>
-    <link>https://boii.xyz/tags/onetiny/</link>
+    <link>https://www.boii.xyz/tags/onetiny/</link>
     <description>Recent content in OneTiny on Mr.Boii</description>
     <image>
-      <url>https://boii.xyz/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
-      <link>https://boii.xyz/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+      <url>https://www.boii.xyz/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>https://www.boii.xyz/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Mon, 16 Aug 2021 15:57:17 +0000</lastBuildDate><atom:link href="https://boii.xyz/tags/onetiny/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 16 Aug 2021 15:57:17 +0000</lastBuildDate><atom:link href="https://www.boii.xyz/tags/onetiny/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>OneTiny 开发日记4-2021-8-16</title>
-      <link>https://boii.xyz/posts/other/onetiny-%E5%BC%80%E5%8F%91%E6%97%A5%E8%AE%B04-2021-8-16/</link>
+      <link>https://www.boii.xyz/posts/other/onetiny-%E5%BC%80%E5%8F%91%E6%97%A5%E8%AE%B04-2021-8-16/</link>
       <pubDate>Mon, 16 Aug 2021 15:57:17 +0000</pubDate>
       
-      <guid>https://boii.xyz/posts/other/onetiny-%E5%BC%80%E5%8F%91%E6%97%A5%E8%AE%B04-2021-8-16/</guid>
+      <guid>https://www.boii.xyz/posts/other/onetiny-%E5%BC%80%E5%8F%91%E6%97%A5%E8%AE%B04-2021-8-16/</guid>
       <description>&lt;p&gt;基础不牢，地动山摇&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>OneTiny 开发日记3-2021-6-29</title>
-      <link>https://boii.xyz/posts/other/onetiny-%E5%BC%80%E5%8F%91%E6%97%A5%E8%AE%B03-2021-6-29/</link>
+      <link>https://www.boii.xyz/posts/other/onetiny-%E5%BC%80%E5%8F%91%E6%97%A5%E8%AE%B03-2021-6-29/</link>
       <pubDate>Tue, 29 Jun 2021 15:58:28 +0000</pubDate>
       
-      <guid>https://boii.xyz/posts/other/onetiny-%E5%BC%80%E5%8F%91%E6%97%A5%E8%AE%B03-2021-6-29/</guid>
+      <guid>https://www.boii.xyz/posts/other/onetiny-%E5%BC%80%E5%8F%91%E6%97%A5%E8%AE%B03-2021-6-29/</guid>
       <description>新增访问层级限制
 更新功能没写成，还是没想好怎么处理整个流程。
 摆在面前有两个问题：
@@ -35,19 +35,19 @@
     
     <item>
       <title>OneTiny 开发日记2-2021-6-25</title>
-      <link>https://boii.xyz/posts/other/onetiny-%E5%BC%80%E5%8F%91%E6%97%A5%E8%AE%B02-2021-6-25/</link>
+      <link>https://www.boii.xyz/posts/other/onetiny-%E5%BC%80%E5%8F%91%E6%97%A5%E8%AE%B02-2021-6-25/</link>
       <pubDate>Fri, 25 Jun 2021 12:57:42 +0000</pubDate>
       
-      <guid>https://boii.xyz/posts/other/onetiny-%E5%BC%80%E5%8F%91%E6%97%A5%E8%AE%B02-2021-6-25/</guid>
+      <guid>https://www.boii.xyz/posts/other/onetiny-%E5%BC%80%E5%8F%91%E6%97%A5%E8%AE%B02-2021-6-25/</guid>
       <description>&lt;p&gt;第一次修改别人的东西哈哈&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>OneTiny 开发日记1-2021-6-22</title>
-      <link>https://boii.xyz/posts/other/onetiny-%E5%BC%80%E5%8F%91%E6%97%A5%E8%AE%B01-2021-6-22/</link>
+      <link>https://www.boii.xyz/posts/other/onetiny-%E5%BC%80%E5%8F%91%E6%97%A5%E8%AE%B01-2021-6-22/</link>
       <pubDate>Tue, 22 Jun 2021 08:30:47 +0000</pubDate>
       
-      <guid>https://boii.xyz/posts/other/onetiny-%E5%BC%80%E5%8F%91%E6%97%A5%E8%AE%B01-2021-6-22/</guid>
+      <guid>https://www.boii.xyz/posts/other/onetiny-%E5%BC%80%E5%8F%91%E6%97%A5%E8%AE%B01-2021-6-22/</guid>
       <description>&lt;p&gt;开发 OneTiny 时的一点思路&lt;/p&gt;</description>
     </item>
     

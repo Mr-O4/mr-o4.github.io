@@ -2,110 +2,110 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Posts on Mr.Boii</title>
-    <link>https://boii.xyz/posts/</link>
+    <link>https://www.boii.xyz/posts/</link>
     <description>Recent content in Posts on Mr.Boii</description>
     <image>
-      <url>https://boii.xyz/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
-      <link>https://boii.xyz/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+      <url>https://www.boii.xyz/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>https://www.boii.xyz/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Mon, 14 Mar 2022 23:42:34 +0800</lastBuildDate><atom:link href="https://boii.xyz/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 14 Mar 2022 23:42:34 +0800</lastBuildDate><atom:link href="https://www.boii.xyz/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Hello</title>
-      <link>https://boii.xyz/posts/hello/</link>
+      <link>https://www.boii.xyz/posts/hello/</link>
       <pubDate>Mon, 14 Mar 2022 23:42:34 +0800</pubDate>
       
-      <guid>https://boii.xyz/posts/hello/</guid>
+      <guid>https://www.boii.xyz/posts/hello/</guid>
       <description>Hello Hugo! Hello Hugo.</description>
     </item>
     
     <item>
       <title>Golang [技术启发] 安全函数 SaveFunc</title>
-      <link>https://boii.xyz/posts/go/golang-%E6%8A%80%E6%9C%AF%E5%90%AF%E5%8F%91-savefunc/</link>
+      <link>https://www.boii.xyz/posts/go/golang-%E6%8A%80%E6%9C%AF%E5%90%AF%E5%8F%91-savefunc/</link>
       <pubDate>Sat, 08 Jan 2022 01:50:48 +0800</pubDate>
       
-      <guid>https://boii.xyz/posts/go/golang-%E6%8A%80%E6%9C%AF%E5%90%AF%E5%8F%91-savefunc/</guid>
+      <guid>https://www.boii.xyz/posts/go/golang-%E6%8A%80%E6%9C%AF%E5%90%AF%E5%8F%91-savefunc/</guid>
       <description>&lt;p&gt;安全地执行不安全的函数&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Git-commit message 编写指南</title>
-      <link>https://boii.xyz/posts/git/git-commit-message-%E7%BC%96%E5%86%99%E6%8C%87%E5%8D%97/</link>
+      <link>https://www.boii.xyz/posts/git/git-commit-message-%E7%BC%96%E5%86%99%E6%8C%87%E5%8D%97/</link>
       <pubDate>Tue, 14 Sep 2021 16:34:15 +0000</pubDate>
       
-      <guid>https://boii.xyz/posts/git/git-commit-message-%E7%BC%96%E5%86%99%E6%8C%87%E5%8D%97/</guid>
+      <guid>https://www.boii.xyz/posts/git/git-commit-message-%E7%BC%96%E5%86%99%E6%8C%87%E5%8D%97/</guid>
       <description>&lt;p&gt;commit message 不要乱写&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Golang [深入理解] 10-实现抽象类</title>
-      <link>https://boii.xyz/posts/go/golang-%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3-10-%E5%AE%9E%E7%8E%B0%E6%8A%BD%E8%B1%A1%E7%B1%BB/</link>
+      <link>https://www.boii.xyz/posts/go/golang-%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3-10-%E5%AE%9E%E7%8E%B0%E6%8A%BD%E8%B1%A1%E7%B1%BB/</link>
       <pubDate>Tue, 14 Sep 2021 15:10:01 +0000</pubDate>
       
-      <guid>https://boii.xyz/posts/go/golang-%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3-10-%E5%AE%9E%E7%8E%B0%E6%8A%BD%E8%B1%A1%E7%B1%BB/</guid>
+      <guid>https://www.boii.xyz/posts/go/golang-%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3-10-%E5%AE%9E%E7%8E%B0%E6%8A%BD%E8%B1%A1%E7%B1%BB/</guid>
       <description>&lt;p&gt;虽然不推荐，但免不了要用到。&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Golang [深入理解] 9-值实现 VS 指针实现</title>
-      <link>https://boii.xyz/posts/go/golang-%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3-9-%E5%80%BC%E5%AE%9E%E7%8E%B0-vs-%E6%8C%87%E9%92%88%E5%AE%9E%E7%8E%B0/</link>
+      <link>https://www.boii.xyz/posts/go/golang-%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3-9-%E5%80%BC%E5%AE%9E%E7%8E%B0-vs-%E6%8C%87%E9%92%88%E5%AE%9E%E7%8E%B0/</link>
       <pubDate>Tue, 14 Sep 2021 15:09:50 +0000</pubDate>
       
-      <guid>https://boii.xyz/posts/go/golang-%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3-9-%E5%80%BC%E5%AE%9E%E7%8E%B0-vs-%E6%8C%87%E9%92%88%E5%AE%9E%E7%8E%B0/</guid>
+      <guid>https://www.boii.xyz/posts/go/golang-%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3-9-%E5%80%BC%E5%AE%9E%E7%8E%B0-vs-%E6%8C%87%E9%92%88%E5%AE%9E%E7%8E%B0/</guid>
       <description>&lt;p&gt;都是实现，有啥区别？&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Golang [深入理解] 7-关于 nil</title>
-      <link>https://boii.xyz/posts/go/golang-%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3-7-%E5%85%B3%E4%BA%8E-nil/</link>
+      <link>https://www.boii.xyz/posts/go/golang-%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3-7-%E5%85%B3%E4%BA%8E-nil/</link>
       <pubDate>Tue, 14 Sep 2021 15:09:02 +0000</pubDate>
       
-      <guid>https://boii.xyz/posts/go/golang-%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3-7-%E5%85%B3%E4%BA%8E-nil/</guid>
+      <guid>https://www.boii.xyz/posts/go/golang-%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3-7-%E5%85%B3%E4%BA%8E-nil/</guid>
       <description>&lt;p&gt;关于你可能知道的 nil 的使用&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Golang [深入理解] 4-string 实现原理</title>
-      <link>https://boii.xyz/posts/go/golang-%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3-4-string-%E5%AE%9E%E7%8E%B0%E5%8E%9F%E7%90%86/</link>
+      <link>https://www.boii.xyz/posts/go/golang-%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3-4-string-%E5%AE%9E%E7%8E%B0%E5%8E%9F%E7%90%86/</link>
       <pubDate>Tue, 14 Sep 2021 15:08:20 +0000</pubDate>
       
-      <guid>https://boii.xyz/posts/go/golang-%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3-4-string-%E5%AE%9E%E7%8E%B0%E5%8E%9F%E7%90%86/</guid>
+      <guid>https://www.boii.xyz/posts/go/golang-%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3-4-string-%E5%AE%9E%E7%8E%B0%E5%8E%9F%E7%90%86/</guid>
       <description>&lt;p&gt;关于你可能知道的 string&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Golang [深入理解] 2-slice 实现原理</title>
-      <link>https://boii.xyz/posts/go/golang-%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3-2-slice-%E5%AE%9E%E7%8E%B0%E5%8E%9F%E7%90%86/</link>
+      <link>https://www.boii.xyz/posts/go/golang-%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3-2-slice-%E5%AE%9E%E7%8E%B0%E5%8E%9F%E7%90%86/</link>
       <pubDate>Tue, 14 Sep 2021 15:07:18 +0000</pubDate>
       
-      <guid>https://boii.xyz/posts/go/golang-%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3-2-slice-%E5%AE%9E%E7%8E%B0%E5%8E%9F%E7%90%86/</guid>
+      <guid>https://www.boii.xyz/posts/go/golang-%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3-2-slice-%E5%AE%9E%E7%8E%B0%E5%8E%9F%E7%90%86/</guid>
       <description>&lt;p&gt;关于你可能知道的 slice&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Golang [深入理解] 1-for &amp; range</title>
-      <link>https://boii.xyz/posts/go/golang-%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3-1-for-range/</link>
+      <link>https://www.boii.xyz/posts/go/golang-%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3-1-for-range/</link>
       <pubDate>Tue, 14 Sep 2021 15:06:47 +0000</pubDate>
       
-      <guid>https://boii.xyz/posts/go/golang-%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3-1-for-range/</guid>
+      <guid>https://www.boii.xyz/posts/go/golang-%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3-1-for-range/</guid>
       <description>&lt;p&gt;两种遍历方式的使用与区别&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>OneTiny 开发日记4-2021-8-16</title>
-      <link>https://boii.xyz/posts/other/onetiny-%E5%BC%80%E5%8F%91%E6%97%A5%E8%AE%B04-2021-8-16/</link>
+      <link>https://www.boii.xyz/posts/other/onetiny-%E5%BC%80%E5%8F%91%E6%97%A5%E8%AE%B04-2021-8-16/</link>
       <pubDate>Mon, 16 Aug 2021 15:57:17 +0000</pubDate>
       
-      <guid>https://boii.xyz/posts/other/onetiny-%E5%BC%80%E5%8F%91%E6%97%A5%E8%AE%B04-2021-8-16/</guid>
+      <guid>https://www.boii.xyz/posts/other/onetiny-%E5%BC%80%E5%8F%91%E6%97%A5%E8%AE%B04-2021-8-16/</guid>
       <description>&lt;p&gt;基础不牢，地动山摇&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>OneTiny 开发日记3-2021-6-29</title>
-      <link>https://boii.xyz/posts/other/onetiny-%E5%BC%80%E5%8F%91%E6%97%A5%E8%AE%B03-2021-6-29/</link>
+      <link>https://www.boii.xyz/posts/other/onetiny-%E5%BC%80%E5%8F%91%E6%97%A5%E8%AE%B03-2021-6-29/</link>
       <pubDate>Tue, 29 Jun 2021 15:58:28 +0000</pubDate>
       
-      <guid>https://boii.xyz/posts/other/onetiny-%E5%BC%80%E5%8F%91%E6%97%A5%E8%AE%B03-2021-6-29/</guid>
+      <guid>https://www.boii.xyz/posts/other/onetiny-%E5%BC%80%E5%8F%91%E6%97%A5%E8%AE%B03-2021-6-29/</guid>
       <description>新增访问层级限制
 更新功能没写成，还是没想好怎么处理整个流程。
 摆在面前有两个问题：
@@ -116,82 +116,82 @@
     
     <item>
       <title>OneTiny 开发日记2-2021-6-25</title>
-      <link>https://boii.xyz/posts/other/onetiny-%E5%BC%80%E5%8F%91%E6%97%A5%E8%AE%B02-2021-6-25/</link>
+      <link>https://www.boii.xyz/posts/other/onetiny-%E5%BC%80%E5%8F%91%E6%97%A5%E8%AE%B02-2021-6-25/</link>
       <pubDate>Fri, 25 Jun 2021 12:57:42 +0000</pubDate>
       
-      <guid>https://boii.xyz/posts/other/onetiny-%E5%BC%80%E5%8F%91%E6%97%A5%E8%AE%B02-2021-6-25/</guid>
+      <guid>https://www.boii.xyz/posts/other/onetiny-%E5%BC%80%E5%8F%91%E6%97%A5%E8%AE%B02-2021-6-25/</guid>
       <description>&lt;p&gt;第一次修改别人的东西哈哈&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>OneTiny 开发日记1-2021-6-22</title>
-      <link>https://boii.xyz/posts/other/onetiny-%E5%BC%80%E5%8F%91%E6%97%A5%E8%AE%B01-2021-6-22/</link>
+      <link>https://www.boii.xyz/posts/other/onetiny-%E5%BC%80%E5%8F%91%E6%97%A5%E8%AE%B01-2021-6-22/</link>
       <pubDate>Tue, 22 Jun 2021 08:30:47 +0000</pubDate>
       
-      <guid>https://boii.xyz/posts/other/onetiny-%E5%BC%80%E5%8F%91%E6%97%A5%E8%AE%B01-2021-6-22/</guid>
+      <guid>https://www.boii.xyz/posts/other/onetiny-%E5%BC%80%E5%8F%91%E6%97%A5%E8%AE%B01-2021-6-22/</guid>
       <description>&lt;p&gt;开发 OneTiny 时的一点思路&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Hexo-文件下载功能</title>
-      <link>https://boii.xyz/posts/hexo/hexo-%E6%96%87%E4%BB%B6%E4%B8%8B%E8%BD%BD%E5%8A%9F%E8%83%BD/</link>
+      <link>https://www.boii.xyz/posts/hexo/hexo-%E6%96%87%E4%BB%B6%E4%B8%8B%E8%BD%BD%E5%8A%9F%E8%83%BD/</link>
       <pubDate>Sun, 23 Aug 2020 16:00:35 +0000</pubDate>
       
-      <guid>https://boii.xyz/posts/hexo/hexo-%E6%96%87%E4%BB%B6%E4%B8%8B%E8%BD%BD%E5%8A%9F%E8%83%BD/</guid>
+      <guid>https://www.boii.xyz/posts/hexo/hexo-%E6%96%87%E4%BB%B6%E4%B8%8B%E8%BD%BD%E5%8A%9F%E8%83%BD/</guid>
       <description>&lt;p&gt;So easy~&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>VUE-note-day2</title>
-      <link>https://boii.xyz/posts/vue/vue-note-day2/</link>
+      <link>https://www.boii.xyz/posts/vue/vue-note-day2/</link>
       <pubDate>Thu, 09 Apr 2020 11:34:38 +0000</pubDate>
       
-      <guid>https://boii.xyz/posts/vue/vue-note-day2/</guid>
+      <guid>https://www.boii.xyz/posts/vue/vue-note-day2/</guid>
       <description>&lt;p&gt;Vue 的细节是真的多.&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>VUE-note-day1</title>
-      <link>https://boii.xyz/posts/vue/vue-note-day1/</link>
+      <link>https://www.boii.xyz/posts/vue/vue-note-day1/</link>
       <pubDate>Wed, 08 Apr 2020 12:05:50 +0000</pubDate>
       
-      <guid>https://boii.xyz/posts/vue/vue-note-day1/</guid>
+      <guid>https://www.boii.xyz/posts/vue/vue-note-day1/</guid>
       <description>&lt;p&gt;疫情在家真的无聊 T_T，学点Vue吧&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>全站变灰的实现</title>
-      <link>https://boii.xyz/posts/hexo/%E5%85%A8%E7%AB%99%E5%8F%98%E7%81%B0%E7%9A%84%E5%AE%9E%E7%8E%B0/</link>
+      <link>https://www.boii.xyz/posts/hexo/%E5%85%A8%E7%AB%99%E5%8F%98%E7%81%B0%E7%9A%84%E5%AE%9E%E7%8E%B0/</link>
       <pubDate>Mon, 06 Apr 2020 10:47:03 +0000</pubDate>
       
-      <guid>https://boii.xyz/posts/hexo/%E5%85%A8%E7%AB%99%E5%8F%98%E7%81%B0%E7%9A%84%E5%AE%9E%E7%8E%B0/</guid>
+      <guid>https://www.boii.xyz/posts/hexo/%E5%85%A8%E7%AB%99%E5%8F%98%E7%81%B0%E7%9A%84%E5%AE%9E%E7%8E%B0/</guid>
       <description>&lt;h1 id=&#34;哀悼日-全站变灰的实现&#34;&gt;哀悼日-全站变灰的实现&lt;/h1&gt;</description>
     </item>
     
     <item>
       <title>Electron Note</title>
-      <link>https://boii.xyz/posts/electron/electron-note/</link>
+      <link>https://www.boii.xyz/posts/electron/electron-note/</link>
       <pubDate>Sat, 21 Mar 2020 16:55:25 +0000</pubDate>
       
-      <guid>https://boii.xyz/posts/electron/electron-note/</guid>
+      <guid>https://www.boii.xyz/posts/electron/electron-note/</guid>
       <description>&lt;p&gt;Note&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Git-基本操作说明</title>
-      <link>https://boii.xyz/posts/git/git-%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C%E8%AF%B4%E6%98%8E/</link>
+      <link>https://www.boii.xyz/posts/git/git-%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C%E8%AF%B4%E6%98%8E/</link>
       <pubDate>Thu, 18 Jul 2019 08:09:37 +0000</pubDate>
       
-      <guid>https://boii.xyz/posts/git/git-%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C%E8%AF%B4%E6%98%8E/</guid>
+      <guid>https://www.boii.xyz/posts/git/git-%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C%E8%AF%B4%E6%98%8E/</guid>
       <description>&lt;p&gt;Git Yes!&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>SSM-配置文件</title>
-      <link>https://boii.xyz/posts/java/ssm/ssm-%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6/</link>
+      <link>https://www.boii.xyz/posts/java/ssm/ssm-%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6/</link>
       <pubDate>Sun, 14 Jul 2019 23:19:12 +0000</pubDate>
       
-      <guid>https://boii.xyz/posts/java/ssm/ssm-%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6/</guid>
+      <guid>https://www.boii.xyz/posts/java/ssm/ssm-%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6/</guid>
       <description>先把配置文件捋清楚
 前言 SSM框架中有几个比较重要的配置文件，一开始学起来会很模糊，这里做一下整理
  当一个web程序启动时，Tomcat服务器最先会读取 web.xml 文件，这个文件中会启动一些配置，还会启动Spring配置文件**applicationContext.xml** 和SpringMVC配置文件 springMVC-servlet.xml 这两个文件，在运行 applicationContext.xml 的时候会启动MyBatis的配置文件 myBatis.xml，并且会调用到 jdbc.properties 和 log4J.properties 两个资源属性文件里的属性。
@@ -202,10 +202,10 @@
     
     <item>
       <title>SSM-8-Spring事务管理</title>
-      <link>https://boii.xyz/posts/java/ssm/ssm-8-spring%E4%BA%8B%E5%8A%A1%E7%AE%A1%E7%90%86/</link>
+      <link>https://www.boii.xyz/posts/java/ssm/ssm-8-spring%E4%BA%8B%E5%8A%A1%E7%AE%A1%E7%90%86/</link>
       <pubDate>Sat, 13 Jul 2019 17:04:13 +0000</pubDate>
       
-      <guid>https://boii.xyz/posts/java/ssm/ssm-8-spring%E4%BA%8B%E5%8A%A1%E7%AE%A1%E7%90%86/</guid>
+      <guid>https://www.boii.xyz/posts/java/ssm/ssm-8-spring%E4%BA%8B%E5%8A%A1%E7%AE%A1%E7%90%86/</guid>
       <description>有了事务好管理
 前言 事务：也就是一个用户操作中，需要包含哪些具体操作。这些操作集合在一起，就是事务。这些操作必须是具体的，必要的，不可分割的。要么全部完成，要么全部失败。
 比如你给你朋友转账1000块的操作，分成几个步骤就是：
@@ -219,10 +219,10 @@
     
     <item>
       <title>SSM-7-统一异常处理</title>
-      <link>https://boii.xyz/posts/java/ssm/ssm-7-%E7%BB%9F%E4%B8%80%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86/</link>
+      <link>https://www.boii.xyz/posts/java/ssm/ssm-7-%E7%BB%9F%E4%B8%80%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86/</link>
       <pubDate>Thu, 11 Jul 2019 20:55:10 +0000</pubDate>
       
-      <guid>https://boii.xyz/posts/java/ssm/ssm-7-%E7%BB%9F%E4%B8%80%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86/</guid>
+      <guid>https://www.boii.xyz/posts/java/ssm/ssm-7-%E7%BB%9F%E4%B8%80%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86/</guid>
       <description>遇到异常不要慌～
 摘要 程序运行过程中总会遇到一些可预知的，不可预知的异常。如果不对这些异常进行捕捉和处理，就会导致程序崩溃、停止运行、闪退等诸多令人体验极差的现象。如果对这些异常一个一个单独处理，则代码显得很臃肿，耦合度高（独立性差），所以要用统一异常处理对所有的代码进行异常处理
 SpringMVC处理异常有三种方式：
@@ -234,10 +234,10 @@ SpringMVC处理异常有三种方式：
     
     <item>
       <title>SSM-6-上传和下载</title>
-      <link>https://boii.xyz/posts/java/ssm/ssm-6-%E4%B8%8A%E4%BC%A0%E5%92%8C%E4%B8%8B%E8%BD%BD/</link>
+      <link>https://www.boii.xyz/posts/java/ssm/ssm-6-%E4%B8%8A%E4%BC%A0%E5%92%8C%E4%B8%8B%E8%BD%BD/</link>
       <pubDate>Wed, 10 Jul 2019 01:04:18 +0000</pubDate>
       
-      <guid>https://boii.xyz/posts/java/ssm/ssm-6-%E4%B8%8A%E4%BC%A0%E5%92%8C%E4%B8%8B%E8%BD%BD/</guid>
+      <guid>https://www.boii.xyz/posts/java/ssm/ssm-6-%E4%B8%8A%E4%BC%A0%E5%92%8C%E4%B8%8B%E8%BD%BD/</guid>
       <description>来了，上下都来了～
 摘要 文件上传和下载是web经常要面对的问题。
 上传的方式有多种，包括：
@@ -256,10 +256,10 @@ maven项目：配置pom.xml
     
     <item>
       <title>SSM-5-拦截器</title>
-      <link>https://boii.xyz/posts/java/ssm/ssm-5-%E6%8B%A6%E6%88%AA%E5%99%A8/</link>
+      <link>https://www.boii.xyz/posts/java/ssm/ssm-5-%E6%8B%A6%E6%88%AA%E5%99%A8/</link>
       <pubDate>Sun, 07 Jul 2019 12:04:18 +0000</pubDate>
       
-      <guid>https://boii.xyz/posts/java/ssm/ssm-5-%E6%8B%A6%E6%88%AA%E5%99%A8/</guid>
+      <guid>https://www.boii.xyz/posts/java/ssm/ssm-5-%E6%8B%A6%E6%88%AA%E5%99%A8/</guid>
       <description>拦截器其实就是一种中间件
 摘要 拦截器 Interceptor 主要用于在 请求到达控制器之前进行验证 ，有点类似过滤器。主要用于拦截用户请求并做出相应的处理。通常应用在权限验证，记录请求信息的日志，判断用户是否登录等功能上。
 主要的实现方法有两种：
@@ -275,28 +275,28 @@ maven项目：配置pom.xml
     
     <item>
       <title>SSM-4-数据绑定</title>
-      <link>https://boii.xyz/posts/java/ssm/ssm-4-%E6%95%B0%E6%8D%AE%E7%BB%91%E5%AE%9A/</link>
+      <link>https://www.boii.xyz/posts/java/ssm/ssm-4-%E6%95%B0%E6%8D%AE%E7%BB%91%E5%AE%9A/</link>
       <pubDate>Sun, 07 Jul 2019 10:04:18 +0000</pubDate>
       
-      <guid>https://boii.xyz/posts/java/ssm/ssm-4-%E6%95%B0%E6%8D%AE%E7%BB%91%E5%AE%9A/</guid>
+      <guid>https://www.boii.xyz/posts/java/ssm/ssm-4-%E6%95%B0%E6%8D%AE%E7%BB%91%E5%AE%9A/</guid>
       <description>&lt;p&gt;先把数据绑定起来&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>C-Note</title>
-      <link>https://boii.xyz/posts/note/c-note/</link>
+      <link>https://www.boii.xyz/posts/note/c-note/</link>
       <pubDate>Sun, 09 Jun 2019 13:03:26 +0000</pubDate>
       
-      <guid>https://boii.xyz/posts/note/c-note/</guid>
+      <guid>https://www.boii.xyz/posts/note/c-note/</guid>
       <description>&lt;p&gt;C语言笔记&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Java-About-Hash</title>
-      <link>https://boii.xyz/posts/java/java-about-hash/</link>
+      <link>https://www.boii.xyz/posts/java/java-about-hash/</link>
       <pubDate>Sun, 09 Jun 2019 01:26:48 +0000</pubDate>
       
-      <guid>https://boii.xyz/posts/java/java-about-hash/</guid>
+      <guid>https://www.boii.xyz/posts/java/java-about-hash/</guid>
       <description>Hash 是一种很神奇的数据结构
 HashTable HashTable 散列表 哈希表： 是一种数据结构，它提供快速的插入和查找操作，不管表中有多少数据，插入删除和查找的时间都接近O(1)
 **优点：**HashTable其实是基于数组的，所以在查询方面非常的快，同时它不像普通数组那样紧密排列，在数值未满的时候所有的值其实是散部在数组中的某个位置上的，所以在插入和删除的时候不用像普通数组一样让余下的值一个个的挪。
@@ -317,119 +317,119 @@ CurrentCode + 0，CurrentCode + 1^2^ ，CurrentCode - 1 ^2^，CurrentCode + 2^2^
     
     <item>
       <title>Java-反射</title>
-      <link>https://boii.xyz/posts/java/java-%E5%8F%8D%E5%B0%84/</link>
+      <link>https://www.boii.xyz/posts/java/java-%E5%8F%8D%E5%B0%84/</link>
       <pubDate>Sun, 09 Jun 2019 00:58:48 +0000</pubDate>
       
-      <guid>https://boii.xyz/posts/java/java-%E5%8F%8D%E5%B0%84/</guid>
+      <guid>https://www.boii.xyz/posts/java/java-%E5%8F%8D%E5%B0%84/</guid>
       <description>Java 神器：反射
 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19  Person p = new Person(); /**获取*/ Class&amp;lt;?&amp;gt; clazz = p.getClass(); // 得知道类对象 Class&amp;lt;?&amp;gt; clazz = Person.class;	//得知道类名 Class&amp;lt;?&amp;gt; clazz = Class.forName(&amp;#34;com.tcp404.Person&amp;#34;);//得知道类的全路径名  /** 获取方法 */ Method method = clazz.getDeclaredMethod(&amp;#34;方法名&amp;#34;, new Class(){[参数类型.class, 参数类型.class, ...]}); Methods[] methods = clazz.getDeclaredMethods(); /** 获取属性 */ Field field = clazz.getDeclaredField(&amp;#34;属性名字&amp;#34;); Field[] fields = clazz.getDeclaredFields(); /** 获取构造器 */ Constructor&amp;lt;?</description>
     </item>
     
     <item>
       <title>Git命令大全</title>
-      <link>https://boii.xyz/posts/git/git%E5%91%BD%E4%BB%A4%E5%A4%A7%E5%85%A8/</link>
+      <link>https://www.boii.xyz/posts/git/git%E5%91%BD%E4%BB%A4%E5%A4%A7%E5%85%A8/</link>
       <pubDate>Sun, 19 May 2019 15:15:19 +0000</pubDate>
       
-      <guid>https://boii.xyz/posts/git/git%E5%91%BD%E4%BB%A4%E5%A4%A7%E5%85%A8/</guid>
+      <guid>https://www.boii.xyz/posts/git/git%E5%91%BD%E4%BB%A4%E5%A4%A7%E5%85%A8/</guid>
       <description>&lt;p&gt;One more thing&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>多端同步管理Hexo博客</title>
-      <link>https://boii.xyz/posts/hexo/%E5%A4%9A%E7%AB%AF%E5%90%8C%E6%AD%A5%E7%AE%A1%E7%90%86hexo%E5%8D%9A%E5%AE%A2/</link>
+      <link>https://www.boii.xyz/posts/hexo/%E5%A4%9A%E7%AB%AF%E5%90%8C%E6%AD%A5%E7%AE%A1%E7%90%86hexo%E5%8D%9A%E5%AE%A2/</link>
       <pubDate>Sat, 18 May 2019 11:37:35 +0000</pubDate>
       
-      <guid>https://boii.xyz/posts/hexo/%E5%A4%9A%E7%AB%AF%E5%90%8C%E6%AD%A5%E7%AE%A1%E7%90%86hexo%E5%8D%9A%E5%AE%A2/</guid>
+      <guid>https://www.boii.xyz/posts/hexo/%E5%A4%9A%E7%AB%AF%E5%90%8C%E6%AD%A5%E7%AE%A1%E7%90%86hexo%E5%8D%9A%E5%AE%A2/</guid>
       <description>&lt;p&gt;多端管理其实很简单。&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>几句话区分并行和并发</title>
-      <link>https://boii.xyz/posts/note/%E5%87%A0%E5%8F%A5%E8%AF%9D%E5%8C%BA%E5%88%86%E5%B9%B6%E8%A1%8C%E5%92%8C%E5%B9%B6%E5%8F%91/</link>
+      <link>https://www.boii.xyz/posts/note/%E5%87%A0%E5%8F%A5%E8%AF%9D%E5%8C%BA%E5%88%86%E5%B9%B6%E8%A1%8C%E5%92%8C%E5%B9%B6%E5%8F%91/</link>
       <pubDate>Wed, 15 May 2019 10:04:18 +0000</pubDate>
       
-      <guid>https://boii.xyz/posts/note/%E5%87%A0%E5%8F%A5%E8%AF%9D%E5%8C%BA%E5%88%86%E5%B9%B6%E8%A1%8C%E5%92%8C%E5%B9%B6%E5%8F%91/</guid>
+      <guid>https://www.boii.xyz/posts/note/%E5%87%A0%E5%8F%A5%E8%AF%9D%E5%8C%BA%E5%88%86%E5%B9%B6%E8%A1%8C%E5%92%8C%E5%B9%B6%E5%8F%91/</guid>
       <description>&lt;p&gt;吃饭和打电话你选择哪个？&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>当小程序开发完成后</title>
-      <link>https://boii.xyz/posts/other/%E5%BD%93%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%BC%80%E5%8F%91%E5%AE%8C%E6%88%90%E5%90%8E/</link>
+      <link>https://www.boii.xyz/posts/other/%E5%BD%93%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%BC%80%E5%8F%91%E5%AE%8C%E6%88%90%E5%90%8E/</link>
       <pubDate>Mon, 13 May 2019 15:35:21 +0000</pubDate>
       
-      <guid>https://boii.xyz/posts/other/%E5%BD%93%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%BC%80%E5%8F%91%E5%AE%8C%E6%88%90%E5%90%8E/</guid>
+      <guid>https://www.boii.xyz/posts/other/%E5%BD%93%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%BC%80%E5%8F%91%E5%AE%8C%E6%88%90%E5%90%8E/</guid>
       <description>&lt;p&gt;开发小程序后的一点总结&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>通信中的加密与解密-详细版</title>
-      <link>https://boii.xyz/posts/rsa/%E9%80%9A%E4%BF%A1%E4%B8%AD%E7%9A%84%E5%8A%A0%E5%AF%86%E4%B8%8E%E8%A7%A3%E5%AF%86-%E8%AF%A6%E7%BB%86%E7%89%88/</link>
+      <link>https://www.boii.xyz/posts/rsa/%E9%80%9A%E4%BF%A1%E4%B8%AD%E7%9A%84%E5%8A%A0%E5%AF%86%E4%B8%8E%E8%A7%A3%E5%AF%86-%E8%AF%A6%E7%BB%86%E7%89%88/</link>
       <pubDate>Fri, 26 Apr 2019 09:54:27 +0000</pubDate>
       
-      <guid>https://boii.xyz/posts/rsa/%E9%80%9A%E4%BF%A1%E4%B8%AD%E7%9A%84%E5%8A%A0%E5%AF%86%E4%B8%8E%E8%A7%A3%E5%AF%86-%E8%AF%A6%E7%BB%86%E7%89%88/</guid>
+      <guid>https://www.boii.xyz/posts/rsa/%E9%80%9A%E4%BF%A1%E4%B8%AD%E7%9A%84%E5%8A%A0%E5%AF%86%E4%B8%8E%E8%A7%A3%E5%AF%86-%E8%AF%A6%E7%BB%86%E7%89%88/</guid>
       <description>&lt;p&gt;换个详细点的捋一捋&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>LeetCode-笔记【No-4】0x09-回文数</title>
-      <link>https://boii.xyz/posts/leetcode/leetcode-%E7%AC%94%E8%AE%B0no-40x09-%E5%9B%9E%E6%96%87%E6%95%B0/</link>
+      <link>https://www.boii.xyz/posts/leetcode/leetcode-%E7%AC%94%E8%AE%B0no-40x09-%E5%9B%9E%E6%96%87%E6%95%B0/</link>
       <pubDate>Thu, 25 Apr 2019 11:30:48 +0000</pubDate>
       
-      <guid>https://boii.xyz/posts/leetcode/leetcode-%E7%AC%94%E8%AE%B0no-40x09-%E5%9B%9E%E6%96%87%E6%95%B0/</guid>
+      <guid>https://www.boii.xyz/posts/leetcode/leetcode-%E7%AC%94%E8%AE%B0no-40x09-%E5%9B%9E%E6%96%87%E6%95%B0/</guid>
       <description>&lt;p&gt;LeetCode 第9题&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>LeetCode-笔记【No-3】0x0D-罗马数字转整数</title>
-      <link>https://boii.xyz/posts/leetcode/leetcode-%E7%AC%94%E8%AE%B0no-30x0d-%E7%BD%97%E9%A9%AC%E6%95%B0%E5%AD%97%E8%BD%AC%E6%95%B4%E6%95%B0/</link>
+      <link>https://www.boii.xyz/posts/leetcode/leetcode-%E7%AC%94%E8%AE%B0no-30x0d-%E7%BD%97%E9%A9%AC%E6%95%B0%E5%AD%97%E8%BD%AC%E6%95%B4%E6%95%B0/</link>
       <pubDate>Thu, 25 Apr 2019 11:29:48 +0000</pubDate>
       
-      <guid>https://boii.xyz/posts/leetcode/leetcode-%E7%AC%94%E8%AE%B0no-30x0d-%E7%BD%97%E9%A9%AC%E6%95%B0%E5%AD%97%E8%BD%AC%E6%95%B4%E6%95%B0/</guid>
+      <guid>https://www.boii.xyz/posts/leetcode/leetcode-%E7%AC%94%E8%AE%B0no-30x0d-%E7%BD%97%E9%A9%AC%E6%95%B0%E5%AD%97%E8%BD%AC%E6%95%B4%E6%95%B0/</guid>
       <description>&lt;p&gt;LeetCode 第13题&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>LeetCode-笔记【No-2】0x07-整数反转</title>
-      <link>https://boii.xyz/posts/leetcode/leetcode-%E7%AC%94%E8%AE%B0no-20x07-%E6%95%B4%E6%95%B0%E5%8F%8D%E8%BD%AC/</link>
+      <link>https://www.boii.xyz/posts/leetcode/leetcode-%E7%AC%94%E8%AE%B0no-20x07-%E6%95%B4%E6%95%B0%E5%8F%8D%E8%BD%AC/</link>
       <pubDate>Thu, 25 Apr 2019 10:44:48 +0000</pubDate>
       
-      <guid>https://boii.xyz/posts/leetcode/leetcode-%E7%AC%94%E8%AE%B0no-20x07-%E6%95%B4%E6%95%B0%E5%8F%8D%E8%BD%AC/</guid>
+      <guid>https://www.boii.xyz/posts/leetcode/leetcode-%E7%AC%94%E8%AE%B0no-20x07-%E6%95%B4%E6%95%B0%E5%8F%8D%E8%BD%AC/</guid>
       <description>&lt;p&gt;LeetCode 第7题&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>LeetCode-笔记【No-1】0x01-两数之和</title>
-      <link>https://boii.xyz/posts/leetcode/leetcode-%E7%AC%94%E8%AE%B0no-10x01-%E4%B8%A4%E6%95%B0%E4%B9%8B%E5%92%8C/</link>
+      <link>https://www.boii.xyz/posts/leetcode/leetcode-%E7%AC%94%E8%AE%B0no-10x01-%E4%B8%A4%E6%95%B0%E4%B9%8B%E5%92%8C/</link>
       <pubDate>Thu, 25 Apr 2019 10:44:47 +0000</pubDate>
       
-      <guid>https://boii.xyz/posts/leetcode/leetcode-%E7%AC%94%E8%AE%B0no-10x01-%E4%B8%A4%E6%95%B0%E4%B9%8B%E5%92%8C/</guid>
+      <guid>https://www.boii.xyz/posts/leetcode/leetcode-%E7%AC%94%E8%AE%B0no-10x01-%E4%B8%A4%E6%95%B0%E4%B9%8B%E5%92%8C/</guid>
       <description>&lt;p&gt;LeetCode 第1题&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>通信中的加密与解密</title>
-      <link>https://boii.xyz/posts/rsa/%E9%80%9A%E4%BF%A1%E4%B8%AD%E7%9A%84%E5%8A%A0%E5%AF%86%E4%B8%8E%E8%A7%A3%E5%AF%86/</link>
+      <link>https://www.boii.xyz/posts/rsa/%E9%80%9A%E4%BF%A1%E4%B8%AD%E7%9A%84%E5%8A%A0%E5%AF%86%E4%B8%8E%E8%A7%A3%E5%AF%86/</link>
       <pubDate>Thu, 25 Apr 2019 09:52:52 +0000</pubDate>
       
-      <guid>https://boii.xyz/posts/rsa/%E9%80%9A%E4%BF%A1%E4%B8%AD%E7%9A%84%E5%8A%A0%E5%AF%86%E4%B8%8E%E8%A7%A3%E5%AF%86/</guid>
+      <guid>https://www.boii.xyz/posts/rsa/%E9%80%9A%E4%BF%A1%E4%B8%AD%E7%9A%84%E5%8A%A0%E5%AF%86%E4%B8%8E%E8%A7%A3%E5%AF%86/</guid>
       <description>&lt;p&gt;怎么和聊天才能不被人看到信息内容？&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>RSA加密原理</title>
-      <link>https://boii.xyz/posts/rsa/rsa%E5%8A%A0%E5%AF%86%E5%8E%9F%E7%90%86/</link>
+      <link>https://www.boii.xyz/posts/rsa/rsa%E5%8A%A0%E5%AF%86%E5%8E%9F%E7%90%86/</link>
       <pubDate>Thu, 25 Apr 2019 08:09:08 +0000</pubDate>
       
-      <guid>https://boii.xyz/posts/rsa/rsa%E5%8A%A0%E5%AF%86%E5%8E%9F%E7%90%86/</guid>
+      <guid>https://www.boii.xyz/posts/rsa/rsa%E5%8A%A0%E5%AF%86%E5%8E%9F%E7%90%86/</guid>
       <description>&lt;p&gt;数学是一种很奇妙的东西&lt;/p&gt;</description>
     </item>
     
     <item>
       <title></title>
-      <link>https://boii.xyz/posts/manjaro/</link>
+      <link>https://www.boii.xyz/posts/manjaro/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://boii.xyz/posts/manjaro/</guid>
+      <guid>https://www.boii.xyz/posts/manjaro/</guid>
       <description>换源 1  sudo pacman-mirrors -i -c China -m rank   或者自动选择
 1  pacman-mirrors -c China   或者自动选择最快的
 1  pacman-mirrors --fasttrack   安装 Yay 1  sudo pacman -Sy yay   安装字体 1  yay -Sy wqy-zenhei wqy-microhei adobe-source-han-sans-otc-fonts tty-font-awesome tty-cascadia-code nerd-fonts-cascadia-code ttf-material-icons   输入法 1  sudo pacman -Sy fcitx5 fcitx5-chinese-addons fcitx5-qt fcitx5-gtk   fcitx5 是输入法框架，默认支持英文。 fcitx5-chinese-addons 是中文支持。

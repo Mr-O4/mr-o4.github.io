@@ -2,29 +2,29 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>底层原理 on Mr.Boii</title>
-    <link>https://boii.xyz/tags/%E5%BA%95%E5%B1%82%E5%8E%9F%E7%90%86/</link>
+    <link>https://www.boii.xyz/tags/%E5%BA%95%E5%B1%82%E5%8E%9F%E7%90%86/</link>
     <description>Recent content in 底层原理 on Mr.Boii</description>
     <image>
-      <url>https://boii.xyz/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
-      <link>https://boii.xyz/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+      <url>https://www.boii.xyz/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>https://www.boii.xyz/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Tue, 14 Sep 2021 15:08:20 +0000</lastBuildDate><atom:link href="https://boii.xyz/tags/%E5%BA%95%E5%B1%82%E5%8E%9F%E7%90%86/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 14 Sep 2021 15:08:20 +0000</lastBuildDate><atom:link href="https://www.boii.xyz/tags/%E5%BA%95%E5%B1%82%E5%8E%9F%E7%90%86/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Golang [深入理解] 4-string 实现原理</title>
-      <link>https://boii.xyz/posts/go/golang-%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3-4-string-%E5%AE%9E%E7%8E%B0%E5%8E%9F%E7%90%86/</link>
+      <link>https://www.boii.xyz/posts/go/golang-%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3-4-string-%E5%AE%9E%E7%8E%B0%E5%8E%9F%E7%90%86/</link>
       <pubDate>Tue, 14 Sep 2021 15:08:20 +0000</pubDate>
       
-      <guid>https://boii.xyz/posts/go/golang-%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3-4-string-%E5%AE%9E%E7%8E%B0%E5%8E%9F%E7%90%86/</guid>
+      <guid>https://www.boii.xyz/posts/go/golang-%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3-4-string-%E5%AE%9E%E7%8E%B0%E5%8E%9F%E7%90%86/</guid>
       <description>&lt;p&gt;关于你可能知道的 string&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Golang [深入理解] 2-slice 实现原理</title>
-      <link>https://boii.xyz/posts/go/golang-%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3-2-slice-%E5%AE%9E%E7%8E%B0%E5%8E%9F%E7%90%86/</link>
+      <link>https://www.boii.xyz/posts/go/golang-%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3-2-slice-%E5%AE%9E%E7%8E%B0%E5%8E%9F%E7%90%86/</link>
       <pubDate>Tue, 14 Sep 2021 15:07:18 +0000</pubDate>
       
-      <guid>https://boii.xyz/posts/go/golang-%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3-2-slice-%E5%AE%9E%E7%8E%B0%E5%8E%9F%E7%90%86/</guid>
+      <guid>https://www.boii.xyz/posts/go/golang-%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3-2-slice-%E5%AE%9E%E7%8E%B0%E5%8E%9F%E7%90%86/</guid>
       <description>&lt;p&gt;关于你可能知道的 slice&lt;/p&gt;</description>
     </item>
     

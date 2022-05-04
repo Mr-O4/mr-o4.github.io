@@ -2,20 +2,20 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Java on Mr.Boii</title>
-    <link>https://boii.xyz/categories/java/</link>
+    <link>https://www.boii.xyz/categories/java/</link>
     <description>Recent content in Java on Mr.Boii</description>
     <image>
-      <url>https://boii.xyz/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
-      <link>https://boii.xyz/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+      <url>https://www.boii.xyz/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>https://www.boii.xyz/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sun, 14 Jul 2019 23:19:12 +0000</lastBuildDate><atom:link href="https://boii.xyz/categories/java/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 14 Jul 2019 23:19:12 +0000</lastBuildDate><atom:link href="https://www.boii.xyz/categories/java/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>SSM-配置文件</title>
-      <link>https://boii.xyz/posts/java/ssm/ssm-%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6/</link>
+      <link>https://www.boii.xyz/posts/java/ssm/ssm-%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6/</link>
       <pubDate>Sun, 14 Jul 2019 23:19:12 +0000</pubDate>
       
-      <guid>https://boii.xyz/posts/java/ssm/ssm-%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6/</guid>
+      <guid>https://www.boii.xyz/posts/java/ssm/ssm-%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6/</guid>
       <description>先把配置文件捋清楚
 前言 SSM框架中有几个比较重要的配置文件，一开始学起来会很模糊，这里做一下整理
  当一个web程序启动时，Tomcat服务器最先会读取 web.xml 文件，这个文件中会启动一些配置，还会启动Spring配置文件**applicationContext.xml** 和SpringMVC配置文件 springMVC-servlet.xml 这两个文件，在运行 applicationContext.xml 的时候会启动MyBatis的配置文件 myBatis.xml，并且会调用到 jdbc.properties 和 log4J.properties 两个资源属性文件里的属性。
@@ -26,10 +26,10 @@
     
     <item>
       <title>SSM-8-Spring事务管理</title>
-      <link>https://boii.xyz/posts/java/ssm/ssm-8-spring%E4%BA%8B%E5%8A%A1%E7%AE%A1%E7%90%86/</link>
+      <link>https://www.boii.xyz/posts/java/ssm/ssm-8-spring%E4%BA%8B%E5%8A%A1%E7%AE%A1%E7%90%86/</link>
       <pubDate>Sat, 13 Jul 2019 17:04:13 +0000</pubDate>
       
-      <guid>https://boii.xyz/posts/java/ssm/ssm-8-spring%E4%BA%8B%E5%8A%A1%E7%AE%A1%E7%90%86/</guid>
+      <guid>https://www.boii.xyz/posts/java/ssm/ssm-8-spring%E4%BA%8B%E5%8A%A1%E7%AE%A1%E7%90%86/</guid>
       <description>有了事务好管理
 前言 事务：也就是一个用户操作中，需要包含哪些具体操作。这些操作集合在一起，就是事务。这些操作必须是具体的，必要的，不可分割的。要么全部完成，要么全部失败。
 比如你给你朋友转账1000块的操作，分成几个步骤就是：
@@ -43,10 +43,10 @@
     
     <item>
       <title>SSM-7-统一异常处理</title>
-      <link>https://boii.xyz/posts/java/ssm/ssm-7-%E7%BB%9F%E4%B8%80%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86/</link>
+      <link>https://www.boii.xyz/posts/java/ssm/ssm-7-%E7%BB%9F%E4%B8%80%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86/</link>
       <pubDate>Thu, 11 Jul 2019 20:55:10 +0000</pubDate>
       
-      <guid>https://boii.xyz/posts/java/ssm/ssm-7-%E7%BB%9F%E4%B8%80%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86/</guid>
+      <guid>https://www.boii.xyz/posts/java/ssm/ssm-7-%E7%BB%9F%E4%B8%80%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86/</guid>
       <description>遇到异常不要慌～
 摘要 程序运行过程中总会遇到一些可预知的，不可预知的异常。如果不对这些异常进行捕捉和处理，就会导致程序崩溃、停止运行、闪退等诸多令人体验极差的现象。如果对这些异常一个一个单独处理，则代码显得很臃肿，耦合度高（独立性差），所以要用统一异常处理对所有的代码进行异常处理
 SpringMVC处理异常有三种方式：
@@ -58,10 +58,10 @@ SpringMVC处理异常有三种方式：
     
     <item>
       <title>SSM-6-上传和下载</title>
-      <link>https://boii.xyz/posts/java/ssm/ssm-6-%E4%B8%8A%E4%BC%A0%E5%92%8C%E4%B8%8B%E8%BD%BD/</link>
+      <link>https://www.boii.xyz/posts/java/ssm/ssm-6-%E4%B8%8A%E4%BC%A0%E5%92%8C%E4%B8%8B%E8%BD%BD/</link>
       <pubDate>Wed, 10 Jul 2019 01:04:18 +0000</pubDate>
       
-      <guid>https://boii.xyz/posts/java/ssm/ssm-6-%E4%B8%8A%E4%BC%A0%E5%92%8C%E4%B8%8B%E8%BD%BD/</guid>
+      <guid>https://www.boii.xyz/posts/java/ssm/ssm-6-%E4%B8%8A%E4%BC%A0%E5%92%8C%E4%B8%8B%E8%BD%BD/</guid>
       <description>来了，上下都来了～
 摘要 文件上传和下载是web经常要面对的问题。
 上传的方式有多种，包括：
@@ -80,10 +80,10 @@ maven项目：配置pom.xml
     
     <item>
       <title>SSM-5-拦截器</title>
-      <link>https://boii.xyz/posts/java/ssm/ssm-5-%E6%8B%A6%E6%88%AA%E5%99%A8/</link>
+      <link>https://www.boii.xyz/posts/java/ssm/ssm-5-%E6%8B%A6%E6%88%AA%E5%99%A8/</link>
       <pubDate>Sun, 07 Jul 2019 12:04:18 +0000</pubDate>
       
-      <guid>https://boii.xyz/posts/java/ssm/ssm-5-%E6%8B%A6%E6%88%AA%E5%99%A8/</guid>
+      <guid>https://www.boii.xyz/posts/java/ssm/ssm-5-%E6%8B%A6%E6%88%AA%E5%99%A8/</guid>
       <description>拦截器其实就是一种中间件
 摘要 拦截器 Interceptor 主要用于在 请求到达控制器之前进行验证 ，有点类似过滤器。主要用于拦截用户请求并做出相应的处理。通常应用在权限验证，记录请求信息的日志，判断用户是否登录等功能上。
 主要的实现方法有两种：
@@ -99,19 +99,19 @@ maven项目：配置pom.xml
     
     <item>
       <title>SSM-4-数据绑定</title>
-      <link>https://boii.xyz/posts/java/ssm/ssm-4-%E6%95%B0%E6%8D%AE%E7%BB%91%E5%AE%9A/</link>
+      <link>https://www.boii.xyz/posts/java/ssm/ssm-4-%E6%95%B0%E6%8D%AE%E7%BB%91%E5%AE%9A/</link>
       <pubDate>Sun, 07 Jul 2019 10:04:18 +0000</pubDate>
       
-      <guid>https://boii.xyz/posts/java/ssm/ssm-4-%E6%95%B0%E6%8D%AE%E7%BB%91%E5%AE%9A/</guid>
+      <guid>https://www.boii.xyz/posts/java/ssm/ssm-4-%E6%95%B0%E6%8D%AE%E7%BB%91%E5%AE%9A/</guid>
       <description>&lt;p&gt;先把数据绑定起来&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Java-About-Hash</title>
-      <link>https://boii.xyz/posts/java/java-about-hash/</link>
+      <link>https://www.boii.xyz/posts/java/java-about-hash/</link>
       <pubDate>Sun, 09 Jun 2019 01:26:48 +0000</pubDate>
       
-      <guid>https://boii.xyz/posts/java/java-about-hash/</guid>
+      <guid>https://www.boii.xyz/posts/java/java-about-hash/</guid>
       <description>Hash 是一种很神奇的数据结构
 HashTable HashTable 散列表 哈希表： 是一种数据结构，它提供快速的插入和查找操作，不管表中有多少数据，插入删除和查找的时间都接近O(1)
 **优点：**HashTable其实是基于数组的，所以在查询方面非常的快，同时它不像普通数组那样紧密排列，在数值未满的时候所有的值其实是散部在数组中的某个位置上的，所以在插入和删除的时候不用像普通数组一样让余下的值一个个的挪。
@@ -132,20 +132,20 @@ CurrentCode + 0，CurrentCode + 1^2^ ，CurrentCode - 1 ^2^，CurrentCode + 2^2^
     
     <item>
       <title>Java-反射</title>
-      <link>https://boii.xyz/posts/java/java-%E5%8F%8D%E5%B0%84/</link>
+      <link>https://www.boii.xyz/posts/java/java-%E5%8F%8D%E5%B0%84/</link>
       <pubDate>Sun, 09 Jun 2019 00:58:48 +0000</pubDate>
       
-      <guid>https://boii.xyz/posts/java/java-%E5%8F%8D%E5%B0%84/</guid>
+      <guid>https://www.boii.xyz/posts/java/java-%E5%8F%8D%E5%B0%84/</guid>
       <description>Java 神器：反射
 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19  Person p = new Person(); /**获取*/ Class&amp;lt;?&amp;gt; clazz = p.getClass(); // 得知道类对象 Class&amp;lt;?&amp;gt; clazz = Person.class;	//得知道类名 Class&amp;lt;?&amp;gt; clazz = Class.forName(&amp;#34;com.tcp404.Person&amp;#34;);//得知道类的全路径名  /** 获取方法 */ Method method = clazz.getDeclaredMethod(&amp;#34;方法名&amp;#34;, new Class(){[参数类型.class, 参数类型.class, ...]}); Methods[] methods = clazz.getDeclaredMethods(); /** 获取属性 */ Field field = clazz.getDeclaredField(&amp;#34;属性名字&amp;#34;); Field[] fields = clazz.getDeclaredFields(); /** 获取构造器 */ Constructor&amp;lt;?</description>
     </item>
     
     <item>
       <title>几句话区分并行和并发</title>
-      <link>https://boii.xyz/posts/note/%E5%87%A0%E5%8F%A5%E8%AF%9D%E5%8C%BA%E5%88%86%E5%B9%B6%E8%A1%8C%E5%92%8C%E5%B9%B6%E5%8F%91/</link>
+      <link>https://www.boii.xyz/posts/note/%E5%87%A0%E5%8F%A5%E8%AF%9D%E5%8C%BA%E5%88%86%E5%B9%B6%E8%A1%8C%E5%92%8C%E5%B9%B6%E5%8F%91/</link>
       <pubDate>Wed, 15 May 2019 10:04:18 +0000</pubDate>
       
-      <guid>https://boii.xyz/posts/note/%E5%87%A0%E5%8F%A5%E8%AF%9D%E5%8C%BA%E5%88%86%E5%B9%B6%E8%A1%8C%E5%92%8C%E5%B9%B6%E5%8F%91/</guid>
+      <guid>https://www.boii.xyz/posts/note/%E5%87%A0%E5%8F%A5%E8%AF%9D%E5%8C%BA%E5%88%86%E5%B9%B6%E8%A1%8C%E5%92%8C%E5%B9%B6%E5%8F%91/</guid>
       <description>&lt;p&gt;吃饭和打电话你选择哪个？&lt;/p&gt;</description>
     </item>
     

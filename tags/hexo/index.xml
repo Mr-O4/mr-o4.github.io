@@ -2,38 +2,38 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>HEXO on Mr.Boii</title>
-    <link>https://boii.xyz/tags/hexo/</link>
+    <link>https://www.boii.xyz/tags/hexo/</link>
     <description>Recent content in HEXO on Mr.Boii</description>
     <image>
-      <url>https://boii.xyz/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
-      <link>https://boii.xyz/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+      <url>https://www.boii.xyz/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>https://www.boii.xyz/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sun, 23 Aug 2020 16:00:35 +0000</lastBuildDate><atom:link href="https://boii.xyz/tags/hexo/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 23 Aug 2020 16:00:35 +0000</lastBuildDate><atom:link href="https://www.boii.xyz/tags/hexo/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Hexo-文件下载功能</title>
-      <link>https://boii.xyz/posts/hexo/hexo-%E6%96%87%E4%BB%B6%E4%B8%8B%E8%BD%BD%E5%8A%9F%E8%83%BD/</link>
+      <link>https://www.boii.xyz/posts/hexo/hexo-%E6%96%87%E4%BB%B6%E4%B8%8B%E8%BD%BD%E5%8A%9F%E8%83%BD/</link>
       <pubDate>Sun, 23 Aug 2020 16:00:35 +0000</pubDate>
       
-      <guid>https://boii.xyz/posts/hexo/hexo-%E6%96%87%E4%BB%B6%E4%B8%8B%E8%BD%BD%E5%8A%9F%E8%83%BD/</guid>
+      <guid>https://www.boii.xyz/posts/hexo/hexo-%E6%96%87%E4%BB%B6%E4%B8%8B%E8%BD%BD%E5%8A%9F%E8%83%BD/</guid>
       <description>&lt;p&gt;So easy~&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>全站变灰的实现</title>
-      <link>https://boii.xyz/posts/hexo/%E5%85%A8%E7%AB%99%E5%8F%98%E7%81%B0%E7%9A%84%E5%AE%9E%E7%8E%B0/</link>
+      <link>https://www.boii.xyz/posts/hexo/%E5%85%A8%E7%AB%99%E5%8F%98%E7%81%B0%E7%9A%84%E5%AE%9E%E7%8E%B0/</link>
       <pubDate>Mon, 06 Apr 2020 10:47:03 +0000</pubDate>
       
-      <guid>https://boii.xyz/posts/hexo/%E5%85%A8%E7%AB%99%E5%8F%98%E7%81%B0%E7%9A%84%E5%AE%9E%E7%8E%B0/</guid>
+      <guid>https://www.boii.xyz/posts/hexo/%E5%85%A8%E7%AB%99%E5%8F%98%E7%81%B0%E7%9A%84%E5%AE%9E%E7%8E%B0/</guid>
       <description>&lt;h1 id=&#34;哀悼日-全站变灰的实现&#34;&gt;哀悼日-全站变灰的实现&lt;/h1&gt;</description>
     </item>
     
     <item>
       <title>多端同步管理Hexo博客</title>
-      <link>https://boii.xyz/posts/hexo/%E5%A4%9A%E7%AB%AF%E5%90%8C%E6%AD%A5%E7%AE%A1%E7%90%86hexo%E5%8D%9A%E5%AE%A2/</link>
+      <link>https://www.boii.xyz/posts/hexo/%E5%A4%9A%E7%AB%AF%E5%90%8C%E6%AD%A5%E7%AE%A1%E7%90%86hexo%E5%8D%9A%E5%AE%A2/</link>
       <pubDate>Sat, 18 May 2019 11:37:35 +0000</pubDate>
       
-      <guid>https://boii.xyz/posts/hexo/%E5%A4%9A%E7%AB%AF%E5%90%8C%E6%AD%A5%E7%AE%A1%E7%90%86hexo%E5%8D%9A%E5%AE%A2/</guid>
+      <guid>https://www.boii.xyz/posts/hexo/%E5%A4%9A%E7%AB%AF%E5%90%8C%E6%AD%A5%E7%AE%A1%E7%90%86hexo%E5%8D%9A%E5%AE%A2/</guid>
       <description>&lt;p&gt;多端管理其实很简单。&lt;/p&gt;</description>
     </item>
     

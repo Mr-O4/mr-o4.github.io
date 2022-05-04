@@ -2,29 +2,29 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Vue on Mr.Boii</title>
-    <link>https://boii.xyz/tags/vue/</link>
+    <link>https://www.boii.xyz/tags/vue/</link>
     <description>Recent content in Vue on Mr.Boii</description>
     <image>
-      <url>https://boii.xyz/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
-      <link>https://boii.xyz/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+      <url>https://www.boii.xyz/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>https://www.boii.xyz/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Thu, 09 Apr 2020 11:34:38 +0000</lastBuildDate><atom:link href="https://boii.xyz/tags/vue/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 09 Apr 2020 11:34:38 +0000</lastBuildDate><atom:link href="https://www.boii.xyz/tags/vue/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>VUE-note-day2</title>
-      <link>https://boii.xyz/posts/vue/vue-note-day2/</link>
+      <link>https://www.boii.xyz/posts/vue/vue-note-day2/</link>
       <pubDate>Thu, 09 Apr 2020 11:34:38 +0000</pubDate>
       
-      <guid>https://boii.xyz/posts/vue/vue-note-day2/</guid>
+      <guid>https://www.boii.xyz/posts/vue/vue-note-day2/</guid>
       <description>&lt;p&gt;Vue 的细节是真的多.&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>VUE-note-day1</title>
-      <link>https://boii.xyz/posts/vue/vue-note-day1/</link>
+      <link>https://www.boii.xyz/posts/vue/vue-note-day1/</link>
       <pubDate>Wed, 08 Apr 2020 12:05:50 +0000</pubDate>
       
-      <guid>https://boii.xyz/posts/vue/vue-note-day1/</guid>
+      <guid>https://www.boii.xyz/posts/vue/vue-note-day1/</guid>
       <description>&lt;p&gt;疫情在家真的无聊 T_T，学点Vue吧&lt;/p&gt;</description>
     </item>
     

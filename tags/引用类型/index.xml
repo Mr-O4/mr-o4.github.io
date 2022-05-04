@@ -2,20 +2,20 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>引用类型 on Mr.Boii</title>
-    <link>https://boii.xyz/tags/%E5%BC%95%E7%94%A8%E7%B1%BB%E5%9E%8B/</link>
+    <link>https://www.boii.xyz/tags/%E5%BC%95%E7%94%A8%E7%B1%BB%E5%9E%8B/</link>
     <description>Recent content in 引用类型 on Mr.Boii</description>
     <image>
-      <url>https://boii.xyz/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
-      <link>https://boii.xyz/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+      <url>https://www.boii.xyz/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>https://www.boii.xyz/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Tue, 14 Sep 2021 15:09:02 +0000</lastBuildDate><atom:link href="https://boii.xyz/tags/%E5%BC%95%E7%94%A8%E7%B1%BB%E5%9E%8B/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 14 Sep 2021 15:09:02 +0000</lastBuildDate><atom:link href="https://www.boii.xyz/tags/%E5%BC%95%E7%94%A8%E7%B1%BB%E5%9E%8B/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Golang [深入理解] 7-关于 nil</title>
-      <link>https://boii.xyz/posts/go/golang-%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3-7-%E5%85%B3%E4%BA%8E-nil/</link>
+      <link>https://www.boii.xyz/posts/go/golang-%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3-7-%E5%85%B3%E4%BA%8E-nil/</link>
       <pubDate>Tue, 14 Sep 2021 15:09:02 +0000</pubDate>
       
-      <guid>https://boii.xyz/posts/go/golang-%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3-7-%E5%85%B3%E4%BA%8E-nil/</guid>
+      <guid>https://www.boii.xyz/posts/go/golang-%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3-7-%E5%85%B3%E4%BA%8E-nil/</guid>
       <description>&lt;p&gt;关于你可能知道的 nil 的使用&lt;/p&gt;</description>
     </item>
     
