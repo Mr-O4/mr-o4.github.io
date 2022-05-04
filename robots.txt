@@ -1,1 +1,3 @@
 User-agent: *
+Disallow:
+Sitemap: https://boii.xyz/sitemap.xml
