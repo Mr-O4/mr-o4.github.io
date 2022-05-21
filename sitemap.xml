@@ -2,25 +2,40 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://www.boii.xyz/posts/hello/</loc>
-    <lastmod>2022-03-14T23:42:34+08:00</lastmod>
+    <loc>https://www.boii.xyz/categories/</loc>
+    <lastmod>2022-05-21T18:42:25+08:00</lastmod>
   </url><url>
     <loc>https://www.boii.xyz/</loc>
-    <lastmod>2022-03-14T23:42:34+08:00</lastmod>
+    <lastmod>2022-05-21T18:42:25+08:00</lastmod>
   </url><url>
     <loc>https://www.boii.xyz/posts/</loc>
-    <lastmod>2022-03-14T23:42:34+08:00</lastmod>
+    <lastmod>2022-05-21T18:42:25+08:00</lastmod>
+  </url><url>
+    <loc>https://www.boii.xyz/categories/skill/</loc>
+    <lastmod>2022-05-21T18:42:25+08:00</lastmod>
   </url><url>
     <loc>https://www.boii.xyz/tags/</loc>
+    <lastmod>2022-05-21T18:42:25+08:00</lastmod>
+  </url><url>
+    <loc>https://www.boii.xyz/posts/skill/%E4%BD%BF%E7%94%A8%E9%93%BE%E8%A1%A8%E5%A4%84%E7%90%86%E6%89%B9%E9%87%8F%E6%93%8D%E4%BD%9C/</loc>
+    <lastmod>2022-05-21T18:42:25+08:00</lastmod>
+  </url><url>
+    <loc>https://www.boii.xyz/tags/%E6%89%B9%E9%87%8F/</loc>
+    <lastmod>2022-05-21T18:42:25+08:00</lastmod>
+  </url><url>
+    <loc>https://www.boii.xyz/tags/%E6%A0%A1%E9%AA%8C%E5%99%A8/</loc>
+    <lastmod>2022-05-21T18:42:25+08:00</lastmod>
+  </url><url>
+    <loc>https://www.boii.xyz/tags/%E9%93%BE%E8%A1%A8/</loc>
+    <lastmod>2022-05-21T18:42:25+08:00</lastmod>
+  </url><url>
+    <loc>https://www.boii.xyz/hello/</loc>
     <lastmod>2022-03-14T23:42:34+08:00</lastmod>
   </url><url>
     <loc>https://www.boii.xyz/tags/untagged/</loc>
     <lastmod>2022-03-14T23:42:34+08:00</lastmod>
   </url><url>
     <loc>https://www.boii.xyz/categories/advanced/</loc>
-    <lastmod>2022-01-08T01:50:48+08:00</lastmod>
-  </url><url>
-    <loc>https://www.boii.xyz/categories/</loc>
     <lastmod>2022-01-08T01:50:48+08:00</lastmod>
   </url><url>
     <loc>https://www.boii.xyz/tags/golang/</loc>
@@ -282,18 +297,8 @@
   </url><url>
     <loc>https://www.boii.xyz/archives/</loc>
   </url><url>
-    <loc>https://www.boii.xyz/posts/skill/%E4%BD%BF%E7%94%A8%E9%93%BE%E8%A1%A8%E5%A4%84%E7%90%86%E6%89%B9%E9%87%8F%E6%93%8D%E4%BD%9C/</loc>
-  </url><url>
     <loc>https://www.boii.xyz/me/</loc>
   </url><url>
     <loc>https://www.boii.xyz/search/</loc>
-  </url><url>
-    <loc>https://www.boii.xyz/categories/skill/</loc>
-  </url><url>
-    <loc>https://www.boii.xyz/tags/%E6%89%B9%E9%87%8F/</loc>
-  </url><url>
-    <loc>https://www.boii.xyz/tags/%E6%A0%A1%E9%AA%8C%E5%99%A8/</loc>
-  </url><url>
-    <loc>https://www.boii.xyz/tags/%E9%93%BE%E8%A1%A8/</loc>
   </url>
 </urlset>

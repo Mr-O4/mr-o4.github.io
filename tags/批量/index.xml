@@ -8,11 +8,12 @@
       <url>https://www.boii.xyz/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
       <link>https://www.boii.xyz/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
     </image>
-    <generator>Hugo -- gohugo.io</generator><atom:link href="https://www.boii.xyz/tags/%E6%89%B9%E9%87%8F/index.xml" rel="self" type="application/rss+xml" />
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Sat, 21 May 2022 18:42:25 +0800</lastBuildDate><atom:link href="https://www.boii.xyz/tags/%E6%89%B9%E9%87%8F/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Chain</title>
+      <title>使用链表进行批量执行操作</title>
       <link>https://www.boii.xyz/posts/skill/%E4%BD%BF%E7%94%A8%E9%93%BE%E8%A1%A8%E5%A4%84%E7%90%86%E6%89%B9%E9%87%8F%E6%93%8D%E4%BD%9C/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <pubDate>Sat, 21 May 2022 18:42:25 +0800</pubDate>
       
       <guid>https://www.boii.xyz/posts/skill/%E4%BD%BF%E7%94%A8%E9%93%BE%E8%A1%A8%E5%A4%84%E7%90%86%E6%89%B9%E9%87%8F%E6%93%8D%E4%BD%9C/</guid>
       <description>使用链表进行批量执行操作 最近在项目中学到一种挺有意思的编程技巧。这里记录一下
