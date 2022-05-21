@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>校验器 on Mr.Boii</title>
+    <link>https://www.boii.xyz/tags/%E6%A0%A1%E9%AA%8C%E5%99%A8/</link>
+    <description>Recent content in 校验器 on Mr.Boii</description>
+    <image>
+      <url>https://www.boii.xyz/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>https://www.boii.xyz/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+    </image>
+    <generator>Hugo -- gohugo.io</generator><atom:link href="https://www.boii.xyz/tags/%E6%A0%A1%E9%AA%8C%E5%99%A8/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Chain</title>
+      <link>https://www.boii.xyz/posts/skill/%E4%BD%BF%E7%94%A8%E9%93%BE%E8%A1%A8%E5%A4%84%E7%90%86%E6%89%B9%E9%87%8F%E6%93%8D%E4%BD%9C/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.boii.xyz/posts/skill/%E4%BD%BF%E7%94%A8%E9%93%BE%E8%A1%A8%E5%A4%84%E7%90%86%E6%89%B9%E9%87%8F%E6%93%8D%E4%BD%9C/</guid>
+      <description>使用链表进行批量执行操作 最近在项目中学到一种挺有意思的编程技巧。这里记录一下
+场景 在创建一个抽奖的时候，前端会携带许许多多的数据过来，这些数据有抽奖本身的、抽奖配置的、奖项信息的、参与方式的、助力方式的、创建人信息的、创建人联系方式的等等。
+这里面每一种都需要校验，有些条件还是互斥的，有些条件的判定依赖与其他条件的结果，所以无法只靠结构体 tag 去使用 gValid 库校验，并且在验证的时候还需要考虑验证的顺序。
+解决方案 通过阅读项目的源码以后，发现是实现了一个链表，这个链表有 3 个方法：
+ AddToChainHead( Handler ): 添加结点到链表的表头 AddToChainTail( Handler ): 添加结点到链表的表尾 Iterator( Param Structure ): 遍历链表  结点的数据域是一个 Handler，这个结构体必须实现 Handler 接口，在遍历链表时需要调用其校验方法。
+Handler 接口中只有一个 Handle( Param Structure ) error 校验方法。
+在创建抽奖的时候，初始化这个链表，将校验器逐个加入链表，最后遍历链表，在链表中调用结点的中的校验器的 Handle 校验方法执行。
+代码 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62  package chain // Handler 接口，参数放在 req 这个结构体中 type Handler interface { Handle(*Req) error } type node struct { Data Handler // 数据域  Next *Node // 指针域 } type chain struct { HeadNode *Node // 头结点  TailNode *Node // 尾结点 } // 创建链表 type NewChain() *chain { return &amp;amp;chain{} } // 添加结点到链表头部 func (c *chain) AddToHead(h Handler) { node := &amp;amp;node{ Data: h, Next: nil, } if c.</description>
+    </item>
+    
+  </channel>
+</rss>
