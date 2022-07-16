@@ -28,9 +28,9 @@
       <description>新增访问层级限制
 更新功能没写成，还是没想好怎么处理整个流程。
 摆在面前有两个问题：
- 下载下来的新版本（可执行文件）放在哪 如何关闭自己然后启动新版本  所以暂时搁置，转头去实现访问层级限制功能。
+下载下来的新版本（可执行文件）放在哪 如何关闭自己然后启动新版本 所以暂时搁置，转头去实现访问层级限制功能。
 使用中间件 这次把中间件用上了，还把之前对浏览器的默认行为：请求 favicon.ico 进行拦截的部分放在单独的中间件里，并且应用到全局。
-1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20  // Start 函数负责启动 gin 实例，开始提供 HTTP 服务 func Start() { gin.SetMode(gin.ReleaseMode) r := gin.New() r.Use(gin.LoggerWithWriter(config.Output),gin.Recovery()) // 中间件  r.Use(middleware.InterceptICO) r.Use(middleware.CheckLevel) r.NoRoute(controller.NotFound) r.GET(&amp;#34;/*filename&amp;#34;, controller.Handler) r.POST(&amp;#34;/upload&amp;#34;, controller.Upload) printInfo() err := r.Run(&amp;#34;:&amp;#34; + config.Port) if _, ok := err.(*net.OpError); ok { log.</description>
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 // Start 函数负责启动 gin 实例，开始提供 HTTP 服务 func Start() { gin.SetMode(gin.ReleaseMode) r := gin.New() r.Use(gin.LoggerWithWriter(config.Output),gin.Recovery()) // 中间件 r.Use(middleware.InterceptICO) r.Use(middleware.CheckLevel) r.NoRoute(controller.NotFound) r.GET(&amp;#34;/*filename&amp;#34;, controller.Handler) r.POST(&amp;#34;/upload&amp;#34;, controller.Upload) printInfo() err := r.Run(&amp;#34;:&amp;#34; + config.Port) if _, ok := err.(*net.OpError); ok { log.Fatal(color.RedString(&amp;#34;指定的 %s 端口已被占用，请换一个端口号。&amp;#34;, config.</description>
     </item>
     
     <item>

@@ -19,17 +19,17 @@
       <description>来了，上下都来了～
 摘要 文件上传和下载是web经常要面对的问题。
 上传的方式有多种，包括：
- 使用文件流手工编程上传 基于commons-fileupload组件的文件上传 基于Servlet3及以上版本文件上传  下载经常有两种方式：
- 通过超链接实现下载，但是会暴露下载文件的真实位置，并且只能下载存放在web应用所在的目录下的文件。 利用程序编码实现下载，可以增加安全访问控制，还可以从任意位置提供下载的数据，比如数据库。  效果图 上传 选择文件前
+使用文件流手工编程上传 基于commons-fileupload组件的文件上传 基于Servlet3及以上版本文件上传 下载经常有两种方式：
+通过超链接实现下载，但是会暴露下载文件的真实位置，并且只能下载存放在web应用所在的目录下的文件。 利用程序编码实现下载，可以增加安全访问控制，还可以从任意位置提供下载的数据，比如数据库。 效果图 上传 选择文件前
 选择文件后
 上传文件后
 下载 可以被下载的文件列表
 选择文件存储位置
 使用步骤 导入jar包 SpringMVC框架的文件上传是基于commons-fileupload组件，所以需要commons-fileupload和commons-io的jar包。
 maven项目：配置pom.xml
-1 2 3 4 5 6 7 8 9 10 11  &amp;lt;!--上传下载--&amp;gt; &amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;commons-fileupload&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;commons-fileupload&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;1.4&amp;lt;/version&amp;gt; &amp;lt;/dependency&amp;gt; &amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;commons-io&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;commons-io&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;2.6&amp;lt;/version&amp;gt; &amp;lt;/dependency&amp;gt;   非maven项目：将下载好的 commons-fileupload 和 commons-io 的jar放到 webapps\WEB-INF\lib 目录下
+1 2 3 4 5 6 7 8 9 10 11 &amp;lt;!--上传下载--&amp;gt; &amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;commons-fileupload&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;commons-fileupload&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;1.4&amp;lt;/version&amp;gt; &amp;lt;/dependency&amp;gt; &amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;commons-io&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;commons-io&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;2.6&amp;lt;/version&amp;gt; &amp;lt;/dependency&amp;gt; 非maven项目：将下载好的 commons-fileupload 和 commons-io 的jar放到 webapps\WEB-INF\lib 目录下
 单文件上传 1. 编写领域模型 文件上传后保存在服务器里是一个对象，这个对象我们得定义它的属性。文件上传的时候的文件描述（备注），文件的创建时间等等，最重要的文件本身的类型是 MultipartFile
-1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20  public class FileDomain { private String description; private MultipartFile myFile; public String getDescription() { return description; } public void setDescription(String description) { this.</description>
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 public class FileDomain { private String description; private MultipartFile myFile; public String getDescription() { return description; } public void setDescription(String description) { this.</description>
     </item>
     
   </channel>
